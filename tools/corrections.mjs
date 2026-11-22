@@ -120,6 +120,9 @@ export const CORRECTIONS = [
   [/\bMendorong\b/g, 'Push'],
   [/\bdidorong\b/gi, 'di-push'],
   [/\bPendorongan berhasil\b/g, 'Push berhasil'],
+  [/\bDorong\b/g, 'Push'],
+  [/\bdorong\b/g, 'push'],
+  [/\bpush to talk\b/gi, 'push-to-talk'],
   [/\bmenarik commit\b/g, 'pull commit'],
   [/\buntuk menarik commit\b/g, 'untuk pull commit'],
   [/\bPush Enter\b/g, 'Tekan Enter'],
@@ -315,6 +318,10 @@ export const CORRECTIONS = [
   [/\bantarmuka obrolan\b/g, 'Chat UI'],
   [/\bTemukan di editor\b/g, 'Cari di editor'],
   [/\btemukan di editor\b/g, 'cari di editor'],
+  [/\bTarik \{\{behind\}\}, tekan \{\{ahead\}\}/g, 'Pull {{behind}}, push {{ahead}}'],
+  [/\b\{\{(\w+)\}\} di depan\b/g, '{{$1}} commit ahead'],
+  [/\b\{\{(\w+)\}\} ke depan\b/g, '{{$1}} commit ahead'],
+  [/\b\{\{(\w+)\}\} di belakang\b/g, '{{$1}} commit behind'],
   [/\bMemuat (Linear|Jira|GitHub|GitLab) issue/gi, (m) => `Memuat issue ${m.split(' ')[1]}`],
   [/\b(Gagal memuat|Tidak dapat memuat|Gagal menyimpan|Menampilkan) (Linear|Jira|GitHub|GitLab) issue/gi, (m) => {
     const [verb, product] = m.split(' ')

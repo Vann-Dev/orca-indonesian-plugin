@@ -11959,7 +11959,7 @@
               "080202facb": "model",
               "7640ed9848": "suara",
               "56defcd6c3": "Pilih model ucapan-ke-teks lokal atau cloud yang akan digunakan untuk dikte.",
-              "931b1a9e53": "dorong untuk berbicara",
+              "931b1a9e53": "push untuk berbicara",
               "064a9bd94a": "tunggu",
               "6fa48bcd41": "beralih",
               "d86f5600da": "modus",
@@ -13702,7 +13702,7 @@
             "7fad8509fe": "Perbaiki Dengan AI",
             "71026ca2cb": "Menyegarkan…",
             "889cdfba04": "Buat {{value0}}",
-            "98f4c37b33": "Dorong & Buat {{value0}}",
+            "98f4c37b33": "Push & Buat {{value0}}",
             "b6ce28da5b": "{{value0}} #{{value1}} sudah terbuka",
             "cf9e69f3be": "{{value0}} sudah terbuka",
             "192e686e57": "Buka pada {{value0}}",
@@ -13733,7 +13733,7 @@
             "reviewUpdatedAt": "{{review}} diperbarui {{time}}"
           },
           "CreateHostedReviewComposer": {
-            "741ff8a0d2": "Dorong & Buat {{value0}}"
+            "741ff8a0d2": "Push & Buat {{value0}}"
           },
           "FileExplorer": {
             "79b1537dd3": "Pilih ruang kerja untuk menelusuri file",
@@ -14102,7 +14102,7 @@
               "011f9713fc": "Push diblokir",
               "60bd988f0b": "Perbaikan AI",
               "03d238218c": "Detail",
-              "a9bf7c171a": "Dorong Gagal",
+              "a9bf7c171a": "Push Gagal",
               "834cb3f23d": "Perbaiki dengan AI",
               "783a808870": "Tutup"
             },
@@ -14268,7 +14268,7 @@
                 "066fedd446": "Pekerjaan gagal",
                 "ae8a04ef17": "Detail file konflik tidak tersedia",
                 "73d0675356": "Menyegarkan detail konflik…",
-                "f5bc5c4cf1": "Penyedia hosting melaporkan konflik, tetapi Git lokal tidak mereproduksinya. Segarkan review atau dorong cabang untuk menghitung ulang kemampuan merge.",
+                "f5bc5c4cf1": "Penyedia hosting melaporkan konflik, tetapi Git lokal tidak mereproduksinya. Segarkan review atau push cabang untuk menghitung ulang kemampuan merge.",
                 "5bc9bda2af": "Jalankan dari worktree ini",
                 "e87fb3d929": "Salin perintah penyegaran merge",
                 "1e53e45072": "Disalin",
@@ -14430,7 +14430,7 @@
                 },
                 "needs_push": {
                   "title": "Cabang memiliki commit yang belum di-push",
-                  "body": "Dorong commit terbaru sebelum membuat {{reviewLabel}}."
+                  "body": "Push commit terbaru sebelum membuat {{reviewLabel}}."
                 },
                 "existing": {
                   "title": "{{reviewLabelCap}} sudah ada",
@@ -14582,7 +14582,7 @@
                   "blockedCheckOutBranchFirst": "Checkout cabang dulu",
                   "blockedSwitchToFeatureBranch": "Beralih ke cabang fitur",
                   "blockedPublishBranch": "Publikasikan Cabang",
-                  "blockedPushFirst": "Dorong dulu",
+                  "blockedPushFirst": "Push dulu",
                   "blockedForcePushFirst": "Force Push dulu",
                   "blockedSyncFirst": "Sinkronkan terlebih dahulu",
                   "blockedUnsupportedProvider": "Penyedia tidak didukung",
@@ -14594,10 +14594,10 @@
                   "titleLinkedReviewTargetUnavailable": "Target cabang review tertaut tidak tersedia",
                   "titlePublishBranchFirstToPush": "Publikasikan cabang terlebih dahulu untuk push commit",
                   "titleCommitAndForcePush": "Commit perubahan yang di-stage dan force push dengan lease",
-                  "titleCommitAndTryPush": "Commit perubahan yang di-stage dan coba dorong",
-                  "titleCommitAndPush": "Commit perubahan yang di-stage dan dorong",
+                  "titleCommitAndTryPush": "Commit perubahan yang di-stage dan coba push",
+                  "titleCommitAndPush": "Commit perubahan yang di-stage dan push",
                   "commitForcePush": "commit & Force push",
-                  "commitPush": "commit & Dorong",
+                  "commitPush": "commit & Push",
                   "titleOperationInProgress": "Operasi sedang berlangsung…",
                   "titleAbortRebaseInProgress": "Batalkan rebase yang sedang berlangsung",
                   "titleAbortMergeInProgress": "Batalkan merge yang sedang berlangsung",
@@ -14605,9 +14605,9 @@
                   "titleNothingToPush": "Tidak ada yang perlu di-push",
                   "titleNothingToForcePushTo": "Tidak ada yang perlu di-force push ke {{upstreamName}}",
                   "titleNothingToForcePush": "Tidak ada yang memaksa untuk di-push",
-                  "titlePushAndSetUpstream": "Dorong cabang ini dan atur upstream jika diperlukan",
+                  "titlePushAndSetUpstream": "Push cabang ini dan atur upstream jika diperlukan",
                   "titleTryRegularPush": "Coba push biasa; git mungkin memerlukan force push",
-                  "titlePushMayNeedSync": "Dorong commit lokal; git mungkin memerlukan sinkronisasi terlebih dahulu",
+                  "titlePushMayNeedSync": "Push commit lokal; git mungkin memerlukan sinkronisasi terlebih dahulu",
                   "titleCheckOutBranchToForcePush": "Checkout cabang sebelum force push commit",
                   "titleCheckOutBranchToPull": "Checkout cabang sebelum pull commit",
                   "titlePublishBranchFirstToPull": "Publikasikan cabang terlebih dahulu untuk pull commit",
@@ -14631,14 +14631,14 @@
                   "forcePushBeforeReview": "Force push sebelum {{shortLabel}}",
                   "pushBeforeReview": "Tekan sebelum {{shortLabel}}",
                   "titleForcePushBeforeCreatingReview": "Force push dengan lease sebelum membuat {{reviewLabel}}",
-                  "titlePushBeforeCreatingReview": "Dorong commit lokal sebelum membuat {{reviewLabel}}",
+                  "titlePushBeforeCreatingReview": "Push commit lokal sebelum membuat {{reviewLabel}}",
                   "pushCount_one": "Push {{count}} commit",
                   "pushCount_other": "Push {{count}} commit",
                   "pullCount_one": "Pull {{count}} commit",
                   "pullCount_other": "Pull {{count}} commit",
                   "fastForwardCount_one": "Fast-forward {{count}} commit",
                   "fastForwardCount_other": "Fast-forward {{count}} commit",
-                  "syncCounts": "Pull {{behind}}, tekan {{ahead}}",
+                  "syncCounts": "Pull {{behind}}, push {{ahead}}",
                   "remoteBranchFallback": "cabang jarak jauh",
                   "titleForcePushOlderCopiesBranch": "Remote hanya memiliki salinan commit lokal yang lebih lama. Force push cabang ini dengan lease untuk memperbarui {{upstreamName}}.",
                   "titleForcePushOlderCopiesCount_one": "Remote hanya memiliki salinan commit lokal yang lebih lama. Force push {{count}} cabang commit dengan lease untuk memperbarui {{upstreamName}}.",
@@ -14667,7 +14667,7 @@
                   "statusBaseNotOnRemote": "Berdasarkan bukan pada jarak jauh",
                   "statusDefaultBranch": "Cabang default",
                   "statusForkUnsupported": "Fork tidak didukung",
-                  "statusPushFirst": "Dorong dulu",
+                  "statusPushFirst": "Push dulu",
                   "statusForcePushFirst": "Force push dulu",
                   "statusSyncFirst": "Sinkronkan terlebih dahulu",
                   "statusUnsupported": "Tidak didukung"
@@ -14678,7 +14678,7 @@
                   "ed93b4f14f": "commit",
                   "946a8a05ea": "Buat {{value0}} untuk cabang ini",
                   "e7ffa46946": "Buat {{value0}}",
-                  "95550cff15": "Dorong",
+                  "95550cff15": "Push",
                   "d64292a938": "Pull",
                   "795f1509c5": "Sinkronisasi",
                   "390abeab93": "Force push",
@@ -14698,7 +14698,7 @@
                   "74fc171e99": "Paksa Push sedang berlangsung…",
                   "16aee3a5c1": "commit sedang berlangsung…",
                   "e61b0d7a3c": "Checkout cabang sebelum menerbitkan commit.",
-                  "1d47e850cf": "Dorong pembaruan ke cabang review tertaut",
+                  "1d47e850cf": "Push pembaruan ke cabang review tertaut",
                   "c39d0c75c3": "Target cabang review tertaut tidak tersedia.",
                   "d37e68f61d": "Mempersiapkan cabang untuk ditinjau…",
                   "c72e5e65d1": "Siapkan cabang ini dan buat {{value0}}",
@@ -14707,7 +14707,7 @@
                   "e3b9d5f814": "Tidak dapat membuat {{value0}} dari cabang default.",
                   "f4c0e6a925": "Commit perubahan sebelum membuat {{value0}}.",
                   "a5d1f7b036": "Publikasikan commit sebelum membuat {{value0}}.",
-                  "b6e2a8c147": "Dorong commit sebelum membuat {{value0}}.",
+                  "b6e2a8c147": "Push commit sebelum membuat {{value0}}.",
                   "c7f3b9d258": "Sinkronkan cabang ini sebelum membuat {{value0}}.",
                   "d8a4c0e369": "Otentikasi sebelum membuat {{value0}}.",
                   "e9b5d1f470": "Checkout cabang sebelum membuat {{value0}}.",
@@ -14847,7 +14847,7 @@
               "review": {
                 "button": {
                   "label": {
-                    "96ae7358e0": "Dorong & Buat PR di stack",
+                    "96ae7358e0": "Push & Buat PR di stack",
                     "8e8149a0bf": "Buat draf PR di stack",
                     "8df1a05952": "Buat PR di stack"
                   }
@@ -20984,7 +20984,7 @@
           "github": {
             "issue_opened": "Issue dibuka",
             "pr_opened": "pull request dibuka",
-            "pr_pushed": "Dorong",
+            "pr_pushed": "Push",
             "pr_merged": "Digabung",
             "comment": "Komentar",
             "review_comment": "Tinjau komentar",
@@ -22569,7 +22569,7 @@
       "detachedHead": "beralih ke cabang sebelum membuat {{reviewLabel}}.",
       "defaultBranch": "pilih cabang fitur sebelum membuat {{reviewLabel}}.",
       "noUpstream": "publikasikan cabang ini sebelum membuat {{reviewLabel}}.",
-      "needsPush": "dorong cabang ini sebelum membuat {{reviewLabel}}.",
+      "needsPush": "push cabang ini sebelum membuat {{reviewLabel}}.",
       "needsSync": "sinkronkan cabang ini sebelum membuat {{reviewLabel}}.",
       "refreshStatus": "segarkan status source control dan coba lagi.",
       "namedBaseNotOnRemote": "cabang dasar \"{{base}}\" belum di-push ke jarak jauh. Pilih alas yang di-push atau di-push terlebih dahulu.",
@@ -22753,16 +22753,16 @@
           "push": "Push diblokir — lint gagal selama push."
         },
         "prePush": {
-          "publish": "Penerbitan Cabang diblokir — hook pra-dorong gagal.",
-          "sync": "Sinkronisasi diblokir — hook pra-dorong gagal.",
-          "forcePush": "Force Push diblokir — hook pra-dorong gagal.",
-          "push": "Dorong diblokir — hook pra-dorong gagal."
+          "publish": "Penerbitan Cabang diblokir — hook pra-push gagal.",
+          "sync": "Sinkronisasi diblokir — hook pra-push gagal.",
+          "forcePush": "Force Push diblokir — hook pra-push gagal.",
+          "push": "Push diblokir — hook pra-push gagal."
         },
         "detail": {
           "publish": "Cabang Penerbitan diblokir — {{detail}}",
           "sync": "Sinkronisasi diblokir — {{detail}}",
           "forcePush": "Force Push diblokir — {{detail}}",
-          "push": "Dorong diblokir — {{detail}}"
+          "push": "Push diblokir — {{detail}}"
         }
       },
       "remoteAccessWithDetail": {

@@ -816,7 +816,7 @@
       },
       "sshWorkspaceRouting": {
         "disabledHosts": "Host menjelajah dari perangkat ini:",
-        "optionHost": "SSH host",
+        "optionHost": "Host SSH",
         "optionHostTooltip": "Lalu lintas dan DNS melewati host SSH ruang kerja.",
         "optionDevice": "Perangkat ini",
         "optionDeviceTooltip": "Halaman dijelajahi dari jaringan mesin ini.",
@@ -1698,8 +1698,8 @@
       "hookTargets": {
         "agents_one": "1 agen",
         "agents_other": "{{count}} agen",
-        "sshHosts_one": "1 SSH host",
-        "sshHosts_other": "{{count}} SSH host"
+        "sshHosts_one": "1 Host SSH",
+        "sshHosts_other": "{{count}} Host SSH"
       },
       "path": {
         "codexAccount": "Orca-dikelola Codex akun",
@@ -2226,7 +2226,7 @@
       "ensure": {
         "simulator": {
           "tab": {
-            "372d21d428": "Emulator Seluler"
+            "372d21d428": "Emulator seluler"
           }
         }
       },
@@ -2237,7 +2237,7 @@
               "027228a06b": "Tidak dapat menemukan ruang kerja untuk pemeriksaan ini.",
               "03c1d61f83": "Tidak dapat membuka ruang kerja yang terlampir pada pemeriksaan ini.",
               "dfb4dd7c00": "Tidak dapat menemukan ruang kerja yang dilampirkan pada pemeriksaan ini.",
-              "9f00d7df0c": "Permintaan pemeriksaan perbaikan kosong. Perbarui pengaturan AI Kontrol Sumber.",
+              "9f00d7df0c": "Permintaan pemeriksaan perbaikan kosong. Perbarui pengaturan AI Source Control.",
               "2ebf794906": "Tidak ada agen AI aktif yang terdeteksi pada host ruang kerja ini.",
               "4c7f783a7a": "Agen cek tersimpan tidak tersedia di host ruang kerja ini."
             }
@@ -2897,37 +2897,37 @@
         "580a04cd81": "Lanjutan",
         "8400cfe1c1": "Data penggunaan anonim dan kontrol telemetri.",
         "3618579df6": "Privasi & Telemetri",
-        "65ec7d1968": "macOS akses privasi untuk alat pengembang yang diluncurkan terminal.",
-        "d91ae31fbd": "macOS Izin",
+        "65ec7d1968": "Akses privasi macOS untuk alat pengembang yang diluncurkan terminal.",
+        "d91ae31fbd": "Izin macOS",
         "95a1886d94": "Kendalikan terminal dan agen dari ponsel Anda.",
         "1cd25673df": "Seluler",
         "31e57d1c70": "Gunakan mesin yang ada di atas SSH untuk file, terminal, Git, dan ruang kerja.",
-        "94a5afe910": "SSH host",
+        "94a5afe910": "Host SSH",
         "40d80bad8a": "Beta",
         "de0c2907a1": "Server Jarak Jauh Orca",
         "b351014180": "Orca statistik ditambah Claude, Codex, OpenCode, Muse analitik token dan Grok penggunaan langganan.",
         "d72a58b5b9": "Statistik & Penggunaan",
         "dcd0d9b74f": "Pintasan keyboard untuk tindakan umum.",
         "94295ebfb3": "Pintasan",
-        "7682607591": "Pemberitahuan desktop asli untuk acara agen dan terminal.",
+        "7682607591": "Notifikasi desktop native untuk acara agen dan terminal.",
         "2eece16ad1": "Notifikasi",
         "1f452cbd4c": "Perilaku pemilihan dan pengeditan.",
         "0c6ee88a5f": "Masukan & Pengeditan",
         "b11a5a48a2": "Tema, zoom, tampilan aplikasi dan terminal, sidebar, dan bilah status.",
         "93d88d20bf": "Tampilan",
         "2d0659f6f0": "Terminal global, browser, dan tab Markdown.",
-        "65b19f5bde": "Ruang Kerja Mengambang",
+        "65b19f5bde": "Ruang kerja mengambang",
         "3d65d3f1b9": "Atur dukungan emulator seluler untuk Orca dan agen coding.",
-        "1e761cff2b": "Emulator Seluler",
+        "1e761cff2b": "Emulator seluler",
         "e815fd01bd": "Halaman beranda, perutean tautan, dan cookie sesi.",
         "8c197f74a1": "Browser",
         "42ae40842f": "Perintah terminal tersimpan, tercakup secara global atau per proyek.",
         "3fc3db144f": "Perintah Cepat",
         "c33bfd664c": "Shell, penyaji, sesi, dan perilaku terminal.",
         "a9fb10afca": "Terminal",
-        "85f4fd7710": "Sumber Tugas",
-        "ab4b21b58e": "Penamaan cabang, referensi dasar, dan Git Penulis AI.",
-        "09607cb0fe": "Git & Kontrol Sumber",
+        "85f4fd7710": "Sumber tugas",
+        "ab4b21b58e": "Penamaan cabang, referensi dasar, dan Git AI Author.",
+        "09607cb0fe": "Git & Source Control",
         "33a5e1d597": "Hubungkan GitHub, GitLab, Linear, dan layanan hosting sumber.",
         "2b043783ef": "Integrasi",
         "2cd4ea75da": "Default ruang kerja, penyiapan aplikasi, dan pemeliharaan.",
@@ -3339,7 +3339,7 @@
         "9f96d018b7": "GitHub CLI tidak diautentikasi",
         "73e1ad4282": "Orca menggunakan GitHub CLI (gh) untuk menampilkan pull request, issue, dan pemeriksaan.",
         "5beaef5f9e": "GitHub CLI tidak diinstal",
-        "b673e7cf1b": "Git diperlukan untuk Git proyek, kontrol sumber, dan manajemen ruang kerja.",
+        "b673e7cf1b": "Git diperlukan untuk Git proyek, source control, dan manajemen ruang kerja.",
         "e5b7296d9d": "Git tidak diinstal",
         "cd21242762": "Tambahkan proyek untuk memulai.",
         "9c00bd4adf": "Pilih ruang kerja dari sidebar untuk memulai.",
@@ -5020,7 +5020,7 @@
             "disconnected": "Terminal ini menunggu {{value0}}. Hubungkan untuk melanjutkan sesi SSH ini.",
             "connectFailed": "SSH koneksi gagal",
             "title": "SSH koneksi diperlukan",
-            "removedTitle": "SSH host dihapus",
+            "removedTitle": "Host SSH dihapus",
             "removedBody": "Host SSH untuk ruang kerja ini telah dihapus, sehingga tidak dapat terhubung lagi. Hapus ruang kerja untuk mengosongkannya — file jarak jauh tidak akan tersentuh.",
             "removeWorkspaceButton": "Hapus ruang kerja"
           },
@@ -5190,8 +5190,8 @@
             "b1a132357f": "Tab baru",
             "4f327c8b3d": "Buka Markdown...",
             "3d5d6c960d": "Markdown Baru",
-            "fd2b42aaa3": "Emulator Seluler Baru",
-            "b426bb2615": "Buka Emulator Seluler",
+            "fd2b42aaa3": "Emulator seluler Baru",
+            "b426bb2615": "Buka Emulator seluler",
             "4833fb2cbe": "Tab Browser Baru",
             "d364f3c8d4": "Terminal Baru",
             "7c1313d237": "Terminal Baru:",
@@ -5426,12 +5426,12 @@
             "runtime_workspace_window_closed": "Jendela ruang kerja ditutup",
             "connectedHostCount_one": "{{count}} host",
             "connectedHostCount_other": "{{count}} host",
-            "searchSshHosts": "Cari SSH host…",
-            "noMatchingSshHosts": "Tidak ada SSH host yang cocok.",
+            "searchSshHosts": "Cari Host SSH…",
+            "noMatchingSshHosts": "Tidak ada Host SSH yang cocok.",
             "moreSshHostMatches_one": "{{count}} lebih banyak kecocokan. Teruslah mengetik untuk mempersempitnya.",
             "moreSshHostMatches_other": "{{count}} lebih banyak pertandingan. Teruslah mengetik untuk mempersempitnya.",
-            "moreSshHosts_one": "Temukan {{count}} lebih banyak SSH host…",
-            "moreSshHosts_other": "Temukan di antara {{count}} lebih SSH host…"
+            "moreSshHosts_one": "Temukan {{count}} lebih banyak Host SSH…",
+            "moreSshHosts_other": "Temukan di antara {{count}} lebih Host SSH…"
           },
           "StatusBar": {
             "9659e38343": "Port",
@@ -5718,7 +5718,7 @@
             "rateLimitResetsAvailable_other": "{{count}} tersedia pengaturan ulang batas kecepatan"
           },
           "SshTargetStatusRow": {
-            "sshHost": "SSH host"
+            "sshHost": "Host SSH"
           },
           "usagePercentageLabel": {
             "used": "{{value0}}% digunakan",
@@ -5862,8 +5862,8 @@
             "wslDefault": "Bawaan WSL"
           },
           "floatingWorkspace": {
-            "minimize": "Minimalkan Ruang Kerja Mengambang",
-            "show": "Tampilkan Ruang Kerja Mengambang"
+            "minimize": "Minimalkan Ruang kerja mengambang",
+            "show": "Tampilkan Ruang kerja mengambang"
           },
           "workspaceSpaceGitRefresh": {
             "ownerUnavailable": "Pemilik ruang kerja tidak lagi tersedia"
@@ -6759,10 +6759,10 @@
           "addRemoteHost": "Tambahkan host jarak jauh",
           "addSshHostDetail": "Gunakan mesin yang ada di atas SSH.",
           "addRemoteServerDetail": "Sandingkan dengan Orca yang berjalan di komputer lain.",
-          "addRemoteHostDetail": "SSH host atau Orca server",
+          "addRemoteHostDetail": "Host SSH atau Orca server",
           "addWslHost": "Tambahkan WSL distro",
           "addWslHostDetail": "Jalankan server Orca di dalam distro WSL 2. Eksperimental.",
-          "addRemoteHostDetailWithWsl": "SSH host, Orca server, atau WSL distro",
+          "addRemoteHostDetailWithWsl": "Host SSH, Orca server, atau WSL distro",
           "turnOnWslHosts": "Nyalakan"
         },
         "AddRepoNestedImportStep": {
@@ -7400,7 +7400,7 @@
           "remoteSsh": "Jarak Jauh SSH",
           "remoteRuntimeUnsupported": "Membuka jalur ini di aplikasi lokal tidak tersedia.",
           "remoteRuntimeUnsupportedDetail": "Beralih ke ruang kerja lokal atau SSH, lalu coba lagi.",
-          "sshTargetNotFound": "SSH host tidak lagi tersedia.",
+          "sshTargetNotFound": "Host SSH tidak lagi tersedia.",
           "sshTargetNotFoundDetail": "Segarkan ruang kerja atau sambungkan kembali host, lalu coba lagi.",
           "sshTargetInvalid": "SSH konfigurasi host tidak lengkap.",
           "sshTargetInvalidDetail": "Edit atau sambungkan kembali host SSH, lalu coba lagi.",
@@ -7715,7 +7715,7 @@
         },
         "NoticeHostGlyph": {
           "hostDisconnected": "{{hostName}} terputus",
-          "sshHostProject": "Proyek di SSH host {{hostName}}",
+          "sshHostProject": "Proyek di Host SSH {{hostName}}",
           "localHostProject": "Proyeksikan pada host ini",
           "runtimeHostProject": "Proyek pada {{hostName}}"
         },
@@ -7739,8 +7739,8 @@
         "AddRemoteHostDialog": {
           "sshHostRequired": "Host atau alias konfigurasi SSH diperlukan.",
           "sshPortInvalid": "Port harus antara 1 dan 65535.",
-          "sshSaved": "SSH host ditambahkan.",
-          "sshSaveFailed": "Gagal menambahkan SSH host.",
+          "sshSaved": "Host SSH ditambahkan.",
+          "sshSaveFailed": "Gagal menambahkan Host SSH.",
           "serverFieldsRequired": "Nama server dan kode penyandingan diperlukan.",
           "serverSaved": "Server jarak jauh ditambahkan.",
           "serverAlreadyPaired": "Server ini sudah dipasangkan sebagai {{value0}}; memperbarui koneksinya.",
@@ -7750,7 +7750,7 @@
           "serverDescription": "Sandingkan dengan Orca yang berjalan di komputer lain.",
           "serverRunsAsYou": "Perangkat ini akan dapat menjalankan perintah seperti Anda di server ini.",
           "sshDescription": "Tambahkan mesin persisten yang dapat Anda masuki melalui SSH.",
-          "serverSshTitle": "Tambahkan SSH host ke {{server}}",
+          "serverSshTitle": "Tambahkan Host SSH ke {{server}}",
           "serverSshDescription": "{{server}} menyimpan host ini dan menghubungkannya. Kata sandi dan frasa sandi diminta saat terhubung.",
           "cancel": "Batal",
           "saving": "Menyimpan...",
@@ -7832,14 +7832,14 @@
         },
         "WorktreeCardSshHostControl": {
           "connectFailed": "SSH koneksi gagal",
-          "removedTooltip": "SSH host dihapus — koneksi ulang tidak tersedia",
-          "removedName": "SSH host {{value0}} telah dihapus",
+          "removedTooltip": "Host SSH dihapus — koneksi ulang tidak tersedia",
+          "removedName": "Host SSH {{value0}} telah dihapus",
           "connectedTooltip": "Proyek pada host SSH",
-          "connectedName": "Proyek di SSH host {{value0}}",
-          "connectingName": "Menghubungkan ke SSH host {{value0}}",
-          "authFailedName": "Sambungkan kembali SSH host {{value0}} — autentikasi gagal",
+          "connectedName": "Proyek di Host SSH {{value0}}",
+          "connectingName": "Menghubungkan ke Host SSH {{value0}}",
+          "authFailedName": "Sambungkan kembali Host SSH {{value0}} — autentikasi gagal",
           "retryName": "Coba lagi koneksi SSH ke {{value0}}",
-          "connectName": "Hubungkan ke SSH host {{value0}}",
+          "connectName": "Hubungkan ke Host SSH {{value0}}",
           "authFailedTooltip": "{{value0}} · otentikasi gagal",
           "failedTooltip": "{{value0}} · koneksi gagal"
         },
@@ -8530,7 +8530,7 @@
           "c47127f222": "Bawaan WSL"
         },
         "CommitMessageAiPane": {
-          "ad66ff886d": "Kontrol Sumber AI default",
+          "ad66ff886d": "Source Control AI default",
           "347094560b": "Digunakan oleh repositori yang mewarisi default ulasan yang dihosting global.",
           "2dafc7646e": "Default pembuatan ulasan yang dihosting",
           "e9d46a544d": "Default digunakan saat komposer ulasan yang dihosting terbuka.",
@@ -8548,8 +8548,8 @@
           "47e45cbd5a": "Perintah khusus",
           "1ef29f8c29": "Baris perintah Orca berjalan ketika resep teks menggunakan perintah Kustom.",
           "2339a89104": "Menambahkan tombol AI yang menjalankan agen yang dipilih dengan templat perintah untuk tindakan tersebut.",
-          "d5b45a3628": "Tampilkan tindakan AI Kontrol Sumber",
-          "7bcad2b200": "Menambahkan resep tindakan untuk penerapan Kontrol Sumber, pull request, nama cabang, dan tindakan perbaikan.",
+          "d5b45a3628": "Tampilkan tindakan AI Source Control",
+          "7bcad2b200": "Menambahkan resep tindakan untuk penerapan Source Control, pull request, nama cabang, dan tindakan perbaikan.",
           "d54c64163d": "diaktifkan",
           "4ec89c319e": "agen",
           "34d0348e34": "menghasilkan",
@@ -8597,7 +8597,7 @@
         },
         "DeveloperPermissionsPane": {
           "4c17304beb": "Segarkan",
-          "6326a4c5cc": "Gunakan kontrol ini ketika CLI, aplikasi lokal, atau alat otomatisasi memerlukan macOS akses privasi. Orca tidak bertanya saat startup.",
+          "6326a4c5cc": "Gunakan kontrol ini ketika CLI, aplikasi lokal, atau alat otomatisasi memerlukan Akses privasi macOS. Orca tidak bertanya saat startup.",
           "6f011b9bf6": "Alat terminal mewarisi amplop privasi Orca macOS.",
           "bfa3402305": "Tidak dapat meminta izin",
           "66e94d6cf3": "Permintaan izin terkirim",
@@ -8917,10 +8917,10 @@
           "aefa1ecb59": "Tidak ada nama pengguna git yang dikonfigurasi",
           "3d172725cc": "Tidak ada",
           "1f32ba27a6": "Kustom",
-          "sourceControlGroupOrderDescription": "Pilih apakah Perubahan Bertahap atau Perubahan muncul pertama kali di Kontrol Sumber.",
+          "sourceControlGroupOrderDescription": "Pilih apakah Perubahan Bertahap atau Perubahan muncul pertama kali di Source Control.",
           "changesFirst": "Perubahan dulu",
           "stagedFirst": "Stage dulu",
-          "compareAgainstUpstreamDescription": "Pilih Kontrol Sumber dasar mana yang digunakan secara default untuk perbandingan perubahan yang dilakukan. Cabang upstream mengikuti cabang saat ini secara otomatis dan kembali ke cabang default repositori ketika tidak ada upstream. Anda masih dapat mengubah basis perbandingan per worktree dari panel Git worktree tersebut. Pull Request dan target rebase tidak berubah.",
+          "compareAgainstUpstreamDescription": "Pilih Source Control dasar mana yang digunakan secara default untuk perbandingan perubahan yang dilakukan. Cabang upstream mengikuti cabang saat ini secara otomatis dan kembali ke cabang default repositori ketika tidak ada upstream. Anda masih dapat mengubah basis perbandingan per worktree dari panel Git worktree tersebut. Pull Request dan target rebase tidak berubah.",
           "compareBaseRepositoryDefault": "Default repositori",
           "compareBaseBranchUpstream": "Cabang hulu",
           "refreshLocalBaseDescription": "Saat Anda membuat ruang kerja, Orca segarkan basis jarak jauh dan percepat cabang lokal Anda yang cocok dengan aman, seperti <mainBranch>main</mainBranch> atau <masterBranch>master</masterBranch>. Ini membuat perintah seperti <diffCommand>git diff main...HEAD</diffCommand> tidak dapat dibandingkan dengan riwayat lama. Orca melewatkan pembaruan jika cabang tersebut memiliki perubahan yang tidak dikomit atau hanya dilakukan secara lokal.",
@@ -8928,7 +8928,7 @@
           "jiraIssueKeyCasingLowercase": "Huruf kecil",
           "jiraIssueKeyCasingPreserve": "Kunci huruf besar",
           "d12c81a103": "Git nama pengguna",
-          "53a0daed73": "Urutan grup kontrol sumber",
+          "53a0daed73": "Urutan grup source control",
           "7826f35f63": "Awalan cabang",
           "f2765fbbf6": "GitLab API anggaran",
           "8cdbaf4b03": "Jira casing kunci",
@@ -9040,7 +9040,7 @@
           "19d39113b6": "Biarkan agen pengkodean mengontrol emulator seluler aktif dengan perintah Orca CLI.",
           "8aec2f99a0": "Segarkan ketersediaan emulator",
           "ae1612c58c": "Ketersediaan",
-          "f9af91ea26": "Menampilkan tindakan Emulator Seluler Baru dan memungkinkan agen untuk melampirkan ke emulator aktif.",
+          "f9af91ea26": "Menampilkan tindakan Emulator seluler Baru dan memungkinkan agen untuk melampirkan ke emulator aktif.",
           "bc39d0f115": "Atur dukungan emulator seluler untuk Orca dan agen coding.",
           "a4f1c82d90": "Dinonaktifkan",
           "b5e2d93e01": "Memeriksa...",
@@ -9476,8 +9476,8 @@
           "62511a575d": "Gunakan global",
           "show": "Tampilkan",
           "hide": "Sembunyikan",
-          "showActionsLabel": "Tampilkan tindakan AI Kontrol Sumber",
-          "visibilityHelper": "Mengontrol apakah tombol AI Kontrol Sumber ditampilkan untuk repositori ini. Pembuatan yang digunakan oleh fitur-fitur terpisah mengikuti pengaturan fitur-fitur tersebut. Default globalnya adalah {{value0}}."
+          "showActionsLabel": "Tampilkan tindakan AI Source Control",
+          "visibilityHelper": "Mengontrol apakah tombol AI Source Control ditampilkan untuk repositori ini. Pembuatan yang digunakan oleh fitur-fitur terpisah mengikuti pengaturan fitur-fitur tersebut. Default globalnya adalah {{value0}}."
         },
         "RepositorySourceControlAiHostedReviewDefaults": {
           "053ccfbf52": "Mati",
@@ -9491,7 +9491,7 @@
           "981eae7e14": "Draf secara default"
         },
         "RepositorySourceControlAiSection": {
-          "112f3b934f": "AI kontrol sumber"
+          "112f3b934f": "AI source control"
         },
         "RuntimeAccessGrantList": {
           "sshAccessCaveat": "Mencabut tautan juga mencabut tautan yang dibuat di terminal yang dibukanya. Siapa pun yang memiliki terminal di komputer ini, lebih dari SSH atau melalui tautan, masih dapat memasangkan kembali.",
@@ -9609,8 +9609,8 @@
           "499c1cd7f9": "Pengaturan kompatibilitas tingkat rendah untuk pemecahan issue.",
           "1c87f8d024": "Lanjutan",
           "c1b43dc4e2": "Data penggunaan anonim dan kontrol telemetri.",
-          "9b83cc62c2": "macOS akses privasi untuk alat pengembang yang diluncurkan terminal.",
-          "65660d4548": "macOS Izin",
+          "9b83cc62c2": "Akses privasi macOS untuk alat pengembang yang diluncurkan terminal.",
+          "65660d4548": "Izin macOS",
           "c6c01ac209": "Kendalikan terminal dan agen dari ponsel Anda.",
           "c40dadaac8": "Seluler",
           "c2ee313198": "Gunakan mesin yang ada di atas SSH untuk file, terminal, Git, dan ruang kerja.",
@@ -9618,7 +9618,7 @@
           "8acf3f22e0": "Orca statistik ditambah Claude, Codex, OpenCode, Muse analitik token dan Grok penggunaan langganan.",
           "a737a4bb22": "Pintasan keyboard untuk tindakan umum.",
           "23bf7a1ad4": "Pintasan",
-          "7210ac09c4": "Pemberitahuan desktop asli untuk aktivitas agen dan acara terminal.",
+          "7210ac09c4": "Notifikasi desktop native untuk aktivitas agen dan acara terminal.",
           "9907545fa3": "Notifikasi",
           "d0b7021d64": "Perilaku pemilihan dan pengeditan.",
           "6d1a27e193": "Tema, zoom, tampilan aplikasi dan terminal, sidebar, dan bilah status.",
@@ -9630,7 +9630,7 @@
           "6742c7932c": "Perintah terminal tersimpan, tercakup secara global atau per proyek.",
           "b79b5b31e9": "Shell, penyaji, sesi, dan perilaku terminal.",
           "3de4bbb841": "Terminal",
-          "cfa34f4465": "Penamaan cabang, referensi dasar, dan Git Penulis AI.",
+          "cfa34f4465": "Penamaan cabang, referensi dasar, dan Git AI Author.",
           "b07041697f": "Hubungkan GitHub, GitLab, Linear, dan layanan hosting sumber.",
           "c9ca101a3b": "Integrasi",
           "f9b77539fd": "Default ruang kerja, penyiapan aplikasi, dan pemeliharaan.",
@@ -9661,11 +9661,11 @@
           "tasksDescription": "Hubungkan penyedia, instal skill Linear, dan pilih apa yang muncul di Tugas.",
           "remoteServersDescription": "Jalankan Orca di komputer lain dan kerjakan dari sini.",
           "noSettingsFoundForQuery": "Tidak ditemukan pengaturan untuk \"{{value0}}\"",
-          "045db77e21": "SSH host",
+          "045db77e21": "Host SSH",
           "c0900fa64a": "Sumber tugas",
           "129ae9859c": "Emulator seluler",
           "022effa46f": "Server Orca jarak jauh",
-          "d09b9d8f00": "Git & kontrol sumber",
+          "d09b9d8f00": "Git & source control",
           "3eac6fb97f": "Alat pengembang",
           "4198aae333": "akun penyedia AI",
           "3f3e11cb5d": "Penggunaan komputer",
@@ -9742,8 +9742,8 @@
           "ee0e5c2a48": "Gunakan agen default",
           "bf84dea6af": "Gunakan variabel hanya jika Anda ingin Orca memasukkan konteks. Biarkan agen sebagai default untuk mengikuti preferensi agen normal Anda.",
           "a79c567194": "Resep aksi",
-          "cf01d41bce": "Agen, argumen CLI, dan templat perintah yang digunakan oleh setiap tombol AI Kontrol Sumber.",
-          "b5f46664d3": "Gagal menyimpan default tindakan AI Kontrol Sumber: {{value0}}",
+          "cf01d41bce": "Agen, argumen CLI, dan templat perintah yang digunakan oleh setiap tombol AI Source Control.",
+          "b5f46664d3": "Gagal menyimpan default tindakan AI Source Control: {{value0}}",
           "d18d665e12": "Simpan",
           "4f549a5fa8": "Menyimpan...",
           "9d3cc627f8": "Tersimpan",
@@ -10761,16 +10761,16 @@
                 "57c851a68c": "CLI",
                 "61117e57f3": "argumen",
                 "0f29331fed": "argumen",
-                "18b6d38835": "Agen, argumen CLI, dan templat perintah yang digunakan oleh setiap tombol AI Kontrol Sumber.",
+                "18b6d38835": "Agen, argumen CLI, dan templat perintah yang digunakan oleh setiap tombol AI Source Control.",
                 "3c4e5e5938": "Resep aksi",
                 "ee14a9e9f7": "diaktifkan",
-                "82109d627d": "kontrol sumber",
+                "82109d627d": "source control",
                 "542e1a00a7": "Codex",
                 "f121bec167": "Claude",
                 "93e5210da8": "pesan",
                 "c33cb1b982": "ai",
-                "0b946b2abe": "Menambahkan resep tindakan untuk penerapan Kontrol Sumber, pull request, nama cabang, dan tindakan perbaikan.",
-                "24dbdfca78": "Tampilkan tindakan AI Kontrol Sumber"
+                "0b946b2abe": "Menambahkan resep tindakan untuk penerapan Source Control, pull request, nama cabang, dan tindakan perbaikan.",
+                "24dbdfca78": "Tampilkan tindakan AI Source Control"
               }
             }
           }
@@ -11112,14 +11112,14 @@
             "1d2fae1fa2": "nama pengguna git",
             "f83c8937c4": "penamaan cabang",
             "5ecd91c5ef": "Awalan ditambahkan ke nama cabang saat membuat worktree.",
-            "sourceControlGroupOrderDescription": "Pilih apakah Perubahan Bertahap atau Perubahan muncul pertama kali di Kontrol Sumber.",
+            "sourceControlGroupOrderDescription": "Pilih apakah Perubahan Bertahap atau Perubahan muncul pertama kali di Source Control.",
             "groupOrder": "pesanan grup",
             "changesFirst": "berubah dulu",
             "stagedFirst": "dipentaskan terlebih dahulu",
             "untrackedFirst": "tidak terlacak terlebih dahulu",
-            "sourceControl": "kontrol sumber",
+            "sourceControl": "source control",
             "gitChanges": "git berubah",
-            "compareAgainstUpstreamDescription": "Pilih Kontrol Sumber dasar mana yang digunakan secara default untuk perbandingan perubahan yang dilakukan. Cabang upstream mengikuti cabang saat ini secara otomatis dan kembali ke cabang default repositori ketika tidak ada upstream. Anda masih dapat mengubah basis perbandingan per worktree dari panel Git worktree tersebut. Pull Request dan target rebase tidak berubah.",
+            "compareAgainstUpstreamDescription": "Pilih Source Control dasar mana yang digunakan secara default untuk perbandingan perubahan yang dilakukan. Cabang upstream mengikuti cabang saat ini secara otomatis dan kembali ke cabang default repositori ketika tidak ada upstream. Anda masih dapat mengubah basis perbandingan per worktree dari panel Git worktree tersebut. Pull Request dan target rebase tidak berubah.",
             "compareBase": "bandingkan basis",
             "defaultCompareBase": "basis perbandingan default",
             "defaultBranch": "cabang default",
@@ -11136,7 +11136,7 @@
             "issueKey": "kunci issue",
             "uppercase": "huruf besar",
             "lowercase": "huruf kecil",
-            "85983bb4f9": "Urutan grup kontrol sumber",
+            "85983bb4f9": "Urutan grup source control",
             "1ad8060ddc": "Basis perbandingan default",
             "b7562365cd": "GitLab API anggaran",
             "410e821889": "Selalu perbarui main lokal",
@@ -11527,7 +11527,7 @@
             "5ff7fe1ade": "pull request",
             "eec39b3de6": "pesan commit",
             "cfad7ce5f3": "ai",
-            "a47f51127e": "kontrol sumber",
+            "a47f51127e": "source control",
             "6cc5c65e64": "Penggantian pembuatan git khusus proyek.",
             "cc876ca5f2": "repositori",
             "6469de5368": "proyek",
@@ -11600,7 +11600,7 @@
             "7f380f89ea": "Nama tampilan",
             "88d466b2e3": "Basis worktree default",
             "1617bc353d": "Skrip arsip",
-            "6259586017": "Git Penulis AI",
+            "6259586017": "Git AI Author",
             "bbbe994528": "Hapus proyek",
             "cedbe6c02c": "Kapan menjalankan pengaturan",
             "eefc3e51ef": "GitHub akun",
@@ -11668,7 +11668,7 @@
             "f7b6383aec": "tambahkan",
             "62826efbe9": "Tambahkan host SSH baru.",
             "d4bcd497c7": "jarak jauh",
-            "74c6d90d78": "Kelola SSH host.",
+            "74c6d90d78": "Kelola Host SSH.",
             "53ae83cb55": "SSH koneksi",
             "893c8717f2": "Impor dari konfigurasi SSH",
             "50416e3809": "Uji koneksi",
@@ -12189,7 +12189,7 @@
           "clientDefault": "Default klien",
           "sourceControlAiDefaults": "Resep, perintah, dan ulasan yang dihosting secara default dibagikan oleh klien ini; pilihan dan penemuan model tetap tercakup pada host tempat agen berjalan.",
           "projectOnThisHost": "Proyeksikan pada host ini",
-          "repositorySourceControlAi": "Penggantian ini berlaku untuk penyiapan proyek ini dan mewarisi default AI Kontrol Sumber klien hingga disesuaikan.",
+          "repositorySourceControlAi": "Penggantian ini berlaku untuk penyiapan proyek ini dan mewarisi default AI Source Control klien hingga disesuaikan.",
           "agentLaunchDefaults": "Agen default, penggantian perintah, argumen CLI, dan lingkungan peluncuran disimpan di host yang dipilih.",
           "hostOverride": "Penggantian host",
           "workspaceDirectory": "Default klien diwarisi hingga host memerlukan direktori worktreenya sendiri.",
@@ -12458,7 +12458,7 @@
                   "installed": "Terpasang",
                   "notInstalled": "Belum terpasang",
                   "recheck": "Periksa ulang",
-                  "description": "Izinkan agen membaca dan mengedit tugas Linear. Pengaturan terpandu penuh (koneksi + skill + visibilitas) ada di Pengaturan → Sumber Tugas.",
+                  "description": "Izinkan agen membaca dan mengedit tugas Linear. Pengaturan terpandu penuh (koneksi + skill + visibilitas) ada di Pengaturan → Sumber tugas.",
                   "copyFailed": "Gagal menyalin perintah.",
                   "copyCommand": "Salin perintah",
                   "installedDescription": "Skill agen terpasang. Untuk memperbaruinya, jalankan:",
@@ -12467,7 +12467,7 @@
               },
               "search": {
                 "title": "Linear",
-                "description": "Linear status skill, contoh penggunaan, dan tautan ke pengaturan Sumber Tugas.",
+                "description": "Linear status skill, contoh penggunaan, dan tautan ke pengaturan Sumber tugas.",
                 "linear": "linear",
                 "tickets": "tiket",
                 "issues": "issue",
@@ -12693,7 +12693,7 @@
           "setupVisibleTitle": "3. Tampilkan Linear di Tugas",
           "setupVisibleBody": "Menyimpan Linear di pemilih sumber Tugas dan pintasan bilah sisi.",
           "setupTitle": "Daftar periksa pengaturan",
-          "setupBody": "Ketiganya diperlukan untuk perulangan Tugas + agen secara penuh. Jalur pertama kali juga berada di bawah Sumber Tugas.",
+          "setupBody": "Ketiganya diperlukan untuk perulangan Tugas + agen secara penuh. Jalur pertama kali juga berada di bawah Sumber tugas.",
           "setupReady": "Semua siap",
           "setupProgress": "{{done}} dari {{total}} siap",
           "notesTitle": "Senang mengetahuinya",
@@ -12705,7 +12705,7 @@
           "noteKeysTitle": "Tombol mengikuti runtime",
           "noteKeysBody": "API kunci dan ruang kerja disimpan untuk runtime aktif.",
           "noteVisibilityTitle": "Menyembunyikan ≠ putuskan sambungan",
-          "noteVisibilityBody": "Menyembunyikan Linear di Sumber Tugas hanya akan menghapusnya dari pemilih. Itu tidak menghilangkan kunci atau keahlian Anda.",
+          "noteVisibilityBody": "Menyembunyikan Linear di Sumber tugas hanya akan menghapusnya dari pemilih. Itu tidak menghilangkan kunci atau keahlian Anda.",
           "setupChecking": "Memeriksa…",
           "setupUnverified": "Tidak dapat memverifikasi",
           "c5cd02806b": "Sumber tugas"
@@ -13122,7 +13122,7 @@
           },
           "description": "Orca menginstal sendiri pada host SSH yang kosong dan terus memperbarui dirinya sendiri.",
           "deploy": {
-            "host": "SSH host",
+            "host": "Host SSH",
             "name": "Nama server"
           },
           "pending": {
@@ -13184,7 +13184,7 @@
             "mobileTabSelection": "pilihan tab seluler",
             "uiRouting": "pengaturan sidebar dan filter"
           },
-          "loadFailed": "Orca tidak dapat memuat SSH host dan gerakan yang belum selesai. Buka kembali Pengaturan untuk mencoba lagi.",
+          "loadFailed": "Orca tidak dapat memuat Host SSH dan gerakan yang belum selesai. Buka kembali Pengaturan untuk mencoba lagi.",
           "outcome": {
             "live": "Belum selesai: terminal di server ini masih berjalan. Tutup dan coba lagi.",
             "unverifiable": "Belum selesai: Orca tidak dapat mengonfirmasi apa yang sedang berjalan di server ini. Coba lagi saat host dapat dihubungi.",
@@ -13435,7 +13435,7 @@
         },
         "serverList": {
           "addTitle": "Tambahkan server",
-          "installNoHosts": "Tidak ada SSH host tanpa server Orca.",
+          "installNoHosts": "Tidak ada Host SSH tanpa server Orca.",
           "installHostHelp": "Hanya host tanpa server Orca.",
           "addSshHost": "Tambahkan host SSH",
           "cancel": "Batal",
@@ -13993,7 +13993,7 @@
             "2fe2a67580": "Tindakan catatan lainnya",
             "eae2d051af": "Salin semua catatan",
             "cc474e0b8c": "Catatan",
-            "e131cd7128": "Kontrol Sumber hanya tersedia untuk repositori Git",
+            "e131cd7128": "Source Control hanya tersedia untuk repositori Git",
             "c07b236287": "Pilih ruang kerja untuk melihat perubahan",
             "a5e5a11090": "Gagal membuang semua — tidak dapat membatalkan pentahapan file sebelum dibuang",
             "8a5ba6a988": "Gagal memuat perbedaan commit",
@@ -14067,9 +14067,9 @@
             "fda060d6ce": "Tinjau pesan commit, lalu coba lagi Buat PR.",
             "b75cb1fd0c": "Melakukan perubahan…",
             "995c5e67ec": "Penyiapan ulasan memerlukan perhatian.",
-            "d7492cafce": "Tidak dapat menyegarkan Kontrol Sumber. Coba lagi Buat PR.",
-            "473f18758e": "Pengaturan AI Kontrol Sumber",
-            "createPrIntentConfigureAi": "Tambahkan pesan commit atau konfigurasikan pengaturan AI Kontrol Sumber.",
+            "d7492cafce": "Tidak dapat menyegarkan Source Control. Coba lagi Buat PR.",
+            "473f18758e": "Pengaturan AI Source Control",
+            "createPrIntentConfigureAi": "Tambahkan pesan commit atau konfigurasikan pengaturan AI Source Control.",
             "createPrIntentGenerateFailed": "Tidak dapat membuat pesan commit. Tambahkan satu dan coba lagi.",
             "createPrIntentCommitFailed": "Tidak dapat melakukan perubahan. Perbaiki masalahnya, lalu coba lagi Buat PR.",
             "createPrIntentNeedsSync": "Sinkronkan cabang ini sebelum membuat ulasan.",
@@ -14084,7 +14084,7 @@
             "createPrIntentCreatingReview": "Membuat ulasan…",
             "a91f8e2b01": "Lihat sebagai daftar",
             "b82e9f3c12": "Lihat sebagai pohon",
-            "f71c4a8d90": "Tindakan kontrol sumber lainnya",
+            "f71c4a8d90": "Tindakan source control lainnya",
             "c8e4a1f902": "Filter: {{value0}}",
             "b3c8f1a902": "Filter file berdasarkan nama",
             "d4f8c2a901": "Hapus dan tutup filter",
@@ -14106,7 +14106,7 @@
               "834cb3f23d": "Perbaiki dengan AI",
               "783a808870": "Tutup"
             },
-            "97e7124eac": "Tidak dapat menyegarkan Kontrol Sumber. Coba lagi.",
+            "97e7124eac": "Tidak dapat menyegarkan Source Control. Coba lagi.",
             "b8c2e1a904": "{{value0}} → {{value1}}",
             "a4e93c21d7": "Cabang saat ini: {{value0}}",
             "c7d4e2f801": "Ubah referensi dasar: {{value0}}",
@@ -14515,7 +14515,7 @@
             "e8e2e4ce74": "Alihkan bilah samping kanan",
             "441733b630": "Port",
             "83a10e3c44": "Pemeriksaan",
-            "0314901467": "Kontrol Sumber",
+            "0314901467": "Source Control",
             "8bc2bbc3a0": "Penjelajah",
             "9fffaf17c1": "Alihkan sidebar kanan ({{value0}})",
             "aiVaultSessionHistory": "Agen",
@@ -14546,10 +14546,10 @@
                   "launch": {
                     "4f4e0418a0": "Tidak dapat membuat prompt agen.",
                     "push": {
-                      "empty": "Prompt kegagalan push kosong. Perbarui pengaturan AI Kontrol Sumber."
+                      "empty": "Prompt kegagalan push kosong. Perbarui pengaturan AI Source Control."
                     },
                     "commit": {
-                      "empty": "Prompt kegagalan commit kosong. Perbarui pengaturan AI Kontrol Sumber."
+                      "empty": "Prompt kegagalan commit kosong. Perbarui pengaturan AI Source Control."
                     },
                     "d481ab22f9": "Agen AI yang disimpan tidak tersedia. Gunakan Sesuaikan peluncuran untuk memilih agen lain.",
                     "9bbd9077a2": "Tidak ada agen AI yang diaktifkan. Konfigurasikan agen di Pengaturan.",
@@ -14781,7 +14781,7 @@
                   "4cbd0cd9d2": "commit sedang berlangsung…",
                   "e7876a2bde": "Menampilkan setidaknya satu file untuk menghasilkan pesan.",
                   "0904be2505": "Hapus pesan untuk dibuat ulang.",
-                  "1ea9ba37aa": "Pilih agen di Pengaturan -> Git -> AI Kontrol Sumber."
+                  "1ea9ba37aa": "Pilih agen di Pengaturan -> Git -> AI Source Control."
                 },
                 "completeMergeFailed": "Merge lengkap gagal"
               }
@@ -15671,7 +15671,7 @@
             "da121ba48d": "PLAN.md",
             "e4befee569": "cangkang",
             "606aa93192": "File",
-            "94febb0976": "Kontrol sumber",
+            "94febb0976": "Source control",
             "8d6516312d": "2 terminal · claude aktif",
             "8432787c4e": "feat/mobile-page",
             "8fd998acd3": "Kembali"
@@ -15763,7 +15763,7 @@
       "floating": {
         "terminal": {
           "FloatingTerminalIconContextMenu": {
-            "8e7d775287": "Sembunyikan Ruang Kerja Mengambang",
+            "8e7d775287": "Sembunyikan Ruang kerja mengambang",
             "763f5fa2c1": "Pindah ke Tombol Mengambang",
             "0ee79e0674": "Pindah ke Bilah Status",
             "a2fbd81c1b": "Reset posisi/ukuran"
@@ -15945,7 +15945,7 @@
             "dfe313e0c9": "OPEN",
             "6e3f5223c5": "Penjelajah",
             "ab2901bce6": "Pemeriksaan",
-            "d7f80060ca": "Kontrol Sumber",
+            "d7f80060ca": "Source Control",
             "8e715588e4": "Cari",
             "a6c8b9e32f": "Pemeriksaan berhasil",
             "f4d5e1a7b2": "3 pemeriksaan"
@@ -16377,7 +16377,7 @@
           "90d576adb2": "Segarkan",
           "c8ca989aea": "Tampilkan pohon file",
           "58ad5ad431": "Tutup",
-          "28e7db4a90": "Kontrol Sumber",
+          "28e7db4a90": "Source Control",
           "31931dec46": "Cuplikan ulasan ini tidak lagi memiliki konflik yang belum terselesaikan.",
           "992145ff5a": "Semua konflik terselesaikan",
           "6e459867ad": "Status kontinuitas sesi-lokal. Git tidak lagi melaporkan file ini sebagai tidak digabungkan.",
@@ -22333,8 +22333,8 @@
     },
     "settingsLabel": "Pengaturan Dasbor Agen",
     "host": {
-      "sshNamed": "SSH host · {{host}}",
-      "ssh": "SSH host",
+      "sshNamed": "Host SSH · {{host}}",
+      "ssh": "Host SSH",
       "remoteNamed": "Host jarak jauh Orca · {{host}}",
       "remote": "Host jarak jauh Orca"
     }
@@ -22571,11 +22571,11 @@
       "noUpstream": "publikasikan cabang ini sebelum membuat {{reviewLabel}}.",
       "needsPush": "push cabang ini sebelum membuat {{reviewLabel}}.",
       "needsSync": "sinkronkan cabang ini sebelum membuat {{reviewLabel}}.",
-      "refreshStatus": "segarkan status kontrol sumber dan coba lagi.",
+      "refreshStatus": "segarkan status source control dan coba lagi.",
       "namedBaseNotOnRemote": "cabang dasar \"{{base}}\" belum push ke jarak jauh. Pilih alas yang push atau push terlebih dahulu.",
       "baseNotOnRemote": "cabang dasar belum push ke jarak jauh. Pilih alas yang push atau push terlebih dahulu.",
       "branchChanged": "beralih kembali ke cabang yang dipilih sebelum membuat {{reviewLabel}}.",
-      "branchStatusUnverified": "tidak dapat memverifikasi status cabang. Segarkan kontrol sumber dan coba lagi.",
+      "branchStatusUnverified": "tidak dapat memverifikasi status cabang. Segarkan source control dan coba lagi.",
       "reviewLookupUnavailable": "Orca tidak dapat memastikan apakah cabang ini sudah memiliki {{reviewLabel}}. Coba lagi setelah pencarian {{providerName}} berhasil.",
       "sameBaseBranch": "pilih cabang dasar yang berbeda sebelum membuat {{reviewLabel}}.",
       "rejected": "{{providerName}} menolak {{reviewLabel}}. Periksa cabang dasar dan status cabang, lalu coba lagi.",
@@ -22609,7 +22609,7 @@
     },
     "variables": {
       "basePrompt": "Perintah bawaan Orca untuk tindakan ini, termasuk konteksnya Orca mengetahui cara berkumpul dengan aman.",
-      "branch": "Nama cabang kontrol sumber saat ini.",
+      "branch": "Nama cabang source control saat ini.",
       "stagedFiles": "Daftar file bertahap yang dipisahkan baris baru untuk pembuatan pesan commit.",
       "stagedPatch": "Patch git bertahap yang digunakan untuk pembuatan pesan commit.",
       "baseBranch": "Cabang target yang dipilih di komposer Buat PR.",
@@ -22669,13 +22669,13 @@
         "commandTemplateEmptyPullRequest": "Templat perintah kosong untuk detail pull request.",
         "commandTemplateEmptyBranchName": "Templat perintah kosong untuk nama cabang.",
         "commandTemplateEmptyChatName": "Templat perintah kosong untuk nama obrolan.",
-        "sourceControlAgentUnsupported": "Pilih agen AI Kontrol Sumber yang didukung untuk tindakan ini di Pengaturan -> Git -> AI Kontrol Sumber. Agen yang didukung: {{agents}}, atau Perintah khusus.",
+        "sourceControlAgentUnsupported": "Pilih agen AI Source Control yang didukung untuk tindakan ini di Pengaturan -> Git -> AI Source Control. Agen yang didukung: {{agents}}, atau Perintah khusus.",
         "chatNameAgentUnsupported": "Pilih agen nama obrolan yang didukung untuk tindakan ini di Pengaturan -> Obrolan -> Nama obrolan. Agen yang didukung: {{agents}}, atau Perintah khusus.",
-        "sourceControlCustomCommandEmpty": "Perintah khusus kosong. Tambahkan satu di Pengaturan -> Git -> AI Kontrol Sumber.",
+        "sourceControlCustomCommandEmpty": "Perintah khusus kosong. Tambahkan satu di Pengaturan -> Git -> AI Source Control.",
         "chatNameCustomCommandEmpty": "Perintah khusus kosong. Tambahkan satu di Pengaturan -> Obrolan -> Nama obrolan.",
-        "agentCannotGenerateCommitMessage": "Agen \"{{agent}}\" tidak mendukung pesan commit AI Kontrol Sumber. Agen yang didukung: {{agents}}, atau Perintah khusus.",
-        "agentCannotGeneratePullRequest": "Agen \"{{agent}}\" tidak mendukung detail pull request AI Kontrol Sumber. Agen yang didukung: {{agents}}, atau Perintah khusus.",
-        "agentCannotGenerateBranchName": "Agen \"{{agent}}\" tidak mendukung nama cabang AI Kontrol Sumber. Agen yang didukung: {{agents}}, atau Perintah khusus.",
+        "agentCannotGenerateCommitMessage": "Agen \"{{agent}}\" tidak mendukung pesan commit AI Source Control. Agen yang didukung: {{agents}}, atau Perintah khusus.",
+        "agentCannotGeneratePullRequest": "Agen \"{{agent}}\" tidak mendukung detail pull request AI Source Control. Agen yang didukung: {{agents}}, atau Perintah khusus.",
+        "agentCannotGenerateBranchName": "Agen \"{{agent}}\" tidak mendukung nama cabang AI Source Control. Agen yang didukung: {{agents}}, atau Perintah khusus.",
         "agentCannotGenerateChatName": "Agen \"{{agent}}\" tidak mendukung nama obrolan. Agen yang didukung: {{agents}}, atau Perintah khusus.",
         "noModelForAgent": "Tidak ada model yang tersedia untuk {{label}}.",
         "planCustomCommandEmpty": "Perintah khusus kosong. Tambahkan satu di Pengaturan → Git → Pesan commit AI.",
@@ -22719,7 +22719,7 @@
         "dictationCleanupAgentUnsupported": "Pilih agen yang didukung untuk pembersihan AI di Pengaturan -> Suara -> Pembersihan. Agen yang didukung: {{agents}}, atau Perintah khusus.",
         "agentCannotGenerateDictationCleanup": "Agen \"{{agent}}\" tidak mendukung pembersihan dikte. Agen yang didukung: {{agents}}, atau Perintah khusus."
       },
-      "enableSourceControlAi": "Aktifkan AI Kontrol Sumber di Pengaturan -> Git.",
+      "enableSourceControlAi": "Aktifkan AI Source Control di Pengaturan -> Git.",
       "chooseBaseBranch": "Pilih cabang dasar sebelum membuat.",
       "savedCommitRecipeRepo": "Resep pesan commit yang disimpan untuk repositori ini.",
       "savedCommitRecipeGlobal": "Resep pesan commit yang disimpan sebagai default global.",
@@ -22787,9 +22787,9 @@
         "pull": "Pull diblokir — selesaikan konflik merge yang ada terlebih dahulu."
       },
       "mergeConflicts": {
-        "rebase": "Rebase dihentikan karena konflik. Selesaikan issue tersebut di Kontrol Sumber, lalu lanjutkan rebase.",
-        "sync": "Sinkronisasi terhenti karena konflik merge. Selesaikan issue tersebut di Kontrol Sumber, lalu lakukan merge.",
-        "pull": "Tarikan terhenti karena konflik merge. Selesaikan issue tersebut di Kontrol Sumber, lalu lakukan merge."
+        "rebase": "Rebase dihentikan karena konflik. Selesaikan issue tersebut di Source Control, lalu lanjutkan rebase.",
+        "sync": "Sinkronisasi terhenti karena konflik merge. Selesaikan issue tersebut di Source Control, lalu lakukan merge.",
+        "pull": "Tarikan terhenti karena konflik merge. Selesaikan issue tersebut di Source Control, lalu lakukan merge."
       },
       "syncRemoteMoved": "Sinkronisasi gagal — jarak jauh dipindahkan saat sinkronisasi. Coba lagi.",
       "forcePushRejected": "Paksa push ditolak — perubahan jarak jauh sejak pengambilan terakhir. Ambil dulu, lalu coba lagi.",
@@ -22817,7 +22817,7 @@
       "open": "Buka ruang kerja",
       "occupied": "Check out di {{path}}",
       "remote": "jarak jauh",
-      "statusFailed": "Orca tidak dapat membaca perubahan pembayaran ini. Segarkan Kontrol Sumber sebelum beralih.",
+      "statusFailed": "Orca tidak dapat membaca perubahan pembayaran ini. Segarkan Source Control sebelum beralih.",
       "statusUnknown": "Baca perubahan checkout ini sebelum beralih.",
       "conflict": "Selesaikan atau batalkan {{operation}} sebelum berpindah cabang.",
       "dirty_one": "Mengkomit atau membuang {{count}} file yang diubah sebelum berpindah cabang.",
@@ -24194,7 +24194,7 @@
       "e37b19864c": "Tampilkan pemeriksaan",
       "6bd12f3071": "Muat ulang halaman browser secara paksa",
       "8788e3be3a": "Alihkan ruang kerja anak",
-      "44e8b7dcb5": "Tampilkan kontrol sumber",
+      "44e8b7dcb5": "Tampilkan source control",
       "2f2961bebf": "Fokuskan bilah alamat browser",
       "cb816639bd": "Tampilkan port",
       "0fe8d02935": "Kembali di browser",
@@ -24913,10 +24913,10 @@
       "firstUse": "Pilih perangkat pertama Anda. Orca akan mengingat pilihan yang berhasil di komputer ini."
     },
     "errors": {
-      "disabled": "Emulator Seluler dinonaktifkan di Pengaturan.",
-      "notAvailable": "Emulator Seluler tidak tersedia.",
+      "disabled": "Emulator seluler dinonaktifkan di Pengaturan.",
+      "notAvailable": "Emulator seluler tidak tersedia.",
       "noSession": "Tidak ada sesi emulator yang aktif",
-      "noDeviceSpecified": "Tidak ada perangkat emulator yang ditentukan. Pilih perangkat default di Pengaturan > Emulator Seluler atau berikan perangkat.",
+      "noDeviceSpecified": "Tidak ada perangkat emulator yang ditentukan. Pilih perangkat default di Pengaturan > Emulator seluler atau berikan perangkat.",
       "workspaceChanged": "Ruang kerja berubah saat emulator dimulai. Pasang kembali emulator.",
       "noIosSimulators": "Tidak ditemukan simulator iOS. Tambahkan satu di Xcode Pengaturan > Platform.",
       "simctlUnavailable": "xcrun simctl tidak tersedia.",
@@ -27024,7 +27024,7 @@
     "abortOperationTitle": "Batalkan {{operation}}?",
     "abortOperationDescription": "Ini membatalkan operasi yang sedang berlangsung dan dapat membuang resolusi konflik yang dibuat selama operasi tersebut.",
     "abortOperation": "Batalkan {{operation}}",
-    "recoveryFailed": "Tidak dapat menyelesaikan operasi. Segarkan Kontrol Sumber dan coba lagi.",
+    "recoveryFailed": "Tidak dapat menyelesaikan operasi. Segarkan Source Control dan coba lagi.",
     "continueOperation": "Lanjutkan {{operation}}",
     "reverting": "Mengembalikan",
     "updateActionsHost": "Perbarui Orca pada {{host}} untuk bertindak berdasarkan commit",
@@ -27038,7 +27038,7 @@
     "actionLanded": "Sekarang di {{commit}} di {{branch}}",
     "detachedHead": "KEPALA terpisah",
     "actionWarning": "Tindakan selesai, tetapi Git melaporkan issue.",
-    "actionConflicted": "Selesaikan konflik di Kontrol Sumber, lalu lanjutkan atau batalkan operasi.",
+    "actionConflicted": "Selesaikan konflik di Source Control, lalu lanjutkan atau batalkan operasi.",
     "alreadyApplied": "Sudah diterapkan, tidak ada yang perlu dipilih",
     "nothingToRevert": "Tidak ada yang perlu dikembalikan; perubahan sudah dibatalkan.",
     "actionRefused": "Tindakannya tidak selesai.",
@@ -27168,7 +27168,7 @@
   },
   "emulatorPane": {
     "tabIntro": {
-      "hiddenFromMenu": "Emulator Seluler dihapus dari menu +",
+      "hiddenFromMenu": "Emulator seluler dihapus dari menu +",
       "hiddenFromMenuHint": "Kembalikan dari roda gigi di akhir baris ikon.",
       "undoHide": "Urungkan",
       "saveFailed": "Tidak dapat memperbarui menu +."

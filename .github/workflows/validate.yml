@@ -15,3 +15,7 @@ jobs:
           node-version: 22
       - name: Check the manifest and its files
         run: node .github/check-plugin.mjs
+      - name: Fetch the English source for this pack version
+        run: node tools/fetch-upstream.mjs "$(node -p "require('./orca-plugin.json').version")"
+      - name: Check the pack against that release
+        run: node tools/quality.mjs

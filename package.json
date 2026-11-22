@@ -1,0 +1,13 @@
+{
+  "name": "orca-indonesian-plugin",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node .github/check-plugin.mjs",
+    "quality": "node tools/quality.mjs",
+    "status": "node tools/status.mjs",
+    "upstream": "node tools/fetch-upstream.mjs",
+    "sync": "node tools/sync-upstream.mjs",
+    "report": "node tools/report.mjs"
+  }
+}

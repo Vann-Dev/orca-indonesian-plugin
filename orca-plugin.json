@@ -3,7 +3,7 @@
   "manifestVersion": 2,
   "id": "indonesian",
   "name": "Bahasa Indonesia",
-  "version": "0.1.0",
+  "version": "1.4.269",
   "description": "Antarmuka Orca dalam bahasa Indonesia, diselaraskan dengan Orca 1.4.269. Paket komunitas, tidak resmi.",
   "engines": {
     "orca": ">=1.4.269"

@@ -42,8 +42,24 @@ bahasa Inggris Orca; kalau sebuah key tidak ada, Orca otomatis menampilkan teks 
 Untuk memperbaiki satu teks, cari key-nya lalu ganti nilainya. Setelah itu cek dengan:
 
 ```sh
-orca plugin validate .
+npm run check     # manifest dan file yang disebutnya
+npm run quality   # placeholder, protected copy, glosarium, coverage
 ```
+
+## Menyusul rilis Orca baru
+
+Versi plugin mengikuti versi Orca. Saat Orca merilis versi baru, jalankan:
+
+```sh
+npm run upstream -- 1.4.270
+npm run sync -- --plan --orca 1.4.270
+npm run sync -- --orca 1.4.270 --write-todo todo.json
+# terjemahkan setiap entri di todo.json, lalu
+npm run sync -- --orca 1.4.270 --apply todo.json
+npm run quality
+```
+
+Rinciannya ada di [`tools/README.md`](tools/README.md).
 
 ## Lisensi
 

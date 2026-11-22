@@ -2473,7 +2473,7 @@
       },
       "ephemeralVmWorkspaceTarget": {
         "projectRootRegistrationFailed": "Gagal mendaftarkan root proyek yang dibuat resep pada waktu proses.",
-        "provisionedRootRequiresSsh": "Resep root yang tersedia saat ini memerlukan koneksi SSH langsung."
+        "provisionedRootRequiresSsh": "Resep provisioned-root saat ini memerlukan koneksi SSH langsung."
       },
       "blocked": {
         "notification": {
@@ -2574,7 +2574,7 @@
         "folderWorkspaceRemoved": "Ruang kerja folder telah dihapus."
       },
       "ephemeralVmWorktreeCreation": {
-        "sparseCheckoutUnsupported": "Resep root yang tersedia tidak mendukung sparse checkout."
+        "sparseCheckoutUnsupported": "Resep provisioned-root tidak mendukung sparse checkout."
       },
       "worktreeJumpNavigation": {
         "filteredNotice": "worktree ini disembunyikan oleh filter sidebar. Ruang kerja dibuka, namun tidak ditampilkan di Spaces."
@@ -13177,7 +13177,7 @@
             "worktreeMetadata": "detail worktree",
             "worktreeLineage": "riwayat worktree",
             "workspaceLineage": "riwayat ruang kerja",
-            "sparsePreset": "preset checkout yang jarang",
+            "sparsePreset": "preset sparse checkout",
             "retiredWorktreeName": "nama worktree yang sudah pensiun",
             "automation": "otomatisasi",
             "automationRun": "otomatisasi berjalan",
@@ -14697,7 +14697,7 @@
                   "7f8a9b0c1d": "Operasi jarak jauh sedang berlangsung — coba lagi setelah selesai",
                   "74fc171e99": "Paksa Push sedang berlangsung…",
                   "16aee3a5c1": "commit sedang berlangsung…",
-                  "e61b0d7a3c": "Checkout cabang sebelum menerbitkan commit.",
+                  "e61b0d7a3c": "Checkout cabang sebelum publish commit.",
                   "1d47e850cf": "Push pembaruan ke cabang review tertaut",
                   "c39d0c75c3": "Target cabang review tertaut tidak tersedia.",
                   "d37e68f61d": "Mempersiapkan cabang untuk ditinjau…",
@@ -23116,7 +23116,7 @@
       "sparseStatus": "Sparse checkout",
       "scopeDetails": "Tentang cakupan sparse checkout",
       "scopeExplanation": "Pemilih folder mengubah apa yang Anda lihat, bukan file mana yang diperiksa. Root repositori mencakup file root dan leluhur yang telah diperiksa.",
-      "searchExplanation": "Nama memfilter folder yang Anda lihat. Pencarian konten di seluruh ruang kerja. File yang dihilangkan oleh checkout jarang tidak dicari.",
+      "searchExplanation": "Nama memfilter folder yang Anda lihat. Pencarian konten di seluruh ruang kerja. File yang dihilangkan oleh sparse checkout tidak dicari.",
       "findInFolder": "Temukan di {{path}}",
       "folderLoadError": "Tidak dapat memuat folder ini:",
       "emptyFolder": "Tidak ada file di folder ini"
@@ -23137,7 +23137,7 @@
     "nameTooLong": "Nama harus terdiri dari 80 karakter atau kurang.",
     "nameExists": "Preset bernama “{{name}}” sudah ada.",
     "loading": "Memuat preset...",
-    "details": "Apa yang diperiksa?",
+    "details": "apa yang di-checkout?",
     "pathInstructions": "Pilih folder dari repositori, atau ketik jalur relatif repo apa pun.",
     "retryLoad": "Coba lagi memuat preset",
     "fullCheckout": "Checkout penuh",
@@ -24974,8 +24974,8 @@
       "recipeResultNotJsonObject": "Resep stdout harus berupa satu objek JSON.",
       "recipeResultPairingCodeInvalid": "Kode penyandingan hasil resep bukan kode penyandingan Orca yang valid.",
       "recipeResultProjectRootNotAbsolute": "Hasil resep projectRoot harus berupa jalur runtime absolut.",
-      "provisionedRootResultRequired": "Resep root yang tersedia harus mengembalikan skemaVersi 2 dengan checkoutMode \"root yang disediakan\".",
-      "provisionedRootNotConfigured": "Hasil resep meminta checkout root yang tersedia, tetapi resepnya tidak dikonfigurasi untuk itu.",
+      "provisionedRootResultRequired": "Resep provisioned-root harus mengembalikan skemaVersi 2 dengan checkoutMode \"root yang disediakan\".",
+      "provisionedRootNotConfigured": "Hasil resep meminta checkout provisioned-root, tetapi resepnya tidak dikonfigurasi untuk itu.",
       "destroyExited": "Destroy keluar dengan kode {{exitCode}}.",
       "destroyFailed": "Destroy gagal.",
       "destroyDisabled": "Destroy dinonaktifkan untuk resep ini.",
@@ -27032,7 +27032,7 @@
     "cannotApplyMerge": "Tidak dapat memilih/mengembalikan merge commit dari sini",
     "confirmCommitAction": "{{action}} {{commit}}?",
     "cancelAction": "Batal",
-    "checkoutCommit": "Lihat commit",
+    "checkoutCommit": "Checkout commit",
     "cherryPick": "Cherry-pick",
     "revert": "Kembalikan",
     "actionLanded": "Sekarang di {{commit}} di {{branch}}",

@@ -826,7 +826,7 @@
       },
       "remoteBrowsing": {
         "heading": "Penjelajahan jarak jauh",
-        "headingDescription": "Tempat halaman ruang kerja jarak jauh dirender, dan origin lalu lintas jaringannya."
+        "headingDescription": "Tempat halaman ruang kerja jarak jauh dirender, dan dari mana lalu lintas jaringannya keluar."
       },
       "userAgent": {
         "title": "Identitas browser",
@@ -23137,7 +23137,7 @@
     "nameTooLong": "Nama harus terdiri dari 80 karakter atau kurang.",
     "nameExists": "Preset bernama “{{name}}” sudah ada.",
     "loading": "Memuat preset...",
-    "details": "apa yang di-checkout?",
+    "details": "Apa yang di-checkout?",
     "pathInstructions": "Pilih folder dari repositori, atau ketik jalur relatif repo apa pun.",
     "retryLoad": "Coba lagi memuat preset",
     "fullCheckout": "Checkout penuh",

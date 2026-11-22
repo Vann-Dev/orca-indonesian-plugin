@@ -723,7 +723,7 @@
       },
       "chat": {
         "fontFamily": "Keluarga font",
-        "fontFamilyDescription": "Font yang digunakan untuk pesan, aktivitas, dan kotak pesan.",
+        "fontFamilyDescription": "Font untuk pesan, aktivitas, dan kotak pesan.",
         "fontKeywordTypeface": "jenis huruf",
         "fontKeywordTypography": "tipografi",
         "inheritFont": "Sama dengan font IDE",
@@ -732,26 +732,26 @@
         "fontPreview": "Rubah coklat yang gesit melompati anjing pemalas.",
         "title": "Chat UI",
         "textSize": "Ukuran teks",
-        "textSizeDescription": "Pesan, aktivitas alat, dan kotak pesan. {{increase}} / {{decrease}} dalam obrolan ubah ini juga.",
+        "textSizeDescription": "Pesan, aktivitas tool, dan kotak pesan. {{increase}} / {{decrease}} di obrolan juga mengubah ini.",
         "codeTextSize": "Ukuran teks kode",
-        "codeTextSizeDescription": "Blok kode, kode sebaris, perintah, dan keluaran alat.",
+        "codeTextSizeDescription": "Blok kode, kode inline, perintah, dan output tool.",
         "width": "Lebar",
-        "widthDescription": "Seberapa lebar pesan dan kotak pesan dapat berkembang di panel lebar.",
+        "widthDescription": "Seberapa lebar pesan dan kotak pesan bisa membentang di panel lebar.",
         "resetAppearance": "Atur ulang tampilan obrolan",
-        "resetDescription": "Kembalikan default di atas.",
+        "resetDescription": "Kembalikan ke default di atas.",
         "comfortable": "Nyaman",
         "wide": "Lebar",
         "full": "Penuh",
-        "pixels": "piksel",
+        "pixels": "px",
         "reset": "Atur ulang",
-        "matchTerminalInterface": "Cocokkan antarmuka terminal",
+        "matchTerminalInterface": "Ikuti antarmuka terminal",
         "matchTerminalInterfaceDescription": "Gunakan font dan warna antarmuka terminal Anda untuk keseluruhan obrolan. Tetap sinkron jika Anda mengubah tema terminal nanti.",
         "contrast": "Kontras",
         "contrastDescription": "Betapa terangnya teks obrolan di latar belakang. Ujung kanan cocok dengan tampilan yang lebih tua dan cerah.",
         "softer": "Lebih lembut",
         "sharper": "Lebih tajam",
         "terminalControlledHint": "Diatur oleh antarmuka terminal.",
-        "terminalControlledTooltip": "Mencocokkan antarmuka terminal Anda. Matikan antarmuka terminal Match untuk mengubahnya."
+        "terminalControlledTooltip": "Mengikuti antarmuka terminal Anda. Matikan Ikuti antarmuka terminal untuk mengubahnya."
       },
       "editorTheme": {
         "light": "Tema editor terang",
@@ -5342,7 +5342,7 @@
             "59b5955621": "Unggah milik Anda sendiri…",
             "0608ad02a2": "Pilih hewan peliharaan",
             "b75484a01a": "Ukuran hewan peliharaan",
-            "c6aa805b1b": "piksel",
+            "c6aa805b1b": "px",
             "2f7bbaa457": "Ukuran",
             "34c25dfe9c": "Pet",
             "aec479308a": "Menu hewan peliharaan",
@@ -9949,7 +9949,7 @@
           "f40f6ef17c": "Berat font tebal"
         },
         "TerminalFontSizeSetting": {
-          "9b5252c85a": "piksel",
+          "9b5252c85a": "px",
           "0f4c92e595": "Ukuran font terminal default untuk panel baru dan pembaruan langsung.",
           "a653570abf": "Ukuran font"
         },
@@ -13609,7 +13609,7 @@
           }
         },
         "editorTypography": {
-          "fontSizeUnit": "piksel",
+          "fontSizeUnit": "px",
           "lineHeightAuto": "Otomatis",
           "ligaturesAutoEnabled": "Otomatis - diaktifkan untuk \"{{value0}}\".",
           "ligaturesAutoDisabled": "Otomatis - dinonaktifkan untuk \"{{value0}}\".",

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://raw.githubusercontent.com/stablyai/orca/main/docs/schemas/plugins/orca-plugin.v2.schema.json",
+  "manifestVersion": 2,
+  "id": "indonesian",
+  "name": "Bahasa Indonesia",
+  "version": "0.1.0",
+  "description": "Antarmuka Orca dalam bahasa Indonesia, diselaraskan dengan Orca 1.4.269. Paket komunitas, tidak resmi.",
+  "engines": {
+    "orca": ">=1.4.269"
+  },
+  "execution": "data",
+  "contributes": {
+    "languagePacks": [
+      {
+        "locale": "id",
+        "path": "locales/id.json",
+        "displayName": "Bahasa Indonesia"
+      }
+    ]
+  },
+  "author": {
+    "name": "Vann-Dev",
+    "url": "https://github.com/Vann-Dev"
+  },
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "cover": {
+    "path": "assets/cover.png",
+    "alt": "Jendela bergaya Orca dengan pengaturan tampilan dalam bahasa Indonesia dan pilihan Bahasa Indonesia."
+  }
+}

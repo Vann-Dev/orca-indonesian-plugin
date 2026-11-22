@@ -1,0 +1,19 @@
+name: Validate plugin
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check the pack against Orca's language-pack rules
+        run: node tools/lint.mjs
+      - name: Check the manifest names only files that exist
+        run: node -e "const m=require('./orca-plugin.json');for(const k of ['icon'])if(!require('node:fs').existsSync(m[k]))throw new Error(m[k]);for(const p of m.contributes.languagePacks)if(!require('node:fs').existsSync(p.path))throw new Error(p.path)"

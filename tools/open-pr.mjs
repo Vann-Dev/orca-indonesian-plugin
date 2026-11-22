@@ -26,6 +26,17 @@ if (!version || !bodyFile) {
 const git = (...argv) => execFileSync('git', argv, { cwd: at('.'), encoding: 'utf8' }).trim()
 const run = (cmd, argv) => execFileSync(cmd, argv, { cwd: at('.'), encoding: 'utf8' }).trim()
 
+// A fresh clone has no identity; use the one this repository's commits already carry.
+const config = (name) => {
+  try {
+    return git('config', '--get', name)
+  } catch {
+    return ''
+  }
+}
+if (!config('user.email')) git('config', 'user.email', 'stevanvincent05@gmail.com')
+if (!config('user.name')) git('config', 'user.name', 'Vann-Dev')
+
 const dryRun = args.includes('--dry-run')
 const branch = `auto/orca-${version}`
 // Only the pack, the manifest and the README are part of a sync. The tooling itself and the

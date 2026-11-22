@@ -172,16 +172,17 @@ if (missing.length > 0) {
 }
 
 // --- baseline ---------------------------------------------------------------
-const baselinePath = 'tools/quality-baseline.json'
-const baseline = fs.existsSync(at(baselinePath)) ? readJson(baselinePath) : { known: [] }
+// Next to this script, so a copy run from a staged tools/ directory still finds it.
+const baselinePath = path.join(path.dirname(fileURLToPath(import.meta.url)), 'quality-baseline.json')
+const baseline = fs.existsSync(baselinePath) ? JSON.parse(fs.readFileSync(baselinePath, 'utf8')) : { known: [] }
 const known = new Set(baseline.known)
 const signature = (p) => `${p.rule}\t${p.key}`
 
 if (flag('--baseline')) {
-  writeJson(baselinePath, {
+  fs.writeFileSync(baselinePath, JSON.stringify({
     note: 'Problems that predate the quality gate. Fix them in a dedicated pass, then regenerate this file.',
     known: [...new Set(problems.map(signature))].sort()
-  })
+  }, null, 2) + '\n')
   console.log(`baseline written: ${problems.length} entries`)
   process.exit(0)
 }

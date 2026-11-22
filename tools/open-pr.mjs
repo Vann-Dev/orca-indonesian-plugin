@@ -28,7 +28,10 @@ const run = (cmd, argv) => execFileSync(cmd, argv, { cwd: at('.'), encoding: 'ut
 
 const dryRun = args.includes('--dry-run')
 const branch = `auto/orca-${version}`
-const ALLOWED = ['locales/', 'orca-plugin.json', 'README.md', 'tools/']
+// Only the pack, the manifest and the README are part of a sync. The tooling itself and the
+// downloaded English sources stay out of the commit.
+const STAGED = ['locales', 'orca-plugin.json', 'README.md']
+const ALLOWED = ['locales/', 'orca-plugin.json', 'README.md']
 
 if (git('rev-parse', '--abbrev-ref', 'HEAD') === branch) {
   // already on the branch
@@ -41,21 +44,18 @@ if (git('rev-parse', '--abbrev-ref', 'HEAD') === branch) {
   }
 }
 
-const status = git('status', '--porcelain').split('\n').filter(Boolean)
-if (status.length === 0) {
-  console.log('nothing to commit')
+git('add', '--', ...STAGED)
+const staged = git('diff', '--cached', '--name-only').split('\n').filter(Boolean)
+if (staged.length === 0) {
+  console.log('nothing staged for the pack; no commit made')
   process.exit(0)
 }
-const outside = status
-  .map((line) => line.slice(3).trim())
-  .filter((file) => !ALLOWED.some((prefix) => file.startsWith(prefix)))
+const outside = staged.filter((file) => !ALLOWED.some((prefix) => file.startsWith(prefix)))
 if (outside.length > 0) {
   console.error('refusing to commit files outside the pack:')
   for (const file of outside) console.error(`  ${file}`)
   process.exit(1)
 }
-
-git('add', '--all')
 const summary = git('diff', '--cached', '--stat')
 git('commit', '-m', `chore(i18n): sync with Orca ${version}`, '-m', summary)
 if (dryRun) {

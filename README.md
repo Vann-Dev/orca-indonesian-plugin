@@ -27,22 +27,7 @@ tampil dalam bahasa Inggris sampai paket berikutnya dirilis — sama seperti pak
 Teks yang dilindungi Orca tetap dalam bahasa Inggris: dialog keamanan, izin, dan hal-hal yang
 berkaitan dengan kepercayaan plugin. Itu batasan Orca, bukan sesuatu yang bisa ditimpa paket.
 
-## Mengubah terjemahan
-
-Semua terjemahan berada di `locales/id.json`. Untuk perbaikan permanen, sunting
-`tools/memory/reviewed.json` lalu jalankan ulang build — nilai di sana selalu menang atas hasil mesin:
-
-```sh
-node tools/build.mjs     # tulis ulang locales/id.json
-node tools/lint.mjs      # cek aturan paket bahasa Orca
-orca plugin validate .
-```
-
-`tools/upstream/` menyimpan katalog bahasa Inggris dan daftar teks terlindungi untuk rilis yang
-ditargetkan. `tools/memory/cache.json` adalah cache terjemahan mesin; aman dihapus kalau ingin
-menerjemahkan ulang dari awal.
-
-## Lisensi
+## Istilah
 
 Istilah yang dipakai developer tetap dalam bahasa Inggris, mengikuti cara orang menulisnya di repo
 dan dokumen Indonesia: `checkout`, `branch`, `commit`, `push`, `pull`, `stash`, `rebase`, `merge`,
@@ -50,8 +35,18 @@ dan dokumen Indonesia: `checkout`, `branch`, `commit`, `push`, `pull`, `stash`, 
 `review`, `reviewer`, `issue`, `origin`, `upstream`, `repo`, `worktree`, `host`, `plugin`, `sandbox`,
 `prompt`, `token`, `agent`, `skill`. Yang diterjemahkan adalah kalimat dan kata kerja di sekitarnya.
 
-Penulisan ulang istilah ada di `tools/corrections.mjs`, jadi memperbaiki satu istilah cukup mengubah
-file itu lalu menjalankan `node tools/build.mjs` — tanpa menerjemahkan ulang seluruh paket.
+## Mengubah terjemahan
+
+Semua terjemahan berada di [`locales/id.json`](locales/id.json). Key-nya sama persis dengan katalog
+bahasa Inggris Orca; kalau sebuah key tidak ada, Orca otomatis menampilkan teks bahasa Inggris.
+
+Untuk memperbaiki satu teks, cari key-nya lalu ganti nilainya. Setelah itu cek dengan:
+
+```sh
+orca plugin validate .
+```
+
+## Lisensi
 
 MIT — lihat [LICENSE](LICENSE).
 

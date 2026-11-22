@@ -1,15 +1,17 @@
 // Builds locales/id.json from the English catalog of a pinned Orca release.
 //
 //   node tools/build.mjs            translate whatever is missing, then write the pack
-//   node tools/build.mjs --dry-run  report what would change, write no pack
+//   node tools/build.mjs --dry-run  report what would change, write nothing
 //
-// Machine output is a baseline. Anything in tools/memory/reviewed.json wins over it, so
-// a phrase that reads badly can be fixed once and stays fixed across rebuilds.
+// Machine output is a baseline. Anything in tools/memory/reviewed.json wins over it, and
+// tools/corrections.mjs renames the developer terms the engine insists on translating.
+// Both run at assembly time, so editing either rebuilds the pack without re-translating.
 import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
 import { fileURLToPath } from 'node:url'
 import { NAMES_RE } from './names.mjs'
+import { CORRECTIONS } from './corrections.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const dryRun = process.argv.includes('--dry-run')
@@ -117,122 +119,6 @@ function restore(text, slots) {
 }
 
 // --- after translation -------------------------------------------------------
-// The engine translates nouns developers keep in English. These fix only the ones it
-// gets wrong again and again. Long phrases run before the single words inside them.
-const CORRECTIONS = [
-  [/\bpohon kerja(?:nya)?\b/gi, (m) => (/nya$/i.test(m) ? 'worktreenya' : 'worktree')],
-  [/\bpermintaan penarikan\b/gi, 'pull request'],
-  [/\bpermintaan tarik\b/gi, 'pull request'],
-  [/\btarik permintaan\b/gi, 'pull request'],
-  [/\bpermintaan penggabungan\b/gi, 'merge request'],
-  [/\bpermintaan gabungan\b/gi, 'merge request'],
-  [/\bpenggabungan otomatis\b/gi, 'auto-merge'],
-  [/\btuan rumah(?:nya)?\b/gi, (m) => (/nya$/i.test(m) ? 'hostnya' : 'host')],
-  [/\bkotak pasir\b/gi, 'sandbox'],
-  [/\bbak pasir\b/gi, 'sandbox'],
-  [/\bsiput(?: repo)?\b/gi, 'slug'],
-  [/\bpenurunan harga\b/gi, 'Markdown'],
-  [/\bpenyaring\b/gi, 'filter'],
-  [/\bkomitmen\b/gi, 'commit'],
-  [/\bkomit\b/gi, 'commit'],
-  [/\bberkomitmen\b/gi, 'commit'],
-  // Product names the engine insists on translating.
-  [/\bClaude Kode\b/g, 'Claude Code'],
-  [/\bKodeks\b/g, 'Codex'],
-  [/\bkodeks\b/g, 'codex'],
-  [/\bAntigravitasi\b/g, 'Antigravity'],
-  [/\bantigravitasi\b/g, 'antigravity'],
-  [/\bSelancar Angin\b/g, 'Windsurf'],
-  [/\bselancar angin\b/g, 'windsurf'],
-  [/\bLinier\b/g, 'Linear'],
-  [/\blinier\b/g, 'linear'],
-  [/\bMenyalahkan\b/g, 'Blame'],
-  [/\bmenyalahkan\b/g, 'blame'],
-  [/\bantrean panjang\b/gi, 'baris panjang'],
-  [/\bPohon Kerja\b/g, 'Worktree'],
-  [/\bPerbedaan\b/g, 'Diff'],
-  [/\bmenarik permintaan\b/gi, 'pull request'],
-  [/\bmembangun status\b/gi, 'status build'],
-  [/\bPaksa Dorong\b/g, 'Force Push'],
-  [/\bpaksa dorong\b/gi, 'force push'],
-  [/\bDorong paksa\b/g, 'Force push'],
-  [/\bdorong paksa\b/g, 'force push'],
-  [/\bDorongan gagal\b/gi, 'Push gagal'],
-  [/\bdorongan gagal\b/gi, 'push gagal'],
-  [/\bdorongan biasa\b/gi, 'push biasa'],
-  [/\bDorong\b/g, 'Push'],
-  [/\bdorong\b/g, 'push'],
-  [/\bpesan penerapan\b/gi, 'pesan commit'],
-  [/\bPesan Penerapan\b/g, 'Pesan commit'],
-  [/\bTarik\b/g, 'Pull'],
-  [/\btarik\b/g, 'pull'],
-  [/\bTekan\b/g, 'Push'],
-  [/\btekan\b/g, 'push'],
-  [/\bdidorong\b/gi, 'push'],
-  [/\bmenarik\b/gi, 'pull'],
-  [/\bditarik\b/gi, 'pull'],
-  [/\bmenarik alih\b/gi, 'mengambil alih'],
-  [/\bStatus Humas\b/g, 'Status PR'],
-  [/\bHumas\b/g, 'PR'],
-  [/\bTahapkan\b/g, 'Stage'],
-  [/\btahapkan\b/g, 'stage'],
-  [/\bTahapan Semua\b/g, 'Stage Semua'],
-  [/\btahapan semua\b/g, 'stage semua'],
-  [/\bmasih tahapan\b/gi, 'masih stage'],
-  [/\bSimpan dulu\b/g, 'Stash dulu'],
-  [/\bMaju cepat\b/g, 'Fast-forward'],
-  [/\bmaju cepat\b/g, 'fast-forward'],
-  [/\bPenggabungan\b/g, 'Merge'],
-  [/\bpenggabungan\b/g, 'merge'],
-  [/\bBacklog\b/g, 'Backlog'],
-  [/\bKeterampilan\b/g, 'Skill'],
-  [/\bketerampilan\b/g, 'skill'],
-  [/\bSejarah\b/g, 'Riwayat'],
-  [/\bsejarah\b/g, 'riwayat'],
-  [/\bdibedah\b/gi, 'di-diff'],
-  [/\bCopot pemasangan\b/gi, 'Hapus instalasi'],
-  [/\bMengungkapkan\b/gi, 'Tampilkan'],
-  [/\bmengungkapkan\b/gi, 'menampilkan'],
-  [/\bMembangun VM\b/g, 'Menyiapkan VM'],
-  [/\bPelacakan Penggunaan\b/g, 'Pelacakan penggunaan'],
-  // `issue` is what GitHub, Linear and Jira call it, and what developers here say.
-  [/\bMasalah tertaut\b/g, 'Issue tertaut'],
-  [/\bmasalah tertaut\b/g, 'issue tertaut'],
-  [/\bJenis Masalah\b/g, 'Jenis Issue'],
-  [/\bMasalah Linear\b/g, 'Issue Linear'],
-  [/\bmasalah Linear\b/g, 'issue Linear'],
-  [/\bMasalah Jira\b/g, 'Issue Jira'],
-  [/\bmasalah Jira\b/g, 'issue Jira'],
-  [/\bMasalah GitHub\b/g, 'Issue GitHub'],
-  [/\bmasalah GitHub\b/g, 'issue GitHub'],
-  [/\bIssues\b/g, 'Issue'],
-  [/\bMasalah\b/g, 'Issue'],
-  [/\bmasalah\b/g, 'issue'],
-  // macOS keeps its UI nouns in English in Indonesian, and these read as labels.
-  [/\bmacOS akses privasi\b/g, 'Akses privasi macOS'],
-  [/\bmacOS Izin\b/g, 'Izin macOS'],
-  [/\bSSH host\b/g, 'Host SSH'],
-  [/\bSSH hosts\b/g, 'Host SSH'],
-  [/\bGit Penulis AI\b/g, 'Git AI Author'],
-  [/\bGit penulis AI\b/g, 'Git AI Author'],
-  [/\bStatistik & Penggunaan\b/g, 'Statistik & Penggunaan'],
-  [/\bPemberitahuan desktop asli\b/g, 'Notifikasi desktop native'],
-  [/\bRuang Kerja Mengambang\b/g, 'Ruang kerja mengambang'],
-  [/\bEmulator Seluler\b/g, 'Emulator seluler'],
-  [/\bSumber Tugas\b/g, 'Sumber tugas'],
-  [/\bKontrol Sumber\b/g, 'Source Control'],
-  [/\bkontrol sumber\b/g, 'source control'],
-  [/\bKontrol sumber\b/g, 'Source control'],
-  [/\bGit & Source Control\b/g, 'Git & Source Control'],
-  [/\bSimpanan\b/g, 'Backlog'],
-  [/\bCatatan Rilis\b/g, 'Catatan rilis'],
-  [/\btinjauan\b/gi, 'ulasan'],
-  [/\bpeninjauan\b/gi, 'ulasan'],
-  [/\bpengulas\b/gi, 'peninjau']
-]
-
-// Words that are the same in both languages, or that the app deliberately keeps from
-// the English string. A correction that hits these produces the original again.
 function tidy(text) {
   let out = text.replace(PROMPT_RE, '')
   // Keep a space before a percent sign the engine glued to the previous word.
@@ -289,9 +175,8 @@ function looksUntranslatable(source) {
   return false
 }
 
-// Cache entries carry the masking and prompt they were built with, so changing either
-// re-translates instead of silently keeping stale wording. Corrections run at assembly
-// time, so they can be edited without re-translating anything.
+// Cache entries belong to the masking and prompt that produced them. Corrections are
+// applied later, so editing them never costs a re-translation.
 const CACHE_VERSION = crypto
   .createHash('sha256')
   .update(JSON.stringify([PROMPT, masking.map(([re]) => String(re))]))

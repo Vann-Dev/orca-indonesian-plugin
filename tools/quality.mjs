@@ -9,6 +9,7 @@
 // listed, but they do not fail the run, so the pack can be cleaned up without blocking every PR.
 import fs from 'node:fs'
 import path from 'node:path'
+import { fileURLToPath } from 'node:url'
 import {
   at,
   coverage,

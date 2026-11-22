@@ -730,7 +730,7 @@
         "systemFont": "Font sistem",
         "fontPreviewLabel": "Pratinjau font obrolan",
         "fontPreview": "Rubah coklat yang gesit melompati anjing pemalas.",
-        "title": "Antarmuka obrolan",
+        "title": "Chat UI",
         "textSize": "Ukuran teks",
         "textSizeDescription": "Pesan, aktivitas alat, dan kotak pesan. {{increase}} / {{decrease}} dalam obrolan ubah ini juga.",
         "codeTextSize": "Ukuran teks kode",
@@ -4344,7 +4344,7 @@
             }
           },
           "ProjectRoadmap": {
-            "be52f7b6db": "Tampilan peta jalan ini tidak memiliki kolom tanggal atau iterasi untuk menempatkan item, jadi Orca yang mencantumkannya.",
+            "be52f7b6db": "Tampilan roadmap ini tidak memiliki kolom tanggal atau iterasi untuk menempatkan item, jadi Orca yang mencantumkannya.",
             "6405e036e0": "Bulan",
             "f2b1cabef7": "Seperempat",
             "b6afc6fe45": "Tahun",
@@ -4360,7 +4360,7 @@
             "7d1220d979": "Item terbatas"
           },
           "ProjectPickerPanels": {
-            "04ec212ccb": "Peta Jalan",
+            "04ec212ccb": "roadmap",
             "9fe1ac868c": "Tidak didukung"
           },
           "ProjectViewStates": {
@@ -5706,7 +5706,7 @@
             "claude": {
               "waiting": {
                 "label": "Pembaruan saat Claude berjalan",
-                "message": "Claude pembaruan penggunaan saat berikutnya Claude dijalankan."
+                "message": "pembaruan penggunaan Claude saat berikutnya Claude dijalankan."
               }
             },
             "justNow": "baru saja",
@@ -5753,7 +5753,7 @@
           },
           "RemoteServerUpdateStatusSegment": {
             "updating": "Memperbarui {{value0}}/{{value1}}",
-            "updatingTooltip": "Jarak jauh Orca Pembaruan server sedang berlangsung",
+            "updatingTooltip": "Pembaruan Orca Server jarak jauh sedang berlangsung",
             "failedTooltip": "Buka Pembaruan Server Jarak Jauh Orca untuk meninjau dan mencoba lagi",
             "updatedTooltip": "Pembaruan server jarak jauh Orca selesai",
             "failedCount_one": "{{count}} pembaruan server gagal",
@@ -7656,7 +7656,7 @@
           "title": "Siapkan Linear skill agen",
           "remoteCopy": "Ini menginstal pengaturan host; lingkungan agen jarak jauh mungkin memerlukan pengaturan terpisah.",
           "hostCopy": "Instal untuk penyerahan agen host dari pekerjaan Linear yang ditautkan.",
-          "dismiss": "Tutup Linear pengaturan keahlian agen",
+          "dismiss": "Tutup pengaturan skill agen Linear",
           "setup": "Siapkan",
           "recheck": "Periksa ulang",
           "successTitle": "Linear akses tiket sudah siap",
@@ -8159,9 +8159,9 @@
           "fcc4093fc1": "Gunakan login {{value0}} Codex Anda saat ini.",
           "72b36ea174": "Opsional. Orca dapat menggunakan login Claude normal Anda; tambahkan akun hanya jika Anda ingin peralihan cepat tanpa berpindah sesi obrolan.",
           "26ef4b55be": "Claude",
-          "2743cdc0af": "Claude pembaruan akun gagal.",
+          "2743cdc0af": "pembaruan akun Claude gagal.",
           "f921d32606": "Claude akun diperbarui.",
-          "5bf8764953": "Codex pembaruan akun gagal.",
+          "5bf8764953": "pembaruan akun Codex gagal.",
           "9baf45d071": "Perangkat ini",
           "2358ac71d2": "Bawaan WSL",
           "ad47a33f72": "Memuat WSL",
@@ -8177,7 +8177,7 @@
           "2f24f244a4": "MiniMax cookie diperlukan.",
           "8e6f0cb1d8": "MiniMax cookie tidak disimpan.",
           "8d61637a77": "MiniMax cookie disimpan.",
-          "b43e761fe5": "MiniMax pembaruan cookie gagal.",
+          "b43e761fe5": "pembaruan cookie MiniMax gagal.",
           "5d63bbfbec": "MiniMax",
           "33bba5ad83": "Tempelkan cookie sesi MiniMax Anda untuk pengambilan batas tarif lokal.",
           "73ea15f24b": "Tersimpan",
@@ -13089,7 +13089,7 @@
           "body": "{{credential}} disimpan tidak terenkripsi — sistem ini tidak memiliki keyring OS yang Orca dapat digunakan. Siapa pun yang dapat membaca disk Anda atau cadangannya dapat membaca kredensialnya. Instal dan buka kunci gnome-keyring atau kwallet, lalu simpan lagi untuk menyegelnya."
         },
         "sshManagedHostRemove": {
-          "descriptionServerHost": "Orca berjalan pada {{label}}. Di Server Orca Jarak Jauh, buka menu ⋯ di {{label}} dan pilih Berhenti… untuk menghapus Orca dari host, atau Lupakan… jika host sudah tidak ada. Kemudian Anda dapat menghapus host SSH ini.",
+          "descriptionServerHost": "Orca berjalan pada {{label}}. Di Orca Server jarak jauh, buka menu ⋯ di {{label}} dan pilih Berhenti… untuk menghapus Orca dari host, atau Lupakan… jika host sudah tidak ada. Kemudian Anda dapat menghapus host SSH ini.",
           "2ca95e9fd7": "Kelola server jarak jauh"
         },
         "managedServers": {
@@ -15305,7 +15305,7 @@
           "27743304b1": "Linear",
           "af69f42372": "Tekan Enter untuk menjalankan GitHub CLI autentikasi. Periksa kembali GitHub setelah alur browser atau perangkat selesai.",
           "f9d2e12d17": "GitHub perintah masuk",
-          "6d469169f2": "GitHub pengaturan",
+          "6d469169f2": "pengaturan GitHub",
           "bd5d976fb2": "Instal gh",
           "50db38cf4b": "pull request, issue, dan periksa status.",
           "c1547656f0": "Memeriksa…",
@@ -16677,8 +16677,8 @@
           "de68b75bde": "Tutup pencarian",
           "f7bcecbe26": "Kecocokan berikutnya",
           "32ae8d7d57": "Kecocokan sebelumnya",
-          "158c645829": "Temukan di editor Markdown yang kaya",
-          "98b89276f3": "Temukan di editor kaya",
+          "158c645829": "Cari di editor Markdown yang kaya",
+          "98b89276f3": "Cari di editor kaya",
           "a86958d508": "Tidak ada hasil",
           "e8c147435f": "Sembunyikan ganti",
           "9cdc38be33": "Alihkan ganti",
@@ -19438,7 +19438,7 @@
       },
       "agentSurface": {
         "chat": {
-          "label": "Antarmuka obrolan",
+          "label": "Chat UI",
           "description": "Agen membalas dalam obrolan, dengan pesan yang diberikan dan diff.",
           "recommended": "Direkomendasikan",
           "terminalFallback": "Agen tanpa dukungan obrolan kembali ke terminal.",
@@ -19500,10 +19500,10 @@
         "startTimedOut": "{{agent}} membutuhkan waktu terlalu lama untuk memulai (tidak ada respons terhadap {{method}} setelah {{seconds}}s).",
         "startTimedOutKeepsHappening": "Jika ini terus terjadi, komputer yang menjalankan obrolan ini mungkin kelebihan beban.",
         "notSignedIn": "{{agent}} belum masuk.",
-        "claudeSystemNotSignedIn": "Claude belum masuk. Jalankan `{{loginCommand}}`, atau pilih akun di Claude Pengaturan akun.",
-        "claudeManagedNotSignedIn": "Akun Claude ini belum masuk. Masuk lagi di Claude Pengaturan akun.",
+        "claudeSystemNotSignedIn": "Claude belum masuk. Jalankan `{{loginCommand}}`, atau pilih akun di pengaturan Akun Claude.",
+        "claudeManagedNotSignedIn": "Akun Claude ini belum masuk. Masuk lagi di pengaturan Akun Claude.",
         "codexSystemNotSignedIn": "Codex belum masuk. Jalankan `{{loginCommand}}`.",
-        "codexManagedNotSignedIn": "Akun Codex ini belum masuk. Masuk lagi di Codex Pengaturan akun.",
+        "codexManagedNotSignedIn": "Akun Codex ini belum masuk. Masuk lagi di pengaturan Akun Codex.",
         "antigravityNotSignedIn": "Antigravity belum masuk. Masuk pada Pengaturan → Akun → Antigravity. Kemudian kirim pesan Anda lagi.",
         "antigravitySystemNotSignedIn": "Antigravity belum masuk. Masuk dengan menjalankan `agy` di komputer yang menjalankan obrolan ini, lalu kirim pesan Anda lagi.",
         "cliMissing": "{{agent}} tidak ditemukan di komputer yang menjalankan obrolan ini. Instal, atau periksa Perintahnya di Pengaturan → Agen.",
@@ -19526,9 +19526,9 @@
         "launchPreparationFailed": "Orca tidak dapat mempersiapkan {{agent}} untuk memulai di komputer yang menjalankan obrolan ini.",
         "conversationOpenElsewhere": "Codex masih membuka percakapan ini. Coba lagi sebentar lagi, atau tutup terminal Codex lainnya.",
         "conversationOpenInTerminal": "{{agent}} sudah menjalankan percakapan ini di terminal lain. Keluar dari {{agent}} di sana atau tutup terminal itu untuk melanjutkan ke sini.",
-        "chooseClaudeAccount": "Pilih atau tambahkan satu di Claude Pengaturan akun.",
-        "chooseClaudeAccountThenRunCommand": "Pilih atau tambahkan satu di Claude Pengaturan akun, lalu jalankan /{{command}} lagi.",
-        "chooseClaudeAccountThenSend": "Pilih atau tambahkan satu di Claude Pengaturan akun, lalu kirim pesan Anda lagi.",
+        "chooseClaudeAccount": "Pilih atau tambahkan satu di pengaturan Akun Claude.",
+        "chooseClaudeAccountThenRunCommand": "Pilih atau tambahkan satu di pengaturan Akun Claude, lalu jalankan /{{command}} lagi.",
+        "chooseClaudeAccountThenSend": "Pilih atau tambahkan satu di pengaturan Akun Claude, lalu kirim pesan Anda lagi.",
         "providerExitedRow": "{{agent}} dihentikan saat respons ini sedang berlangsung. Anda dapat melanjutkan percakapan ini.",
         "providerExitedRejection": "{{agent}} berhenti sebelum pesan ini dikirim.",
         "providerExitedAnswer": "{{agent}} telah berhenti, jadi jawaban Anda tidak terkirim. Kirim pesan untuk melanjutkan.",
@@ -23415,12 +23415,12 @@
   "projectViews": {
     "layout": {
       "board": "Papan",
-      "roadmap": "Peta Jalan",
+      "roadmap": "roadmap",
       "table": "Tabel"
     },
     "unsupported": {
-      "switchLayout": "Beralih ke tampilan Tabel, Papan, atau Peta Jalan untuk mengerjakan proyek ini di Orca.",
-      "description": "Orca menampilkan tampilan proyek tabel, papan, dan peta jalan. Tampilan ini menggunakan tata letak yang belum dapat dirender.",
+      "switchLayout": "Beralih ke tampilan Tabel, Papan, atau roadmap untuk mengerjakan proyek ini di Orca.",
+      "description": "Orca menampilkan tampilan proyek tabel, papan, dan roadmap. Tampilan ini menggunakan tata letak yang belum dapat dirender.",
       "layoutNotSupported": "Orca belum mendukung {{layout}} tampilan proyek."
     },
     "authHelp": {
@@ -24147,7 +24147,7 @@
       "tabNextTerminal": "Tab terminal berikutnya",
       "tabPreviousTerminal": "Tab terminal sebelumnya",
       "tabOpenQuickCommandsMenu": "Alihkan menu Perintah Cepat",
-      "editorFind": "Temukan di editor",
+      "editorFind": "Cari di editor",
       "editorReplace": "Ganti di editor",
       "editorToggleChangesView": "Alihkan tampilan perubahan",
       "fileExplorerUndo": "Urungkan operasi file",
@@ -24165,7 +24165,7 @@
       "terminalEqualizePaneSizes": "Samakan ukuran panel",
       "terminalExpandPane": "Perluas/ciutkan panel",
       "chatFind": "Temukan di obrolan",
-      "terminalToggleNativeChat": "Beralih antara antarmuka obrolan dan terminal",
+      "terminalToggleNativeChat": "Beralih antara Chat UI dan terminal",
       "terminalClosePane": "Tutup panel aktif",
       "terminalCopySessionId": "Salin ID sesi",
       "terminalSplitRight": "Pisahkan terminal ke kanan",
@@ -24343,13 +24343,13 @@
       "selfPairingCode": "Kode penyandingan ini untuk Orca itu sendiri. Hasilkan kode di komputer lain.",
       "managedDeployment": "Orca menjalankan server ini pada host SSH untuk Anda; pasangannya tidak dapat diganti atau dihapus di sini. Untuk menonaktifkannya, jalankan `orca environment stop --environment <name> --yes` atau gunakan Pengaturan > Orca pada host SSH Anda; untuk host yang hilang, jalankan `orca environment forget --environment <name> --yes`.",
       "sshAccessChangePending": "Perubahan akses SSH server ini belum selesai. Coba lagi atau batalkan di Pengaturan > Jarak Jauh Orca Server > SSH akses untuk server berpasangan sebelum mengganti pasangannya atau menghapusnya.",
-      "sshAccessLinked": "Putuskan tautan akses SSH server ini pada Pengaturan > Server Orca Jarak Jauh > akses SSH untuk server berpasangan sebelum mengganti pasangannya atau menghapusnya.",
+      "sshAccessLinked": "Putuskan tautan akses SSH server ini pada Pengaturan > Orca Server jarak jauh > akses SSH untuk server berpasangan sebelum mengganti pasangannya atau menghapusnya.",
       "alreadyPairedCloudWorkspace": "Server ini sudah dipasangkan sebagai \"{{name}}\". Itu milik ruang kerja cloud, yang memasangkannya lagi saat dilanjutkan.",
       "alreadyPairedCloudIdentity": "Server ini sudah dipasangkan sebagai \"{{name}}\". Server ruang kerja cloud menggunakan kembali identitas server tersebut, sehingga tidak disimpan.",
       "alreadyPairedWslHost": "Server ini sudah dipasangkan sebagai \"{{name}}\". Orca mengelolanya sebagai host WSL, sehingga pasangannya tidak dapat diganti di sini.",
       "alreadyPairedManagedDeployment": "Server ini sudah dipasangkan sebagai \"{{name}}\". Orca menjalankan server ini pada host SSH untuk Anda; pasangannya tidak dapat diganti atau dihapus di sini. Untuk menonaktifkannya, jalankan `orca environment stop --environment <name> --yes` atau gunakan Pengaturan > Orca pada host SSH Anda; untuk host yang hilang, jalankan `orca environment forget --environment <name> --yes`.",
       "alreadyPairedSshAccessChangePending": "Server ini sudah dipasangkan sebagai \"{{name}}\". Perubahan akses SSH server ini belum selesai. Coba lagi atau batalkan di Pengaturan > Jarak Jauh Orca Server > SSH akses untuk server berpasangan sebelum mengganti pasangannya atau menghapusnya.",
-      "alreadyPairedSshAccessLinked": "Server ini sudah dipasangkan sebagai \"{{name}}\". Putuskan tautan akses SSH server ini pada Pengaturan > Server Orca Jarak Jauh > akses SSH untuk server berpasangan sebelum mengganti atau menghapus pasangannya.",
+      "alreadyPairedSshAccessLinked": "Server ini sudah dipasangkan sebagai \"{{name}}\". Putuskan tautan akses SSH server ini pada Pengaturan > Orca Server jarak jauh > akses SSH untuk server berpasangan sebelum mengganti atau menghapus pasangannya.",
       "alreadyPairedAddAgain": "Server ini sudah dipasangkan sebagai \"{{name}}\". Untuk memperbarui koneksinya, tambahkan lagi di Pengaturan > Jarak Jauh Orca Server.",
       "alreadyPairedUnreadable": "Server ini telah dipasangkan sebagai \"{{name}}\", yang pengaturan tersimpannya tidak dapat dibaca oleh versi Orca ini.",
       "nameTaken": "Server bernama \"{{name}}\" sudah ada.",
@@ -24434,7 +24434,7 @@
         "notConnected": "Tidak terhubung ke Linear",
         "createFailed": "Linear pembuatan gagal",
         "createdButUnavailable": "Issue telah dibuat tetapi tidak dapat diambil",
-        "updateFailed": "Linear pembaruan gagal",
+        "updateFailed": "pembaruan Linear gagal",
         "commentFailed": "Gagal membuat komentar",
         "projectCreateFailed": "Linear pembuatan proyek gagal",
         "noApiKey": "Tidak ada kunci API yang disimpan.",
@@ -25157,12 +25157,12 @@
     },
     "slack": {
       "connection": {
-        "appSettings": "Slack pengaturan aplikasi",
+        "appSettings": "pengaturan aplikasi Slack",
         "removeNote": "Menghapus penghentian pekerjaan baru dari Slack. Itu tidak menghapus aplikasi di Slack.",
         "none": "Belum masuk Slack.",
         "add": "Tambahkan ke Slack",
         "waiting": "Menunggu instalasi di Slack.",
-        "unfinished": "Slack pengaturan belum selesai.",
+        "unfinished": "pengaturan Slack belum selesai.",
         "finish": "Selesaikan penyiapan",
         "removeConfirm": "Hapus",
         "update": "Pembaruan di Slack",

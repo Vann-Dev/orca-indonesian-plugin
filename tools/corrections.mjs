@@ -132,7 +132,7 @@ export const CORRECTIONS = [
   [/\bcheckout jarang\b/g, 'sparse checkout'],
   [/\bdan origin lalu lintas jaringannya\b/g, 'dan dari mana lalu lintas jaringannya keluar'],
   [/\bapa yang di-checkout\?/g, 'Apa yang di-checkout?'],
-  [/\bCheck out di \{\{path\}\}\b/g, 'Di-checkout di {{path}}'],
+  [/\bCheck out di \{\{path\}\}/g, '{{path}} sedang di-checkout'],
   [/\bapa yang diperiksa\b/gi, 'apa yang di-checkout'],
   [/\bApa yang diperiksa\b/g, 'Apa yang di-checkout'],
   [/\bLihat commit\b/g, 'Checkout commit'],

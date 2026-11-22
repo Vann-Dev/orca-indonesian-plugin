@@ -22815,7 +22815,7 @@
       "copy": "Salin nama cabang",
       "create": "Buat cabang {{name}} dari {{branch}}",
       "open": "Buka ruang kerja",
-      "occupied": "Check out di {{path}}",
+      "occupied": "{{path}} sedang di-checkout",
       "remote": "jarak jauh",
       "statusFailed": "Orca tidak dapat membaca perubahan checkout ini. Segarkan Source Control sebelum beralih.",
       "statusUnknown": "Baca perubahan checkout ini sebelum beralih.",

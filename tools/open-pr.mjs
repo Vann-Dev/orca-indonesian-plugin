@@ -44,15 +44,20 @@ const branch = `auto/orca-${version}`
 const STAGED = ['locales', 'orca-plugin.json', 'README.md']
 const ALLOWED = ['locales/', 'orca-plugin.json', 'README.md']
 
-if (git('rev-parse', '--abbrev-ref', 'HEAD') === branch) {
-  // already on the branch
-} else {
-  try {
-    git('rev-parse', '--verify', branch)
-    git('checkout', branch)
-  } catch {
-    git('checkout', '-b', branch)
+if (git('rev-parse', '--abbrev-ref', 'HEAD') !== branch) {
+  // A branch left from an earlier run, here or on the remote, is continued rather than
+  // restarted, so a second nightly run adds to the open pull request.
+  const has = (ref) => {
+    try {
+      git('rev-parse', '--verify', '--quiet', ref)
+      return true
+    } catch {
+      return false
+    }
   }
+  if (has(branch)) git('checkout', branch)
+  else if (has(`origin/${branch}`)) git('checkout', '-b', branch, `origin/${branch}`)
+  else git('checkout', '-b', branch)
 }
 
 git('add', '--', ...STAGED)

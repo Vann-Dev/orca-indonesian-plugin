@@ -292,6 +292,16 @@ export const CORRECTIONS = [
   [/\bIssue pemuatan\b/g, 'Memuat issue'],
   [/\bIssue pencarian\b/g, 'Cari issue'],
   [/\bIssue pemindaian tambahan\b/g, 'Issue tambahan'],
+  [/\{\{(\w+)\}\} mengubah file/g, '{{$1}} file berubah'],
+  [/\{\{(\w+)\}\} memeriksa\b/g, '{{$1}} check'],
+  [/\{\{(\w+)\}\} berubah\b/g, '{{$1}} perubahan'],
+  [/\bMemuat (Linear|Jira|GitHub|GitLab) issue/gi, (m) => `Memuat issue ${m.split(' ')[1]}`],
+  [/\b(Gagal memuat|Tidak dapat memuat|Gagal menyimpan|Menampilkan) (Linear|Jira|GitHub|GitLab) issue/gi, (m) => {
+    const [verb, product] = m.split(' ')
+    return `${verb} issue ${product}`
+  }],
+  [/\b(Jira|GitHub|GitLab|Linear) jenis issue\b/gi, (m) => `Jenis issue ${m.split(' ')[0]}`],
+  [/\b(Jira|GitHub|GitLab|Linear) issue types\b/g, (m) => `Jenis issue ${m.split(' ')[0]}`],
 
   // --- words Indonesian developers keep in English ---
   [/\bPeramban\b/g, 'Browser'],

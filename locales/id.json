@@ -1829,7 +1829,7 @@
     "linearIssue": {
       "createLabel": "Buat worktree dari Linear edisi {{value0}}: {{value1}}",
       "pendingLabel": "Buat worktree dari Linear edisi {{value0}}",
-      "loadingLabel": "Memuat Linear issue {{value0}}",
+      "loadingLabel": "Memuat issue Linear {{value0}}",
       "createHint": "Buat worktree dari issue Linear",
       "loadingHint": "Memuat issue Linear…"
     },
@@ -3887,7 +3887,7 @@
         "585dba2989": "Tidak dapat membuka ruang kerja yang terkait dengan issue ini.",
         "534a9c6017": "Tidak dapat membuka ruang kerja yang terlampir pada pull request ini.",
         "fe380f306c": "Gagal menyimpan tampilan tugas default.",
-        "af2a8371de": "Gagal memuat Jira jenis issue.",
+        "af2a8371de": "Gagal memuat Jenis issue Jira.",
         "6775c05483": "Gagal memperbarui status Linear",
         "745ae567d4": "\"{{value0}}\" tidak tersedia untuk {{value1}}",
         "669e419d65": "Tampilan Linear tidak memiliki konteks ruang kerja.",
@@ -4022,7 +4022,7 @@
         "loadPageUnreachable": "Halaman {{value0}} melampaui apa yang dapat dihasilkan oleh pencarian GitHub.",
         "loadPageFailed": "Halaman {{value0}} tidak dapat dimuat dari GitHub.",
         "loadPageNoMoreResults": "Tidak ada hasil lagi di halaman {{value0}}.",
-        "linearHasWorktreeLoadFailed": "Tidak dapat memuat Linear issue yang terkait dengan ruang kerja Orca.",
+        "linearHasWorktreeLoadFailed": "Tidak dapat Memuat issue Linear yang terkait dengan ruang kerja Orca.",
         "linearHasWorktreePartialLoadFailed": "Beberapa issue Linear yang terkait dengan ruang kerja Orca tidak dapat dimuat. Segarkan untuk mencoba lagi.",
         "linearHasWorktreeSearchPlaceholder": "Filter issue yang terkait dengan ruang kerja Orca...",
         "linearModeHasWorktree": "Memiliki Ruang Kerja",
@@ -5882,8 +5882,8 @@
             "gitStatusUnavailable": "Git status tidak tersedia: {{error}}",
             "gitStatusNotLoaded": "Git status belum dimuat",
             "noUncommittedFiles": "Tidak ada file yang tidak di-commit",
-            "changedFiles_one": "{{count}} mengubah file",
-            "changedFiles_other": "{{count}} mengubah file",
+            "changedFiles_one": "{{count}} file berubah",
+            "changedFiles_other": "{{count}} file berubah",
             "noEditorFiles": "Tidak ada file editor yang terbuka",
             "editorFilesOpen_one": "{{count}} file editor terbuka",
             "editorFilesOpen_other": "{{count}} file editor terbuka",
@@ -16359,12 +16359,12 @@
           "noExtension": "(tanpa ekstensi)",
           "diffLoadTimedOut": "Diff tidak selesai memuat.",
           "diffLoadFailed": "Tidak dapat memuat diff.",
-          "changedFilesVs_one": "{{count}} mengubah file vs {{baseRef}}",
-          "changedFilesVs_other": "{{count}} mengubah file vs {{baseRef}}",
-          "changedFilesIn_one": "{{count}} mengubah file di {{compareRef}}",
-          "changedFilesIn_other": "{{count}} mengubah file di {{compareRef}}",
-          "changedFiles_one": "{{count}} mengubah file",
-          "changedFiles_other": "{{count}} mengubah file",
+          "changedFilesVs_one": "{{count}} file berubah vs {{baseRef}}",
+          "changedFilesVs_other": "{{count}} file berubah vs {{baseRef}}",
+          "changedFilesIn_one": "{{count}} file berubah di {{compareRef}}",
+          "changedFilesIn_other": "{{count}} file berubah di {{compareRef}}",
+          "changedFiles_one": "{{count}} file berubah",
+          "changedFiles_other": "{{count}} file berubah",
           "showAiNotes_one": "Tampilkan {{count}} catatan AI",
           "showAiNotes_other": "Tampilkan {{count}} catatan AI",
           "send": "Kirim",
@@ -18534,7 +18534,7 @@
           "reloaded": "Dimuat ulang"
         },
         "FolderWorkspaceSourceControl": {
-          "changeCount_one": "{{count}} berubah",
+          "changeCount_one": "{{count}} perubahan",
           "changeCount_other": "{{count}} perubahan",
           "openWorktree": "Buka worktree ini",
           "reconnect": "Hubungkan kembali untuk melihat perubahan worktree ini."
@@ -19094,7 +19094,7 @@
         "someIssuesFailed": "Beberapa issue Jira yang terkait dengan ruang kerja tidak dapat dimuat. Segarkan untuk mencoba lagi."
       },
       "taskPageJiraLoadState": {
-        "failedToLoadIssues": "Gagal memuat Jira issue.",
+        "failedToLoadIssues": "Gagal Memuat issue Jira.",
         "authFailed": "Jira otentikasi gagal. Hubungkan kembali Jira di Pengaturan, lalu coba lagi.",
         "accessDenied": "Jira menolak akses ke pencarian issue ini. Periksa izin proyek atau coba kueri JQL lain.",
         "rateLimited": "Jira membatasi pencarian issue ini. Coba lagi sebentar lagi.",
@@ -19513,7 +19513,7 @@
         "signInThenSend": "Masuk, lalu kirim pesan Anda lagi.",
         "historyTooLarge": "Riwayat percakapan ini terlalu besar untuk dipulihkan di sini.",
         "managedAccountEnvOverride": "Peluncuran Claude ini menetapkan variabel masuknya sendiri Anthropic. Hapus akun tersebut untuk menggunakan akun Claude yang dikelola.",
-        "accountSwitchInProgress": "Pengaturan {{agent}} berubah pada host ini. Coba lagi setelah selesai.",
+        "accountSwitchInProgress": "Pengaturan {{agent}} perubahan pada host ini. Coba lagi setelah selesai.",
         "managedAccountUnsupported": "Meskipun akun Claude ditambahkan di WSL, obrolan Claude memerlukan akun Windows Claude.",
         "launchFolderMissing": "Folder tempat obrolan ini dijalankan sudah tidak ada lagi. Pulihkan untuk melanjutkan obrolan ini.",
         "historyInOtherAccount": "Riwayat obrolan ini ada di akun Claude lain. Beralih kembali ke akun itu untuk melanjutkannya.",
@@ -19712,8 +19712,8 @@
       },
       "turnDiff": {
         "partial": "Diff sebagian",
-        "changedFiles_one": "{{count}} mengubah file",
-        "changedFiles_other": "{{count}} mengubah file",
+        "changedFiles_one": "{{count}} file berubah",
+        "changedFiles_other": "{{count}} file berubah",
         "showMoreFiles": "Tampilkan {{count}} lagi",
         "hide": "Sembunyikan",
         "hidden": "Orca tidak akan menampilkan turn diff lagi"
@@ -20098,7 +20098,7 @@
         "exitUnconfirmedFromTerminal": "{{agent}} masih menjalankan percakapan ini di terminal ini. Keluar dari {{agent}} di sini, lalu buka percakapan ini dari Riwayat Sesi.",
         "exitUnconfirmed": "{{agent}} menjalankan percakapan ini di terminal lain. Keluar dari sana atau tutup terminal itu, lalu coba lagi.",
         "notSavedYet": "{{agent}} belum menyimpan percakapan ini. Coba lagi setelah dibalas.",
-        "terminalChanged": "Terminal yang menjalankan {{agent}} berubah sebelum ditutup, jadi Orca membiarkannya terbuka. Coba lagi.",
+        "terminalChanged": "Terminal yang menjalankan {{agent}} perubahan sebelum ditutup, jadi Orca membiarkannya terbuka. Coba lagi.",
         "terminalExitUnproven": "Orca menutup terminal {{agent}} tetapi tidak dapat memastikannya berhenti, sehingga obrolan tidak terbuka. Periksa koneksi host, lalu buka percakapan dari Session History.",
         "resumeFailed": "{{agent}} tidak dapat melanjutkan obrolan. Periksa terminal ini dan koneksi host, lalu coba lagi."
       },
@@ -20303,7 +20303,7 @@
         "limited": "Sasaran terbatas",
         "attachmentsUnsupported": "Hapus lampiran sebelum menetapkan tujuan.",
         "checks_one": "{{count}} periksa",
-        "checks_other": "{{count}} memeriksa",
+        "checks_other": "{{count}} check",
         "last-check": "Pemeriksaan sasaran terakhir"
       },
       "fileLinks": {
@@ -20916,7 +20916,7 @@
       },
       "tidyUp": {
         "tidiedMemory": "Rapikan memori",
-        "changes_one": "{{count}} berubah",
+        "changes_one": "{{count}} perubahan",
         "changes_other": "{{count}} perubahan",
         "reviewChanges_one": "Tinjau {{count}} perubahan",
         "reviewChanges_other": "Tinjau {{count}} perubahan"
@@ -24400,7 +24400,7 @@
       "listLabel": "Linear daftar",
       "fetchMore": "Ambil lebih banyak",
       "projectNotFound": "Proyek tidak ditemukan.",
-      "issuesLoadFailed": "Gagal memuat Linear issue.",
+      "issuesLoadFailed": "Gagal Memuat issue Linear.",
       "connectionFailed": "Koneksi gagal",
       "apiKeyHint": "Tempelkan kunci Pribadi API untuk ruang kerja Linear yang ingin Anda gunakan Orca. Jika ruang kerja tersebut sudah terhubung, Orca menggantikan kunci yang disimpan.",
       "remoteKeyStorage": "Kunci ini disimpan oleh runtime jarak jauh yang aktif.",
@@ -25889,7 +25889,7 @@
         "selfNote": "Anda membuat aplikasi Google Cloud sendiri, sehingga login Anda tetap ada di komputer. Tidak ada yang melewati server Orca.",
         "stepApp": "{{bot}} membuka Google Cloud dan menyiapkan aplikasi",
         "stepSignIn": "Anda mencentang kotak persyaratan Google dan masuk",
-        "stepCheck": "{{bot}} memeriksa apakah Gmail, Kalender, dan Drive berfungsi",
+        "stepCheck": "{{bot}} check apakah Gmail, Kalender, dan Drive berfungsi",
         "continue": "Lanjutkan"
       },
       "connectDescription": "Berikan bot Anda akses ke Gmail, Kalender, dan Drive. Proses masuk Anda tetap di {{host}}.",
@@ -26767,7 +26767,7 @@
       "chat": {
         "added": "Ditambahkan {{items}}",
         "canceled": "Dibatalkan {{items}}",
-        "changes": "{{from}} → {{to}} · {{count}} berubah",
+        "changes": "{{from}} → {{to}} · {{count}} perubahan",
         "updated": "Diperbarui {{items}}",
         "youCanceled": "Anda membatalkan {{items}}",
         "youCanceledMany": "Anda membatalkan {{count}} item: {{items}}",

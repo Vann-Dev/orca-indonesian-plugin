@@ -44,6 +44,15 @@ menerjemahkan ulang dari awal.
 
 ## Lisensi
 
+Istilah yang dipakai developer tetap dalam bahasa Inggris, mengikuti cara orang menulisnya di repo
+dan dokumen Indonesia: `checkout`, `branch`, `commit`, `push`, `pull`, `stash`, `rebase`, `merge`,
+`fast-forward`, `stage`, `diff`, `fork`, `pipeline`, `shell`, `hook`, `thread`, `header`, `worker`,
+`review`, `reviewer`, `issue`, `origin`, `upstream`, `repo`, `worktree`, `host`, `plugin`, `sandbox`,
+`prompt`, `token`, `agent`, `skill`. Yang diterjemahkan adalah kalimat dan kata kerja di sekitarnya.
+
+Penulisan ulang istilah ada di `tools/corrections.mjs`, jadi memperbaiki satu istilah cukup mengubah
+file itu lalu menjalankan `node tools/build.mjs` — tanpa menerjemahkan ulang seluruh paket.
+
 MIT — lihat [LICENSE](LICENSE).
 
 ---

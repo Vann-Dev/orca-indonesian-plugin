@@ -81,12 +81,15 @@ for (const p of P.keys()) {
   if (!E.has(p) || !translatable(p)) stale.push(p)
 }
 
+const currentSource = `tools/upstream/${currentOrca}/en.json`
 const report = {
   from: currentOrca,
   to: target,
   version: manifest.version,
   needsBump: manifest.version !== target,
-  coverageBefore: coverage(pack, readJson(`tools/upstream/${currentOrca}/en.json`), isProtected).percent,
+  coverageBefore: fs.existsSync(at(currentSource))
+    ? coverage(pack, readJson(currentSource), isProtected).percent
+    : null,
   added,
   changed,
   removed: [...P.keys()].filter((p) => !E.has(p)),

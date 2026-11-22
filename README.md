@@ -3,8 +3,7 @@
 Terjemahan antarmuka [Orca](https://orca.dev/) ke bahasa Indonesia, dikemas sebagai plugin bahasa.
 Isinya hanya data: tidak ada kode yang dijalankan.
 
-> Paket **tidak resmi** buatan komunitas. Tidak berafiliasi dengan, dan tidak disetujui oleh,
-> Stably / Lovecast Inc.
+> Paket **tidak resmi** buatan komunitas. Tidak berafiliasi dengan Stably / Lovecast Inc.
 
 ## Pasang
 

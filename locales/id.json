@@ -1162,7 +1162,8 @@
         "automationHelp": "Riwayat pengoperasiannya juga dihapus.",
         "automation": "Menghapus otomatisasi",
         "title": "Konfirmasi",
-        "running": "Menutup obrolan atau terminal yang sedang berjalan"
+        "running": "Menutup obrolan atau terminal yang sedang berjalan",
+        "chat": "Menghapus obrolan"
       },
       "pages": {
         "folder": "Folder ruang kerja",
@@ -1755,8 +1756,7 @@
       "saveFailed": "Tidak dapat menyimpan pembaruan otomatis.",
       "title": "Pembaruan otomatis",
       "description": "Pada pemasangan desktop yang didukung, Orca mengunduh pembaruan yang memenuhi syarat pada jadwal pemeriksaan rutinnya dan memulai ulang untuk menginstalnya secara otomatis.",
-      "info": "Tentang pembaruan otomatis",
-      "installingStatus": "sedang diinstal."
+      "info": "Tentang pembaruan otomatis"
     }
   },
   "menu": {
@@ -2262,7 +2262,8 @@
             "new": {
               "tab": {
                 "11cce5cc77": "Tidak dapat meluncurkan {{value0}} di terminal baru.",
-                "a5a1f7033f": "{{value0}} Anda belum terkirim — tempelkan setelah agen siap."
+                "a5a1f7033f": "{{value0}} Anda belum terkirim — tempelkan setelah agen siap.",
+                "agentExited": "Agent keluar sebelum prompt Anda terkirim."
               }
             }
           },
@@ -7940,7 +7941,8 @@
           "running": "Berjalan",
           "stopped": "Dihentikan",
           "title": "Tambahkan WSL distro",
-          "description": "Orca menjalankan servernya di dalam distro, jadi git, file, dan terminal berjalan secara native di Linux. Proyek di distro ini yang Anda buka melalui \\\\wsl.localhost berpindah ke host ini secara otomatis setelah terminalnya menganggur; proyek di drive Windows (/mnt/…) tetap ada di komputer ini. Anda dapat mengembalikan proyek yang dipindahkan dari sidebar.",
+          "descriptionMoveFromSidebar": "Orca menjalankan servernya di dalam distro, jadi git, file, dan terminal berjalan secara native di Linux. Proyek di distro ini yang Anda buka melalui \\\\wsl.localhost tetap ada di komputer ini sampai Anda memindahkannya dari menu sidebar. Proyek di drive Windows (/mnt/…) juga tetap di sini. Anda dapat mengembalikan proyek yang dipindahkan dari sidebar.",
+          "descriptionAutoMove": "Orca menjalankan servernya di dalam distro, jadi git, file, dan terminal berjalan secara native di Linux. Proyek di distro ini yang Anda buka melalui \\\\wsl.localhost pindah ke host ini secara otomatis setelah terminalnya menganggur. Proyek di drive Windows (/mnt/…) tetap di komputer ini. Anda dapat mengembalikan proyek yang dipindahkan dari sidebar.",
           "distro": "Distro",
           "loading": "Mencari distro WSL…",
           "placeholder": "Pilih distro",
@@ -8807,21 +8809,21 @@
         },
         "GeneralUpdateSettingsSection": {
           "8a52ca1d02": "Catatan rilis",
-          "d89806cc89": "siap dipasang.",
-          "a6b37929dc": "Versi",
-          "8311da27ba": "tersedia.",
           "02dc082e70": "Tidak dapat memulai pengunduhan pembaruan.",
           "ceb579abaf": "Periksa pembaruan aplikasi dan instal versi Orca yang lebih baru.",
           "bd79d412f0": "Pemeriksaan pembaruan gagal. {{value0}}",
           "b9ad70c30d": "Kesalahan pembaruan. {{value0}}",
-          "2a48034c4c": "Mengunduh v{{value0}}... {{value1}}%",
           "f40d88390d": "Anda menggunakan versi terbaru.",
           "31fd7150cf": "Memeriksa pembaruan...",
           "d69a09b672": "Pembaruan diperiksa secara otomatis saat peluncuran.",
-          "e3b9d21c07": "tersedia. Perbarui Orca melalui manajer paket sistem Anda — Orca tidak dapat menginstal rilis ini sendiri.",
           "6d27bd46e3": "Periksa pembaruan",
-          "857ca887da": "Unduh pembaruan (",
-          "c0a8f827c7": "Mulai ulang untuk memperbarui ("
+          "downloadUpdate": "Unduh pembaruan",
+          "restartToUpdate": "Mulai ulang untuk memperbarui",
+          "versionAvailable": "Versi {{version}} tersedia.",
+          "externallyManagedVersionAvailable": "Versi {{version}} tersedia. Perbarui Orca melalui manajer paket sistem Anda — Orca tidak dapat menginstal rilis ini sendiri.",
+          "versionReadyToInstall": "Versi {{version}} siap dipasang.",
+          "versionInstalling": "Versi {{version}} sedang dipasang.",
+          "downloadingVersion": "Mengunduh versi {{version}} ({{percent}}%)…"
         },
         "GeneralWorkspaceSettingsSection": {
           "3d538a98f7": "Pilih aplikasi yang tersedia dari menu Buka di ruang kerja.",
@@ -12791,13 +12793,10 @@
         },
         "ReleaseChannelSection": {
           "switchFailed": "Tidak dapat beralih ke build itu.",
-          "title": "Saluran rilis",
+          "title": "Saluran pembaruan",
           "description": "Beralih saluran pembaruan atau beralih ke versi apa pun yang diterbitkan, termasuk versi lama. Penurunan versi diperbolehkan dan bangunan yang belum diperiksa dapat dipatahkan.",
           "devOnly": "Khusus pengembang",
-          "channelAriaLabel": "Perbarui saluran",
-          "hourlyWarning": "Pembuatan kapal setiap jam langsung dari utama tanpa gerbang pengujian, dan yang Windows tidak ditandatangani. Simpan build yang stabil.",
-          "dailyWarning": "Pembuatan kapal harian langsung dari utama tanpa gerbang pengujian, dan yang Windows tidak ditandatangani. Simpan build yang stabil.",
-          "adhocWarning": "Bangunan adhoc berasal dari cabang yang belum mendarat, dan bangunan Windows tidak ditandatangani. Siapa pun yang memotongnya dapat meninggalkannya — simpanlah bangunan yang stabil.",
+          "adhocWarning": "Build Windows tidak ditandatangani. Pembuatnya dapat berhenti merawat sebuah build, jadi simpan build stabil sebagai cadangan.",
           "loadingBuilds": "Memuat build…",
           "noBuilds": "Tidak ada build yang ditemukan",
           "refresh": "Segarkan daftar build",
@@ -12807,9 +12806,21 @@
           "willSwitch": "{{value0}} → {{value1}}",
           "webUnavailable": "Peralihan build hanya tersedia di aplikasi desktop.",
           "devChannelUnsupportedAria": "{{value0}} (hanya {{value1}})",
-          "devChannelUnsupported": "{{value0}} build diproduksi hanya untuk {{value1}}. Linux tetap di Stabil atau RC.",
+          "devChannelUnsupported": "Build {{value0}} hanya dibuat untuk {{value1}}. Linux tetap di {{stable}} atau {{rc}}.",
           "downloadInstaller": "Unduh penginstal",
-          "manualInstallHint": "{{value0}} build tidak ditandatangani pada Windows, sehingga pembaru dalam aplikasi tidak dapat menginstalnya pada build yang ditandatangani. Jalankan penginstal yang diunduh satu kali — Windows akan memperingatkan tentang penerbit yang tidak dikenal — dan setiap peralihan selanjutnya, termasuk kembali ke Stabil, berfungsi dari sini."
+          "manualInstallHint": "Build {{value0}} tidak ditandatangani di Windows, sehingga pembaru dalam aplikasi tidak dapat memasangnya di atas build bertanda tangan. Jalankan penginstal yang diunduh satu kali — Windows akan memperingatkan tentang penerbit yang tidak dikenal — dan setiap peralihan berikutnya, termasuk kembali ke {{stable}}, berfungsi dari sini.",
+          "stableLabel": "Stabil",
+          "stableDescription": "Rilis stabil untuk penggunaan umum.",
+          "rcLabel": "RC",
+          "rcDescription": "Kandidat rilis yang terbit sebelum rilis stabil.",
+          "hourlyLabel": "Setiap jam",
+          "hourlyDescription": "Dibangun setiap jam dari main.",
+          "dailyLabel": "Harian",
+          "dailyDescription": "Dibangun sekali sehari dari main.",
+          "adhocLabel": "Ad hoc",
+          "adhocDescription": "Build sekali pakai dari branch untuk mencoba perubahan sebelum di-merge.",
+          "devChannelPlatforms": "macOS dan Windows",
+          "scheduledWarning": "Build ini dirilis tanpa gate pengujian. Build Windows tidak ditandatangani. Simpan build stabil sebagai cadangan."
         },
         "VoiceMicrophoneSetting": {
           "systemDefault": "Bawaan sistem",
@@ -13118,7 +13129,8 @@
             "updateOrcaOnHost": "Perbarui Orca pada host ini",
             "updateAnyway": "Tetap perbarui",
             "notNow": "Nanti saja",
-            "forceUpdate": "Terminal berjalan di host ini. Mereka terus menjalankan pembaruan, dan panelnya terhubung kembali ketika server Orca dimulai ulang."
+            "forceUpdate": "Terminal berjalan di host ini. Mereka terus menjalankan pembaruan, dan panelnya terhubung kembali ketika server Orca dimulai ulang.",
+            "forceUpdateUncounted": "Orca tidak dapat menghitung terminal di host ini. Pembaruan hanya berjalan jika tidak ada daemon terminal yang berjalan di sana, dan terminal apa pun yang dijalankan server Orca sendiri akan berakhir."
           },
           "description": "Orca menginstal sendiri pada host SSH yang kosong dan terus memperbarui dirinya sendiri.",
           "deploy": {
@@ -13366,7 +13378,11 @@
           "connect": "Hubungkan",
           "forceUpdate": "Paksa pembaruan",
           "turnOn": "Buka Eksperimental",
-          "chip": "WSL"
+          "chip": "WSL",
+          "notStartedAsWslHost": "Server host ini dimulai oleh host SSH, bukan sebagai host WSL, jadi proyek tidak dapat dipindahkan ke sini. Mulai ulang sebagai host WSL untuk memperbaikinya.",
+          "restartAsWslHost": {
+            "button": "Mulai ulang sebagai host WSL"
+          }
         },
         "restartServer": {
           "action": "Mulai ulang server Orca…",
@@ -19780,7 +19796,12 @@
         "placeholder": "Tanya apa saja, @ untuk menyebutkan file, / untuk perintah",
         "loadingFiles": "Memuat file...",
         "noFiles": "Tidak ada file yang cocok",
-        "noMembers": "Tidak ada bot yang cocok",
+        "noBots": "Tidak ada bot",
+        "noBotsMatch": "Tidak ada bot yang cocok dengan \"{{query}}\"",
+        "botCount_one": "{{count}} bot",
+        "botCount_other": "{{count}} bot",
+        "fileCount_one": "{{count}} file",
+        "fileCount_other": "{{count}} file",
         "filesLoadFailed": "Tidak dapat memuat file",
         "attach": "Lampirkan file",
         "startDictation": "Mulai dikte",
@@ -19868,6 +19889,10 @@
         "attachmentOwnerChanged": "Ruang kerja ini mengubah host saat melampirkan — letakkan file lagi.",
         "attachmentUnreadable": "Tidak dapat membaca file yang dijatuhkan.",
         "tooManyAttachments": "Lampirkan {{value0}} atau lebih sedikit file sekaligus.",
+        "permissionAgentSettings": "Pengaturan {{agent}}",
+        "permissionAgentSettingsUsedHint": "Menggunakan pengaturan izin {{agent}} Anda.",
+        "permissionAgentSettingsUnnamedHint": "Menggunakan pengaturan izin {{agent}} Anda. Orca tidak dapat menampilkan mode ini.",
+        "permissionFromAgentSettings": "{{mode}}, dari pengaturan {{agent}}",
         "pasteFailed": "Gagal menempel.",
         "tooManySkills": "Pesan Anda tidak terkirim ke {{agent}}. Simpan maksimal {{limit}} file skill yang dipilih dan coba lagi.",
         "commandAttachmentsUnsupported": "Hapus lampiran sebelum menggunakan perintah sesi obrolan.",
@@ -19879,6 +19904,7 @@
         "imageUnavailable": "Pratinjau tidak tersedia",
         "botFor": "Untuk: {{detail}}",
         "agents": "Agen",
+        "recent": "Terbaru",
         "bots": "Bot",
         "files": "File",
         "skillPillLabel": "Skill: {{name}}",
@@ -19894,7 +19920,7 @@
         "noMatchingChats": "Tidak ada obrolan yang cocok",
         "noOtherChats": "Tidak ada obrolan lain",
         "retryChats": "Coba lagi",
-        "permissionAppliesNextMessage": "{{saved}} berlaku untuk pesan Anda berikutnya; berlari {{active}}",
+        "permissionAppliesNextMessage": "{{saved}} berlaku untuk pesan Anda berikutnya; saat ini memakai {{active}}",
         "modelAndEffortValue": "{{model}} · {{effort}}",
         "modelAndEffort": "Model dan upaya"
       },
@@ -20278,6 +20304,7 @@
         "open": "Buka {{name}}",
         "row": {
           "started": "Dimulai",
+          "forItems": "untuk",
           "reopened": "Dibuka kembali",
           "followedUp": "Mengirim tindak lanjut ke",
           "handedOff": "Diserahkan kepada",
@@ -20725,7 +20752,6 @@
         "copyFailed": "Gagal menyalin",
         "copyIdentity": "Salin {{value0}}",
         "detachedCommit": "commit {{head}} (bukan cabang)",
-        "folder": "Folder",
         "mainCheckout": "Branch Utama",
         "turnWorking": "Agen obrolan ini berfungsi. Ganti cabang setelah gilirannya selesai.",
         "worktree": "Worktree"
@@ -23948,6 +23974,8 @@
       "destinationChanged": "Proyek sebelumnya dari {{distro}} dipindahkan ke host WSL lain. Hubungkan host itu untuk bergerak lebih banyak.",
       "hostUnavailable": "Host {{distro}} tidak terhubung. Hubungkan di Pengaturan, lalu coba lagi.",
       "hostUpdateRequired": "Host {{distro}} menjalankan versi lama Orca. Perbarui di Pengaturan, lalu coba lagi.",
+      "hostLaunchUnproven": "Server Orca di {{distro}} menjalankan versi Orca ini tetapi tidak dapat menerima proyek ini, jadi pembaruan tidak akan membantu. Server itu mungkin dimulai di luar host WSL, misalnya oleh host SSH. Hapus host {{distro}} di Pengaturan, lalu tambahkan lagi.",
+      "hostNotWslLaunched": "Server Orca di {{distro}} tidak dimulai sebagai host WSL (biasanya host SSH untuk distro ini yang memulainya), jadi tidak dapat menerima proyek ini. Pembaruan tidak akan membantu. Pilih Mulai ulang sebagai host WSL pada host {{distro}} di Pengaturan, lalu coba lagi.",
       "terminalsBlocked": "Beberapa terminal, agen, atau otomatisasi dalam proyek ini sedang sibuk. Tidak ada yang dipindahkan.",
       "exportIncomplete": "Beberapa status tersimpan dalam proyek ini belum dapat dipindahkan, jadi tidak ada yang dipindahkan:",
       "exportIncompletePreview": "Beberapa status tersimpan dalam proyek ini belum dapat dipindahkan:",
@@ -25153,7 +25181,8 @@
     },
     "errors": {
       "nameTaken": "Bot lain sudah memiliki nama itu.",
-      "avatarInvalid": "Gambar itu tidak dapat digunakan. Pilih gambar PNG atau JPG."
+      "avatarInvalid": "Gambar itu tidak dapat digunakan. Pilih gambar PNG atau JPG.",
+      "unsavedDrafts": "Foldernya memiliki perubahan editor yang belum disimpan. Simpan atau tutup perubahan itu, lalu hapus lagi."
     },
     "slack": {
       "connection": {
@@ -25384,7 +25413,8 @@
         "removeNote": "Orang tidak bisa lagi menanyakannya di GitHub, dan GitHub orangnya dibersihkan. Aplikasi Orca tetap terpasang.",
         "removeConfirm": "Hapus",
         "finishSetup": "Selesaikan penyiapan",
-        "orgDescription": "{{repos}} · masuk sebagai @{{login}}"
+        "orgDescription": "{{repos}} · masuk sebagai @{{login}}",
+        "addAccount": "Tambahkan akun GitHub lain"
       },
       "account": {
         "defaultBot": "Bot default untuk permintaan saya",
@@ -25396,6 +25426,8 @@
         "unlink": "Putuskan tautan",
         "unlinked": "Tambahkan GitHub dari Konektor bot untuk menautkan akun Anda.",
         "descriptionOnHost": "Bot GitHub pengguna {{host}} berfungsi sebagai dan dimiliki oleh.",
+        "descriptionPlural": "Akun GitHub Anda, agar bot Anda tahu komentar mana yang milik Anda.",
+        "descriptionOnHostPlural": "Pengguna GitHub yang dipakai bot {{host}} untuk bekerja dan yang memilikinya.",
         "linkedAs": "Ditautkan sebagai {{login}}",
         "reconnect": "Hubungkan ulang",
         "linkFromApp": "Tautan GitHub dari Orca di komputer yang dipasangkan ke {{host}}.",
@@ -25793,6 +25825,19 @@
       "filter": "Filter bot",
       "pickTwo": "Pilih 2 bot atau lebih",
       "sameComputer": "Bot dalam satu grup harus berada di komputer yang sama.",
+      "pairedComputersOnly": "Grup hanya dapat menambahkan bot dari komputer yang dipasangkan.",
+      "needsLocalBot": "Grup ini membutuhkan setidaknya satu bot di komputer ini.",
+      "thisComputer": "Komputer ini",
+      "remoteNeedsChat": "Buka obrolan dengan {{name}} sekali, lalu tambahkan ke grup.",
+      "remoteReplied": "Membalas di {{computer}}",
+      "remoteNotice": "Tidak menjawab di {{computer}}",
+      "remoteNotSent": "Tidak terkirim ke {{computer}}",
+      "remoteUnknown": "Pengiriman tidak diketahui",
+      "remoteStopped": "Berhenti di sini",
+      "remoteSending": "Menanyakan di {{computer}}…",
+      "remoteAsked": "Ditanyakan di {{computer}}",
+      "remoteMayAnswer": "Mungkin masih menjawab di {{computer}}.",
+      "remoteShortened": "Diringkas. Jawaban lengkap ada di {{computer}}.",
       "homeUnavailable": "Ruang kerja rumah untuk “{{name}}” di {{host}} tidak tersedia.",
       "createdNotOpened": "Membuat “{{name}}”, tetapi tidak dapat membukanya.",
       "retryOpen": "Coba lagi",
@@ -26276,6 +26321,12 @@
       "linkCopied": "Tautan disalin",
       "webhookNotShared": "Webhook · tidak dibagikan",
       "commandNotShared": "Perintah · tidak dibagikan",
+      "fileLinkNotShared": "Memiliki symlink atau hard link · tidak dibagikan",
+      "outsideSkill": "Dari luar {{project}}",
+      "outsideSkillWith": "Dari luar {{project}} · {{description}}",
+      "tooLargeNotShared": "Terlalu besar · tidak dibagikan",
+      "unreadableNotShared": "Tidak dapat dibaca · tidak dibagikan",
+      "overLimitNotShared": "Melebihi batas skill · tidak dibagikan",
       "notShared": "Tidak dibagikan",
       "includeMemory": "Sertakan memori",
       "countOf": "{{picked}} dari {{all}}",
@@ -26647,7 +26698,10 @@
       "workers": "Worker",
       "waitingCount": "{{count}} menunggu",
       "loading": "Memuat obrolan…",
-      "readFailed": "Tidak dapat membaca obrolan bot ini."
+      "readFailed": "Tidak dapat membaca obrolan bot ini.",
+      "delete": "Hapus obrolan",
+      "open": "Buka",
+      "actions": "Tindakan obrolan"
     },
     "cloudSignIn": {
       "automationScheduledOnly": "Berjalan sesuai jadwalnya saja: acaranya dijeda saat keluar dari Orca",
@@ -26815,6 +26869,8 @@
         "replyOrPick": "Balas dengan kata-kata Anda sendiri, atau pilih salah satu opsi",
         "replyingTo": "Membalas:",
         "hideReplyingTo": "Sembunyikan",
+        "replyingToShow": "Membalas: {{question}}. Tampilkan pertanyaan",
+        "showQuestion": "Tampilkan pertanyaan",
         "replyTo": "Membalas {{name}}…"
       },
       "empty": {
@@ -26908,7 +26964,8 @@
         "firstItem": "Item pertama",
         "lastItem": "Item terakhir",
         "deleted": "Item ini telah dihapus.",
-        "moreLinks": "{{count}} lebih banyak tautan"
+        "moreLinks": "{{count}} lebih banyak tautan",
+        "loading": "Memuat item…"
       },
       "loading": "Memuat item…",
       "readFailed": "Tidak dapat membaca item.",
@@ -27197,6 +27254,7 @@
     "auggieProduct": "Auggie",
     "kiloProduct": "Kilo CLI",
     "mimoCodeProduct": "Kode MiMo",
+    "qwenCodeProduct": "Qwen Code",
     "commandCopied": "Perintah disalin",
     "commandNotCopied": "Tidak dapat menyalin perintah",
     "copyCommand": "Salin",
@@ -27253,5 +27311,18 @@
     "toolsLabel": "Alat aplikasi",
     "workspaces": "Ruang kerja",
     "more": "Lainnya"
+  },
+  "chats": {
+    "delete": {
+      "updateHost": "Perbarui {{host}} untuk menghapus obrolan",
+      "failed": "Tidak dapat menghapus obrolan",
+      "undone": "Tindakan ini tidak dapat dibatalkan.",
+      "title": "Hapus obrolan ini?",
+      "descriptionHost": "Obrolan ini dihapus permanen dari {{host}}. Tindakan ini tidak dapat dibatalkan.",
+      "action": "Hapus",
+      "groupRoom": "Obrolan di ruangan grup tidak dapat dihapus",
+      "workerOwed": "Orkestrasi masih menunggu obrolan ini",
+      "home": "Obrolan Rumah agent terkelola tidak dapat dihapus"
+    }
   }
 }

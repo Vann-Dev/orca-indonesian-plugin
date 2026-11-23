@@ -352,6 +352,11 @@
     "guestRecovery": {
       "failed": "Halaman browser berhenti tiba-tiba. Coba lagi untuk memulihkannya."
     },
+    "serverPage": {
+      "download": {
+        "started": "Mengunduh ke {{path}} di {{host}}"
+      }
+    },
     "clientHosted": {
       "preparationFailed": "Tidak dapat memulai browser jarak jauh di desktop ini. Periksa koneksi berpasangan dan coba lagi.",
       "unavailableTitle": "Browser yang dihosting klien tidak tersedia",
@@ -515,7 +520,9 @@
         "safariFullDiskAccess": "macOS menolak akses ke cookie Safari. Berikan Akses Disk Penuh ke Orca di Pengaturan Sistem → Privasi & Keamanan → Akses Disk Penuh.",
         "macFullDiskAccess": "macOS menolak akses ke {{browser}} cookie. Berikan Akses Disk Penuh ke Orca di Pengaturan Sistem → Privasi & Keamanan → Akses Disk Penuh, lalu mulai ulang Orca.",
         "connectionEnded": "Koneksi ke server ini berakhir selama impor. Hubungkan kembali dan coba lagi.",
-        "serverRepaired": "Server ini dipasangkan kembali selama impor. Coba lagi."
+        "serverRepaired": "Server ini dipasangkan kembali selama impor. Coba lagi.",
+        "sshHostDisconnected": "Halaman ini tidak lagi terhubung melalui host SSH-nya. Hubungkan kembali lalu coba lagi.",
+        "pageChanged": "Halaman ini tertutup atau berganti profil selama impor. Coba lagi."
       },
       "notice": {
         "importedMore_one": "{{count}} cookie yang diimpor untuk {{domains}} +{{more}} lainnya. Muat ulang halaman untuk menggunakannya.",
@@ -523,6 +530,13 @@
         "imported_one": "{{count}} cookie yang diimpor untuk {{domains}}. Muat ulang halaman untuk menggunakannya.",
         "imported_other": "{{count}} cookie yang diimpor untuk {{domains}}. Muat ulang halaman untuk menggunakannya.",
         "failed": "Impor cookie gagal: {{reason}}"
+      },
+      "sshPage": {
+        "label": "Browser di perangkat ini",
+        "destination": "Mengimpor ke browser untuk {{host}}.",
+        "hostAgents": "Agent di {{host}} dapat memakai proses masuk ini, tetapi tidak dapat membaca cookie-nya.",
+        "stored": "Disimpan di browser untuk {{host}}.",
+        "googleCookiesSkipped": "Cookie Google tidak diimpor. Buka halaman yang menjelajah melalui {{host}}, lalu masuk ke Google."
       }
     },
     "passwords": {
@@ -830,7 +844,8 @@
       },
       "userAgent": {
         "title": "Identitas browser",
-        "description": "Pilih agen pengguna untuk setiap profil dan halaman browser. Perubahan akan berlaku setelah restart.",
+        "descriptionPageKinds": "Pilih user agent untuk setiap halaman yang ditampilkan komputer ini, termasuk halaman SSH dan halaman jarak jauh yang disetel ke Perangkat ini. Perubahan berlaku setelah mulai ulang.",
+        "serverPagesNote": "Halaman server (streaming) memakai identitas server itu; atur di sana dengan orca browser identity set.",
         "remoteUnsupported": "Kelola identitas browser di host jarak jauh dengan Orca CLI.",
         "loading": "Memuat…",
         "resetRequired": "Data identitas harus direset secara eksplisit sebelum dapat diubah.",
@@ -932,8 +947,6 @@
       }
     },
     "agents": {
-      "installedRegion": "Agen terpasang",
-      "availableRegion": "Agen tersedia untuk dipasang",
       "permissionsTitle": "Izin",
       "permissionsChoiceExplanation": "Apa yang bisa dilakukan setiap agen tanpa diminta. Anda dapat menetapkan satu agen secara berbeda di bawah.",
       "permissionEachOwn": "Pengaturan masing-masing agen",
@@ -1023,6 +1036,8 @@
       "chatUnavailableOnWindows": "{{value0}} Obrolan belum tersedia di Windows, jadi {{value0}} terbuka di terminal pada host ini. Obrolan di host macOS atau Linux masih berfungsi.",
       "undetectedCommandHint": "Jika {{agent}} CLI dipasang di luar PATH, masukkan path lengkap ke file yang dapat dieksekusi di host ini.",
       "agentActions": "{{agent}} tindakan",
+      "showDetails": "Tampilkan detail",
+      "hideDetails": "Sembunyikan detail",
       "defaultAutoBadge": "Default · Otomatis",
       "newAgentsTitle": "Agen baru",
       "defaultSurfaceServerDescription": "Default untuk agen {{host}} dimulai dengan sendirinya, misalnya dari CLI atau worker orkestrasinya. Agen yang Anda buka dari komputer ini mengikuti pilihan Komputer ini."
@@ -1369,7 +1384,8 @@
         "waiting": "Menunggu instalasi",
         "updateNeeded": "Diperlukan pembaruan"
       },
-      "avatarSlackNote": "Mengubah gambar bot Anda di Slack juga.",
+      "avatarSlackNote": "Slack menerima gambarnya, bukan warna atau pakaiannya.",
+      "avatarSlackNoteColor": "Slack menerima gambarnya, bukan warnanya.",
       "linearStatus": {
         "checking": "Memeriksa",
         "unknown": "Tidak dapat memeriksa",
@@ -1554,7 +1570,8 @@
       "soulEdit": "Sunting",
       "soulStats": "{{lines}} baris · {{words}} kata",
       "soulDoubleClickHint": "Klik dua kali untuk mengedit",
-      "soulEmpty": "Belum ada instruksi. Klik dua kali atau pilih Edit untuk menulis."
+      "soulEmpty": "Belum ada instruksi. Klik dua kali atau pilih Edit untuk menulis.",
+      "teamDisabled": "Bot dimatikan oleh tim Anda."
     },
     "windowMaterial": {
       "description": "Apa yang terlihat di balik terminal tembus cahaya. Perlu dimulai ulang.",
@@ -1589,7 +1606,8 @@
       "keywordSecurity": "keamanan",
       "1b4d825e0e": "Penundaan pembaruan",
       "ab7e864374": "Tentang penundaan pembaruan",
-      "ee1d96f74a": "Lewati penundaan sekali"
+      "ee1d96f74a": "Lewati penundaan sekali",
+      "teamManaged": "Diatur oleh tim Anda"
     },
     "editorFormatOnSave": {
       "description": "Memformat teks sebelum penyimpanan manual dan penyimpanan otomatis. Konfigurasikan perintah pemformat di Pengaturan > Proyek. Mati secara default.",
@@ -1757,6 +1775,25 @@
       "title": "Pembaruan otomatis",
       "description": "Pada pemasangan desktop yang didukung, Orca mengunduh pembaruan yang memenuhi syarat pada jadwal pemeriksaan rutinnya dan memulai ulang untuk menginstalnya secara otomatis.",
       "info": "Tentang pembaruan otomatis"
+    },
+    "cloudConsole": {
+      "manageInBrowser": "Kelola di browser",
+      "openFailed": "Tidak dapat membuka browser. Coba lagi.",
+      "teamAdmin": {
+        "title": "Tim & admin",
+        "description": "Kelola tim Anda di browser."
+      },
+      "signInFailed": "Tidak dapat memasukkan Anda ke konsol",
+      "signInFailedDetail": "Browser Anda tetap membukanya. Masuk di sana untuk melanjutkan."
+    },
+    "mobile": {
+      "teamDisabledRelay": "Orca Relay dimatikan oleh tim Anda. Gunakan LAN."
+    },
+    "computerUse": {
+      "teamDisabled": "Penggunaan Komputer dimatikan oleh tim Anda."
+    },
+    "artifacts": {
+      "teamDisabled": "Berbagi artefak dimatikan oleh tim Anda."
     }
   },
   "menu": {
@@ -5480,6 +5517,8 @@
             "cursorUsageMenu": "Cursor Penggunaan",
             "hiddenUsageProviders": "Juga: {{value0}}",
             "zcodeUsageMenu": "Penggunaan ZCode",
+            "rateLimitResetsUnsupportedWsl_one": "{{count}} reset tersedia · belum di WSL",
+            "rateLimitResetsUnsupportedWsl_other": "{{count}} reset tersedia · belum di WSL",
             "rateLimitResetsAvailable_one": "{{count}} pengaturan ulang batas kecepatan tersedia",
             "rateLimitResetsAvailable_other": "{{count}} tersedia pengaturan ulang batas kecepatan",
             "signedOutAccounts": "Keluar",
@@ -5716,7 +5755,8 @@
             "updatedAgo": "Diperbarui {{time}}",
             "notYetUpdated": "Belum diperbarui",
             "rateLimitResetsAvailable_one": "{{count}} pengaturan ulang batas kecepatan tersedia",
-            "rateLimitResetsAvailable_other": "{{count}} tersedia pengaturan ulang batas kecepatan"
+            "rateLimitResetsAvailable_other": "{{count}} tersedia pengaturan ulang batas kecepatan",
+            "unsupportedOwner": "Penggunaan tidak tersedia untuk {{server}}"
           },
           "SshTargetStatusRow": {
             "sshHost": "SSH host"
@@ -5734,6 +5774,7 @@
             "gotIt": "Mengerti"
           },
           "UsageRosterPanel": {
+            "wslUsageNotShown": "Penggunaan WSL belum ditampilkan",
             "title": "Penggunaan",
             "openDetails": "Buka detail penggunaan",
             "notSignedIn": "belum masuk",
@@ -5817,29 +5858,29 @@
             "server_replaced_explanation": "Orca terhubung ke host sebagai pengguna SSH yang berbeda, atau servernya telah diinstal ulang. Di Pengaturan › Remote Orca Server, buka menu ⋯ di server ini dan pilih Lupakan…, lalu sambungkan host SSH untuk memasangkan dengan servernya saat ini."
           },
           "NativeChatResumeStatusSegment": {
-            "tooltip": "Buka obrolan terputus yang tersedia untuk dilanjutkan",
-            "failedTooltip": "Obrolan Orca tidak dapat dilanjutkan setelah dimulai ulang. Klik untuk detailnya.",
-            "checkTooltip": "Obrolan Orca tidak dapat dilanjutkan, atau tidak dapat dikonfirmasi telah dilanjutkan, setelah dimulai ulang. Klik untuk detailnya.",
-            "resumingTooltip": "Memulihkan obrolan yang terputus dan memintanya untuk melanjutkan…",
-            "resumingProgressLabel": "Melanjutkan obrolan {{value0}}/{{value1}}",
-            "resumingProgressAria": "Melanjutkan obrolan, {{value0}} dari {{value1}} selesai. Klik untuk membuka detailnya.",
-            "resumedTooltip": "Obrolan Orca dilanjutkan setelah restart. Klik untuk melihatnya.",
-            "chatsFailedLabel_one": "{{count}} obrolan gagal dilanjutkan",
-            "chatsFailedLabel_other": "{{count}} obrolan gagal dilanjutkan",
-            "chatsFailedAria_one": "{{count}} obrolan gagal dilanjutkan. Klik untuk detailnya.",
-            "chatsFailedAria_other": "{{count}} obrolan gagal dilanjutkan. Klik untuk detailnya.",
-            "resumedLabelCount_one": "{{count}} obrolan dilanjutkan",
-            "resumedLabelCount_other": "{{count}} obrolan dilanjutkan",
-            "resumedAriaCount_one": "{{count}} obrolan dilanjutkan. Klik untuk melihatnya.",
-            "resumedAriaCount_other": "{{count}} obrolan dilanjutkan. Klik untuk melihatnya.",
-            "checkLabelCount_one": "{{count}} obrolan untuk memeriksa",
-            "checkLabelCount_other": "{{count}} obrolan untuk diperiksa",
-            "checkAriaCount_one": "{{count}} obrolan untuk diperiksa setelah melanjutkan. Klik untuk detailnya.",
-            "checkAriaCount_other": "{{count}} obrolan untuk diperiksa setelah melanjutkan. Klik untuk detailnya.",
-            "labelCount_one": "{{count}} obrolan untuk melanjutkan",
-            "labelCount_other": "{{count}} obrolan untuk dilanjutkan",
-            "ariaLabelCount_one": "{{count}} obrolan tersedia untuk dilanjutkan",
-            "ariaLabelCount_other": "{{count}} obrolan tersedia untuk dilanjutkan"
+            "tooltip": "Buka agent terputus yang dapat dilanjutkan",
+            "failedTooltip": "Agent yang tidak dapat dilanjutkan Orca setelah mulai ulang. Klik untuk detail.",
+            "checkTooltip": "Agent yang tidak dapat dilanjutkan Orca, atau yang belum terkonfirmasi dilanjutkan, setelah mulai ulang. Klik untuk detail.",
+            "resumingTooltip": "Memulihkan agent terputus dan meminta mereka melanjutkan…",
+            "resumingProgressLabel": "Melanjutkan agent {{value0}}/{{value1}}",
+            "resumingProgressAria": "Melanjutkan agent, {{value0}} dari {{value1}} selesai. Klik untuk membuka detail.",
+            "resumedTooltip": "Agent yang dilanjutkan Orca setelah mulai ulang. Klik untuk melihatnya.",
+            "chatsFailedLabel_one": "{{count}} agent gagal dilanjutkan",
+            "chatsFailedLabel_other": "{{count}} agent gagal dilanjutkan",
+            "chatsFailedAria_one": "{{count}} agent gagal dilanjutkan. Klik untuk detail.",
+            "chatsFailedAria_other": "{{count}} agent gagal dilanjutkan. Klik untuk detail.",
+            "resumedLabelCount_one": "{{count}} agent dilanjutkan",
+            "resumedLabelCount_other": "{{count}} agent dilanjutkan",
+            "resumedAriaCount_one": "{{count}} agent dilanjutkan. Klik untuk melihatnya.",
+            "resumedAriaCount_other": "{{count}} agent dilanjutkan. Klik untuk melihatnya.",
+            "checkLabelCount_one": "{{count}} agent untuk diperiksa",
+            "checkLabelCount_other": "{{count}} agent untuk diperiksa",
+            "checkAriaCount_one": "{{count}} agent untuk diperiksa setelah dilanjutkan. Klik untuk detail.",
+            "checkAriaCount_other": "{{count}} agent untuk diperiksa setelah dilanjutkan. Klik untuk detail.",
+            "labelCount_one": "{{count}} agent untuk dilanjutkan",
+            "labelCount_other": "{{count}} agent untuk dilanjutkan",
+            "ariaLabelCount_one": "{{count}} agent tersedia untuk dilanjutkan",
+            "ariaLabelCount_other": "{{count}} agent tersedia untuk dilanjutkan"
           },
           "StatusBarUsageChangeNotices": {
             "compactTitle": "Tampilan penggunaan kini ringkas",
@@ -6668,7 +6709,6 @@
         },
         "skillPlanOpCopy": {
           "busy": "Instalasi lain masih berjalan",
-          "edited": "Skill diedit di luar Orca",
           "install": "Instal",
           "installFor": "Instal untuk {{value0}}",
           "installed": "Terpasang",
@@ -6694,7 +6734,16 @@
           "repairAvailable": "Perbaikan tersedia",
           "installAvailable": "Instal tersedia",
           "otherBuild": "Dipasang oleh versi Orca lainnya",
-          "otherBuildKept": "Disimpan: ditulis oleh versi Orca lain"
+          "otherBuildKept": "Disimpan: ditulis oleh versi Orca lain",
+          "differsFromOrca": "Salinan ini berbeda dari milik Orca",
+          "replaceMovesFolder": "Mengganti memindahkan seluruh folder, termasuk file tambahan apa pun, ke {{folder}}.",
+          "replaceMovesFolderOnHost": "Mengganti memindahkan seluruh folder, termasuk file tambahan apa pun, ke {{folder}} di {{host}}.",
+          "replaceMovesLink": "Mengganti memindahkan tautan ini ke {{folder}}.",
+          "replaceMovesLinkOnHost": "Mengganti memindahkan tautan ini ke {{folder}} di {{host}}.",
+          "replaceMovesFile": "Mengganti memindahkan file ini ke {{folder}}.",
+          "replaceMovesFileOnHost": "Mengganti memindahkan file ini ke {{folder}} di {{host}}.",
+          "replaceMovesCopy": "Mengganti memindahkan salinan ini ke {{folder}}.",
+          "replaceMovesCopyOnHost": "Mengganti memindahkan salinan ini ke {{folder}} di {{host}}."
         },
         "managedRemoval": {
           "removed": "{{removed}} dihapus.",
@@ -6708,6 +6757,11 @@
           "preservedDescription": "Orca memperbarui skill dan menyimpan hasil edit Anda ke {{value0}}.",
           "uncertainTitle": "Orca tidak dapat mengonfirmasi pembaruan skill di {{value0}}",
           "uncertainDescription": "Orca mungkin telah memperbarui skill pada {{value0}} tetapi tidak dapat mengonfirmasi hasilnya. Jika Anda mengedit skill selama pembaruan, salinannya ada di {{value1}}."
+        },
+        "SkillBackupPathLine": {
+          "movedTo": "Salinan lama dipindahkan ke:",
+          "movedToOnHost": "Salinan lama dipindahkan ke {{host}}:",
+          "showFolder": "Tampilkan folder"
         }
       },
       "sidebar": {
@@ -6848,14 +6902,12 @@
           "cloneFolderNotEmpty": "\"{{value0}}\" sudah ada di folder ini, jadi klon ini memerlukan foldernya sendiri."
         },
         "AutoRenameFailedDialog": {
-          "dismissing": "Menutup…",
           "aed1623b1e": "Tutup",
           "eab8b45238": "Salin error",
           "a23b22d16f": "Disalin",
           "74fc00776f": "Detail kesalahan",
           "ca3b225195": "Nama otomatis cabang gagal",
           "couldNotGenerateBranchName": "Orca tidak dapat menghasilkan nama cabang untuk <name>{{name}}</name> dari pesan agen pertama.",
-          "dismiss": "Tutup",
           "tryAgain": "Coba lagi",
           "namingBranch": "Penamaan cabang…",
           "errorDetailsAt": "Detail kesalahan · {{time}}",
@@ -8714,6 +8766,12 @@
             "description": "Bilah ikon di tepi kiri untuk beralih antara ruang kerja dan halaman lain.",
             "copy": "Menambahkan bilah ikon di sebelah kiri daftar ruang kerja. Ruang Kerja, Pengaturan, dan Bantuan dipindahkan ke dalamnya, dan tetap terlihat saat daftar diciutkan.",
             "toggleLabel": "Alihkan rel aplikasi"
+          },
+          "sharedCodexServers": {
+            "title": "Server Codex bersama",
+            "description": "Obrolan Codex dengan pengaturan yang sama berbagi satu proses latar belakang, bukan memulai satu untuk setiap obrolan.",
+            "copy": "Memakai lebih sedikit memori dan memulai obrolan baru lebih cepat. Jika proses bersama mogok, semua obrolannya tersambung kembali. Berlaku untuk obrolan di komputer ini yang dimulai setelah Anda mengubahnya; host jarak jauh dan WSL tetap memakai satu proses per obrolan.",
+            "toggleLabel": "Alihkan server Codex bersama"
           }
         },
         "FloatingWorkspacePane": {
@@ -9541,7 +9599,7 @@
           "connect": "Hubungkan",
           "runtimeReachable": "{{value0}} dapat dijangkau.",
           "updateServer": "Perbarui",
-          "updatingServers": "Memperbarui server…",
+          "updatingServers": "Memperbarui…",
           "sshTunnelRequired": "SSH terowongan diperlukan",
           "accessRevoked": "{{value0}} tidak lagi menerima komputer ini. Pasangkan kembali dengan tautan akses baru.",
           "managedAccessRevoked": "{{value0}} tidak lagi menerima komputer ini, dan Orca tidak dapat memasangkannya lagi melalui SSH. Hubungkan untuk mencoba lagi.",
@@ -9616,7 +9674,7 @@
           "c6c01ac209": "Kendalikan terminal dan agen dari ponsel Anda.",
           "c40dadaac8": "Seluler",
           "c2ee313198": "Gunakan mesin yang ada di atas SSH untuk file, terminal, Git, dan ruang kerja.",
-          "7686cb5c36": "Hubungkan browser ini ke server Orca yang disimpan.",
+          "7686cb5c36": "Hubungkan ke server Orca tersimpan.",
           "8acf3f22e0": "Orca statistik ditambah Claude, Codex, OpenCode, Muse analitik token dan Grok penggunaan langganan.",
           "a737a4bb22": "Pintasan keyboard untuk tindakan umum.",
           "23bf7a1ad4": "Pintasan",
@@ -9661,7 +9719,7 @@
           "linearTitle": "Linear",
           "linearDescription": "Cara kerja Linear di Orca, daftar periksa penyiapan, skill agen, dan contoh petunjuknya.",
           "tasksDescription": "Hubungkan penyedia, instal skill Linear, dan pilih apa yang muncul di Tugas.",
-          "remoteServersDescription": "Jalankan Orca di komputer lain dan kerjakan dari sini.",
+          "remoteServersDescription": "Kerjakan dari mesin lain di sini.",
           "noSettingsFoundForQuery": "Tidak ditemukan pengaturan untuk \"{{value0}}\"",
           "045db77e21": "SSH host",
           "c0900fa64a": "Sumber tugas",
@@ -10900,6 +10958,12 @@
               "navigation": "navigasi",
               "sidebar": "bilah samping",
               "icons": "ikon"
+            },
+            "sharedCodexServers": {
+              "title": "Server Codex bersama",
+              "description": "Obrolan Codex dengan pengaturan yang sama berbagi satu proses latar belakang, bukan memulai satu untuk setiap obrolan.",
+              "codex": "codex",
+              "memory": "memory"
             }
           }
         },
@@ -12888,6 +12952,11 @@
           "title": "Orca Akun",
           "description": "Bagikan pekerjaan secara instan dan jangkau desktop Anda dari Orca Seluler di mana pun Anda berada.",
           "searchDescription": "Masuk atau keluar dari akun yang digunakan oleh Artifacts dan Orca Relay.",
+          "managed": "Tim Anda mengelola sebagian pengaturan Orca.",
+          "deviceReportNamedViewers": "Pemilik dan admin di {{teams}} dapat melihat laporan dari perangkat ini.",
+          "deviceReportViewers": "Pemilik dan admin tim dapat melihat laporan dari perangkat ini.",
+          "reportingDetails": "Detail pelaporan perangkat",
+          "reportingDisclosure": "Tampilan Perangkat menunjukkan versi Orca Anda, saluran rilis, nama perangkat, platform, status pembaruan, plugin wajib yang tidak dapat dipasang Orca, dan kapan perangkat terakhir melapor.",
           "benefitsTitle": "Disertakan dengan akun Anda",
           "artifactsTitle": "Berbagi artefak",
           "artifactsDescription": "Publikasikan file HTML dan Markdown, lalu kelola setiap tautan yang dibagikan dari Orca.",
@@ -13487,12 +13556,11 @@
           "thisComputer": "Komputer ini",
           "defaultHostHelp": "Proyek yang ada tetap pada tempatnya.",
           "defaultHostWebHelp": "Browser ini membuka proyek baru di server yang dipilih.",
-          "updateAll": "Perbarui semua ({{count}})",
+          "updateAll": "Perbarui semua",
           "addServer": "Tambahkan server",
           "moreWaysToAdd": "Lebih banyak cara untuk menambahkan server",
           "pasteAccessLink": "Tempel tautan akses",
           "checkForUpdates": "Periksa pembaruan",
-          "emptyDescription": "Memasangkan kotak pengembang, mesin cloud, atau desktop di rumah. Sesinya tetap berjalan di sana saat komputer ini dalam mode tidur.",
           "movePaused": "Pemindahan dijeda",
           "shareTitle": "Bagikan komputer ini",
           "done": "Selesai",
@@ -13526,7 +13594,13 @@
           "setUp": "Siapkan",
           "overYourSsh": "Melalui koneksi SSH Anda",
           "newerThanApp": "Lebih baru dari aplikasi ini (v{{version}})",
-          "installViaSsh": "Instal melalui SSH"
+          "installViaSsh": "Instal melalui SSH",
+          "shareRowHint": "Izinkan Orca lain terhubung ke sini.",
+          "manageShare": "Kelola",
+          "share": "Bagikan",
+          "serversCaption": "Server",
+          "updatesCount_one": "{{count}} pembaruan",
+          "updatesCount_other": "{{count}} pembaruan"
         },
         "sshBulkRemove": {
           "removedCount": "{{count}} dihapus",
@@ -13569,11 +13643,14 @@
           "attentionUnwritable": "Perlu perhatian · Orca tidak dapat menulis ke {{folder}}",
           "attentionBusy": "Perlu perhatian · Pemasangan skill lainnya masih selesai di sini",
           "attentionUnreadable": "Perlu perhatian · Orca tidak dapat membaca semua file dalam salinan ini",
-          "attentionEdited": "Perlu perhatian · Anda mengedit salinan ini",
           "attentionOther": "Perlu perhatian · Skill lain sudah menggunakan nama ini",
           "attentionSharedNotCurrent": "Perlu perhatian · Salinan bersama yang digunakan folder ini bukan milik Orca",
           "resultUpdateSkippedPlaces": "{{result}} · Pembaruan dilewati di {{places}} tempat: {{reason}}",
-          "resultUpdateSkippedAgent": "{{result}} · Pembaruan dilewati di {{agent}}: {{reason}}"
+          "resultUpdateSkippedAgent": "{{result}} · Pembaruan dilewati di {{agent}}: {{reason}}",
+          "attentionDiffersFromOrca": "Perlu perhatian · Salinan ini berbeda dari milik Orca",
+          "replaceMovesCopyToBackup": "Mengganti memindahkan salinan saat ini, termasuk file tambahan apa pun, ke cadangan.",
+          "replaceMovesCopyToFolder": "Mengganti memindahkan salinan saat ini, termasuk file tambahan apa pun, ke {{folder}}.",
+          "replaceMovesCopyToFolderOnHost": "Mengganti memindahkan salinan saat ini, termasuk file tambahan apa pun, ke {{folder}} di {{host}}."
         },
         "recoverServer": {
           "action": "Pulihkan server…"
@@ -17852,11 +17929,9 @@
         },
         "AutomationRunHistory": {
           "402651bfb6": "Belum berjalan.",
-          "13988187b3": "Token",
           "86a248187e": "Pembelanjaan",
           "149c0b49c7": "Ruang kerja",
           "8faaa00726": "Jalankan",
-          "a00e38d1a3": "—",
           "historyUnavailable": "Riwayat proses tidak tersedia dari host ini. Ini tidak berarti otomatisasi gagal atau tidak berjalan."
         },
         "AutomationSchedulePicker": {
@@ -17920,7 +17995,6 @@
           "missingWorkspace": "Ruang kerja tidak ada",
           "usageUnavailable": "Penggunaan tidak tersedia",
           "noRunUsageYet": "Belum ada penggunaan yang dijalankan",
-          "noWorkspace": "Tidak ada ruang kerja",
           "latestSavedOutput": "Keluaran terbaru yang disimpan",
           "fullOutputUnavailable": "Tidak dapat memuat keluaran lengkap.",
           "retryFullOutput": "Coba lagi",
@@ -18179,7 +18253,6 @@
           "failed7d": "Gagal · 7d",
           "automation": "Otomatisasi",
           "triggered": "Dipicu",
-          "trigger": "Pemicu",
           "loading": "Pemuatan berjalan…",
           "noRuns": "Belum berjalan",
           "emptyDescription": "Proses muncul di sini setelah otomatisasi dipicu.",
@@ -18258,7 +18331,10 @@
         "usage": {
           "tokensAndCost_one": "{{tokens}} tanda · {{cost}}",
           "tokensAndCost_other": "{{tokens}} token · {{cost}}",
-          "costUnavailable": "—"
+          "costUnavailable": "—",
+          "spent": "{{spend}} terpakai",
+          "tokens_one": "{{tokens}} token",
+          "tokens_other": "{{tokens}} token"
         },
         "externalActionDisabled": {
           "actionInProgress": "Tindakan otomatisasi lainnya masih berjalan.",
@@ -18301,7 +18377,6 @@
           "needsCredentials": "{{host}} memerlukan kredensial untuk menyambung kembali, jadi proses ini tidak dimulai.",
           "signIn": "Masuk ke {{host}}",
           "output": "Keluaran",
-          "details": "Detail",
           "runNumber": "Jalankan #{{number}}",
           "runFailed": "Proses gagal.",
           "scheduledAt": "Dijadwalkan {{time}}",
@@ -19017,7 +19092,7 @@
         "ownershipUnknownShort": "Belum siap untuk melanjutkan.",
         "notAttachedShort": "Tidak terhubung kembali.",
         "dispatchRejectedShort": "Agen menolak untuk melanjutkan.",
-        "unsupportedShort": "Orca tidak dapat melanjutkan obrolan ini."
+        "unsupportedShort": "Orca tidak dapat melanjutkan agent ini."
       },
       "web": {
         "preloadApi": {
@@ -19189,32 +19264,32 @@
         "create": "Buat"
       },
       "NativeChatResumeToast": {
-        "resumingOn_one": "Melanjutkan {{count}} obrolan di {{machine}}…",
-        "resumingOn_other": "Melanjutkan {{count}} obrolan di {{machine}}…",
-        "resuming_one": "Melanjutkan {{count}} obrolan…",
-        "resuming_other": "Melanjutkan {{count}} obrolan…",
-        "resumedOn_one": "Melanjutkan {{count}} obrolan di {{machine}}.",
-        "resumedOn_other": "Melanjutkan {{count}} obrolan di {{machine}}.",
-        "resumedUpdate_one": "Melanjutkan {{count}} obrolan setelah pembaruan.",
-        "resumedUpdate_other": "Melanjutkan {{count}} obrolan setelah pembaruan.",
-        "resumedRestart_one": "Melanjutkan {{count}} obrolan setelah restart.",
-        "resumedRestart_other": "Melanjutkan {{count}} obrolan setelah restart.",
-        "partial_one": "Melanjutkan {{resumed}} dari {{total}} obrolan. {{count}} membutuhkanmu.",
-        "partial_other": "Melanjutkan {{resumed}} dari {{total}} obrolan. {{count}} membutuhkanmu.",
-        "stoppedOn_one": "{{count}} obrolan berhenti pada {{machine}}.",
-        "stoppedOn_other": "{{count}} obrolan berhenti pada {{machine}}.",
-        "stoppedUpdate_one": "{{count}} obrolan berhenti ketika Orca diperbarui.",
-        "stoppedUpdate_other": "{{count}} obrolan berhenti ketika Orca diperbarui.",
-        "stoppedRestart_one": "{{count}} obrolan berhenti ketika Orca ditutup.",
-        "stoppedRestart_other": "{{count}} obrolan berhenti ketika Orca ditutup.",
+        "resumingOn_one": "Melanjutkan {{count}} agent di {{machine}}…",
+        "resumingOn_other": "Melanjutkan {{count}} agent di {{machine}}…",
+        "resuming_one": "Melanjutkan {{count}} agent…",
+        "resuming_other": "Melanjutkan {{count}} agent…",
+        "resumedOn_one": "Melanjutkan {{count}} agent di {{machine}}.",
+        "resumedOn_other": "Melanjutkan {{count}} agent di {{machine}}.",
+        "resumedUpdate_one": "Melanjutkan {{count}} agent setelah pembaruan.",
+        "resumedUpdate_other": "Melanjutkan {{count}} agent setelah pembaruan.",
+        "resumedRestart_one": "Melanjutkan {{count}} agent setelah mulai ulang.",
+        "resumedRestart_other": "Melanjutkan {{count}} agent setelah mulai ulang.",
+        "partial_one": "Melanjutkan {{resumed}} dari {{total}} agent. {{count}} menunggu Anda.",
+        "partial_other": "Melanjutkan {{resumed}} dari {{total}} agent. {{count}} menunggu Anda.",
+        "stoppedOn_one": "{{count}} agent berhenti di {{machine}}.",
+        "stoppedOn_other": "{{count}} agent berhenti di {{machine}}.",
+        "stoppedUpdate_one": "{{count}} agent berhenti saat Orca diperbarui.",
+        "stoppedUpdate_other": "{{count}} agent berhenti saat Orca diperbarui.",
+        "stoppedRestart_one": "{{count}} agent berhenti saat Orca ditutup.",
+        "stoppedRestart_other": "{{count}} agent berhenti saat Orca ditutup.",
         "promptsNotResent": "Melanjutkan tidak akan mengirimkan perintah Anda lagi.",
         "resume": "Lanjutkan",
         "details": "Detail",
         "close": "Tutup",
-        "listLabel": "Obrolan",
-        "untitled": "Obrolan tanpa judul",
-        "willAsk": "Orca meminta obrolan untuk dilanjutkan. Pesan antrian dapat dikirim.",
-        "asked": "Orca meminta obrolan untuk dilanjutkan. Pesan antrian dapat dikirim.",
+        "listLabel": "Agent",
+        "untitled": "Agent tanpa judul",
+        "willAsk": "Orca meminta agent melanjutkan. Pesan di antrean mungkin terkirim.",
+        "asked": "Orca meminta agent melanjutkan. Pesan di antrean mungkin terkirim.",
         "resumedAutomatically": "Dilanjutkan secara otomatis.",
         "changeInSettings": "Perubahan dalam Pengaturan",
         "dismissAll": "Tutup semua",
@@ -19539,6 +19614,8 @@
         "agentCommandFailed": "Perintah {{agent}} di Pengaturan → Agen tidak memulai {{agent}}: {{detail}}. Ubah atau setel ulang.",
         "runtimeNotInstalled": "{{agent}} tidak diinstal pada komputer yang menjalankan obrolan ini. Instal dari obrolan dalam versi Orca saat ini.",
         "fullAccessAsRoot": "{{agent}} tidak akan menggunakan akses penuh saat dijalankan sebagai root. Pilih izin lain untuk {{agent}} di Pengaturan → Agen untuk komputer yang menjalankan obrolan ini, lalu mulai obrolan baru.",
+        "botToolsNeedStatusHooks": "Bot {{agent}} memerlukan hook status Agent: itulah cara alat bot bertindak sebagai bot. Aktifkan untuk {{agent}} di Pengaturan → Agent, lalu mulai obrolan baru.",
+        "botToolsGatewayOutdated": "Gateway {{agent}} masih menjalankan salinan plugin Orca yang lebih lama, sehingga alat bot ini tidak dapat bertindak sebagai bot. Jalankan `hermes gateway stop`, lalu mulai obrolan baru.",
         "launchPreparationFailed": "Orca tidak dapat mempersiapkan {{agent}} untuk memulai di komputer yang menjalankan obrolan ini.",
         "conversationOpenElsewhere": "Codex masih membuka percakapan ini. Coba lagi sebentar lagi, atau tutup terminal Codex lainnya.",
         "conversationOpenInTerminal": "{{agent}} sudah menjalankan percakapan ini di terminal lain. Keluar dari {{agent}} di sana atau tutup terminal itu untuk melanjutkan ke sini.",
@@ -20170,7 +20247,17 @@
         "next": "Berikutnya",
         "skip": "Lewati",
         "sending": "Mengirim…",
-        "terminalRequired": "Jawab pertanyaan OMP ini di terminal."
+        "terminalRequired": "Jawab pertanyaan OMP ini di terminal.",
+        "recommended": "Direkomendasikan",
+        "stepAnswered": "{{value0}}, sudah dijawab",
+        "stepOf": "{{value0}} dari {{value1}}",
+        "answered": "Sudah dijawab",
+        "title": "Pertanyaan",
+        "previous": "Pertanyaan sebelumnya",
+        "nextQuestion": "Pertanyaan berikutnya",
+        "back": "Kembali",
+        "skipAndSubmit": "Lewati dan kirim",
+        "stepLabel": "{{value0}}, {{value1}} dari {{value2}}: {{value3}}"
       },
       "ask": {
         "awaiting": "Menunggu masukan pengguna:",
@@ -20181,11 +20268,6 @@
         "questionCount": "{{value0}} pertanyaan"
       },
       "approval": {
-        "reasonSentAsMessage": "Alasan, dikirim sebagai pesan",
-        "answerFailed": "{{name}}: {{detail}}",
-        "answerNotApplied": "{{name}}: jawabannya tidak mencapai prompt ini",
-        "answerWorkerEnded": "{{name}} telah berakhir, jadi perintah ini ditutup",
-        "countdown": "Claude menyangkalnya sendiri di {{time}} jika tidak ada yang menjawab.",
         "record": {
           "showLess": "Tampilkan lebih sedikit",
           "showMore": "Tampilkan lebih banyak",
@@ -20194,19 +20276,6 @@
           "youAllowedForSession": "Anda mengizinkan <tool>{{tool}}</tool> untuk sesi ini",
           "youDenied": "Anda menolak <tool>{{tool}}</tool>",
           "youAnswered": "Anda menjawab <tool>{{tool}}</tool>: {{answer}}",
-          "youAllowedFor": "Anda mengizinkan <tool>{{tool}}</tool> untuk <task>{{task}}</task>",
-          "youDeniedFor": "Anda menolak <tool>{{tool}}</tool> untuk <task>{{task}}</task>",
-          "coordinatorAllowed": "Koordinator mengizinkan <tool>{{tool}}</tool> untuk <task>{{task}}</task>",
-          "coordinatorDenied": "Koordinator ditolak <tool>{{tool}}</tool> untuk <task>{{task}}</task>",
-          "allowedInTerminal": "<tool>{{tool}}</tool> untuk <task>{{task}}</task> diperbolehkan di terminalnya",
-          "deniedInTerminal": "<tool>{{tool}}</tool> untuk <task>{{task}}</task> ditolak di terminalnya",
-          "allowedInChat": "<tool>{{tool}}</tool> untuk <task>{{task}}</task> diperbolehkan dalam obrolannya",
-          "deniedInChat": "<tool>{{tool}}</tool> untuk <task>{{task}}</task> ditolak dalam obrolannya",
-          "autoDenied": "<tool>{{tool}}</tool> untuk <task>{{task}}</task> ditolak secara otomatis setelah pukul 2:00",
-          "waitsInTerminal": "<tool>{{tool}}</tool> untuk <task>{{task}}</task> menunggu di terminalnya",
-          "workerEnded": "<tool>{{tool}}</tool> untuk <task>{{task}}</task> ditutup: worker berakhir",
-          "closedUnnamed": "<tool>{{tool}}</tool> untuk <task>{{task}}</task> ditutup tanpa rekaman jawaban",
-          "coordinatorReason": "Alasan koordinator",
           "coordinatorAllowedHere": "Koordinator diperbolehkan <tool>{{tool}}</tool>",
           "coordinatorDeniedHere": "Koordinator ditolak <tool>{{tool}}</tool>",
           "allowedUnnamed": "Diizinkan <tool>{{tool}}</tool>",
@@ -20311,6 +20380,13 @@
           "task": "Tugas dari",
           "update": "Pembaruan dari",
           "message": "Pesan dari"
+        },
+        "kind": {
+          "started": "Dimulai",
+          "reopened": "Dibuka kembali",
+          "followedUp": "Tindak lanjut",
+          "handedOff": "Diserahkan",
+          "task": "Tugas"
         }
       },
       "goal": {
@@ -20370,7 +20446,6 @@
         "steerHint": "Kirim sekarang, selagi agen tetap bekerja",
         "sendHint": "Kirim pesan ini sekarang",
         "delete": "Hapus",
-        "moreActions": "Tindakan lainnya",
         "moveChanged": "Antrian berubah sebelum perpindahan ini. Coba seret pesan itu lagi.",
         "reorderHint": "Pull untuk menyusun ulang, atau gunakan tombol panah Atas dan Bawah.",
         "reorderMessage": "Menyusun ulang pesan",
@@ -20380,7 +20455,6 @@
         "listLabel": "Pesan dalam antrean",
         "alreadySent": "Pesan ini sudah terkirim.",
         "withdrawnHold": "Berhenti sebelum dikirim",
-        "pausedSendFailed": "Tidak dapat mengirim — tekan Kirim untuk mencoba lagi.",
         "paused": "Dijeda",
         "resume": "Lanjutkan",
         "fromSender": "Dari",
@@ -20395,13 +20469,17 @@
         "editGonePrompt": "Pesan ini sudah terkirim atau dihapus. Hasil edit Anda akan ada di kotak obrolan setelah Anda menjawab agen.",
         "imageCount_one": "{{count}} gambar",
         "imageCount_other": "{{count}} gambar",
-        "collapse": "Ciutkan",
-        "expand": "Perluas",
         "queued": "Dalam antrean",
         "clearAll": "Hapus semua",
         "editReturned": "Hasil edit Anda ada di kotak obrolan.",
         "commandsUnsupported": "Perintah tidak dapat disimpan dalam pesan antri.",
-        "imageCount": "{{count}} gambar"
+        "imageCount": "{{count}} gambar",
+        "queuedCount_one": "{{count}} dalam antrean",
+        "queuedCount_other": "{{count}} dalam antrean",
+        "couldNotSend": "Tidak dapat mengirim",
+        "retry": "Coba lagi",
+        "showLessRows": "Tampilkan lebih sedikit",
+        "moreRows": "+{{value0}} lagi"
       },
       "thought": "Pemikiran",
       "thoughtForDuration": "Berpikir untuk {{duration}}",
@@ -20626,6 +20704,7 @@
         "stopUnconfirmed": "Orca tidak dapat memastikan worker berhenti."
       },
       "connectorAsker": {
+        "anApp": "Sebuah aplikasi",
         "directMessage": "{{source}} DM",
         "earlierMessages": "{{count}} pesan sebelumnya di thread",
         "earlierMessages_one": "{{count}} pesan sebelumnya di thread",
@@ -20679,7 +20758,6 @@
       },
       "toolAdded": {
         "removed": "Dihapus",
-        "heading": "Menambahkan alat",
         "remove": "Hapus",
         "added": "Ditambahkan"
       },
@@ -20926,6 +21004,8 @@
       "sideChat": {
         "description": "Ajukan pertanyaan sampingan pada cabang di samping obrolan ini",
         "argumentHint": "<question>",
+        "pill": "Obrolan samping",
+        "placeholder": "Ajukan pertanyaan samping",
         "notReady": "Obrolan sampingan belum siap. Coba lagi sebentar lagi.",
         "replyRunning": "Tersedia saat balasan ini selesai.",
         "noReply": "Tersedia setelah balasan pertama.",
@@ -21019,6 +21099,7 @@
             "review_requested": "review diminta",
             "assigned": "Ditugaskan",
             "ci_failed": "CI gagal",
+            "ci_finished": "CI selesai",
             "ci_passed": "CI lulus",
             "pr_conflicted": "Konflik",
             "pr_closed": "Ditutup",
@@ -21171,6 +21252,108 @@
         "agyItem": "login agy sendiri",
         "agyHint": "Obrolan ini menjalankan Antigravity CLI pada host ini. Metode lain berlaku untuk obrolan baru.",
         "confirmSignIn": "Masuk dengan Google?"
+      },
+      "pairedServerAsk": {
+        "always": "Selalu izinkan {{server}}",
+        "deny": "Tolak",
+        "once": "Izinkan sekali",
+        "thisServer": "server ini",
+        "title": "{{from}} ingin mengirim pesan ke {{to}} di komputer ini",
+        "titlePills": "<from>{{from}}</from> ingin mengirim pesan ke <to>{{to}}</to> di komputer ini"
+      },
+      "clientAsk": {
+        "declined": "Ditolak",
+        "notConnected": "Tidak terhubung",
+        "pairedComputer": "Komputer tersanding",
+        "waitingForYou": "Menunggu Anda",
+        "waitingOn": "Menunggu persetujuan di {{computer}}"
+      },
+      "dock": {
+        "label": "Kotak pesan dan prompt"
+      },
+      "googleOffer": {
+        "useAccount": "Gunakan {{email}} untuk Google.",
+        "useAnother": "Gunakan akun lain",
+        "reconnect": "Hubungkan kembali {{email}}",
+        "use": "Gunakan {{email}}",
+        "staysDefault": "{{email}} tetap menjadi default"
+      },
+      "workerDock": {
+        "commandOutputPending": "Output perintah belum tersedia.",
+        "retry": "Coba lagi",
+        "dismiss": "Tutup",
+        "openWorker": "Buka worker",
+        "remoteOwner": "Hentikan atau bersihkan ini dari komputer tempatnya berjalan",
+        "restore": "Tampilkan di dock lagi",
+        "unavailable": "Status worker tidak tersedia",
+        "empty": "0 worker",
+        "clearAllLabel_one": "Bersihkan worker yang gagal",
+        "clearAllLabel_other": "Bersihkan semua {{count}} worker yang gagal",
+        "clearAll": "Bersihkan semua",
+        "attention": "Perlu perhatian",
+        "openWork": "Buka pekerjaan",
+        "orderHeld": "Urutan ditahan",
+        "statusChanged": "Status berubah",
+        "loadingWorker": "Memuat worker…",
+        "resultUnavailable": "Hasil worker tidak tersedia",
+        "showLatest": "Tampilkan terbaru",
+        "workersRegion": "Worker",
+        "timeUnavailable": "Waktu status tidak tersedia",
+        "doneResult": "Selesai · buka hasil",
+        "clearName": "Bersihkan {{name}}",
+        "stopUnavailable": "Hentikan {{name}} · {{title}} tidak tersedia · {{reason}}",
+        "stopName": "Hentikan {{name}} · {{title}}",
+        "stopping": "Menghentikan…",
+        "clear": "Bersihkan",
+        "stop": "Hentikan",
+        "coordinator": "Menunggu koordinator",
+        "starting": "Memulai",
+        "running": "Berjalan",
+        "idle": "Menganggur",
+        "saving": "Menyimpan hasil…",
+        "failed": "Gagal",
+        "unexpected": "Berhenti tak terduga",
+        "unavailableState": "Status tidak tersedia",
+        "needsYou": "Menunggu Anda",
+        "worker": "Worker",
+        "agent": "Agent",
+        "command": "Perintah",
+        "workflow": "Workflow",
+        "monitor": "Monitor",
+        "task": "Tugas",
+        "taskCount_one": "{{count}} tugas",
+        "taskCount_other": "{{count}} tugas",
+        "workerCount_one": "{{count}} worker",
+        "workerCount_other": "{{count}} worker",
+        "commandCount_one": "{{count}} perintah",
+        "commandCount_other": "{{count}} perintah",
+        "workflowCount_one": "{{count}} workflow",
+        "workflowCount_other": "{{count}} workflow",
+        "monitorCount_one": "{{count}} monitor",
+        "monitorCount_other": "{{count}} monitor",
+        "agentCount_one": "{{count}} agent",
+        "agentCount_other": "{{count}} agent",
+        "stoppedByYou": "Dihentikan oleh Anda",
+        "finished": "Selesai",
+        "failedCount": "{{count}} gagal",
+        "needsYouCount": "{{count}} menunggu Anda",
+        "showName": "Tampilkan {{name}}",
+        "startedAt": "· Dimulai {{time}} · {{elapsed}} berlalu",
+        "contactUnavailable": "· Kontak terakhir yang terkonfirmasi tidak tersedia",
+        "runningCount": "{{count}} berjalan",
+        "cleared_one": "1 worker dibersihkan",
+        "cleared_other": "{{count}} worker dibersihkan"
+      },
+      "webhookSetup": {
+        "heading": "Siapkan webhook",
+        "keyAndSecret": "Kunci dan signing secret",
+        "copiedReceipt": "✓ URL disalin",
+        "signingSecret": "Signing secret",
+        "addSecret": "Tambah…",
+        "noSecret": "Tidak ada",
+        "sampleCall": "Contoh panggilan",
+        "sampleNote": "Memulai run sungguhan",
+        "send": "Kirim"
       }
     },
     "tab": {
@@ -21209,9 +21392,6 @@
     },
     "workspace": {
       "cleanup": {
-        "presentationFixtures": {
-          "reviewAlphaCleanup": "Tinjau pembersihan alfa"
-        },
         "browse": {
           "noSizes": "Belum ada ukuran ruang kerja yang diukur.",
           "noSizesDescription": "Ukuran muncul setelah penggunaan disk diukur.",
@@ -21401,7 +21581,8 @@
           "restoreFailed": "Tidak bisa berhenti mengabaikan {{value0}}",
           "ignoreTooltip": "Abaikan: lewati penghapusan massal",
           "stopIgnoring": "Berhenti mengabaikan",
-          "stopIgnoringNamed": "Berhenti mengabaikan {{value0}}"
+          "stopIgnoringNamed": "Berhenti mengabaikan {{value0}}",
+          "clearSelection": "Bersihkan pilihan"
         },
         "scan": {
           "progress": "Memindai ruang kerja ({{value0}}/{{value1}})",
@@ -21873,7 +22054,6 @@
           "unsavedEditorChanges": "Perubahan editor yang belum disimpan",
           "uncommittedChanges": "Perubahan yang belum di-commit",
           "unpushedCommits": "Commit yang belum di-push",
-          "ignoredFiles": "File yang diabaikan",
           "gitUnknown": "Tidak dapat membaca status Git",
           "archiveUnavailable": "Arsip tidak tersedia",
           "archiveScript": "Memiliki skrip arsip",
@@ -22085,6 +22265,7 @@
       "retry": "Coba lagi instalasi",
       "unavailable": "{{agent}} tidak tersedia di host ini.",
       "update": "Perbarui",
+      "updateTo": "Perbarui ke {{version}}",
       "verifying": "Memeriksa runtime yang diunduh.",
       "installTitle": "Instal {{agent}} untuk mulai mengobrol",
       "continueTitle": "Instal {{agent}} untuk melanjutkan",
@@ -22153,7 +22334,9 @@
         "keepOpen": "Tetap terbuka",
         "bannerRunning": "Worker orkestrasi · Tutup 2 menit setelah selesai",
         "bannerFinished": "Worker orkestrasi selesai · Ditutup dalam {{countdown}}",
-        "temporaryBadge": "Sementara"
+        "boundRunning": "Tutup bersama {{worker}}",
+        "boundFinished": "{{worker}} selesai · Tutup dalam {{countdown}}",
+        "boundFallbackName": "worker-nya"
       }
     },
     "bots": {
@@ -22939,7 +23122,8 @@
         "agentNotSupported": "agen tidak didukung"
       },
       "consentTranscriptIndex": "Pencarian cocok dengan detail sesi dan pratinjau pesan. Untuk menelusuri percakapan lengkap, aktifkan penelusuran teks lengkap (mengindeks transkrip lokal, tidak disunting). Perangkat yang dipasangkan juga dapat mencarinya.",
-      "noMatchesToShow": "Tidak ada sesi yang cocok untuk ditampilkan."
+      "noMatchesToShow": "Tidak ada sesi yang cocok untuk ditampilkan.",
+      "titleMatchesOnly": "Tidak ada kecocokan teks lengkap. Menampilkan sesi yang judul atau detailnya cocok."
     }
   },
   "sessionHistory": {
@@ -23047,7 +23231,8 @@
       "open": "Buka pratinjau",
       "copyPath": "Salin jalur",
       "setting": "Pratinjau gambar yang ditempel dan dilepas",
-      "settingDescription": "Tampilkan gambar lokal terkini di header panel setelah Anda menempelkan atau melepaskannya."
+      "settingDescription": "Tampilkan gambar lokal terkini di header panel setelah Anda menempelkan atau melepaskannya.",
+      "copied": "Disalin"
     },
     "sessionSaveFailure": {
       "title": "Tidak dapat menyimpan sesi terminal",
@@ -23092,6 +23277,11 @@
       "learnMore": "Pelajari lebih lanjut",
       "dontShowAgain": "Jangan tampilkan lagi",
       "dismiss": "Tutup"
+    },
+    "fileDrop": {
+      "copyUploadedPaths": "Salin path",
+      "copyUploadedPathsFailed": "Tidak dapat menyalin path yang diunggah.",
+      "uploadedWithoutPaste": "Unggahan selesai, tetapi path-nya tidak dapat ditempel ke terminal."
     },
     "newerDaemonBanner": {
       "failedTitle": "Tidak dapat membuka kembali terminal ini",
@@ -23301,7 +23491,8 @@
       "googleSignInAgyOption": "Masuk dengan menjalankan agy",
       "googleSignInOrca": "proses masuk bawaan Orca",
       "googleSignInOrcaOption": "Masuk melalui browser Anda di sini; tidak diperlukan bantuan",
-      "googleSignInUpdateFailed": "Tidak dapat mengubah cara Antigravity masuk dengan Google."
+      "googleSignInUpdateFailed": "Tidak dapat mengubah cara Antigravity masuk dengan Google.",
+      "chatDescriptionKeyOnAgy": "Obrolan baru berjalan di agy dengan proses masuk di bawah, terpisah dari agy di terminal."
     },
     "claude": {
       "added": "Akun ditambahkan. Pilih untuk menggunakannya pada Claude berikutnya Anda mulai.",
@@ -23375,7 +23566,14 @@
         "title": "Claude jajak pendapat penggunaan",
         "description": "Menggunakan kode masuk Claude Anda untuk memeriksa penggunaan, kredit, dan akun tidak aktif. Matikan untuk menggunakan pembacaan terminal langsung saja.",
         "about": "Tentang Claude jajak pendapat penggunaan"
-      }
+      },
+      "organizationSuffix": "Organisasi ···{{suffix}}",
+      "personalOrganization": "Pribadi"
+    },
+    "codex": {
+      "usageSignInLabel": "Sudah keluar",
+      "usageSignInMessage": "Masuk untuk melihat penggunaan.",
+      "usageSignInSettingsMessage": "Buka Pengaturan → Akun untuk masuk."
     },
     "hostSignIn": {
       "copied": "Disalin",
@@ -23474,7 +23672,8 @@
       "organizations": "Organisasi",
       "listFailed": "Gagal membuat daftar proyek",
       "detailsFailed": "Gagal memuat detail",
-      "viewFailed": "Gagal mengambil tampilan proyek"
+      "viewFailed": "Gagal mengambil tampilan proyek",
+      "chooseProject": "Pilih proyek"
     },
     "error": {
       "notFoundState": "Tidak dapat menemukan proyek atau tampilan ini.",
@@ -23725,12 +23924,19 @@
       "rateLimitedInMinutes_one": "GitHub batas kecepatan tercapai. Coba lagi sekitar {{count}} menit.",
       "rateLimitedInMinutes_other": "GitHub batas kecepatan tercapai. Coba lagi dalam waktu sekitar {{count}} menit.",
       "rateLimitedInMinutesSignedOut_one": "GitHub batas kecepatan tercapai. Coba lagi dalam waktu sekitar {{count}} menit, atau jalankan `gh auth login` agar Orca dapat menggunakan batas tertinggi akun Anda.",
-      "rateLimitedInMinutesSignedOut_other": "GitHub batas kecepatan tercapai. Coba lagi dalam waktu sekitar {{count}} menit, atau jalankan `gh auth login` agar Orca dapat menggunakan batas tertinggi akun Anda."
+      "rateLimitedInMinutesSignedOut_other": "GitHub batas kecepatan tercapai. Coba lagi dalam waktu sekitar {{count}} menit, atau jalankan `gh auth login` agar Orca dapat menggunakan batas tertinggi akun Anda.",
+      "teamUpdatePolicy": "Tim Anda mengelola pembaruan Orca."
     },
     "automatic": {
       "downloading": "Mengunduh Orca {{version}}…",
       "installing": "Memasang Orca {{version}}…",
       "restarting": "Orca akan dimulai ulang secara otomatis."
+    },
+    "emergencyRequired": {
+      "summary": "Orca {{version}} diperlukan. Mulai ulang untuk memperbarui."
+    },
+    "teamRequired": {
+      "summary": "Tim Anda mewajibkan Orca {{version}}. Mulai ulang untuk memperbarui."
     },
     "remoteUpdateBusy": "Server ini sedang diperbarui. Periksa lagi setelah selesai."
   },
@@ -24633,7 +24839,12 @@
         "approval": "Agen menunggu Anda menyetujui suatu tindakan.",
         "signIn": "Agen sedang menunggu Anda untuk masuk.",
         "prompt": "Agen berhenti pada prompt yang membutuhkan jawaban Anda."
-      }
+      },
+      "botsOff": "Bot dimatikan di Pengaturan, jadi Orca melewati run ini.",
+      "botsOffByTeam": "Bot dimatikan oleh tim Anda, jadi Orca melewati run ini.",
+      "botMissing": "Bot yang menjalankan otomasi ini sudah tidak ada.",
+      "botFolderMissing": "Folder bot sudah tidak tersedia.",
+      "botPaused": "{{bot}} dijeda, jadi Orca melewati run ini."
     },
     "extraAgentArgs": {
       "errors": {
@@ -24740,7 +24951,8 @@
     "eventsWontFire": "Berjalan sesuai jadwalnya saja: memerlukan konektor {{connectors}}",
     "webhooksOff": "Tidak dapat berjalan: Orca Cloud belum mendukung webhook",
     "webhooksOffScheduled": "Hanya berjalan sesuai jadwalnya: Orca Cloud belum mendukung webhook",
-    "openConnectors": "Buka konektor"
+    "openConnectors": "Buka konektor",
+    "hostUnreachable": "Tidak dapat menghubungi {{host}}. Coba lagi setelah kembali."
   },
   "codeHost": {
     "errors": {
@@ -25114,6 +25326,17 @@
       "pictureUpload": "Gambar Anda",
       "pictureColor": "Warna latar belakang",
       "pictureColorCustom": "Warna khusus",
+      "pictureOutfit": "Pakaian",
+      "outfitNone": "Tanpa pakaian",
+      "outfitTie": "Dasi",
+      "outfitDetective": "Detektif",
+      "outfitHardHat": "Helm proyek",
+      "outfitReviewer": "Reviewer",
+      "outfitNightShift": "Shift malam",
+      "outfitArtist": "Seniman",
+      "outfitScientist": "Ilmuwan",
+      "outfitParty": "Pesta",
+      "outfitSecurity": "Keamanan",
       "colorSky": "Langit",
       "colorWhite": "Putih",
       "colorLavender": "Lavender",
@@ -25148,6 +25371,16 @@
       "uploadPasteOrDrop": "atau unggah, tempel, atau letakkan milik Anda sendiri",
       "pasteHint": "Tempel gambar dengan {{shortcut}}",
       "changePicture": "Ubah gambar",
+      "validation": {
+        "botsUnavailable": "Bot tidak tersedia",
+        "computerOffline": "Offline",
+        "findingAgents": "Mencari agent…",
+        "identityTooLong": "Terlalu panjang",
+        "noAgents": "Tidak ada agent",
+        "noAgentsAvailable": "Tidak ada agent yang tersedia",
+        "pictureLoading": "Memuat gambar…",
+        "updateOrca": "Perbarui Orca"
+      },
       "parts": {
         "olderHost": "{{host}} memerlukan pembaruan Orca untuk menambah skill dan jadwal",
         "skillsKept_one": "skill {{kept}}/{{count}}",
@@ -25162,7 +25395,9 @@
         "needsApps_one": "Membutuhkan aplikasi {{count}}",
         "needsApps_other": "Membutuhkan {{count}} aplikasi",
         "setUpInFirstChat": "Pengaturan di obrolan pertama"
-      }
+      },
+      "identityWatches": "Memantau {{what}}",
+      "identityReports": "Melaporkan {{what}}"
     },
     "section": {
       "title": "Bot",
@@ -25256,6 +25491,7 @@
       "idle": "Menganggur",
       "needsYou": "Butuh Anda",
       "askedCoordinator": "Bertanya ke {{name}}",
+      "waitsOnBackground": "Menunggu tugas latar belakangnya",
       "chat": "Obrolan"
     },
     "workspaces": {
@@ -25414,7 +25650,8 @@
         "removeConfirm": "Hapus",
         "finishSetup": "Selesaikan penyiapan",
         "orgDescription": "{{repos}} · masuk sebagai @{{login}}",
-        "addAccount": "Tambahkan akun GitHub lain"
+        "addAccount": "Tambahkan akun GitHub lain",
+        "refresh": "Muat ulang"
       },
       "account": {
         "defaultBot": "Bot default untuk permintaan saya",
@@ -25468,6 +25705,7 @@
         "githubReviewRequested": "Saat review diminta",
         "githubAssigned": "Saat ditugaskan pada GitHub",
         "githubCiFailed": "Ketika CI gagal",
+        "githubCiFinished": "Saat CI selesai",
         "githubCiPassed": "Saat CI lewat",
         "githubPrConflicted": "Saat pull request mengalami konflik",
         "githubPrClosed": "Saat pull request ditutup",
@@ -25704,7 +25942,8 @@
       "fallbackNamed": "Webhook “{{automation}}” sudah aktif. Salin URL-nya dari Orca di komputer: Pengaturan › Bot › {{bot}} › Webhook. Untuk menjeda atau menghapusnya, tanyakan {{bot}} di sini.",
       "fallback": "Webhook ini aktif. Salin URL-nya dari Orca di komputer, di pengaturan bot di bawah Webhook. Untuk menjeda atau menghapusnya, tanyakan pada bot di sini.",
       "copiedNoClear": "Kosongkan clipboard Anda setelah selesai; browser ini tidak dapat berjanji untuk menghapusnya untuk Anda.",
-      "pausedSignedOut": "{{hooks}} · dijeda saat keluar"
+      "pausedSignedOut": "{{hooks}} · dijeda saat keluar",
+      "copied": "Disalin"
     },
     "upNext": {
       "looked": "Tampak {{time}}",
@@ -25808,6 +26047,7 @@
       "peerAsked": "{{from}} bertanya {{to}}",
       "peerTold": "{{from}} diberitahu {{to}}",
       "peerFollowedUp": "{{bot}} ditindaklanjuti",
+      "peerReadItems": "{{bot}} membaca pembaruan pada item-itemnya",
       "handoffsPaused": "Dijeda setelah {{count}} serah terima. Balas untuk melanjutkan.",
       "peerReplyRead": "{{reader}} baca balasan {{peer}}",
       "deleteTitle": "Hapus {{name}}?",
@@ -25877,11 +26117,12 @@
         "members": "Anggota",
         "membersCount": "Anggota {{count}}",
         "noMembers": "Tidak ada bot di grup ini"
-      }
+      },
+      "deliveryUnconfirmed": "Pengiriman belum terkonfirmasi",
+      "starting": "Memulai…",
+      "notStarted": "Belum dimulai"
     },
     "google": {
-      "copied": "Disalin. Kirimkan ke admin Google Anda.",
-      "checksAgain": "Orca cek lagi sendiri.",
       "file": {
         "tooLarge": "File ini terlalu besar untuk dijadikan file aplikasi Google."
       },
@@ -25892,11 +26133,11 @@
         "removeNote": "Bot berhenti menggunakan akun ini di sini. Setelan bot tetap ada, jadi Connect Google mengaktifkannya kembali.",
         "confirm": "Putuskan",
         "remove": "Hapus dari komputer ini",
-        "revoke": "Hapus dan cabut di Google"
+        "revoke": "Hapus dan cabut di Google",
+        "promotes": "{{email}} menjadi default.",
+        "removeOneNote": "Bot berhenti memakai akun ini di sini."
       },
-      "account": "Google · {{email}}",
       "reconnect": "Hubungkan ulang",
-      "addService": "Tambahkan layanan",
       "thisComputer": "komputer ini",
       "thisServer": "server ini",
       "title": "Google",
@@ -25916,11 +26157,6 @@
         "signInButton": "Masuk lagi"
       },
       "signIn": "Masuk ke Google",
-      "waiting": "Selesai menghubungkan Google di browser Anda.",
-      "waitingHowPersonal": "Pilih akun Anda dan klik Izinkan. Google meminta Anda untuk mengonfirmasi terlebih dahulu: klik Lanjutkan.",
-      "waitingHow": "Pilih akun Anda dan klik Izinkan.",
-      "openAgain": "Buka lagi",
-      "disconnectMenu": "Putuskan",
       "shareButton": "Bagikan pengaturan",
       "setUpTime": "Sekitar 10 menit",
       "haveSetupFile": "Punya file setup dari tim Anda?",
@@ -25948,7 +26184,15 @@
       "setUp": "Siapkan Google",
       "setUpOpens": "Membuka obrolan {{bot}}",
       "createBotToSetUp": "Bot baru",
-      "pasteHint": "Setelah Anda mengklik Izinkan, halaman tidak dapat dimuat. Tempelkan alamatnya di sini."
+      "defaultBadge": "Default",
+      "row": {
+        "signedOut": "Dikeluarkan oleh Google"
+      },
+      "setDefault": "Jadikan default",
+      "accountActions": "Tindakan {{email}}",
+      "addServiceMenu": "Tambahkan layanan…",
+      "updateToAdd": "Perbarui Orca di {{host}} untuk menambah akun Google lain.",
+      "account": "Google · {{email}}"
     },
     "googleSetup": {
       "receipt": {
@@ -26267,7 +26511,398 @@
         "ops": "Ops",
         "personal": "Asisten pribadi"
       },
-      "paletteLine": "Templat bot"
+      "paletteLine": "Templat bot",
+      "pr-review": {
+        "name": "Review pull request",
+        "line": "Me-review pull request yang diminta untuk Anda review dan menampilkan perubahan berisiko.",
+        "firstChat": "Menanyakan repo mana yang harus dicakup, lalu me-review pull request terbuka yang menunggu review Anda dan memposting temuannya di sini, dengan file dan baris. Bot ini tidak berkomentar di GitHub sampai Anda mengizinkannya.",
+        "watches": "Pull request yang menunggu review Anda, di repo yang Anda pilih",
+        "does": "Me-review masing-masing dan menampilkan perubahan berisiko serta test yang hilang, dengan file dan baris.",
+        "reports": "Di sini, saat review diminta",
+        "example1": "#4121: penghitung retry tidak pernah direset, jadi gangguan kedua menghentikan retry.",
+        "example2": "Tidak ada test yang mencakup jalur timeout baru.",
+        "events": {
+          "review-requested": {
+            "trigger": "Saat Anda diminta me-review pull request",
+            "action": "Review lalu posting di sini"
+          }
+        }
+      },
+      "bug-investigation": {
+        "name": "Investigasi bug",
+        "line": "Mereproduksi bug yang dilaporkan dan menemukan titik mulainya.",
+        "firstChat": "Beri laporan bug atau tautan issue. Bot ini memulai agent di ruang kerja baru yang menuliskan cara mereproduksinya, lalu melaporkan penyebabnya. Bot hanya menulis perbaikan setelah Anda setuju.",
+        "watches": "Laporan bug yang Anda berikan, dan issue Linear yang ditugaskan kepada Anda",
+        "does": "Mereproduksi bug di ruang kerja baru, menemukan titik mulainya, dan mengusulkan perbaikan.",
+        "reports": "Di sini, saat sudah ada repro dan penyebab",
+        "example1": "ORC-640 berhasil direproduksi di Windows: paste menghilangkan baris terakhir jika tidak ada baris baru.",
+        "example2": "Penyebab: penanda akhir paste terkirim sebelum chunk terakhir. Mulai perbaikan?",
+        "events": {
+          "linear-assigned": {
+            "trigger": "Saat issue Linear ditugaskan kepada Anda",
+            "action": "Selidiki"
+          }
+        }
+      },
+      "dependency-updates": {
+        "name": "Pembaruan dependensi",
+        "line": "Memeriksa paket usang dan rentan lalu mengusulkan upgrade.",
+        "firstChat": "Menampilkan paket usang dan rentan di repo yang Anda pilih, paling mendesak lebih dulu. Setelah Anda setuju, agent membuka satu pull request per kelompok.",
+        "watches": "Paket di repo yang Anda pilih",
+        "does": "Menampilkan advisory dan paket usang, paling mendesak lebih dulu; meng-upgrade satu kelompok per pull request setelah disetujui.",
+        "reports": "Di sini, setiap Senin pukul 09.00",
+        "example1": "1 advisory: http-client 6.19 punya perbaikan tingkat tinggi di 6.21.",
+        "example2": "4 upgrade minor dapat masuk dalam satu pull request.",
+        "schedules": {
+          "weekly-check": {
+            "when": "Setiap Senin pukul 09.00",
+            "what": "Advisory dan versi mayor baru"
+          }
+        }
+      },
+      "unreviewed-work": {
+        "name": "Pekerjaan agent yang belum di-review",
+        "line": "Daftar harian pekerjaan agent yang sudah selesai tetapi belum dilihat siapa pun.",
+        "firstChat": "Menampilkan ruang kerja yang agent-nya sudah selesai dengan perubahan yang belum Anda review atau jadikan pull request. Orca sudah memberi tahu saat agent menunggu Anda; ini mencakup yang sudah selesai.",
+        "watches": "Ruang kerja Orca Anda",
+        "does": "Menampilkan ruang kerja yang agent-nya sudah selesai dengan perubahan yang belum di-review atau dibuatkan pull request.",
+        "reports": "Di sini, hari kerja pukul 09.00",
+        "example1": "mobile-pairing selesai kemarin dengan diff 340 baris, tanpa pull request.",
+        "example2": "2 lainnya selesai minggu ini.",
+        "schedules": {
+          "daily-list": {
+            "when": "Hari kerja pukul 09.00",
+            "what": "Pekerjaan selesai yang menunggu review"
+          }
+        }
+      },
+      "workspace-cleanup": {
+        "name": "Pembersihan ruang kerja",
+        "line": "Menemukan ruang kerja yang sudah selesai atau ditinggalkan lalu menawarkan untuk menghapusnya.",
+        "firstChat": "Menampilkan ruang kerja yang pull request-nya sudah di-merge atau yang tidak berubah selama dua minggu, beserta perubahan yang belum di-commit. Bot hanya menghapus yang Anda pilih.",
+        "watches": "Ruang kerja Orca Anda dan pull request-nya",
+        "does": "Menampilkan ruang kerja yang sudah selesai atau ditinggalkan, beserta perubahan yang belum di-commit; hanya menghapus yang Anda pilih.",
+        "reports": "Di sini, setiap Jumat pukul 16.00",
+        "example1": "6 ruang kerja selesai: pull request-nya di-merge minggu ini.",
+        "example2": "2 folder tidak berubah sejak 20 Okt.",
+        "schedules": {
+          "weekly-list": {
+            "when": "Setiap Jumat pukul 16.00",
+            "what": "Ruang kerja yang siap dihapus"
+          }
+        }
+      },
+      "security-check": {
+        "name": "Pemeriksaan keamanan",
+        "line": "Memeriksa perubahan yang sudah di-merge untuk mencari secret yang bocor dan kode berisiko.",
+        "firstChat": "Me-review pull request yang di-merge minggu lalu di repo yang Anda pilih dan menampilkan hal yang perlu diperiksa ulang, dengan file dan baris.",
+        "watches": "Pull request yang di-merge di repo yang Anda pilih",
+        "does": "Memeriksanya untuk secret bocor, injection, auth yang hilang, dan default yang tidak aman.",
+        "reports": "Di sini, setiap Senin pukul 09.00 dan saat pull request di-merge",
+        "example1": "#4133 mencatat seluruh header request, termasuk auth token.",
+        "example2": "Tidak ada lainnya minggu ini.",
+        "schedules": {
+          "weekly-review": {
+            "when": "Setiap Senin pukul 09.00",
+            "what": "Perubahan yang di-merge minggu ini"
+          }
+        },
+        "events": {
+          "pr-merged": {
+            "trigger": "Saat pull request di-merge",
+            "action": "Periksa"
+          }
+        }
+      },
+      "release": {
+        "name": "Kesiapan rilis",
+        "line": "Memantau apa yang menghambat rilis berikutnya.",
+        "firstChat": "Menyimpan daftar kesiapan singkat: pemeriksaan yang gagal, pull request yang menunggu review, penghambat yang masih terbuka.",
+        "watches": "Pull request, pemeriksaan, dan ruang kerja",
+        "does": "Menyimpan daftar kesiapan singkat: pemeriksaan yang gagal, pull request yang menunggu review, penghambat yang masih terbuka.",
+        "reports": "Di sini, pagi hari kerja",
+        "example1": "1.5 terhambat satu pemeriksaan yang gagal: typecheck di #4121.",
+        "example2": "Dua pull request masih perlu di-review: #4108, #4130.",
+        "schedules": {
+          "readiness-list": {
+            "when": "Hari kerja pukul 09.00",
+            "what": "Daftar kesiapan"
+          }
+        }
+      },
+      "release-notes": {
+        "name": "Catatan rilis",
+        "line": "Menyusun draf catatan rilis berikutnya dari pull request yang di-merge.",
+        "firstChat": "Menemukan tag rilis terakhir dan menyusun draf catatan dalam tiga kelompok: baru, diperbaiki, diubah. Anda menyuntingnya di sini.",
+        "watches": "Pull request yang di-merge sejak rilis terakhir",
+        "does": "Menyusun draf catatan rilis untuk pengguna dalam tiga kelompok: baru, diperbaiki, diubah.",
+        "reports": "Di sini, saat Anda meminta",
+        "example1": "Draf untuk 1.5: 4 baru, 9 diperbaiki, 2 diubah.",
+        "example2": "Perubahan terbesar: bot dapat berbagi skill."
+      },
+      "ci-failures": {
+        "name": "Kegagalan CI",
+        "line": "Menjelaskan pemeriksaan yang gagal dan menyimpan daftar pemeriksaan yang flaky.",
+        "firstChat": "Membaca check run dua minggu terakhir dan menampilkan yang flaky, lalu menjelaskan setiap pemeriksaan yang gagal di pull request terbuka Anda. Bot baru memulai perbaikan setelah Anda setuju.",
+        "watches": "Check run di repo yang Anda pilih",
+        "does": "Membedakan pemeriksaan flaky dari kegagalan sungguhan, menjelaskan setiap kegagalan, dan menyimpan daftar pemeriksaan flaky.",
+        "reports": "Di sini, setiap Senin pukul 09.00 dan saat pemeriksaan gagal",
+        "needsSetup": "GitHub belum dapat memfilter kegagalan berdasarkan branch, jadi bot melihat setiap kegagalan di repo dan melewati yang tidak penting. Setiap kegagalan memakan satu giliran.",
+        "example1": "#4130 typecheck: satu export diganti nama, dua lokasi pemanggilan terlewat. Perbaikannya satu commit.",
+        "example2": "Paling flaky minggu ini: test terminal-resize, 4 dari 30 run.",
+        "schedules": {
+          "flaky-list": {
+            "when": "Setiap Senin pukul 09.00",
+            "what": "Pemeriksaan flaky"
+          }
+        },
+        "events": {
+          "check-failed": {
+            "trigger": "Saat pemeriksaan gagal",
+            "action": "Beri tahu apakah flaky atau sungguhan"
+          }
+        }
+      },
+      "deploy-watch": {
+        "name": "Pemantauan deploy",
+        "line": "Memposting apa yang berubah di setiap deploy dan menandai yang gagal.",
+        "firstChat": "Memberi Anda alamat otomasi yang dapat dipanggil alat deploy Anda, lalu merangkum setiap deploy dari pull request yang dibawanya.",
+        "watches": "Panggilan dari alat deploy Anda",
+        "does": "Merangkum setiap deploy dari pull request yang dibawanya, dan menandai yang gagal.",
+        "reports": "Di sini, setelah setiap deploy",
+        "needsSetup": "Tidak ada konektor alat deploy: Anda menambahkan alamat otomasi ke alat deploy secara manual.",
+        "example1": "Deploy produksi 14:02: 5 pull request, termasuk perbaikan retry relay.",
+        "example2": "Deploy staging gagal di migrate: kolom sudah ada.",
+        "events": {
+          "deploy-called": {
+            "trigger": "Saat alat deploy Anda memanggil",
+            "action": "Rangkum deploy"
+          }
+        }
+      },
+      "support": {
+        "name": "Triase dukungan",
+        "line": "Menyimpan daftar pertanyaan yang belum dijawab siapa pun.",
+        "firstChat": "Menampilkan pertanyaan yang belum dijawab di kanal Slack yang Anda pilih, dengan tautan, dan mencatat mana yang sudah punya issue.",
+        "watches": "Kanal Slack yang Anda pilih",
+        "does": "Menampilkan pertanyaan yang belum dijawab beserta tautannya, dan mencatat mana yang sudah punya issue Linear.",
+        "reports": "Di sini, setiap 2 jam pada hari kerja",
+        "example1": "3 pertanyaan baru di #help sejak 11.00. Terlama: SSH remote terus terputus, 2 jam.",
+        "example2": "“Bisakah saya mengekspor bot?” sudah punya SUP-212.",
+        "schedules": {
+          "unanswered": {
+            "when": "Hari kerja, setiap 2 jam dari pukul 09.00 sampai 17.00",
+            "what": "Pertanyaan yang belum dijawab"
+          }
+        }
+      },
+      "feedback": {
+        "name": "Ringkasan umpan balik",
+        "line": "Mengubah umpan balik menjadi daftar tema mingguan.",
+        "firstChat": "Mengelompokkan umpan balik sebulan terakhir di kanal yang Anda pilih menjadi tema, dengan jumlah dan kutipan.",
+        "watches": "Kanal umpan balik Slack",
+        "does": "Mengelompokkan umpan balik menjadi tema dengan kutipan dan jumlah, serta menautkan issue Linear yang ada.",
+        "reports": "Di sini, setiap Senin pukul 09.00",
+        "example1": "Tema teratas: paste di terminal Windows, 7 orang, tertaut ke ORC-640.",
+        "example2": "Baru minggu ini: 3 orang meminta ekspor bot.",
+        "schedules": {
+          "weekly-themes": {
+            "when": "Setiap Senin pukul 09.00",
+            "what": "Tema minggu ini"
+          }
+        }
+      },
+      "bug-intake": {
+        "name": "Penerimaan laporan bug",
+        "line": "Mengubah laporan bug di Slack menjadi issue terlacak dengan langkah reproduksi.",
+        "firstChat": "Membaca kanal yang Anda pilih dan menyusun draf issue untuk setiap laporan bug baru. Bot baru mengajukannya setelah Anda menyetujui.",
+        "watches": "Kanal Slack tempat bug dilaporkan",
+        "does": "Menyusun draf issue Linear dengan langkah reproduksi untuk setiap laporan bug; mengajukannya setelah disetujui.",
+        "reports": "Di sini, saat bug dilaporkan",
+        "example1": "Draf: “Terminal membeku setelah sleep di macOS 27”, langkah dari thread.",
+        "example2": "Mungkin duplikat ORC-702.",
+        "events": {
+          "bug-posted": {
+            "trigger": "Saat seseorang memposting di kanal bug Anda",
+            "action": "Susun draf issue"
+          }
+        }
+      },
+      "issue-triage": {
+        "name": "Triase issue GitHub",
+        "line": "Memberi label pada issue baru, menemukan duplikat, dan menanyakan detail yang hilang.",
+        "firstChat": "Menelusuri issue baru sepekan terakhir di repo yang Anda pilih dan mengusulkan label serta duplikat di sini.",
+        "watches": "Issue baru di repo yang Anda pilih",
+        "does": "Mengusulkan label dan duplikat, serta menampilkan detail yang hilang, untuk setiap issue baru.",
+        "reports": "Di sini, saat issue dibuka",
+        "example1": "#2210: bug, windows, duplikat #2188.",
+        "example2": "#2214 tidak punya versi atau langkah. Tanyakan?",
+        "events": {
+          "issue-opened": {
+            "trigger": "Saat issue dibuka",
+            "action": "Usulkan label dan duplikat"
+          }
+        }
+      },
+      "briefing": {
+        "name": "Ringkasan proyek",
+        "line": "Ringkasan mingguan tentang proyek yang Anda pilih.",
+        "firstChat": "Menuliskan apa yang berubah, apa yang terhambat, dan apa yang perlu keputusan untuk proyek yang Anda pilih.",
+        "watches": "Proyek Linear dan repo GitHub",
+        "does": "Menuliskan apa yang berubah, apa yang terhambat, dan apa yang perlu keputusan.",
+        "reports": "Di sini, setiap Jumat pukul 15.00",
+        "example1": "Mobile v2: 6 issue ditutup, 2 menunggu desain.",
+        "example2": "Perlu keputusan: ORC-902, teks izin push.",
+        "schedules": {
+          "weekly-brief": {
+            "when": "Setiap Jumat pukul 15.00",
+            "what": "Ringkasan"
+          }
+        }
+      },
+      "docs-upkeep": {
+        "name": "Pemeliharaan dokumen",
+        "line": "Menandai dokumen yang tidak lagi sesuai dengan kode yang di-merge.",
+        "firstChat": "Membaca pull request yang di-merge minggu lalu dan menampilkan halaman dokumen yang kini berisi hal keliru.",
+        "watches": "Pull request yang di-merge dan dokumen di repo yang Anda pilih",
+        "does": "Menampilkan halaman dokumen yang tidak lagi sesuai dengan yang di-merge, beserta baris yang kini keliru.",
+        "reports": "Di sini, setiap Rabu pukul 10.00",
+        "example1": "docs/remote.md masih menyebut SSH perlu mulai ulang; #4108 menghapusnya.",
+        "example2": "1 halaman lain menyebut nama pengaturan lama.",
+        "schedules": {
+          "weekly-docs": {
+            "when": "Setiap Rabu pukul 10.00",
+            "what": "Dokumen yang perlu diperbarui"
+          }
+        }
+      },
+      "spec-drafts": {
+        "name": "Penyusunan spesifikasi",
+        "line": "Mengubah diskusi menjadi spesifikasi singkat yang dapat Anda bagikan.",
+        "firstChat": "Beri thread Slack atau dokumen. Bot menyusun spesifikasi satu halaman dan menanyakan hal yang masih terbuka.",
+        "watches": "Thread Slack dan dokumen yang Anda berikan",
+        "does": "Menyusun spesifikasi satu halaman: masalah, keputusan, cakupan, pertanyaan terbuka.",
+        "reports": "Di sini, saat Anda meminta",
+        "example1": "Draf: “Berbagi bot v2”. 3 keputusan, 2 pertanyaan terbuka.",
+        "example2": "Disimpan ke Drive Anda sebagai dokumen."
+      },
+      "backlog-cleanup": {
+        "name": "Pembersihan backlog",
+        "line": "Menemukan issue usang, duplikat, dan tanpa pemilik.",
+        "firstChat": "Menampilkan issue yang tidak disentuh selama 60 hari, kemungkinan duplikat, dan issue tanpa pemilik, untuk tim yang Anda pilih.",
+        "watches": "Issue Linear untuk tim yang Anda pilih",
+        "does": "Menampilkan issue usang, kemungkinan duplikat, dan issue tanpa pemilik.",
+        "reports": "Di sini, setiap tanggal 1",
+        "example1": "14 issue tidak disentuh sejak Agustus.",
+        "example2": "ORC-511 dan ORC-688 tampak seperti bug yang sama.",
+        "schedules": {
+          "monthly-list": {
+            "when": "Tanggal 1 setiap bulan pukul 09.00",
+            "what": "Daftar pembersihan"
+          }
+        }
+      },
+      "incident-notes": {
+        "name": "Catatan insiden",
+        "line": "Menyimpan timeline di kanal insiden dan menyusun draf tulisannya.",
+        "firstChat": "Mengikuti kanal insiden yang Anda pilih dan thread-nya, menyimpan timeline bertanda waktu, dan menyusun draf tulisan tanpa menyalahkan siapa pun saat insiden berakhir.",
+        "watches": "Kanal insiden yang Anda pilih dan thread-nya",
+        "does": "Menyimpan timeline bertanda waktu, lalu menyusun draf tulisan tanpa menyalahkan siapa pun.",
+        "reports": "Di sini, selama dan setelah insiden",
+        "example1": "14:02 alert terpicu; 14:09 rollback dimulai; 14:21 error kembali normal.",
+        "example2": "Draf tulisan siap.",
+        "events": {
+          "incident-posted": {
+            "trigger": "Saat seseorang memposting di kanal insiden",
+            "action": "Tambahkan ke timeline"
+          }
+        }
+      },
+      "oncall-handoff": {
+        "name": "Serah terima on-call",
+        "line": "Ringkasan mingguan alert, insiden, dan tindak lanjut yang masih terbuka.",
+        "firstChat": "Membaca kanal alert dan issue insiden Anda sepekan terakhir lalu menulis serah terimanya.",
+        "watches": "Kanal alert dan issue insiden Anda",
+        "does": "Merangkum alert dan insiden minggu ini, serta menampilkan tindak lanjut yang masih terbuka.",
+        "reports": "Di sini, setiap Jumat pukul 16.00",
+        "needsSetup": "Tidak ada konektor alat paging: bot hanya membaca alert di tempat alert diposting di Slack.",
+        "example1": "12 alert, 2 insiden. Alert disk di cell-3 terpicu 5 kali.",
+        "example2": "3 tindak lanjut masih terbuka.",
+        "schedules": {
+          "weekly-handoff": {
+            "when": "Setiap Jumat pukul 16.00",
+            "what": "Serah terima"
+          }
+        }
+      },
+      "followup": {
+        "name": "Balasan yang belum Anda kirim",
+        "line": "Mengingatkan balasan yang masih harus Anda kirim.",
+        "firstChat": "Menemukan pertanyaan untuk Anda yang belum dijawab, dan hal yang Anda bilang akan lakukan, di thread Slack dan komentar issue.",
+        "watches": "Thread Slack dan komentar Linear",
+        "does": "Menemukan pertanyaan untuk Anda yang belum dijawab, dan hal yang Anda bilang akan lakukan.",
+        "reports": "Di sini, setiap hari pukul 16.00",
+        "example1": "Anda berkata kepada rekan tim “Saya cek besok” di #design, 2 hari lalu.",
+        "example2": "ORC-881 punya pertanyaan untuk Anda dari kemarin.",
+        "schedules": {
+          "daily-owed": {
+            "when": "Setiap hari pukul 16.00",
+            "what": "Yang masih harus Anda kirim"
+          }
+        }
+      },
+      "standup": {
+        "name": "Catatan standup harian",
+        "line": "Apa yang Anda dan agent Anda kerjakan kemarin, dan apa selanjutnya.",
+        "firstChat": "Menulis catatan kemarin dari ruang kerja Anda, pull request yang di-merge, dan issue yang dipindahkan. Anda menyalinnya ke tempat tim Anda membacanya.",
+        "watches": "Ruang kerja, pull request, dan issue Anda",
+        "does": "Menulis catatan kemarin dan rencana hari ini.",
+        "reports": "Di sini, hari kerja pukul 09.00",
+        "example1": "Kemarin: merge #4121, retry relay. Agent menyelesaikan 2 ruang kerja.",
+        "example2": "Hari ini: ORC-702, review #4130.",
+        "schedules": {
+          "daily-notes": {
+            "when": "Hari kerja pukul 09.00",
+            "what": "Catatan standup"
+          }
+        }
+      },
+      "email-digest": {
+        "name": "Ringkasan email",
+        "line": "Dua kali sehari, email yang perlu balasan dari Anda.",
+        "firstChat": "Membaca kotak masuk hari ini dan menampilkan email yang perlu balasan Anda, terbaru lebih dulu. Bot tidak pernah mengirim email.",
+        "watches": "Kotak masuk Anda",
+        "does": "Menampilkan email yang perlu balasan Anda, terbaru lebih dulu. Tidak pernah mengirim email.",
+        "reports": "Di sini, hari kerja pukul 09.00 dan 14.00",
+        "example1": "2 perlu balasan: tanggal review keamanan, dan pertanyaan invoice.",
+        "example2": "14 newsletter dilewati.",
+        "schedules": {
+          "morning": {
+            "when": "Hari kerja pukul 09.00",
+            "what": "Email yang menunggu Anda"
+          },
+          "afternoon": {
+            "when": "Hari kerja pukul 14.00",
+            "what": "Email yang menunggu Anda"
+          }
+        }
+      },
+      "meeting-prep": {
+        "name": "Persiapan rapat",
+        "line": "Sebelum setiap rapat, issue, pull request, dan dokumen yang dibahas.",
+        "firstChat": "Melihat kalender hari ini dan menulis catatan persiapan singkat untuk setiap rapat.",
+        "watches": "Kalender Anda",
+        "does": "Sebelum setiap rapat, menampilkan issue, pull request, dan dokumen yang dibahas.",
+        "reports": "Di sini, sebelum setiap rapat",
+        "example1": "Sinkronisasi mobile pukul 11: ORC-902 perlu keputusan; #4130 menunggu Anda.",
+        "example2": "Dokumen: “Teks izin push”.",
+        "events": {
+          "meeting-soon": {
+            "trigger": "15 menit sebelum rapat",
+            "action": "Catatan persiapan"
+          }
+        }
+      }
     },
     "options": {
       "title": "Opsi bot",
@@ -26429,7 +27064,20 @@
         "github": "Sebutan dan peristiwa tentang isu dan PR",
         "slack": "Pesan dan sebutan",
         "linear": "Issue dan sebutan yang ditetapkan",
-        "google": "Gmail, Kalender, dan Drive, sesuai keinginan Anda"
+        "google": "Gmail, Kalender, dan Drive, sesuai keinginan Anda",
+        "vercel": "Periksa deploy dan baca log-nya",
+        "sentry": "Selidiki error dan peristiwa di baliknya",
+        "datadog": "Cari di log, metrik, dan monitor",
+        "posthog": "Kueri analitik produk dan feature flag",
+        "cloudflare": "Kelola Workers, DNS, dan bagian lain akun",
+        "supabase": "Kueri database dan kelola proyek",
+        "neon": "Jalankan SQL dan kelola branch Postgres",
+        "netlify": "Deploy situs dan periksa build-nya",
+        "gitlab": "Baca dan perbarui issue serta merge request",
+        "context7": "Dokumen dan contoh terkini untuk library kode",
+        "atlassian": "Issue Jira dan halaman Confluence",
+        "notion": "Cari, baca, dan sunting halaman",
+        "stripe": "Cari pembayaran, pelanggan, dan langganan"
       },
       "mcp": {
         "adding": "Menambahkan {{app}}…",
@@ -26459,7 +27107,33 @@
       "unsupported": "Aplikasi ini belum didukung",
       "cantReach": "Tidak dapat mencapai {{app}}",
       "accessNotAllowed": "Akses tidak diizinkan.",
-      "signInExpired": "Masa masuk sudah habis."
+      "signInExpired": "Masa masuk sudah habis.",
+      "composioLine": {
+        "outlook": "Email, kalender, dan kontak",
+        "microsoft_teams": "Obrolan, kanal, dan rapat",
+        "notion": "Halaman, database, dan komentar",
+        "jira": "Issue, proyek, dan sprint",
+        "hubspot": "Kontak, perusahaan, deal, dan tiket",
+        "salesforce": "Akun, lead, dan peluang",
+        "asana": "Tugas, proyek, dan komentar",
+        "airtable": "Basis, tabel, dan catatan",
+        "zendesk": "Tiket, pengguna, dan artikel pusat bantuan",
+        "figma": "File, komentar, dan komponen",
+        "stripe": "Pembayaran, pelanggan, dan invoice",
+        "dropbox": "File dan folder",
+        "one_drive": "File dan folder",
+        "confluence": "Halaman, space, dan komentar",
+        "clickup": "Tugas, daftar, dan dokumen",
+        "monday": "Board, item, dan pembaruan",
+        "intercom": "Percakapan, kontak, dan artikel",
+        "zoom": "Rapat, rekaman, dan transkrip",
+        "calendly": "Acara, undangan, dan tautan pemesanan",
+        "trello": "Board, daftar, dan kartu",
+        "sentry": "Issue, peristiwa, dan rilis",
+        "box": "File dan folder",
+        "miro": "Board, sticky note, dan frame",
+        "reddit": "Postingan, komentar, dan subreddit"
+      }
     },
     "panel": {
       "idle": "Menganggur",
@@ -26496,18 +27170,21 @@
       "actionFor": "{{action}}: {{title}}",
       "worker": "Worker: {{name}}",
       "permissionTool": "Izin · {{tool}}",
-      "whereItRuns": "{{need}} · buka di tempat ia dijalankan"
+      "whereItRuns": "{{need}} · buka di tempat ia dijalankan",
+      "pairedAsk": "{{from}} ingin mengirim pesan ke {{name}}",
+      "pairedAskDetail": "Izin · Pesan {{name}}"
     },
     "upcoming": {
       "empty": "Tanyakan {{name}} dalam obrolan untuk menjalankan sesuatu sesuai jadwal atau ketika sesuatu terjadi.",
-      "every2h": "setiap 2 jam",
-      "every4h": "setiap 4 jam",
+      "every2hWindow": "{{from}} sampai {{to}}, setiap 2 jam",
+      "every4hWindow": "{{from}} sampai {{to}}, setiap 4 jam",
       "lookFirst": "Setelah obrolan pertama Anda · lalu {{every}}",
-      "mornings": "setiap pagi",
+      "morningsAt": "setiap pagi pukul {{time}}",
       "tidyUp": "Memori rapi",
       "today": "Hari ini pukul {{time}}",
       "tomorrow": "Besok pukul {{time}}",
-      "twiceDaily": "dua kali sehari",
+      "twiceDailyAt": "dua kali sehari, {{first}} dan {{second}}",
+      "weekdays": "hari kerja, {{schedule}}",
       "tidyNightAfter": "Setiap malam setelah {{from}}, atau setelah komputer ini aktif",
       "tidyWeekAfter": "Seminggu sekali setelah {{from}}, atau setelah komputer ini aktif",
       "lastNeededSignIn": "Proses terakhirnya dihentikan saat login",
@@ -26618,7 +27295,6 @@
         "accountChangedHere": "Proses masuk Orca komputer ini berubah. Mulai lagi.",
         "notRouted": "Halaman {{service}} harus dibuka di browser Orca untuk {{host}}. Hubungkan kembali {{host}}, lalu mulai lagi."
       },
-      "thisComputer": "komputer ini",
       "pageUnrouted": "Tidak dapat mencapai {{host}} untuk membuka halaman ini di browsernya. Sambungkan kembali {{host}}, lalu coba lagi.",
       "botWorkspaceUnavailable": "Ruang kerja agen ini tidak tersedia di sini sekarang, sehingga halaman tidak dapat dibuka di dalamnya.",
       "signIn": {
@@ -26696,12 +27372,12 @@
       "runningCount": "{{count}} berjalan",
       "showMoreCount": "Tampilkan {{count}} lagi",
       "workers": "Worker",
-      "waitingCount": "{{count}} menunggu",
       "loading": "Memuat obrolan…",
       "readFailed": "Tidak dapat membaca obrolan bot ini.",
       "delete": "Hapus obrolan",
       "open": "Buka",
-      "actions": "Tindakan obrolan"
+      "actions": "Tindakan obrolan",
+      "needsYouCount": "{{count}} menunggu Anda"
     },
     "cloudSignIn": {
       "automationScheduledOnly": "Berjalan sesuai jadwalnya saja: acaranya dijeda saat keluar dari Orca",
@@ -26727,7 +27403,8 @@
     "tabs": {
       "homeDetail": "Beranda: obrolan utama bot. Memori, otomatisasi, dan permintaan dari orang lain ada di sini.",
       "sideDetail": "Obrolan sampingan: topik terpisah dengan bot ini.",
-      "homeBanner": "Buka halaman {{name}}"
+      "homeBanner": "Buka halaman {{name}}",
+      "homeTitle": "Beranda"
     },
     "settingsView": {
       "pathCopied": "Jalur disalin",
@@ -26802,12 +27479,14 @@
         "reopened": "membuka kembali ini",
         "workerFailed": "Worker berhenti:",
         "workerFinished": "Worker selesai:",
+        "anotherAgent": "Agent lain",
         "workerStarted": "Worker dimulai:",
         "you": "Anda",
         "snoozed": "tunda ini sampai {{when}}",
         "snoozedBare": "menunda ini",
         "unsnoozed": "batalkan penundaan ini",
-        "snoozeEnded": "Kembali dari tunda lebih awal"
+        "snoozeEnded": "Kembali dari tunda lebih awal",
+        "waitingOn": "Menunggu"
       },
       "cancel": {
         "confirmMany": "Batalkan {{count}}",
@@ -26855,7 +27534,8 @@
           "linkedMany": "{{chat}} tertaut {{count}} tautan ke {{items}}",
           "linked": "{{chat}} ditautkan {{link}} ke {{items}}"
         },
-        "anotherChat": "Obrolan lain"
+        "anotherChat": "Obrolan lain",
+        "anotherAgent": "Agent lain"
       },
       "chatFallback": "Obrolan",
       "comment": {
@@ -26874,9 +27554,8 @@
         "replyTo": "Membalas {{name}}…"
       },
       "empty": {
-        "allClear": "Tidak ada yang membutuhkan Anda dan tidak ada yang berjalan.",
+        "allClear": "Tidak ada yang menunggu Anda",
         "body": "Ketika {{bot}} mengambil sesuatu untuk Anda, ia muncul di sini dengan apa yang dilakukannya dan apa yang dibutuhkannya dari Anda.",
-        "chatNeedsYou": "Tidak ada apa pun di {{chat}} yang membutuhkan Anda.",
         "filtered": "Tidak ada item yang cocok.",
         "needsYou": "Tidak ada yang membutuhkanmu.",
         "title": "Belum ada item",
@@ -26890,7 +27569,6 @@
         "title": "judul"
       },
       "filter": {
-        "all": "Semua obrolan",
         "chat": "Obrolan",
         "clearAll": "Hapus filter",
         "label": "Memfilter item",
@@ -26911,12 +27589,16 @@
         "issue": "Issue #{{number}}",
         "notRead": "Belum dibaca",
         "pr": "PR #{{number}}",
-        "serverPr": "PR belum ditampilkan untuk pekerjaan server"
+        "serverPr": "PR belum ditampilkan untuk pekerjaan server",
+        "automation": "Otomasi",
+        "automationOn": "Akan membangunkan agent untuk item ini",
+        "automationEnded": "Berakhir"
       },
       "menu": {
         "cancel": "Batalkan…",
         "canceled": "Dibatalkan…",
-        "done": "Selesai"
+        "done": "Selesai",
+        "waiting": "Menunggu…"
       },
       "pill": {
         "clear": "Hapus pilihan",
@@ -26942,7 +27624,8 @@
         "done": "Selesai",
         "needsYou": "Butuh Anda",
         "planned": "Direncanakan",
-        "working": "Sedang berjalan"
+        "working": "Sedang berjalan",
+        "waiting": "Menunggu"
       },
       "tab": "Beranda",
       "view": {
@@ -26990,6 +27673,8 @@
         "pickCustom": "Waktu khusus"
       },
       "ask": {
+        "heldCount_one": "{{count}} jawaban belum terkirim, <send>tetap kirim</send>",
+        "heldCount_other": "{{count}} jawaban belum terkirim, <send>tetap kirim</send>",
         "next": "Pertanyaan selanjutnya",
         "notSentYet": "belum terkirim",
         "previous": "Pertanyaan sebelumnya",
@@ -26997,6 +27682,14 @@
         "step": "{{n}} dari {{total}}",
         "typeAnswer": "Ketikkan jawaban Anda",
         "replaced": "Agen menanyakan pertanyaan baru. Baca, lalu balas."
+      },
+      "readMoreClosedFailed": "Gagal membaca item Closed lainnya",
+      "wait": {
+        "titleOne": "Apa yang ditunggu {{title}}?",
+        "titleMany": "Apa yang ditunggu {{count}} item?",
+        "placeholder": "Menunggu",
+        "keep": "Batal",
+        "confirm": "Setel Menunggu"
       }
     },
     "search": {
@@ -27012,7 +27705,6 @@
       "matchCount_other": "{{count}} cocok"
     },
     "setup": {
-      "copyHowToAsk": "Salin {{text}}",
       "forOnHost": "untuk {{name}} pada {{host}}",
       "for": "untuk {{name}}"
     },
@@ -27038,12 +27730,200 @@
       "itemsNeedYou_other": "{{count}} item yang ditandai untuk Anda",
       "review": "Tinjau",
       "openHome": "Buka Beranda {{name}}"
+    },
+    "pairedServers": {
+      "add": "Tambahkan server tersanding",
+      "allAdded": "Semua server tersanding sudah ditambahkan",
+      "heading": "Server tersanding",
+      "info": "Tentang server tersanding",
+      "none": "Tidak ada server tersanding",
+      "remove": "Hapus",
+      "search": "Cari server tersanding",
+      "tooltip": "Bot dan agent di server ini dapat bertanya kepada {{name}} tanpa menanyakan Anda setiap kali.",
+      "removeServer": "Hapus {{server}}"
+    },
+    "failures": {
+      "lookUnfinished": "Pemeriksaan terakhir tidak selesai.",
+      "lookTimedOut": "Pemeriksaan terakhir dihentikan setelah {{minutes}} mnt.",
+      "lookInterrupted": "Orca berhenti selama pemeriksaan terakhir.",
+      "lookCouldNotStart": "Pemeriksaan terakhir tidak dapat dimulai.",
+      "lookAsleep": "Pemeriksaan terakhir terlewat karena komputer ini tidur.",
+      "tidyUpUnfinished": "Pembersihan memori terakhir tidak selesai.",
+      "tidyUpTimedOut": "Pembersihan memori terakhir dihentikan setelah {{minutes}} mnt.",
+      "tidyUpCouldNotStart": "Pembersihan memori terakhir tidak dapat dimulai.",
+      "tidyUpAsleep": "Pembersihan memori terakhir terlewat karena komputer ini tidur.",
+      "tidyUpUnreadChats": "Pembersihan memori terakhir tidak dapat membaca obrolannya, jadi tidak berjalan.",
+      "tidyUpNoDraft": "Pembersihan memori terakhir tidak membalas dengan MEMORY.md baru.",
+      "tidyUpNoOps": "Balasan pembersihan memori terakhir bukan daftar perubahan yang dapat dibaca Orca.",
+      "tidyUpAllSkipped": "Orca melewati semua perubahan yang diminta pembersihan memori terakhir, jadi tidak ada yang berubah. ({{detail}})",
+      "tidyUpNotListLines": "Pembersihan memori terakhir tidak berjalan: MEMORY.md memiliki lebih dari beberapa baris yang bukan baris daftar, dan Tidy-up ops hanya membaca baris daftar.",
+      "tidyUpMovedOnly": "Pembersihan memori terakhir memindahkan baris status ke memory/journal/, tetapi Orca tidak dapat memakai sisa balasannya. ({{detail}})",
+      "tidyUpBadTopic": "Pembersihan memori terakhir menyebut file topik yang tidak dapat ditulis Orca, jadi tidak ada yang berubah.",
+      "tidyUpTooLong": "MEMORY.md dari pembersihan memori terakhir lebih dari {{max}} baris dan tidak lebih pendek, jadi tidak ada yang berubah.",
+      "tidyUpTooManyRemoved": "Pembersihan memori terakhir menghapus terlalu banyak baris sekaligus, jadi tidak ada yang berubah.",
+      "tidyUpTooManyAdded": "Pembersihan memori terakhir menambahkan terlalu banyak baris baru sekaligus, jadi tidak ada yang berubah.",
+      "tidyUpNotCopied": "Pembersihan memori terakhir menyimpan baris yang tidak ada di MEMORY.md; fakta baru masuk ke MEMORY.md, jadi tidak ada yang berubah.",
+      "tidyUpTooManyFiled": "Pembersihan memori terakhir menyimpan lebih dari {{max}} baris sekaligus, jadi tidak ada yang berubah.",
+      "tidyUpChanged": "MEMORY.md berubah selama pembersihan memori terakhir, jadi tidak ada yang berubah.",
+      "tidyUpNotApplied": "Perubahan dari pembersihan memori terakhir tidak dapat disimpan, jadi tidak ada yang berubah.",
+      "toolGone": "Bot ini tidak lagi memiliki alat itu.",
+      "toolDetailsInvalid": "Detail alat tidak valid. Periksa nama, URL atau executable, serta nilainya.",
+      "toolDestinationChanged": "Tujuan kredensial berubah. Masukkan ulang nilai tersimpan atau hapus barisnya.",
+      "toolSavedValueGone": "Nilai tersimpan itu tidak lagi tersedia. Masukkan ulang atau hapus barisnya.",
+      "toolValueMissing": "Masukkan nilai untuk setiap baris, atau hapus barisnya.",
+      "toolCredentialsUnreadable": "Kredensial alat tersimpan bot tidak dapat dibaca. Masukkan ulang nilai alat.",
+      "toolSignInManaged": "Orca yang masuk ke alat ini. Masuk atau keluar lewat Orca saja.",
+      "toolCredentialsRaced": "Kredensial alat bot berubah di Orca lain. Coba lagi.",
+      "toolSourceManaged": "Orca mengelola alat ini. Ubah di tempat Anda menyiapkannya.",
+      "toolValuesUnmoved": "Masih ada alat yang menyimpan nilainya. Buka kembali alat bot untuk memindahkannya.",
+      "toolCodexCheckFailed": "Codex tidak dapat memeriksa atau menghubungkan alat. Periksa penyiapannya lalu coba lagi.",
+      "toolCodexNoThread": "Codex tidak memulai thread untuk memeriksa alat.",
+      "toolSignInFolderFailed": "Tidak dapat menyiapkan folder proses masuk: {{detail}}",
+      "toolClaudePrepareFailed": "Tidak dapat menyiapkan {{name}} di Claude Code. Periksa konfigurasi alatnya.",
+      "toolNameTaken": "Bot ini sudah punya alat bernama {{name}}.",
+      "toolNameTakenByAgent": "{{agent}} Anda sudah punya alat bernama {{name}}, yang juga didapat bot ini. Pilih nama lain dengan --name.",
+      "toolNameTakenByCodexStdio": "Codex Anda sudah punya alat lokal bernama {{name}}, jadi {{name}} milik bot ini tidak dapat berjalan. Ganti nama alat bot ini.",
+      "toolNotUpdated": "Alat tidak diperbarui.",
+      "toolSignInAddressIncomplete": "Tempel seluruh alamat tempat halaman proses masuk berakhir.",
+      "toolSignInAddressWrong": "Itu bukan alamat tempat proses masuk ini berakhir. Mulai lagi dengan Connect, masuk, lalu tempel alamat yang ditampilkan browser Anda.",
+      "toolSignInEnded": "Proses masuk sudah berakhir atau kehabisan waktu. Mulai lagi dengan Connect.",
+      "toolNotFound": "Bot ini tidak punya alat bernama {{name}}.",
+      "toolNeedsNoSignIn": "{{name}} memakai nilai tersimpannya dan tidak perlu proses masuk.",
+      "toolSignInAgentUnsupported": "Orca hanya memasukkan {{name}} untuk Claude Code dan Codex. Tambahkan dengan nilai proses masuknya.",
+      "toolCodexNoSignInPage": "Codex tidak memberi halaman proses masuk untuk {{name}}.",
+      "toolClaudeSignInFailed": "Claude tidak dapat memulai proses masuk ke {{name}}.",
+      "toolClaudeNoSignInPage": "Claude tidak membuka halaman proses masuk untuk {{name}}.",
+      "groupMessageIdReused": "Identitas pesan sudah dipakai.",
+      "groupChangedBeforeSend": "Grup berubah. Periksa anggota saat ini sebelum mengirim.",
+      "groupEmptyBeforeSend": "Semua bot sudah keluar dari grup ini. Tambahkan bot sebelum mengirim.",
+      "groupRequestUnverifiable": "Permintaan grup yang diantrekan sebelumnya tidak dapat diverifikasi.",
+      "groupTurnInactive": "Permintaan grup atau anggota ini tidak lagi aktif.",
+      "groupBotUnavailable": "Bot ini dijeda atau tidak tersedia. Tidak ada bot lain yang menggantikan.",
+      "groupBotTwice": "Pilih setiap bot satu kali.",
+      "groupBotGone": "Bot yang dipilih sudah tidak tersedia.",
+      "groupLocalOnly": "Saat ini grup hanya mendukung bot di host eksekusi lokal ini.",
+      "groupChanged": "Grup berubah. Buka kembali dialog ini lalu coba lagi.",
+      "groupReplierGone": "Pilih anggota saat ini di balasan Room.",
+      "groupEmptyBeforeThread": "Semua bot sudah keluar dari grup ini. Tambahkan bot sebelum memulai thread.",
+      "groupNeedsLocalBot": "Grup ini memerlukan setidaknya satu bot di komputer ini.",
+      "groupNameTaken": "{{name}} sudah ada di grup ini. Anggota perlu nama berbeda agar sebutan tetap jelas.",
+      "groupPostFromHost": "Untuk memposting di grup dengan bot di komputer lain, gunakan {{host}}.",
+      "groupPeerTooOld": "Perbarui Orca di {{host}} untuk menambahkan bot-nya ke grup.",
+      "attachmentUnreadable": "{{name}} tidak dapat dibaca.",
+      "attachmentTooLarge": "{{name}} melebihi {{maxMb}} MB.",
+      "attachmentUploading": "{{name}} masih diunggah.",
+      "attachmentExpired": "{{names}}: lampiran ini kedaluwarsa. Lampirkan lagi.",
+      "commentImagesTooMany": "Komentar dapat memuat hingga {{max}} gambar.",
+      "commentImagesTooLarge": "Gambar ini berjumlah {{totalMb}} MB. Satu komentar dapat memuat hingga {{maxMb}} MB.",
+      "commentImageNotStored": "Hanya gambar yang ditempel atau dilampirkan yang dapat masuk ke komentar.",
+      "commentAttachmentsUnavailable": "Komputer ini tidak dapat menerima lampiran saat ini. Komentari lagi sebentar lagi.",
+      "commentFileNotAbsolute": "{{path}}: sebutkan file dengan path lengkapnya.",
+      "commentFilesTooMany": "Komentar dapat memuat hingga {{max}} file selain gambar.",
+      "commentChatDeleted": "Obrolan item ini dihapus, jadi file tidak dapat dilampirkan di sini.",
+      "commentAttachFailed": "Tidak dapat melampirkan file. Komentari lagi sebentar lagi.",
+      "groupImagesTooMany": "Pesan grup dapat memuat hingga {{max}} gambar.",
+      "groupImagesTooLarge": "Gambar ini berjumlah {{totalMb}} MB. Satu pesan grup dapat memuat hingga {{maxMb}} MB.",
+      "groupImageNotStored": "Hanya gambar yang ditempel atau dilampirkan yang dapat masuk ke pesan grup.",
+      "groupAttachmentsUnavailable": "Komputer ini tidak dapat menerima lampiran saat ini. Coba kirim lagi sebentar lagi.",
+      "groupAttachFailed": "Tidak dapat melampirkan file. Coba kirim lagi sebentar lagi.",
+      "groupMentionAmbiguous": "Perbaiki sebutan bot yang ambigu sebelum mengirim.",
+      "groupMentionUnavailable": "Perbaiki sebutan bot yang tidak tersedia atau ambigu sebelum mengirim.",
+      "groupReplierNotMember": "Pilih anggota room saat ini di balasan Room.",
+      "groupMailNeverStarted": "Email ini tidak pernah memulai giliran.",
+      "groupRemoteUnreachable": "Tidak dapat menghubungi {{host}}. {{detail}}",
+      "groupRemoteUnreachableRetry": "Tidak dapat menghubungi {{host}}. {{detail}} Posting lagi untuk mencoba ulang."
+    },
+    "lookAroundEvery": {
+      "every4h": "Setiap 4 jam, pukul 08.00 sampai 20.00",
+      "every2h": "Setiap 2 jam, pukul 08.00 sampai 20.00",
+      "twiceDaily": "Dua kali sehari, pukul 08.00 dan 13.00",
+      "mornings": "Setiap pagi pukul 08.00"
+    },
+    "templateSkills": {
+      "nameWithFolder": "{{name}} ({{folder}})",
+      "prReviewChecklist": "pr-review-checklist",
+      "bugReproduction": "bug-reproduction",
+      "ciFailureTriage": "ci-failure-triage",
+      "releaseReadiness": "release-readiness",
+      "releaseNotesStyle": "release-notes-style",
+      "dependencyUpgrade": "dependency-upgrade",
+      "securityChecklist": "security-checklist",
+      "issueTriage": "issue-triage",
+      "feedbackThemes": "feedback-themes",
+      "statusBrief": "status-brief",
+      "specFormat": "spec-format",
+      "incidentTimeline": "incident-timeline",
+      "workspaceHygiene": "workspace-hygiene",
+      "lines": {
+        "pr-review-checklist": "Baca diff untuk perubahan perilaku, test yang hilang, dan suntingan berisiko; sebutkan file dan baris untuk setiap temuan.",
+        "bug-reproduction": "Tuliskan langkah persis yang menunjukkan bug sebelum mencari penyebabnya.",
+        "ci-failure-triage": "Bedakan pemeriksaan flaky dari kegagalan sungguhan atau infrastruktur rusak, dan temukan commit yang memulainya.",
+        "release-readiness": "Apa yang menghambat rilis dan cara menampilkannya: pemeriksaan, review, penghambat yang masih terbuka.",
+        "release-notes-style": "Catatan untuk pengguna: baru, diperbaiki, diubah; jangan sertakan refactor dan nama kode.",
+        "dependency-upgrade": "Upgrade satu kelompok sekali, baca changelog, jalankan test, satu pull request per kelompok.",
+        "security-checklist": "Secret, injection, pemeriksaan auth, dan default tidak aman yang perlu dicari dalam perubahan.",
+        "issue-triage": "Beri label, temukan duplikat, tanyakan detail repro yang hilang dalam satu komentar.",
+        "feedback-themes": "Kelompokkan umpan balik menjadi tema dengan jumlah dan kutipan singkat; tautkan issue yang ada.",
+        "status-brief": "Berubah, terhambat, perlu keputusan: ringkasan kurang dari sepuluh baris.",
+        "spec-format": "Spesifikasi satu halaman: masalah, keputusan, cakupan, pertanyaan terbuka.",
+        "incident-timeline": "Simpan timeline bertanda waktu, lalu susun draf tulisan tanpa menyalahkan siapa pun.",
+        "workspace-hygiene": "Kapan ruang kerja dianggap selesai atau ditinggalkan, dan apa yang perlu diperiksa sebelum menghapusnya."
+      }
+    },
+    "notices": {
+      "couldNotFinish": "{{bot}} tidak dapat menyelesaikan",
+      "turnEnded": "\"{{automation}}\" berakhir sebelum selesai.",
+      "folderMissing": "\"{{automation}}\" tidak dapat dimulai karena folder bot hilang.",
+      "sessionRefused": "\"{{automation}}\" tidak dapat dimulai.",
+      "askedYou": "{{bot}} bertanya kepada Anda",
+      "accessAsked": "{{person}} meminta memakai {{bot}}",
+      "webhookNeedsLook": "Webhook {{bot}} perlu diperiksa",
+      "webhookRefusals": "\"{{automation}}\" menolak {{refused}} panggilan dalam 10 menit terakhir. Jika tidak Anda harapkan, jeda otomasi ini.",
+      "webhookHourlyCap": "\"{{automation}}\" mencapai {{limit}} run per jam; panggilan lain menunggu. Untuk menghentikannya, jeda otomasi ini."
+    },
+    "tools": {
+      "signIn": {
+        "notThisSignIn": "Alamat itu bukan dari proses masuk ini. Tempel alamat tempat Anda berakhir."
+      },
+      "input": {
+        "invalid": "Masukkan nama server dan URL atau executable yang valid.",
+        "namesRepeat": "Setiap nama header atau environment harus unik.",
+        "rowInvalid": "Masukkan nama dan nilai yang valid untuk setiap baris, atau hapus barisnya."
+      },
+      "paste": {
+        "notConfig": "Tempel URL server atau perintah start, atau masukkan konfigurasi di Edit detail.",
+        "badUrl": "Gunakan URL HTTP atau HTTPS tanpa kredensial tersemat.",
+        "badCommand": "Gunakan satu perintah start dengan kutip yang seimbang, atau masukkan detail secara manual. Ekspresi shell tidak didukung."
+      },
+      "signInFailure": {
+        "unsupported": "Aplikasi ini belum didukung.",
+        "unavailable": "Tidak dapat menghubungi aplikasi ini. Periksa alamatnya, lalu coba lagi.",
+        "noTool": "Bot ini tidak lagi memiliki alat itu.",
+        "desktopOnly": "Masuk lewat Orca di {{host}}.",
+        "denied": "Akses tidak diizinkan.",
+        "expired": "Proses masuk kedaluwarsa. Coba lagi.",
+        "couldNotSignIn": "Tidak dapat masuk. Coba lagi."
+      }
     }
   },
   "plugins": {
+    "requiredFailures": {
+      "toast": "Plugin wajib tidak dapat dipasang",
+      "open": "Buka Plugin",
+      "label": "Diwajibkan oleh tim Anda",
+      "body": "Orca tidak dapat memasang {{plugin}}."
+    },
     "frameSaveAs": {
       "title": "Simpan File",
       "allFiles": "Semua File"
+    },
+    "displayText": {
+      "tb0b38488": "Tema GitHub untuk Orca",
+      "tb8aa98fc": "Tema default VS Code untuk Orca",
+      "tfc425a57": "Resep VM Multipass",
+      "t0f9f5503": "Tema VS Code milik GitHub: Light Default, Dark Default, Dark Dimmed, dan varian kontras tinggi.",
+      "t0b4f7e19": "Port tidak resmi tema warna default VS Code: Dark Modern, Light Modern, Dark+, dan Light+.",
+      "tc86eed7d": "Siklus hidup awal yang sudah di-review untuk ruang kerja Multipass sekali pakai."
     }
   },
   "checks": {
@@ -27255,6 +28135,8 @@
     "kiloProduct": "Kilo CLI",
     "mimoCodeProduct": "Kode MiMo",
     "qwenCodeProduct": "Qwen Code",
+    "devinProduct": "Devin CLI",
+    "codebuddyProduct": "CodeBuddy Code",
     "commandCopied": "Perintah disalin",
     "commandNotCopied": "Tidak dapat menyalin perintah",
     "copyCommand": "Salin",
@@ -27324,5 +28206,18 @@
       "workerOwed": "Orkestrasi masih menunggu obrolan ini",
       "home": "Obrolan Rumah agent terkelola tidak dapat dihapus"
     }
+  },
+  "activityBar": {
+    "moveUp": "Pindahkan ke atas",
+    "moveDown": "Pindahkan ke bawah",
+    "hide": "Sembunyikan",
+    "show": "Tampilkan {{name}}",
+    "dragStart": "Mengangkat {{name}}",
+    "dragOver": "{{name}} di atas {{target}}",
+    "dragEnd": "Melepas {{name}}",
+    "dragCancel": "Batal memindahkan {{name}}",
+    "moveLeft": "Pindahkan ke kiri",
+    "moveRight": "Pindahkan ke kanan",
+    "reset": "Atur ulang urutan tab"
   }
 }

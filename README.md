@@ -20,7 +20,7 @@ orca plugin dev load ./orca-indonesian-plugin
 
 ## Cakupan
 
-Terjemahan mengikuti katalog bahasa Inggris Orca 1.4.272. Kalau Orca menambah teks baru, teks itu
+Terjemahan mengikuti katalog bahasa Inggris Orca 1.4.273. Kalau Orca menambah teks baru, teks itu
 tampil dalam bahasa Inggris sampai paket berikutnya dirilis — sama seperti paket bahasa lain.
 
 Teks yang dilindungi Orca tetap dalam bahasa Inggris: dialog keamanan, izin, dan hal-hal yang

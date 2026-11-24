@@ -3,7 +3,7 @@
   "manifestVersion": 2,
   "id": "indonesian",
   "name": "Bahasa Indonesia",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Antarmuka Orca dalam bahasa Indonesia.",
   "engines": {
     "orca": ">=1.4.269"

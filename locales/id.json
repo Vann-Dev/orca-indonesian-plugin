@@ -355,6 +355,9 @@
     "serverPage": {
       "download": {
         "started": "Mengunduh ke {{path}} di {{host}}"
+      },
+      "print": {
+        "failed": "Tidak dapat menyimpan halaman sebagai PDF"
       }
     },
     "clientHosted": {
@@ -391,6 +394,12 @@
       "pending": "Pembukaan kembali…",
       "caveat": "Ini membuka halaman baru pada host jarak jauh di alamat terakhir halaman ini. Status masuk dan halaman sementara lainnya mungkin berbeda, dan halaman yang berasal dari pengiriman formulir terbuka kosong.",
       "failed": "Tidak dapat membuka halaman ini di host jarak jauh. Periksa koneksi dan coba lagi."
+    },
+    "deviceMove": {
+      "toThisComputer": "Buka di komputer ini",
+      "toHost": "Buka di {{host}}",
+      "tooltip": "Membuka alamat ini di tab baru di sisi lain dan menutup tab ini. Anda mungkin perlu masuk lagi.",
+      "failedToThisComputer": "Tidak dapat membuka halaman ini di komputer ini."
     },
     "sshRoute": {
       "preparingTitle": "Menghubungkan melalui host SSH",
@@ -531,12 +540,21 @@
         "imported_other": "{{count}} cookie yang diimpor untuk {{domains}}. Muat ulang halaman untuk menggunakannya.",
         "failed": "Impor cookie gagal: {{reason}}"
       },
-      "sshPage": {
+      "routedPage": {
         "label": "Browser di perangkat ini",
         "destination": "Mengimpor ke browser untuk {{host}}.",
-        "hostAgents": "Agent di {{host}} dapat memakai proses masuk ini, tetapi tidak dapat membaca cookie-nya.",
+        "hostAgents": "Agent di {{host}} dapat memakai proses masuk ini, tetapi tidak dapat membaca cookie-nya."
+      },
+      "sshPage": {
         "stored": "Disimpan di browser untuk {{host}}.",
         "googleCookiesSkipped": "Cookie Google tidak diimpor. Buka halaman yang menjelajah melalui {{host}}, lalu masuk ke Google."
+      },
+      "picker": {
+        "menuItem": "Impor Cookie…",
+        "search": "Cari profil",
+        "lastUsed": "Terakhir dipakai",
+        "noMatches": "Tidak ada hasil",
+        "googleNote": "Login Google tidak diimpor"
       }
     },
     "passwords": {
@@ -1036,8 +1054,8 @@
       "chatUnavailableOnWindows": "{{value0}} Obrolan belum tersedia di Windows, jadi {{value0}} terbuka di terminal pada host ini. Obrolan di host macOS atau Linux masih berfungsi.",
       "undetectedCommandHint": "Jika {{agent}} CLI dipasang di luar PATH, masukkan path lengkap ke file yang dapat dieksekusi di host ini.",
       "agentActions": "{{agent}} tindakan",
-      "showDetails": "Tampilkan detail",
-      "hideDetails": "Sembunyikan detail",
+      "showAgentDetails": "Tampilkan detail {{agent}}",
+      "hideAgentDetails": "Sembunyikan detail {{agent}}",
       "defaultAutoBadge": "Default · Otomatis",
       "newAgentsTitle": "Agen baru",
       "defaultSurfaceServerDescription": "Default untuk agen {{host}} dimulai dengan sendirinya, misalnya dari CLI atau worker orkestrasinya. Agen yang Anda buka dari komputer ini mengikuti pilihan Komputer ini."
@@ -2459,7 +2477,13 @@
           "tab": {
             "open": {
               "urlFailed": "Tidak dapat membuka URL.",
-              "searchFailed": "Tidak dapat mencari dengan {{value0}}."
+              "searchFailed": "Tidak dapat mencari dengan {{value0}}.",
+              "failure": {
+                "stageError": "Error · {{value0}} · {{value1}}",
+                "hostNotFound": "Komputer ruang kerja tidak ditemukan.",
+                "linkBlocked": "Membuka tautan diblokir.",
+                "notWebLink": "Bukan tautan web."
+              }
             }
           }
         }
@@ -2603,13 +2627,18 @@
         }
       },
       "activateAiVaultStructuredSession": {
-        "unavailable": "Sesi agen terstruktur belum tersedia. Coba lagi sebentar lagi.",
         "gone": "Obrolan ini tidak ada lagi di host ini, jadi tidak dapat dibuka kembali di sini.",
         "hostCannotOpen": "Obrolan ini tidak dapat dibuka kembali sampai Orca diperbarui.",
         "notLocatedNamed": "Orca tidak dapat menemukan di mana {{agent}} sedang berjalan, sehingga tidak dapat membukanya.",
         "notLocated": "Orca tidak dapat menemukan di mana agen ini berjalan, sehingga tidak dapat membukanya.",
         "worktreeDeleted": "worktree telah dihapus.",
-        "folderWorkspaceRemoved": "Ruang kerja folder telah dihapus."
+        "projectRemoved": "Proyek telah dihapus dari Orca.",
+        "folderWorkspaceRemoved": "Folder ruang kerja telah dihapus.",
+        "chatStillStarting": "Obrolan ini masih dimulai. Coba lagi nanti.",
+        "chatOpenFailed": "Tidak dapat membuka obrolan ini.",
+        "chatOpenRetry": "Coba lagi",
+        "chatOpenShowDetails": "Tampilkan detail",
+        "chatOpenHideDetails": "Sembunyikan detail"
       },
       "ephemeralVmWorktreeCreation": {
         "sparseCheckoutUnsupported": "Resep provisioned-root tidak mendukung sparse checkout."
@@ -2772,7 +2801,11 @@
       "projectHostSetupOptions": {
         "locationNotSet": "Lokasi proyek tidak disetel",
         "hostLocalGitProject": "Tidak ada Git remote yang cocok untuk proyek ini",
-        "hostLocalFolderProject": "Proyek folder tidak dapat ditautkan ke host lain"
+        "hostLocalFolderProject": "Folder proyek tidak dapat ditautkan ke host lain",
+        "pendingNotSetUp": "Proyek terdaftar di host ini tetapi belum disiapkan",
+        "pendingSettingUp": "Penyiapan proyek sedang berjalan",
+        "pendingError": "Penyiapan proyek perlu diperiksa",
+        "pendingUnsupported": "Proyek tidak didukung di host ini"
       },
       "updateCheckClickOptions": {
         "releaseHint": "{{rcKey}}+klik memeriksa RC terbaru; {{perfKey}}+klik memeriksa performa terbaru.",
@@ -4932,6 +4965,7 @@
             "downloadAlreadyLocal": "'{{value0}}' sudah ada di komputer ini.",
             "downloadFolderUnsupported": "Folder '{{value0}}' tidak dapat diunduh dari host ini.",
             "downloadOpenFailed": "Gagal mengunduh '{{value0}}'.",
+            "openLinkInThisGroupRefused": "Tidak dapat membuka tautan di grup ini",
             "openInThisGroupRefused": "Tidak dapat membuka {{value0}} di grup ini",
             "openInNewTab": "Buka di tab baru"
           },
@@ -17696,8 +17730,6 @@
             "ed8f54509d": "Bawaan",
             "e5d31de1a9": "Ukuran Area Pandang",
             "56f94f4ffa": "Dari File…",
-            "eb280bfb11": "Dari {{value0}}",
-            "2293adf620": "Impor Cookie",
             "cf7cdc67ef": "Profil Baru…",
             "7b838540c7": "Menu browser",
             "a7a86702b3": "Dibuat dan dialihkan ke profil {{value0}}",
@@ -19007,9 +19039,7 @@
         "typeHtml": "HTML"
       },
       "BrowserCookieImportMachineNotice": {
-        "clientLabel": "Browser di perangkat ini",
         "remoteLabel": "Browser aktif {{value0}}",
-        "clientNoteLocalStorage": "Impor membaca browser perangkat ini. Cookie disimpan secara lokal.",
         "remoteNoteRemoteStorage": "Mengimpor browser baca di {{value0}}. Cookie disimpan di mesin itu, dan permintaan izin mungkin muncul di layarnya."
       },
       "native": {
@@ -19728,6 +19758,8 @@
         "historyUnreadable": "Orca tidak dapat membaca riwayat tersimpan obrolan ini.",
         "historyUnusable": "Tidak dapat memuat obrolan ini.",
         "historyUnavailable": "Orca tidak dapat membuka riwayat obrolan ini saat ini.",
+        "diskFull": "Disk di komputer yang menjalankan obrolan ini penuh.",
+        "freeDiskSpace": "Bebaskan ruang di disk, lalu coba lagi.",
         "savedInOtherFolder": "Percakapan ini disimpan di folder lain.",
         "savedByNewerOrca": "Obrolan disimpan oleh Orca yang lebih baru.",
         "updateOrcaToKeepUsing": "Perbarui Orca untuk terus menggunakannya.",
@@ -20249,7 +20281,6 @@
         "sending": "Mengirim…",
         "terminalRequired": "Jawab pertanyaan OMP ini di terminal.",
         "recommended": "Direkomendasikan",
-        "stepAnswered": "{{value0}}, sudah dijawab",
         "stepOf": "{{value0}} dari {{value1}}",
         "answered": "Sudah dijawab",
         "title": "Pertanyaan",
@@ -20379,7 +20410,8 @@
           "handedOff": "Diserahkan kepada",
           "task": "Tugas dari",
           "update": "Pembaruan dari",
-          "message": "Pesan dari"
+          "message": "Pesan dari",
+          "notSentYet": "Belum terkirim"
         },
         "kind": {
           "started": "Dimulai",
@@ -20536,6 +20568,17 @@
       "imagePreview": {
         "fileActions": "Tindakan file",
         "linkActions": "Tindakan tautan"
+      },
+      "imageGallery": {
+        "scopeHelp": "Gambar di sekitar bagian obrolan ini saat Anda membuka pratinjau. Gambar lebih ke atas atau ke bawah tidak disertakan. Tutup dan buka lagi untuk memperbarui.",
+        "description": "Gambar dalam tampilan ini: {{position}} dari {{count}}. {{help}}",
+        "stepAnnouncement": "Gambar {{position}} dari {{count}} dalam tampilan ini: {{title}}.",
+        "firstImage": "Gambar pertama.",
+        "lastImage": "Gambar terakhir.",
+        "loading": "Memuat gambar…",
+        "loadFailed": "Tidak dapat memuat {{name}}",
+        "closedImageChanged": "Pratinjau ditutup karena gambar berubah. Buka thumbnail untuk mengambil kumpulan gambar saat ini.",
+        "closedChatChanged": "Pratinjau ditutup karena obrolan berubah. Buka thumbnail untuk mengambil kumpulan gambar saat ini."
       },
       "goalControl": {
         "settingsRejected": "Codex tidak dapat menerapkan model dan upaya yang dipilih. Perubahan gol ini tidak dikirimkan. Periksa pilihan dan coba lagi.",
@@ -20695,7 +20738,8 @@
         "oneComment": "1 komentar",
         "comments": "{{count}} komentar",
         "unavailable": "Pratinjau tidak tersedia.",
-        "retry": "Coba lagi"
+        "retry": "Coba lagi",
+        "retryKeyHint": "Pratinjau tidak tersedia. Tekan {{key}} untuk mencoba lagi."
       },
       "webPeek": {
         "unavailable": "Tidak ada pratinjau untuk halaman ini."
@@ -21273,7 +21317,6 @@
       },
       "googleOffer": {
         "useAccount": "Gunakan {{email}} untuk Google.",
-        "useAnother": "Gunakan akun lain",
         "reconnect": "Hubungkan kembali {{email}}",
         "use": "Gunakan {{email}}",
         "staysDefault": "{{email}} tetap menjadi default"
@@ -21286,6 +21329,8 @@
         "remoteOwner": "Hentikan atau bersihkan ini dari komputer tempatnya berjalan",
         "restore": "Tampilkan di dock lagi",
         "unavailable": "Status worker tidak tersedia",
+        "alreadyStopped": "Sudah dihentikan",
+        "cantStop": "Tidak dapat dihentikan sekarang",
         "empty": "0 worker",
         "clearAllLabel_one": "Bersihkan worker yang gagal",
         "clearAllLabel_other": "Bersihkan semua {{count}} worker yang gagal",
@@ -22247,12 +22292,13 @@
       "downloadSize": "{{size}} Unduhan MB.",
       "downloading": "Mengunduh {{done}} MB.",
       "downloadingOf": "Mengunduh {{done}} MB dari {{total}} MB.",
-      "external": "Menggunakan salinan {{agent}} yang ditemukan di host ini.",
-      "extracting": "Mengekstrak {{agent}}.",
+      "external": "Memakai {{agent}} Anda sendiri",
+      "externalShort": "Memakai salinan Anda sendiri",
+      "extracting": "Membongkar {{agent}}…",
+      "extractingShort": "Membongkar…",
       "failed": "Instalasi gagal. Coba lagi.",
       "cancelFailed": "Tidak dapat membatalkan instalasi. Coba lagi.",
       "install": "Instal {{agent}}",
-      "installManaged": "Instal salinan Orca",
       "installedByOrca": "Dipasang oleh Orca · {{version}}",
       "notInstalled": "Tidak diinstal.",
       "progress": "{{agent}} unduh",
@@ -22266,7 +22312,8 @@
       "unavailable": "{{agent}} tidak tersedia di host ini.",
       "update": "Perbarui",
       "updateTo": "Perbarui ke {{version}}",
-      "verifying": "Memeriksa runtime yang diunduh.",
+      "verifying": "Memeriksa…",
+      "verifyingAgent": "Memeriksa {{agent}}…",
       "installTitle": "Instal {{agent}} untuk mulai mengobrol",
       "continueTitle": "Instal {{agent}} untuk melanjutkan",
       "heroBody": "Unduhan {{size}} MB satu kali. Itu dibagikan oleh {{agent}} obrolan di komputer yang menjalankan obrolan ini.",
@@ -22284,7 +22331,7 @@
       "checkingTitle": "Memeriksa unduhan",
       "progressOf": "{{done}} dari {{total}} MB",
       "unpackingDetail": "Membongkar runtime",
-      "checkingDetail": "Memeriksa runtime yang diunduh",
+      "checkingDetail": "Memeriksa {{agent}}…",
       "stepDownload": "Unduh",
       "stepUnpack": "Buka kemasan",
       "stepCheck": "Periksa"
@@ -22316,7 +22363,6 @@
       "showDetails": "Tampilkan tugas {{name}} dan balas",
       "task": "Tugas",
       "openFailed": "{{name}}: {{detail}}",
-      "chatUnavailable": "Host ini tidak dapat membuka obrolan. Coba lagi.",
       "terminalExited": "Terminal ini telah keluar.",
       "openOnHost": "Buka agen ini di {{host}}.",
       "cannotLocate": "Host ini tidak dapat menemukan agen ini. Coba lagi.",
@@ -22329,11 +22375,10 @@
     },
     "orchestration": {
       "workerAutoClose": {
-        "running": "Worker orkestrasi sementara · Tutup 2 menit setelah selesai",
-        "finished": "Worker orkestrasi sementara selesai · Ditutup dalam {{countdown}}",
         "keepOpen": "Tetap terbuka",
         "bannerRunning": "Worker orkestrasi · Tutup 2 menit setelah selesai",
         "bannerFinished": "Worker orkestrasi selesai · Ditutup dalam {{countdown}}",
+        "bannerFinishedStatus": "Worker orkestrasi selesai · Segera ditutup",
         "boundRunning": "Tutup bersama {{worker}}",
         "boundFinished": "{{worker}} selesai · Tutup dalam {{countdown}}",
         "boundFallbackName": "worker-nya"
@@ -22755,6 +22800,9 @@
     "scanTooLarge": "Pemindaian Buka Cepat terlalu besar ({{reason}})."
   },
   "checksPanel": {
+    "commentsUnavailable": "Tidak dapat memuat komentar.",
+    "linkedReviewUnavailable": "Tidak dapat memuat pull request yang ditautkan.",
+    "loadingReviewDetails": "Memuat detail review…",
     "unlinked": {
       "title": "pull request dibatalkan tautannya",
       "description": "PR #{{number}} disembunyikan untuk ruang kerja ini. Tautkan lagi untuk memulihkan cek dan meninjau detailnya.",
@@ -23506,7 +23554,7 @@
       "signInRequired": "Masuk lagi untuk menggunakan akun ini",
       "signInAgain": "Masuk lagi",
       "usageSignInLabel": "Masuk lagi",
-      "usageSignInMessage": "Akun Claude yang dipilih mengharuskan Anda masuk lagi. Buka Pengaturan > Akun Penyedia AI, atau pilih Default sistem.",
+      "usageSignInMessage": "Akun ini memerlukan Anda masuk lagi.",
       "signIn": "Masuk",
       "moreSignInOptions": "Opsi masuk lainnya",
       "copySignInLink": "Salin tautan masuk saja",
@@ -24331,8 +24379,12 @@
       "orca": "Orca",
       "agents": "Agen",
       "otherTerminals": "Terminal lain",
-      "privateBytes": "Di-commit oleh Orca dan terminal"
-    }
+      "privateBytes": "Dikomit oleh Orca, agent, dan terminal"
+    },
+    "chatRow": {
+      "tooltip": "Obrolan {{agent}}, termasuk proses yang berjalan di bawahnya"
+    },
+    "sharedAgentProcesses": "Proses agent bersama"
   },
   "browserTab": {
     "agentDriving": "Agen menggunakan halaman ini",
@@ -24756,6 +24808,7 @@
     "waitForImageUploads": "Tunggu hingga gambar selesai diunggah, lalu coba lagi Buat PR."
   },
   "agentPicker": {
+    "refreshModels": "Muat ulang model",
     "catalogUnsupportedLaunch": "{{agent}} model tidak tersedia di host ini. Pilihan Anda saat ini masih berlaku.",
     "catalogLoadFailed": "Tidak dapat memuat model {{agent}}.",
     "catalogLoading": "Memuat model…",
@@ -25303,7 +25356,6 @@
       "waitingForUntil": "Menunggu {{label}} · hingga {{time}}",
       "waitingCount": "Menunggu {{count}} acara",
       "settings": "Pengaturan bot…",
-      "hostDisconnected": "{{host}} terputus",
       "disconnected": "Terputus",
       "runsOn": "Berjalan pada {{host}}"
     },
@@ -25400,6 +25452,8 @@
       "identityReports": "Melaporkan {{what}}"
     },
     "section": {
+      "scrollLeft": "Gulir ke kiri · {{amount}} tersembunyi",
+      "scrollRight": "Gulir ke kanan · {{amount}} tersembunyi",
       "title": "Bot",
       "newBot": "Bot baru",
       "startFromScratch": "Mulai dari awal",
@@ -25408,8 +25462,6 @@
       "expand": "Perluas Bot",
       "collapse": "Ciutkan Bot",
       "summary": "{{action}}, {{total}} bot, {{attention}} membutuhkanmu, {{unread}} belum dibaca, {{working}} berfungsi",
-      "showMore_one": "Tampilkan {{count}} bot lainnya",
-      "showMore_other": "Tampilkan {{count}} bot lainnya",
       "new": "Bot atau grup baru",
       "expandAll": "Perluas semua bot",
       "collapseAll": "Tutup semua bot"
@@ -25742,7 +25794,8 @@
       "runNow": "Jalankan sekarang",
       "openOnPage": "Buka di halaman Otomatisasi",
       "pauseShort": "Jeda",
-      "resumeShort": "Lanjutkan"
+      "resumeShort": "Lanjutkan",
+      "nextAt": "berikutnya {{time}}"
     },
     "accessRequest": {
       "toast": "{{person}} meminta akses ke {{name}}",
@@ -26092,23 +26145,12 @@
       "newThreadHint": "dimulai dari awal",
       "newThreadTab": "Topik baru",
       "items": {
-        "thisGroup": "Grup ini",
-        "thread": "Thread",
-        "all": "Semua pekerjaan mereka",
         "orNames": "{{names}} atau {{last}}",
         "emptyBotsNeedsYou": "Tidak ada apa pun dari {{names}} yang membutuhkan Anda",
         "emptyBots": "Tidak ada item dari {{names}}",
         "emptyTitle": "Belum ada item dari grup ini",
-        "emptyBody": "Saat {{names}} melakukan sesuatu di grup ini, hal itu akan muncul di sini.",
-        "showAll": "Tunjukkan semua karyanya",
         "filterNamed": "Filter item, difilter berdasarkan {{filter}}",
-        "filterBot": "Bot",
-        "outside_one": "{{count}} lebih banyak di luar grup ini",
-        "outside_other": "{{count}} lebih banyak di luar grup ini",
-        "outsideRoom_one": "{{count}} lagi di luar ruangan ini",
-        "outsideRoom_other": "{{count}} lagi di luar ruangan ini",
-        "outsideThread_one": "{{count}} lainnya di luar thread ini",
-        "outsideThread_other": "{{count}} lainnya di luar thread ini"
+        "filterBot": "Bot"
       },
       "panel": {
         "membersMore": "Anggota: {{names}} dan {{count}} lainnya",
@@ -26164,13 +26206,10 @@
       "hostChoice": {
         "description": "Pilih cara {{bot}} masuk ke Gmail, Kalender, dan Drive Anda.",
         "orca": "Orca dihosting",
-        "comingSoon": "Segera hadir",
-        "orcaNote": "Masuk dengan Google. Tidak ada yang perlu diatur.",
+        "soon": "Segera",
+        "orcaNote": "Masuk dengan Google.",
         "self": "Dihosting sendiri",
-        "selfNote": "Anda membuat aplikasi Google Cloud sendiri, sehingga login Anda tetap ada di komputer. Tidak ada yang melewati server Orca.",
-        "stepApp": "{{bot}} membuka Google Cloud dan menyiapkan aplikasi",
-        "stepSignIn": "Anda mencentang kotak persyaratan Google dan masuk",
-        "stepCheck": "{{bot}} check apakah Gmail, Kalender, dan Drive berfungsi",
+        "selfNote": "Aplikasi Google Anda sendiri.",
         "continue": "Lanjutkan"
       },
       "connectDescription": "Berikan bot Anda akses ke Gmail, Kalender, dan Drive. Proses masuk Anda tetap di {{host}}.",
@@ -26192,7 +26231,14 @@
       "accountActions": "Tindakan {{email}}",
       "addServiceMenu": "Tambahkan layanan…",
       "updateToAdd": "Perbarui Orca di {{host}} untuk menambah akun Google lain.",
-      "account": "Google · {{email}}"
+      "account": "Google · {{email}}",
+      "accessBlocked": "Melihat ‘Access blocked’?",
+      "setUpNewApp": "Siapkan aplikasi Google baru",
+      "useAnother": "Pakai akun lain",
+      "useAnotherSignIn": "Masuk dengan Google",
+      "useAnotherSignInDetail": "Memakai aplikasi Google Anda saat ini",
+      "setUpNewAppDetail": "Jika aplikasi Anda saat ini tidak berfungsi untuk akun atau organisasi ini",
+      "updateToSetUpNewApp": "Perbarui Orca di {{host}} untuk menyiapkan aplikasi Google baru."
     },
     "googleSetup": {
       "receipt": {
@@ -27490,12 +27536,7 @@
       },
       "cancel": {
         "confirmMany": "Batalkan {{count}}",
-        "confirmOne": "Batalkan item",
-        "keep": "Simpan",
-        "placeholder": "Alasan",
-        "titleMany": "Batalkan {{count}} item?",
-        "titleOne": "Batalkan {{title}}?",
-        "why": "Bot melihat alasannya. Tidak ada yang dihapus."
+        "keep": "Simpan"
       },
       "chat": {
         "added": "Ditambahkan {{items}}",
@@ -27569,7 +27610,6 @@
         "title": "judul"
       },
       "filter": {
-        "chat": "Obrolan",
         "clearAll": "Hapus filter",
         "label": "Memfilter item",
         "needsYou": "Hanya membutuhkanmu",
@@ -27595,8 +27635,7 @@
         "automationEnded": "Berakhir"
       },
       "menu": {
-        "cancel": "Batalkan…",
-        "canceled": "Dibatalkan…",
+        "cancel": "Batal",
         "done": "Selesai",
         "waiting": "Menunggu…"
       },
@@ -27681,7 +27720,9 @@
         "recommended": "Direkomendasikan",
         "step": "{{n}} dari {{total}}",
         "typeAnswer": "Ketikkan jawaban Anda",
-        "replaced": "Agen menanyakan pertanyaan baru. Baca, lalu balas."
+        "replaced": "Agen menanyakan pertanyaan baru. Baca, lalu balas.",
+        "replacedByNewer": "Diganti oleh pertanyaan yang lebih baru",
+        "skipped": "Dilewati"
       },
       "readMoreClosedFailed": "Gagal membaca item Closed lainnya",
       "wait": {
@@ -28192,7 +28233,8 @@
     "navigationLabel": "Navigasi aplikasi",
     "toolsLabel": "Alat aplikasi",
     "workspaces": "Ruang kerja",
-    "more": "Lainnya"
+    "more": "Lainnya",
+    "pageRegion": "Halaman"
   },
   "chats": {
     "delete": {

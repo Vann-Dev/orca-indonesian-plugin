@@ -2633,8 +2633,8 @@
         "notLocated": "Orca tidak dapat menemukan di mana agen ini berjalan, sehingga tidak dapat membukanya.",
         "worktreeDeleted": "worktree telah dihapus.",
         "projectRemoved": "Proyek telah dihapus dari Orca.",
-        "folderWorkspaceRemoved": "Ruang kerja folder telah dihapus.",
-        "chatStillStarting": "Obrolan ini masih dimulai. Coba lagi sebentar lagi.",
+        "folderWorkspaceRemoved": "Folder ruang kerja telah dihapus.",
+        "chatStillStarting": "Obrolan ini masih dimulai. Coba lagi nanti.",
         "chatOpenFailed": "Tidak dapat membuka obrolan ini.",
         "chatOpenRetry": "Coba lagi",
         "chatOpenShowDetails": "Tampilkan detail",
@@ -2801,7 +2801,7 @@
       "projectHostSetupOptions": {
         "locationNotSet": "Lokasi proyek tidak disetel",
         "hostLocalGitProject": "Tidak ada Git remote yang cocok untuk proyek ini",
-        "hostLocalFolderProject": "Proyek folder tidak dapat ditautkan ke host lain",
+        "hostLocalFolderProject": "Folder proyek tidak dapat ditautkan ke host lain",
         "pendingNotSetUp": "Proyek terdaftar di host ini tetapi belum disiapkan",
         "pendingSettingUp": "Penyiapan proyek sedang berjalan",
         "pendingError": "Penyiapan proyek perlu diperiksa",
@@ -19759,7 +19759,7 @@
         "historyUnusable": "Tidak dapat memuat obrolan ini.",
         "historyUnavailable": "Orca tidak dapat membuka riwayat obrolan ini saat ini.",
         "diskFull": "Disk di komputer yang menjalankan obrolan ini penuh.",
-        "freeDiskSpace": "Bebaskan ruang di disk itu, lalu coba lagi.",
+        "freeDiskSpace": "Bebaskan ruang di disk, lalu coba lagi.",
         "savedInOtherFolder": "Percakapan ini disimpan di folder lain.",
         "savedByNewerOrca": "Obrolan disimpan oleh Orca yang lebih baru.",
         "updateOrcaToKeepUsing": "Perbarui Orca untuk terus menggunakannya.",
@@ -20411,7 +20411,7 @@
           "task": "Tugas dari",
           "update": "Pembaruan dari",
           "message": "Pesan dari",
-          "notSentYet": "belum terkirim"
+          "notSentYet": "Belum terkirim"
         },
         "kind": {
           "started": "Dimulai",

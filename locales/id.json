@@ -352,9 +352,17 @@
     "guestRecovery": {
       "failed": "Halaman browser berhenti tiba-tiba. Coba lagi untuk memulihkannya."
     },
+    "claimedDownload": {
+      "saved": "Disimpan ke {{place}}"
+    },
     "serverPage": {
       "download": {
-        "started": "Mengunduh ke {{path}} di {{host}}"
+        "started": "Mengunduh ke {{path}} di {{host}}",
+        "saveHere": "Simpan ke komputer ini",
+        "copying": "Mengunduh {{filename}} ke komputer ini…",
+        "copied": "Disimpan ke {{path}}",
+        "copyFailed": "Tidak dapat menyimpan {{filename}} ke komputer ini.",
+        "showInFolder": "Tampilkan di Folder"
       },
       "print": {
         "failed": "Tidak dapat menyimpan halaman sebagai PDF"
@@ -534,11 +542,10 @@
         "pageChanged": "Halaman ini tertutup atau berganti profil selama impor. Coba lagi."
       },
       "notice": {
-        "importedMore_one": "{{count}} cookie yang diimpor untuk {{domains}} +{{more}} lainnya. Muat ulang halaman untuk menggunakannya.",
-        "importedMore_other": "Mengimpor {{count}} cookie untuk {{domains}} +{{more}} lainnya. Muat ulang halaman untuk menggunakannya.",
-        "imported_one": "{{count}} cookie yang diimpor untuk {{domains}}. Muat ulang halaman untuk menggunakannya.",
-        "imported_other": "{{count}} cookie yang diimpor untuk {{domains}}. Muat ulang halaman untuk menggunakannya.",
-        "failed": "Impor cookie gagal: {{reason}}"
+        "failed": "Impor cookie gagal: {{reason}}",
+        "importedCount_one": "Mengimpor {{countLabel}} cookie",
+        "importedCount_other": "Mengimpor {{countLabel}} cookie",
+        "reload": "Muat ulang"
       },
       "routedPage": {
         "label": "Browser di perangkat ini",
@@ -586,10 +593,78 @@
       "resetZoom": "Setel ulang zoom",
       "resetViewport": "Setel ulang ukuran area pandang",
       "findOnPage": "Temukan di halaman",
-      "profile": "Profil"
+      "profile": "Profil",
+      "annotateModeWithShortcut": "Anotasi, ambil, atau gambar ({{value0}})",
+      "annotateMode": "Anotasi, ambil, atau gambar"
     },
     "loadStall": {
       "waitingForHost": "Menunggu {{host}}…"
+    },
+    "annotatePalette": {
+      "annotateTooltip": "Anotasi: komentari elemen (A)",
+      "grabTooltip": "Ambil: salin konteks elemen (G)",
+      "drawTooltip": "Gambar: tandai tangkapan layar (D)",
+      "positionLeft": "Kiri",
+      "positionRight": "Kanan",
+      "positionTop": "Atas",
+      "positionMiddle": "Tengah",
+      "positionBottom": "Bawah",
+      "label": "Alat anotasi",
+      "tools": "Alat",
+      "copy": "Salin",
+      "copyTitle": "Salin elemen yang dipilih",
+      "copied": "Tersalin",
+      "screenshot": "Tangkapan layar",
+      "screenshotTitle": "Salin tangkapan layar elemen yang dipilih",
+      "done": "Selesai",
+      "doneTitle": "Selesai (Esc)",
+      "move": "Pindahkan toolbar",
+      "positionValueBothAxes": "{{side}} {{percent}}%, {{vertical}} {{verticalPercent}}%",
+      "annotateTooltipNoKey": "Anotasi: komentari elemen",
+      "grabTooltipNoKey": "Ambil: salin konteks elemen",
+      "drawTooltipNoKey": "Gambar: tandai tangkapan layar",
+      "moveAnywhereTooltip": "Seret atau gunakan tombol panah untuk memindahkan · klik dua kali untuk mengatur ulang · tahan {{key}} untuk melihat di bawah",
+      "copyMarkup": "Salin markup",
+      "pickFirst": "Pilih elemen terlebih dahulu",
+      "moreDrawTools": "Alat gambar lainnya",
+      "showNotes": "Tampilkan catatan",
+      "noteCountOne": "1 catatan",
+      "noteCount": "{{count}} catatan",
+      "drawingDiscarded": "Gambar dibuang",
+      "undo": "Urungkan",
+      "collapseNotes": "Ciutkan catatan",
+      "expandNotes": "Bentangkan catatan",
+      "clearNotes": "Hapus catatan",
+      "waitingForPage": "Menunggu halaman…",
+      "pageDidNotLoad": "Halaman tidak dimuat",
+      "discardDrawing": "Buang gambar",
+      "discardDrawingTitle": "Buang gambar (Esc)",
+      "positionCenter": "Tengah"
+    },
+    "profileCookieClear": {
+      "label": "Cookie",
+      "action": "Hapus cookie…",
+      "rowLocal": "Mengeluarkan Anda dari semua situs di {{profile}} pada komputer ini.",
+      "rowServer": "Mengeluarkan Anda dari semua situs di {{profile}} pada {{host}}, baik di halaman pada komputer ini maupun di halaman yang di-stream.",
+      "rowSsh": "Mengeluarkan Anda dari semua situs di {{profile}} untuk {{host}}.",
+      "unavailable": "Tidak tersedia untuk profil ini pada host yang dipilih.",
+      "confirmTitle": "Hapus cookie di {{profile}} pada {{host}}?",
+      "confirmTitleLocal": "Hapus cookie di {{profile}} pada komputer ini?",
+      "confirmDescriptionServer": "Ini mengeluarkan Anda dari semua situs di profil ini, baik di halaman pada komputer ini maupun di halaman yang di-stream. Profil dan host lain tetap menyimpan cookie-nya.",
+      "confirmDescription": "Ini mengeluarkan Anda dari semua situs di profil ini. Profil dan host lain tetap menyimpan cookie-nya.",
+      "clear": "Hapus",
+      "cancel": "Batal",
+      "cleared": "Cookie di {{profile}} pada {{host}} telah dihapus.",
+      "clearedLocal": "Cookie di {{profile}} pada komputer ini telah dihapus.",
+      "failed": "Tidak dapat menghapus cookie di {{profile}} pada {{host}}. Coba lagi.",
+      "failedLocal": "Tidak dapat menghapus cookie di {{profile}} pada komputer ini. Coba lagi.",
+      "sshHostOption": "{{host}} (SSH)"
+    },
+    "grabToast": {
+      "noScreenshot": "Tangkapan layar tidak tersedia",
+      "hoverReadFailed": "Tidak dapat membaca elemen yang ditunjuk",
+      "noHover": "Tidak ada elemen yang ditunjuk",
+      "copyFailed": "Tidak dapat menyalin"
     }
   },
   "editor": {
@@ -667,8 +742,7 @@
         "title": "Penyedia",
         "searchAgents": "agen",
         "searchCli": "CLI",
-        "searchTerminal": "terminal",
-        "antigravityAccount": "Akun"
+        "searchTerminal": "terminal"
       },
       "permissionsDescriptionOwnAgents": "Obrolan baru mengikuti izin masing-masing agen di Pengaturan → Agen.",
       "launch": {
@@ -725,14 +799,12 @@
       "statusBar": {
         "claudeToggleDescription": "Tampilkan penggunaan token dan biaya Claude untuk ruang kerja aktif.",
         "codexToggleDescription": "Tampilkan penggunaan token dan biaya Codex untuk ruang kerja aktif.",
-        "geminiToggleDescription": "Tampilkan penggunaan token dan biaya Gemini untuk ruang kerja aktif.",
         "opencodeGoToggleDescription": "Tampilkan penggunaan token dan biaya OpenCode Go untuk ruang kerja aktif.",
         "kimiToggleDescription": "Tampilkan penggunaan langganan Kimi untuk ruang kerja aktif.",
         "minimaxToggleDescription": "Tampilkan penggunaan langganan MiniMax untuk ruang kerja aktif.",
         "sshToggleDescription": "Tampilkan host SSH dan Orca jarak jauh yang dikonfigurasi jika tersedia.",
         "resourceUsageToggleDescription": "Tampilkan Manajer Sumber Daya. Klik untuk melihat CPU, memori, sesi, kontrol daemon, dan pemindaian disk ruang kerja.",
         "portsToggleDescription": "Tampilkan port ruang kerja langsung. Klik untuk port cakupan ruang kerja dan pendengar eksternal.",
-        "antigravityToggleDescription": "Tampilkan penggunaan langganan Antigravity untuk ruang kerja aktif.",
         "grokToggleDescription": "Tampilkan penggunaan kredit langganan Grok saat masuk melalui Grok CLI.",
         "cursorToggleDescription": "Tampilkan penggunaan paket Cursor saat masuk melalui agen kursor atau Cursor IDE.",
         "zcodeToggleDescription": "Tampilkan penggunaan kuota ZCode Coding Plan.",
@@ -771,6 +843,7 @@
         "widthDescription": "Seberapa lebar pesan dan kotak pesan bisa membentang di panel lebar.",
         "resetAppearance": "Atur ulang tampilan obrolan",
         "resetDescription": "Kembalikan ke default di atas.",
+        "resetKeyword": "atur ulang",
         "comfortable": "Nyaman",
         "wide": "Lebar",
         "full": "Penuh",
@@ -919,7 +992,7 @@
         "importInvalid": "{{count}} baris tidak dapat dibaca",
         "importUndecryptable": "{{count}} dilindungi oleh browser; ekspor CSV darinya",
         "imported": "{{count}} kata sandi yang diimpor",
-        "deleteAllConfirmDescription": "Setiap kata sandi yang disimpan di profil {{profile}} dihapus secara permanen. Hal ini tidak dapat dibatalkan.",
+        "deleteAllConfirmDescription": "Semua sandi tersimpan, catatan, dan situs yang tidak pernah disimpan di profil {{profile}} akan dihapus permanen. Ini tidak dapat dibatalkan.",
         "deletedAll": "Data kata sandi dihapus",
         "offerToSave": "Tawarkan untuk menyimpan kata sandi",
         "offerToSaveDescription": "Setelah Anda masuk ke suatu situs di browser Orca, tawarkan untuk menyimpan login tersebut.",
@@ -962,6 +1035,9 @@
           "sleep": "tidur",
           "performance": "kinerja"
         }
+      },
+      "sessionHost": {
+        "sshDetail": "Halaman untuk host SSH ini terbuka di komputer ini."
       }
     },
     "agents": {
@@ -1165,6 +1241,8 @@
     },
     "mcp": {
       "inspectFailed": "Tidak dapat memeriksa {{directory}}.",
+      "inspectConfigsFailed": "Tidak dapat memeriksa konfigurasi MCP.",
+      "createConfigFailed": "Gagal membuat konfigurasi MCP.",
       "unreadable": "Tidak dapat dibaca",
       "notFound": "Tidak ditemukan",
       "invalidJson": "Tidak valid JSON",
@@ -1228,6 +1306,7 @@
           "spaces": "spasi",
           "link": "tautan",
           "tabs": "tab",
+          "tab_characters": "karakter tab",
           "trim": "rapikan",
           "root": "akar",
           "word_wrap": "bungkus kata",
@@ -1357,7 +1436,7 @@
         "addedMany": "Menambahkan baris {{count}}",
         "forgotMany": "Lupa baris {{count}}",
         "changedMany": "Mengubah baris {{count}}",
-        "chat": "Obrolan \"{{title}}\"",
+        "chat": "Chat “{{title}}”",
         "aChat": "Obrolan",
         "chatFrom": "{{chat}} · dari {{source}}",
         "kept": "Orca · {{chat}} menulis di atasnya",
@@ -1373,6 +1452,8 @@
         "nothingToUndo": "Tidak ada lagi yang perlu diurungkan: garis-garis itu telah berubah sejak saat itu.",
         "empty": "Belum ada perubahan."
       },
+      "muteNotifications": "Bisukan notifikasi",
+      "muteNotificationsDescription": "Berhenti mengirim notifikasi sistem. Indikator belum dibaca tetap muncul.",
       "notifyNeedsPermission": "Perlu izin",
       "notifyNeedsPermissionDescription": "Saat bot atau worker memerlukan persetujuan Anda.",
       "notifyTaskComplete": "Tugas selesai",
@@ -1484,7 +1565,10 @@
           "secretsHint": "Nilai yang disimpan tetap bersifat pribadi. Biarkan nilai yang disimpan kosong untuk menyimpannya, masukkan nilai untuk menggantikannya, atau hapus barisnya untuk menghapusnya.",
           "unconfirmed": "Belum dikonfirmasi",
           "checkAgain": "Periksa lagi"
-        }
+        },
+        "hostMcpNone": "Belum ada di host ini",
+        "hostMcp": "Server MCP Anda",
+        "hostMcpAndMore": "Server MCP Anda, {{rest}}"
       },
       "editPicture": "Edit gambar bot",
       "retry": "Coba lagi",
@@ -1810,8 +1894,121 @@
     "computerUse": {
       "teamDisabled": "Penggunaan Komputer dimatikan oleh tim Anda."
     },
+    "browserUse": {
+      "teamDisabled": "Browser Use dimatikan oleh tim Anda."
+    },
     "artifacts": {
       "teamDisabled": "Berbagi artefak dimatikan oleh tim Anda."
+    },
+    "navigation": {
+      "accounts": {
+        "description": "Peralihan akun dan pengaturan penggunaan opsional untuk Claude, Codex, Antigravity, OpenCode Go, MiniMax, dan Grok."
+      }
+    },
+    "mcpServers": {
+      "custom": {
+        "found": "Ditemukan {{count}} server",
+        "foundUrl": "URL · {{line}}",
+        "foundCommand": "Command · {{line}}",
+        "title": "Server kustom",
+        "sourceLabel": "URL server, perintah start, atau konfigurasi",
+        "sourceHint": "Tempelkan URL server, perintah start, atau konfigurasi, atau masukkan detailnya sendiri.",
+        "nameTaken": "Server bernama {{name}} sudah ada. Pilih nama lain.",
+        "line": "URL, perintah start, atau konfigurasi",
+        "foundTaken": "Sudah ditambahkan"
+      },
+      "empty": {
+        "copied": "Menyalin {{count}} server dari {{host}}",
+        "title": "Tidak ada server MCP di {{host}}",
+        "copyFrom": "Salin dari {{host}}"
+      },
+      "addServer": "Tambahkan server",
+      "toast": {
+        "saved": "{{name}} disimpan",
+        "sharedOn": "{{name}} berbagi satu proses",
+        "sharedOff": "{{name}} berjalan sekali per sesi",
+        "signedOut": "Keluar dari {{name}}",
+        "removed": "{{name}} dihapus",
+        "workspaces": "{{name}}: {{workspaces}}",
+        "added": "{{name}} ditambahkan",
+        "addedMany": "{{count}} server ditambahkan",
+        "repoOn": "{{name}} diaktifkan di {{repo}}",
+        "repoOff": "{{name}} dimatikan di {{repo}}"
+      },
+      "stale": "Server ini berubah di tempat lain. Menampilkannya apa adanya saat ini.",
+      "launch": {
+        "title": "Luncurkan",
+        "command": "Command",
+        "args": "Argumen",
+        "env": "Environment"
+      },
+      "connection": {
+        "title": "Koneksi",
+        "url": "URL",
+        "headers": "Header"
+      },
+      "shared": {
+        "title": "Bagikan satu proses ke semua agent",
+        "line": "Menggunakan lebih sedikit memori. Server berjalan di luar folder ruang kerja."
+      },
+      "signIn": "Masuk",
+      "signInActions": "Tindakan masuk",
+      "signInAgain": "Masuk lagi",
+      "signOut": "Keluar",
+      "loading": "Membaca server MCP…",
+      "remove": {
+        "title": "Hapus {{name}}?",
+        "line": "Sesi baru di {{host}} tidak akan memilikinya. Nilai tersimpan dan status masuknya akan dihapus.",
+        "confirm": "Hapus",
+        "button": "Hapus server"
+      },
+      "found": {
+        "onlyIn": "{{agents}} · hanya {{projects}}",
+        "move": "Pindahkan ke Orca",
+        "actions": "Tindakan {{name}}",
+        "copy": "Salin ke Orca",
+        "open": "Buka",
+        "copied": "Menyalin {{name}} ke Orca",
+        "title": "Di agent Anda",
+        "summary": "Ditemukan {{count}} server di {{agents}}",
+        "moveAll": "Pindahkan semua ke Orca"
+      },
+      "signedInToast": "Masuk ke {{name}}",
+      "pasteRefused": "Alamat itu bukan dari proses masuk ini.",
+      "workspaces": {
+        "title": "Ruang kerja",
+        "later": "Ruang kerja yang ditambahkan nanti"
+      },
+      "catalog": {
+        "noMatch": "Tidak ada server yang cocok dengan “{{query}}”.",
+        "search": "Cari server",
+        "caption": "Server"
+      },
+      "add": {
+        "title": "Tambahkan server MCP"
+      },
+      "catalogLine": {
+        "github": "Issue, pull request, dan pencarian kode",
+        "linear": "Baca dan perbarui issue dan proyek"
+      },
+      "move": {
+        "title": "Pindahkan {{name}} ke Orca?",
+        "allTitle": "Pindahkan {{count}} server ke Orca?",
+        "line": "Orca menghapusnya dari pengaturan {{agents}} dan menyimpan cadangan.",
+        "allLine": "Orca menghapusnya dari pengaturan {{agents}} dan menyimpan cadangan.",
+        "confirm": "Pindahkan"
+      },
+      "yours": "Milik Anda",
+      "fromPlugins": "Dari plugin",
+      "unsupported": "Server MCP tidak tersedia di {{host}}.",
+      "title": "Server MCP",
+      "description": "Server yang dapat digunakan agent Anda. Perubahan berlaku untuk sesi baru.",
+      "repo": {
+        "on": "Aktif di repo ini",
+        "add": "Tambahkan server untuk repo ini",
+        "files": "Dari file repo ini",
+        "open": "Buka {{file}}"
+      }
     }
   },
   "menu": {
@@ -2080,10 +2277,6 @@
           }
         },
         "worktrees": {
-          "14bc053a47": "Lokal {{value0}} tidak disegarkan",
-          "localBaseRefRefreshFailedForWorktree": "Lokal {{value0}} tidak disegarkan untuk \"{{value1}}\"",
-          "903b51c2ed": "Ruang kerja dibuat dari {{value0}}, namun Orca tidak dapat melakukan fast-forward {{value1}} lokal. {{value2}}",
-          "localBaseRefRefreshFailedDescriptionNamed": "Ruang Kerja \"{{value0}}\" dibuat dari {{value1}}, tetapi Orca tidak dapat melakukan fast-forward {{value2}} lokal. {{value3}}",
           "localBaseRefRefreshFailedDetailDirtyNamed": "Worktree di {{value0}} (tempat {{value1}} lokal di-checkout) punya perubahan yang belum di-commit. Commit, stash, atau buang perubahan itu, lalu perbarui {{value1}} lokal secara manual.",
           "localBaseRefRefreshFailedDetailDirty": "Worktree tempat {{value0}} lokal di-checkout punya perubahan yang belum di-commit. Commit, stash, atau buang perubahan itu, lalu perbarui {{value0}} lokal secara manual.",
           "localBaseRefRefreshFailedDetailNotFastForward": "Lokal {{value0}} tidak ada atau tidak dapat diteruskan dengan cepat dari basis jarak jauh. Periksa commit khusus lokal sebelum memperbaruinya secara manual.",
@@ -2124,7 +2317,13 @@
           },
           "createdWithoutParentNesting": "Dibuat tanpa bersarang di bawah \"{{value0}}\"",
           "createdWithoutParentNestingUnnamed": "Dibuat tanpa bersarang di bawah induk yang dipilih",
-          "createdWithoutParentNestingDetail": "Ruang kerja induk tidak lagi tersedia. Anda dapat mengaturnya dari menu ruang kerja."
+          "createdWithoutParentNestingDetail": "Ruang kerja induk tidak lagi tersedia. Anda dapat mengaturnya dari menu ruang kerja.",
+          "localBaseRefNotUpdated": "{{value0}} tidak diperbarui",
+          "localBaseRefNotUpdatedDirty": "Ada perubahan yang belum di-commit di {{value0}}.",
+          "localBaseRefNotUpdatedNotFastForward": "Ada commit lokal saja di {{value0}}.",
+          "localBaseRefNotUpdatedError": "Error Git.",
+          "localBaseRefHideDetails": "Sembunyikan detail",
+          "localBaseRefShowDetails": "Detail"
         },
         "repos": {
           "2975400634": "Perbarui server Orca untuk membuka folder non-Git pada waktu proses ini.",
@@ -2229,7 +2428,6 @@
           "8da11d876c": "Angsa",
           "b32627f09b": "Penolong",
           "691dd11789": "Antigravity",
-          "12e6baa4f7": "Gemini",
           "09973b4d84": "OMP",
           "302934c5d9": "Pi",
           "706b0fe68b": "GitHub Copilot",
@@ -2486,6 +2684,22 @@
               }
             }
           }
+        },
+        "ports": {
+          "serverPortForward": {
+            "updateServer": "Tidak dapat meneruskan port {{port}} dari {{host}}. Perbarui Orca di {{host}} lalu coba lagi.",
+            "failed": "Tidak dapat meneruskan port {{port}} dari {{host}}. Periksa koneksi lalu coba lagi.",
+            "forwarded": "Port {{port}} dari {{host}} diteruskan",
+            "opened": "{{address}} dibuka di browser default Anda.",
+            "otherMachine": "Tidak dapat meneruskan port {{port}}: ruang kerja ini tidak berjalan di {{host}} itu sendiri.",
+            "useSshPorts": "Tidak dapat meneruskan port {{port}} dari {{host}}. Teruskan di Ports, lalu coba lagi.",
+            "restoredMoved": "Port {{port}} dari {{host}} diteruskan ke localhost:{{localPort}}",
+            "restoredMovedReason": "localhost:{{previousPort}} sedang dipakai di komputer ini."
+          },
+          "forwardedUrl": {
+            "openedIpv4": "Membuka 127.0.0.1:{{port}} alih-alih localhost",
+            "openedIpv4Reason": "Aplikasi lain di komputer ini memakai localhost:{{port}}."
+          }
         }
       },
       "worktree": {
@@ -2635,7 +2849,8 @@
         "projectRemoved": "Proyek telah dihapus dari Orca.",
         "folderWorkspaceRemoved": "Folder ruang kerja telah dihapus.",
         "chatStillStarting": "Obrolan ini masih dimulai. Coba lagi nanti.",
-        "chatOpenFailed": "Tidak dapat membuka obrolan ini.",
+        "chatOpenFailed": "Tidak dapat membuka chat",
+        "chatOpenDismiss": "Tutup",
         "chatOpenRetry": "Coba lagi",
         "chatOpenShowDetails": "Tampilkan detail",
         "chatOpenHideDetails": "Sembunyikan detail"
@@ -2845,11 +3060,6 @@
           "failedToLoadUsage": "Gagal memuat data penggunaan",
           "failedToParseCliOutput": "Gagal mengurai keluaran CLI",
           "fetchAborted": "Pengambilan batas tarif dibatalkan",
-          "geminiCredentialsNotFound": "Gemini CLI kredensial tidak ditemukan",
-          "geminiOauthDisabled": "Gemini CLI OAuth dinonaktifkan di pengaturan",
-          "geminiProjectIdLoadFailed": "Gagal memuat Gemini ID proyek (HTTP {{status}})",
-          "geminiProjectIdMissingInResponse": "Gemini ID proyek tidak ditemukan di API tanggapan",
-          "geminiProjectIdNotFound": "Gemini ID proyek tidak ditemukan",
           "grokAuthInvalid": "Grok file autentikasi tidak valid",
           "grokAuthUnreadable": "Tidak dapat membaca Grok file autentikasi",
           "grokBillingConfigMissing": "Grok respons penagihan tidak termasuk konfigurasi",
@@ -2885,13 +3095,11 @@
           "opencodeNoWorkspaceIdShort": "Tidak ditemukan ID ruang kerja",
           "ptyTimeout": "Batas waktu PTY habis",
           "ptyUsageTimeout": "Batas waktu PTY - / panel penggunaan tidak dirender",
-          "quotaFetchFailed": "Pengambilan kuota gagal ({{status}})",
           "rpcFailed": "RPC gagal",
           "rpcProcessExited": "Proses RPC keluar secara tidak terduga",
           "rpcTimeout": "batas waktu RPC",
           "sessionCookieNotConfigured": "Cookie sesi tidak dikonfigurasi",
           "signInWithChatgpt": "Masuk dengan ChatGPT",
-          "tokenRefreshFailed": "Penyegaran token gagal",
           "unknown": "Kesalahan tidak diketahui",
           "usagePageFetchFailed": "Pengambilan halaman penggunaan gagal ({{status}})",
           "waitingForClaudeSession": "Menunggu sesi Claude",
@@ -3016,7 +3224,6 @@
         "cd50cec5d7": "Koordinasikan beberapa agen pengkodean melalui Orca.",
         "58a868e8e4": "Orkestrasi",
         "7c79d3b7bf": "Opsional",
-        "b1c2f8b0ac": "Peralihan akun opsional dan pengaturan penggunaan untuk Claude, Codex, Gemini, OpenCode Go, MiniMax, dan Grok.",
         "f70ac54d38": "Akun Penyedia AI",
         "4121f7a0a2": "Kelola agen AI, tetapkan default, dan sesuaikan perintah.",
         "b49abbd2f7": "Agen",
@@ -3585,9 +3792,9 @@
         "setLocationTooltip": "Pilih folder atau kloning proyek ini ke {{host}}.",
         "addHost": "Tambah host",
         "addSshHost": "Tambah host SSH",
-        "addSshHostHint": "Gunakan mesin yang ada di atas SSH",
+        "addSshHostHint": "Hubungkan lewat SSH",
         "addRemoteOrcaServer": "Tambahkan Server Jarak Jauh Orca",
-        "addRemoteOrcaServerHint": "Pasangkan runtime Orca lainnya",
+        "addRemoteOrcaServerHint": "Orca di komputer lain",
         "hostConnectionFailed": "Koneksi gagal",
         "connect": "Hubungkan",
         "reconnect": "Hubungkan ulang",
@@ -4709,9 +4916,8 @@
             "a9957007eb": "Abaikan {{value0}}",
             "bef0adef9b": "Cabang",
             "bbb1ab6a6f": "Pilih {{value0}}",
-            "b771c92598": "Hapus yang dipilih",
             "7eee951968": "Memindai ruang kerja",
-            "7ae2ad30f4": "Segarkan",
+            "191f0bc98e": "Tutup",
             "7f451a3e2c": "Tidak dapat mengabaikan saran pembersihan",
             "662b8ec3f8": "Pemindaian pembersihan ruang kerja gagal",
             "9cc26c019d": "Hapus",
@@ -4779,10 +4985,6 @@
             "faa855a582": "Hex",
             "1cec618bcc": "{{value0}} pemilih"
           }
-        },
-        "dialog": {
-          "f26c4baeda": "Tutup",
-          "minimize": "Perkecil"
         },
         "repo": {
           "multi": {
@@ -5496,8 +5698,6 @@
             "runtime_last_close_reason": "Ditutup: {{value0}}",
             "runtime_reconnect_attempt": "Coba {{value0}}",
             "runtime_workspace_window_closed": "Jendela ruang kerja ditutup",
-            "connectedHostCount_one": "{{count}} host",
-            "connectedHostCount_other": "{{count}} host",
             "searchSshHosts": "Cari SSH host…",
             "noMatchingSshHosts": "Tidak ada SSH host yang cocok.",
             "moreSshHostMatches_one": "{{count}} lebih banyak kecocokan. Teruslah mengetik untuk mempersempitnya.",
@@ -5511,7 +5711,6 @@
             "24ac89df1a": "Host Jarak Jauh",
             "5e59007df4": "Kimi Penggunaan",
             "8c86cd77b0": "OpenCode Buka Penggunaan",
-            "c1df0d67ec": "Gemini Penggunaan",
             "c0909c686e": "Codex Penggunaan",
             "3885eb74d8": "Claude Penggunaan",
             "c8857b40f7": "Segarkan data penggunaan",
@@ -5540,7 +5739,6 @@
             "c0e972d726": "Batal",
             "3bbf140864": "MiniMax Penggunaan",
             "remoteServerLabel": "Server jarak jauh",
-            "antigravityUsage": "Antigravity Penggunaan",
             "grokUsageMenu": "Grok Penggunaan",
             "floatingTerminalNewActivity": "{{label}}, aktivitas baru",
             "4fba7dc1e7": "{{value0}} bal",
@@ -5783,6 +5981,12 @@
                 "message": "pembaruan penggunaan Claude saat berikutnya Claude dijalankan."
               }
             },
+            "codex": {
+              "waiting": {
+                "label": "Diperbarui saat Codex berjalan",
+                "message": "Pemakaian Codex diperbarui saat Codex berjalan lagi."
+              }
+            },
             "justNow": "baru saja",
             "minutesAgo": "{{minutes}}m yang lalu",
             "hoursAgo": "{{hours}} jam yang lalu",
@@ -5994,16 +6198,9 @@
             "mainWorktree": "worktree utama",
             "detached": "terpisah"
           },
-          "antigravity": {
-            "unknownAccount": "akun Google",
-            "accounts": "Antigravity Akun Tersimpan",
-            "readAgo": "Baca {{time}}",
-            "notRead": "Penggunaan tidak diketahui: belum dibaca"
-          },
           "AccountSwitchList": {
             "used": "Digunakan",
             "left": "Kiri",
-            "reset": "Atur ulang",
             "accounts": "Akun"
           },
           "InlineUsageBars": {
@@ -6789,13 +6986,24 @@
           "strandedDescription": "Hasil edit Anda masih dalam {{value0}}. Salin di tempat yang aman sebelum memperbarui lagi.",
           "preservedTitle": "Hasil edit Anda pada {{value0}} disimpan secara terpisah",
           "preservedDescription": "Orca memperbarui skill dan menyimpan hasil edit Anda ke {{value0}}.",
+          "preservedBackupOnly": "Orca menyimpan editan Anda ke {{value0}}.",
           "uncertainTitle": "Orca tidak dapat mengonfirmasi pembaruan skill di {{value0}}",
-          "uncertainDescription": "Orca mungkin telah memperbarui skill pada {{value0}} tetapi tidak dapat mengonfirmasi hasilnya. Jika Anda mengedit skill selama pembaruan, salinannya ada di {{value1}}."
+          "uncertainDescriptionKept": "Orca mungkin memperbarui skill di {{value0}}, tetapi tidak dapat memastikan hasilnya. Jika Anda mengedit sebuah skill selama pembaruan, salinan Anda ada di {{value1}} atau masih di folder skills."
         },
         "SkillBackupPathLine": {
           "movedTo": "Salinan lama dipindahkan ke:",
           "movedToOnHost": "Salinan lama dipindahkan ke {{host}}:",
           "showFolder": "Tampilkan folder"
+        },
+        "skillBackupRefusal": {
+          "inPlaceReason": "Tidak dapat mencadangkannya: lokasinya di drive lain.",
+          "tryAgain": "Pindahkan keluar dari folder skills, lalu coba lagi.",
+          "leftoverReason": "Tidak dapat mencadangkan salinan sisa: lokasinya di drive lain.",
+          "movedAsideReason": "Tidak dapat mencadangkan salinan lama: lokasinya di drive lain.",
+          "keepIt": "Pindahkan keluar dari folder skills agar tetap tersimpan.",
+          "noReminder": "Pindahkan keluar dari folder skills. Orca tidak akan mengingatkan Anda.",
+          "copyPathFor": "Salin path untuk {{value0}}",
+          "copyFailed": "Tidak dapat menyalin path."
         }
       },
       "sidebar": {
@@ -6846,8 +7054,8 @@
           "addSshHost": "Tambah host SSH",
           "addRemoteServer": "Tambahkan server jarak jauh",
           "addRemoteHost": "Tambahkan host jarak jauh",
-          "addSshHostDetail": "Gunakan mesin yang ada di atas SSH.",
-          "addRemoteServerDetail": "Sandingkan dengan Orca yang berjalan di komputer lain.",
+          "addSshHostDetail": "Hubungkan ke mesin lewat SSH.",
+          "addRemoteServerDetail": "Orca di komputer lain, tanpa perlu SSH.",
           "addRemoteHostDetail": "SSH host atau Orca server",
           "addWslHost": "Tambahkan WSL distro",
           "addWslHostDetail": "Jalankan server Orca di dalam distro WSL 2. Eksperimental.",
@@ -6940,10 +7148,7 @@
           "eab8b45238": "Salin error",
           "a23b22d16f": "Disalin",
           "74fc00776f": "Detail kesalahan",
-          "ca3b225195": "Nama otomatis cabang gagal",
-          "couldNotGenerateBranchName": "Orca tidak dapat menghasilkan nama cabang untuk <name>{{name}}</name> dari pesan agen pertama.",
           "tryAgain": "Coba lagi",
-          "namingBranch": "Penamaan cabang…",
           "errorDetailsAt": "Detail kesalahan · {{time}}",
           "reasonNothingYet": "Belum ada perubahan nama cabang ini.",
           "reasonBranchChanged": "Cabang berubah saat Orca menamainya.",
@@ -6957,8 +7162,7 @@
           "reasonNoDistinctName": "Nama yang dihasilkan cocok dengan nama saat ini.",
           "reasonFirstMessageUnavailable": "Orca tidak dapat menemukan pesan pertama ruang kerja ini.",
           "reasonAlreadyNamed": "Ruang kerja ini telah diganti namanya.",
-          "reasonUnavailable": "Orca tidak dapat memberi nama cabang ini lagi.",
-          "branchNameKept": "Nama cabang disimpan"
+          "reasonUnavailable": "Orca tidak dapat memberi nama cabang ini lagi."
         },
         "CreateProjectLocationField": {
           "95548e33bf": "Pilih folder induk...",
@@ -7304,9 +7508,6 @@
           "0f33af979b": "Checkout sebagian. File di luar jalur ini tidak ada di disk.",
           "4f964d5e8c": "jarang",
           "7d517f82e2": "utama",
-          "4eba2ea99e": "Nama otomatis gagal. Klik untuk melihat detailnya.",
-          "74522ee457": "penggantian nama gagal",
-          "02e19349f4": "Ganti nama otomatis gagal: kesalahan tampilan",
           "691ccfd622": "Menghapus…",
           "deleteFailed": "Penghapusan gagal",
           "35ccfe2475": "Proyek {{value0}}",
@@ -7416,7 +7617,8 @@
           "lineageSubmenu": "Orang Tua & Anak",
           "projectGroupSubmenu": "Grup Proyek",
           "muteNotifications": "Bisukan Notifikasi",
-          "unmuteNotifications": "Suarakan Notifikasi"
+          "unmuteNotifications": "Suarakan Notifikasi",
+          "copyAutoNameError": "Error Auto-Name"
         },
         "WorktreeList": {
           "7a8b9c0d1e": "Pembaruan diperlukan",
@@ -7834,7 +8036,7 @@
           "serverSaveFailed": "Gagal menambahkan server jarak jauh.",
           "serverTitle": "Tambahkan server jarak jauh",
           "sshTitle": "Tambah host SSH",
-          "serverDescription": "Sandingkan dengan Orca yang berjalan di komputer lain.",
+          "serverDescription": "Sandingkan dengan Orca di komputer lain pada jaringan yang sama.",
           "serverRunsAsYou": "Perangkat ini akan dapat menjalankan perintah seperti Anda di server ini.",
           "sshDescription": "Tambahkan mesin persisten yang dapat Anda masuki melalui SSH.",
           "serverSshTitle": "Tambahkan SSH host ke {{server}}",
@@ -8027,8 +8229,8 @@
           "running": "Berjalan",
           "stopped": "Dihentikan",
           "title": "Tambahkan WSL distro",
-          "descriptionMoveFromSidebar": "Orca menjalankan servernya di dalam distro, jadi git, file, dan terminal berjalan secara native di Linux. Proyek di distro ini yang Anda buka melalui \\\\wsl.localhost tetap ada di komputer ini sampai Anda memindahkannya dari menu sidebar. Proyek di drive Windows (/mnt/…) juga tetap di sini. Anda dapat mengembalikan proyek yang dipindahkan dari sidebar.",
-          "descriptionAutoMove": "Orca menjalankan servernya di dalam distro, jadi git, file, dan terminal berjalan secara native di Linux. Proyek di distro ini yang Anda buka melalui \\\\wsl.localhost pindah ke host ini secara otomatis setelah terminalnya menganggur. Proyek di drive Windows (/mnt/…) tetap di komputer ini. Anda dapat mengembalikan proyek yang dipindahkan dari sidebar.",
+          "descriptionMoveFromSidebar": "Git, file, dan terminal berjalan native di Linux. Proyek WSL yang sudah ada tetap di Windows sampai Anda memilih Move to … host di menu proyeknya.",
+          "descriptionAutoMove": "Git, file, dan terminal berjalan native di Linux. Proyek WSL Anda pindah ke sini setelah terminalnya idle.",
           "distro": "Distro",
           "loading": "Mencari distro WSL…",
           "placeholder": "Pilih distro",
@@ -8149,6 +8351,26 @@
           "browseFolder": "Telusuri folder…",
           "cloneFromUrl": "Kloning dari URL…",
           "createNewProject": "Buat proyek baru…"
+        },
+        "AutoNameFailed": {
+          "naming": "Memberi nama ruang kerja ini…",
+          "title": "Tidak dapat memberi nama otomatis",
+          "dismiss": "Tutup",
+          "modelUnavailableOnAccount": "{{model}} tidak tersedia pada akun {{agent}} ini",
+          "modelUnavailableForAgent": "{{model}} tidak tersedia untuk {{agent}}",
+          "modelUnavailable": "{{model}} tidak tersedia",
+          "timedOut": "Waktu habis setelah {{seconds}} detik",
+          "agentMissing": "{{agent}} tidak terpasang",
+          "usageLimitAgent": "{{agent}} mencapai batas pemakaian",
+          "usageLimit": "Agent penamaan mencapai batas pemakaian",
+          "signedOutAgent": "{{agent}} belum masuk",
+          "signedOut": "Agent penamaan belum masuk",
+          "agentFailed": "{{agent}} keluar dengan error",
+          "noAgent": "Belum ada agent penamaan yang disiapkan",
+          "publishCheck": "Tidak dapat memastikan apakah branch sudah di-push",
+          "environment": "Tidak dapat memulai agent penamaan",
+          "emptyName": "Agent tidak mengembalikan nama yang bisa dipakai",
+          "unknown": "Agent penamaan mengalami error"
         }
       },
       "shared": {
@@ -8223,12 +8445,6 @@
           "0335bd31d5": "Tempelkan header Cookie opencode.ai lengkap, termasuk __Host-console_session, untuk pengambilan batas kecepatan.",
           "ea631977b5": "Konfigurasikan OpenCode Pengaturan penyedia Go.",
           "4ac10b4d08": "OpenCode Ayo",
-          "c2aee76420": "Ekstrak kredensial OAuth dari instalasi Gemini CLI lokal Anda untuk mengautentikasi dengan Google untuk {{value0}}. Ini menggunakan kredensial yang dikeluarkan untuk aplikasi Gemini CLI, bukan Orca. Mungkin rusak jika Google memperbarui CLI. Gunakan dengan risiko Anda sendiri.",
-          "96f3649526": "Gunakan kredensial Gemini CLI (eksperimental)",
-          "d676c41fc6": "Ekstrak kredensial OAuth dari instalasi Gemini CLI lokal Anda untuk mengautentikasi dengan Google. Ini menggunakan kredensial yang dikeluarkan untuk aplikasi Gemini CLI, bukan Orca. Mungkin rusak jika Google memperbarui CLI. Gunakan dengan risiko Anda sendiri.",
-          "0c7f915b01": "Gunakan kredensial Gemini CLI",
-          "973741a871": "Tetap sediakan sesi Gemini CLI yang ada. Kredensial Gemini tidak membuat Anda masuk ke Antigravity.",
-          "0c64dc2a64": "Gemini CLI (warisan)",
           "db209ee572": "Hapus",
           "8a0f870153": "Otentikasi ulang",
           "3d245ef7d9": "Codex melaporkan proses masuk ini sudah kedaluwarsa",
@@ -8532,18 +8748,14 @@
         },
         "BrowserProfileRow": {
           "8e636cae25": "Profil \"{{value0}}\" dihapus.",
-          "2d4bea7f35": "Cookie default dihapus.",
           "796d846483": "Tidak ada cookie yang diimpor",
           "c29648fe5b": "Aktif",
           "b4c167764d": "Mengimpor {{value0}} cookie dari file ke {{value1}}.",
           "a3f8c2d1e0b4": "Mengimpor {{value0}} cookie dari {{value1}} ({{value2}}) ke {{value3}}.",
           "b4e9d3f2a1c5": "Mengimpor {{value0}} cookie dari {{value1}} ke {{value2}}.",
           "c5a273a809": "Dari {{value0}}",
-          "4054c458e1": "Hapus cookie default",
           "80bffd32bf": "Impor cookie",
-          "bd7d68f138": "Dari file…",
-          "3b662becd5": "Hapus cookie di profil Default?",
-          "f159cf5a3e": "Ini mungkin membuat Anda keluar dari situs di profil ini."
+          "bd7d68f138": "Dari file…"
         },
         "BrowserUseComputerUseNotice": {
           "79209b37b9": "Jika impor cookie tidak sesuai, Penggunaan Komputer dapat mengontrol aplikasi lokal dan dapat menggunakan sesi browser login yang ada jika berlaku. Instal skill Orca Penggunaan Komputer; macOS juga memerlukan izin privasi.",
@@ -9476,7 +9688,9 @@
           "lucideDescription": "ikon {{label}} dengan warna repo",
           "defaultIcon": "Bawaan",
           "cc76342291": "Gunakan avatar GitHub",
-          "43bf3709dd": "Ikon repo"
+          "43bf3709dd": "Ikon repo",
+          "autoColor": "Warna otomatis (dibuat berbeda dari proyek lain)",
+          "lettersDescription": "Huruf “{{text}}”"
         },
         "RepositoryPane": {
           "15a99d9b9f": "Jalur relatif diselesaikan dari akar proyek ini.",
@@ -9684,6 +9898,7 @@
           "localLink": "Tautan khusus lokal",
           "localLinkHelp": "Tautan ini hanya berfungsi di browser atau klien Orca yang berjalan di komputer ini.",
           "noExternalAddress": "Tidak ada alamat untuk perangkat lain yang ditemukan. Hubungkan komputer ini ke LAN atau Tailscale, segarkan, atau pilih Alamat khusus.",
+          "interfaceDisconnected": "{{address}} terputus. Sambungkan kembali lalu segarkan, atau pilih alamat lain untuk membuat tautan.",
           "customInvalid": "Masukkan host yang valid, host:port, alamat IPv6, atau URL ws(s)://.",
           "thisComputer": "Komputer ini",
           "whoOpens": "Siapa yang akan membuka link tersebut",
@@ -10327,13 +10542,6 @@
             "61f7d1fcbe": "kue",
             "37020a02c2": "konsol",
             "25591bf95b": "Tempelkan header Cookie opencode.ai lengkap, termasuk __Host-console_session, untuk pengambilan batas kecepatan.",
-            "b7c2cee442": "eksperimental",
-            "7118d2f908": "kredensial",
-            "933deaf732": "sumpah",
-            "8630464352": "CLI",
-            "e8e1ff3887": "gemini",
-            "bada4a3218": "Ekstrak kredensial OAuth dari instalasi Gemini CLI lokal Anda untuk mengautentikasi dengan Google.",
-            "d819755b02": "Gunakan kredensial Gemini CLI",
             "35b461d817": "masuk",
             "f2d666a886": "opsional",
             "8b06729e0f": "aktif",
@@ -10571,9 +10779,6 @@
             "d77537b580": "kode terbuka-pergi",
             "a9d56852eb": "kode terbuka",
             "7f72de7cbe": "Tampilkan OpenCode Go token dan penggunaan biaya di bilah status.",
-            "51b0ccd6a2": "google",
-            "2804a920ad": "gemini",
-            "9660c5b2f1": "Tampilkan Gemini penggunaan token dan biaya di bilah status.",
             "97957e374e": "buka",
             "8dfd676c28": "Codex",
             "e9e4412545": "Tampilkan Codex penggunaan token dan biaya di bilah status.",
@@ -10615,8 +10820,6 @@
               "pr": "pr",
               "duplicate": "duplikat"
             },
-            "antigravityUsageDescription": "Tampilkan Antigravity penggunaan langganan di bilah status.",
-            "antigravityKeyword": "antigravity",
             "e7d1b0f3a5": "Tampilkan Grok penggunaan kredit mingguan dari Grok CLI OAuth.",
             "d6c0a9e2f4": "grok",
             "c5b9f8d1e3": "xai",
@@ -10657,7 +10860,6 @@
             "1b404ee6ad": "Tampilkan tombol Orca Mobile",
             "183e6b8ef9": "penggunaan ZCode",
             "d408ece868": "Minimalkan ke baki saat ditutup",
-            "585be839e9": "Gemini penggunaan",
             "20e7d30150": "OpenCode Gunakan penggunaan",
             "ca64c95969": "Grok penggunaan",
             "7f5d534f81": "Tampilkan tombol otomatisasi",
@@ -10671,8 +10873,7 @@
             "c29089716e": "Kimi penggunaan",
             "96e32c1118": "MiniMax penggunaan",
             "e8d2710689": "Muse penggunaan",
-            "aff6e6afdf": "IDE font",
-            "ba1f9d39a6": "Antigravity penggunaan"
+            "aff6e6afdf": "IDE font"
           }
         },
         "auto": {
@@ -13305,6 +13506,8 @@
             "unverifiable": "Belum selesai: Orca tidak dapat mengonfirmasi apa yang sedang berjalan di server ini. Coba lagi saat host dapat dihubungi.",
             "migration": "Belum selesai: perpindahan ke server ini belum selesai. Lanjutkan dulu.",
             "deferred": "Belum selesai: server belum siap untuk ini. Coba lagi nanti.",
+            "stopIncomplete": "Belum selesai: Orca tidak dapat memastikan server saat ini sudah berhenti, jadi pembaruan tidak dimulai. Periksa orcad.log di folder instalasi server di bawah ~/.orca-remote pada host sebelum mencoba lagi.",
+            "rollbackStopIncomplete": "Belum selesai: Orca tidak dapat memastikan server saat ini sudah berhenti, jadi rollback tidak dilakukan. Periksa orcad.log di folder instalasi server di bawah ~/.orca-remote pada host sebelum mencoba lagi.",
             "failed": "Orca tidak dapat menyelesaikan ini di server. Coba lagi.",
             "defaultServer": "Belum selesai: server ini adalah host default untuk proyek baru. Pilih yang lain di bawah Proyek baru dibuka sebelum menghentikannya.",
             "wslMoveRunning": "Belum selesai: sebuah proyek sedang dipindahkan ke server ini. Orca memperbaruinya setelah perpindahan selesai."
@@ -13468,7 +13671,7 @@
         "wslHostsExperimental": {
           "toggleLabel": "Alihkan WSL distro sebagai host",
           "title": "WSL distro sebagai host",
-          "description": "Tambahkan distro WSL 2 sebagai host. Orca menjalankan servernya di dalam distro, jadi git, file, dan terminal di proyek baru di sana berjalan secara native di Linux.",
+          "description": "Jalankan server Orca di dalam distro WSL 2, sehingga git, file, dan terminal berjalan native di Linux.",
           "keywordWsl": "WSL",
           "keywordLinux": "Linux",
           "keywordDistro": "distro"
@@ -13476,13 +13679,13 @@
         "wslHosts": {
           "title": "WSL host",
           "experimental": "Eksperimental",
-          "description": "Orca menjalankan server di dalam setiap distro. Membuka proyek tidak pernah memulai distro yang berhenti: klik Mulai, buka terminal baru, atau sambungkan di sini.",
+          "description": "Orca menjalankan server di dalam setiap distro. Untuk memulai distro yang berhenti, klik Start, buka terminal, atau hubungkan di sini.",
           "add": "Tambahkan WSL distro",
           "connect": "Hubungkan",
           "forceUpdate": "Paksa pembaruan",
           "turnOn": "Buka Eksperimental",
           "chip": "WSL",
-          "notStartedAsWslHost": "Server host ini dimulai oleh host SSH, bukan sebagai host WSL, jadi proyek tidak dapat dipindahkan ke sini. Mulai ulang sebagai host WSL untuk memperbaikinya.",
+          "notStartedAsWslHost": "Host SSH yang memulai server ini, jadi proyek tidak dapat pindah ke sini. Mulai ulang sebagai host WSL untuk memperbaikinya.",
           "restartAsWslHost": {
             "button": "Mulai ulang sebagai host WSL"
           }
@@ -13796,8 +13999,8 @@
             "windows": "persentase jendela",
             "reset": "waktu hingga reset, mis. 3 jam 15 menit",
             "resetAt": "mengatur ulang waktu jam, mis. 20:50",
-            "buckets": "Gemini model ember",
-            "optional": "dihilangkan ketika placeholder di dalamnya kosong"
+            "optional": "dihilangkan ketika placeholder di dalamnya kosong",
+            "namedUsagePools": "kumpulan pemakaian bernama, misalnya kumpulan paket Cursor"
           }
         }
       },
@@ -13915,13 +14118,6 @@
             "c76693e456": "Tidak dapat memuat file untuk ruang kerja ini:"
           },
           "GitHistoryPanel": {
-            "cf7cad58d2": "Belum ada commit",
-            "d0fb0f4bf2": "Segarkan commit",
-            "9f7535d22b": "Referensi adalah nama cabang atau tag yang menunjuk pada penerapan yang tepat. Mereka hanya muncul ketika Git memiliki referensi bernama untuk commit.",
-            "9289ba0cb9": "Apa itu referensi?",
-            "d836037d02": "commit",
-            "8232c8b2f2": "Buka commit {{value0}}: {{value1}}",
-            "e5e81e59a6": "Ubah ukuran commit",
             "6d1e0a7c3b": "Gagal memuat file commit"
           },
           "HostedReviewActions": {
@@ -14081,7 +14277,6 @@
             "286dbda4d6": "Coba lagi",
             "ed34038d0d": "Segarkan perbandingan cabang",
             "493f963029": "Ubah referensi dasar",
-            "11b5dd8e41": "Membandingkan dengan",
             "a9bf7c171a": "commit Gagal",
             "011f9713fc": "commit diblokir",
             "cc199ccc5f": "Lebih banyak tindakan commit dan jarak jauh",
@@ -14215,8 +14410,6 @@
             "c8e4a1f902": "Filter: {{value0}}",
             "b3c8f1a902": "Filter file berdasarkan nama",
             "d4f8c2a901": "Hapus dan tutup filter",
-            "e8a1c4b203": "vs",
-            "4b4a7de138": "Buka halaman review di browser",
             "createPrIntentCommitBlockedSummary": "commit diblokir: {{value0}} Perbaiki issue-nya, lalu coba lagi Buat PR.",
             "pushRecovery": {
               "4b37ae99b0": "Mulai agen AI default untuk memperbaiki kegagalan push ini",
@@ -14236,7 +14429,6 @@
             "97e7124eac": "Tidak dapat menyegarkan Source Control. Coba lagi.",
             "b8c2e1a904": "{{value0}} → {{value1}}",
             "a4e93c21d7": "Cabang saat ini: {{value0}}",
-            "c7d4e2f801": "Ubah referensi dasar: {{value0}}",
             "createPrIntentGenerateDetailsFailed": "Tidak dapat membuat detail review. Coba lagi Buat PR.",
             "entryStageFailed": "Gagal stage “{{value0}}”",
             "entryUnstageFailed": "Gagal melakukan unstage “{{value0}}”",
@@ -14283,7 +14475,55 @@
             "markResolved": "Tandai sebagai terselesaikan",
             "keepFile": "Simpan file",
             "keepDeletion": "Tetap hapus",
-            "refreshAll": "Segarkan semua"
+            "refreshAll": "Segarkan semua",
+            "rebaseConflictCount_one": "{{count}} konflik",
+            "rebaseConflictCount_other": "{{count}} konflik",
+            "rebasePaused": "Rebase dijeda",
+            "rebaseResolveConflictsFirst": "Selesaikan konflik terlebih dahulu",
+            "rebaseAbort": "Batalkan",
+            "rebaseContinue": "Lanjutkan",
+            "continueRebasePausedAgain": "Rebase dijeda pada konflik berikutnya",
+            "continueRebaseFailed": "Gagal melanjutkan rebase",
+            "rebaseAutostashConflict": "Rebase selesai. Perubahan yang belum di-commit tidak dapat diterapkan ulang dengan bersih; perubahan itu disimpan di stash.",
+            "rebaseStoppedByGit": "Git menjeda rebase",
+            "continueRebaseUnconfirmed": "Tidak dapat memastikan hasilnya. Source Control disegarkan untuk menampilkan keadaan saat ini.",
+            "noRebaseInProgress": "Tidak ada rebase yang sedang berlangsung",
+            "rebaseStopMovedOn": "Rebase sudah berlanjut. Periksa panel lalu coba lagi.",
+            "rebaseEmptyStep": "Tidak ada yang perlu di-commit pada langkah ini. Batalkan rebase atau selesaikan di terminal.",
+            "rebaseStepUnreadableShort": "Pemeriksaan gagal",
+            "rebaseCheckAgain": "Periksa lagi",
+            "rebaseRetryInspect": "Coba lagi",
+            "rebaseRetryInspectLabel": "Coba periksa langkah rebase lagi",
+            "rebaseStoppedFinishInTerminal": "Git menjeda langkah ini. Selesaikan di terminal atau batalkan.",
+            "rebaseCheckingStep": "Memeriksa langkah rebase",
+            "rebaseEmptyStepShort": "Langkah kosong",
+            "rebaseAbortLabel": "Batalkan rebase",
+            "scopeFileCount_one": "{{count}} file",
+            "scopeFileCount_other": "{{count}} file",
+            "scopeCommitCount_one": "{{count}} commit",
+            "scopeCommitCount_other": "{{count}} commit",
+            "scopeUncommitted": "Belum di-commit",
+            "scopeAllChanges": "Semua perubahan",
+            "scopeNone": "Tidak ada",
+            "scopeShowAll": "Tampilkan semua perubahan",
+            "scopeBranchCommits": "Commit di branch ini",
+            "scopeRecentCommits": "Commit terbaru",
+            "scopeCompareTo": "Bandingkan dengan {{ref}}",
+            "scopeFilterCommits": "Filter commit",
+            "scopeCommitsFailed": "Tidak dapat memuat commit.",
+            "scopeFilesFailed": "Tidak dapat memuat file.",
+            "scopeLoadingFiles": "Memuat file…",
+            "scopeNoSharedHistory": "Tidak ada riwayat bersama dengan {{ref}}",
+            "scopeRetryCommits": "Coba lagi",
+            "scopeLoadingCommits": "Memuat commit…",
+            "scopeNoMatchingCommits": "Tidak ada commit yang cocok",
+            "scopeNoBranchCommitsYet": "Belum ada commit di branch ini",
+            "scopeNoCommitsYet": "Belum ada commit",
+            "scopeOlderHistory": "Riwayat lama di Git Graph",
+            "scopeNoUncommitted": "Tidak ada perubahan yang belum di-commit.",
+            "scopeCommitFiles": "File",
+            "gitGraphButton": "Graph",
+            "compareLoadingAgainst": "Membandingkan dengan {{base}}"
           },
           "SourceControlAgentActionDialog": {
             "8e856842d1": "Tidak dapat memulai agen yang dipilih.",
@@ -14700,10 +14940,8 @@
                   "titlePublishBranchFirst": "Publikasikan cabang terlebih dahulu untuk menyinkronkan commit",
                   "titleUseForcePush": "Gunakan commit & Force push - jarak jauh hanya memiliki salinan commit lokal yang lebih lama",
                   "titleCommitThenPullPush": "Commit, lalu pull dan push",
-                  "rebaseFromNamedBase": "Rebase dari {{baseRef}}",
                   "rebaseFromBase": "Rebase dari Base",
                   "rebaseChooseRemoteBase": "Pilih cabang basis jarak jauh untuk melakukan rebase",
-                  "rebaseDirtyHint": "Coba lakukan rebasing; git mungkin perlu melakukan atau menyembunyikan perubahan lokal terlebih dahulu",
                   "rebaseWithLatestFrom": "Rebase cabang saat ini dengan commit terbaru dari {{baseRef}}",
                   "blockedCommitFirst": "Commit perubahan terlebih dahulu",
                   "blockedCheckOutBranchFirst": "Checkout cabang dulu",
@@ -14725,7 +14963,6 @@
                   "titleCommitAndPush": "Commit perubahan yang di-stage dan push",
                   "commitForcePush": "commit & Force push",
                   "commitPush": "commit & Push",
-                  "titleOperationInProgress": "Operasi sedang berlangsung…",
                   "titleAbortRebaseInProgress": "Batalkan rebase yang sedang berlangsung",
                   "titleAbortMergeInProgress": "Batalkan merge yang sedang berlangsung",
                   "titleNothingToPushTo": "Tidak ada yang perlu di-push ke {{upstreamName}}",
@@ -14786,7 +15023,6 @@
                   "statusSetsUpstream": "Mengatur upstream",
                   "statusMayFail": "Mungkin gagal",
                   "statusPublished": "Diterbitkan",
-                  "statusStashFirst": "Stash dulu",
                   "statusReplaces": "Menggantikan ↓{{behind}}",
                   "statusCommitFirst": "commit dulu",
                   "statusReviewOpen": "{{shortLabel}} terbuka",
@@ -14797,7 +15033,14 @@
                   "statusPushFirst": "Push dulu",
                   "statusForcePushFirst": "Force push dulu",
                   "statusSyncFirst": "Sinkronkan terlebih dahulu",
-                  "statusUnsupported": "Tidak didukung"
+                  "statusUnsupported": "Tidak didukung",
+                  "rebaseOntoNamedBase": "Rebase ke {{base}}",
+                  "rebaseCommitOrStashFirst": "Commit atau stash perubahan terlebih dahulu",
+                  "continueRebase": "Lanjutkan rebase",
+                  "titleContinueRebase": "Lanjutkan rebase yang dijeda",
+                  "rebaseFromNamedBase": "Rebase dari {{baseRef}}",
+                  "rebaseDirtyHint": "Coba lakukan rebasing; git mungkin perlu melakukan atau menyembunyikan perubahan lokal terlebih dahulu",
+                  "statusStashFirst": "Stash dulu"
                 }
               },
               "primary": {
@@ -14840,7 +15083,8 @@
                   "e9b5d1f470": "Checkout cabang sebelum membuat {{value0}}.",
                   "f0c6e2a581": "Cabang ini belum siap untuk {{value0}}.",
                   "8f9a0b1c2d": "Tidak ada yang perlu di-commit. Cabang sudah diperbarui.",
-                  "h3i4j5k607": "Memeriksa apakah cabang ini dapat membuat {{value0}}…"
+                  "h3i4j5k607": "Memeriksa apakah cabang ini dapat membuat {{value0}}…",
+                  "nothingToCommit": "Tidak ada yang perlu di-commit"
                 }
               },
               "branch": {
@@ -15135,12 +15379,7 @@
             "f8a2c4d1e0": "Mode pencarian penjelajah"
           },
           "GitHistoryCommitFiles": {
-            "b2c3d4e5f6": "Tidak ada perubahan file dalam commit ini",
-            "c3d4e5f6a7": "Buka semua perubahan"
-          },
-          "GitHistoryRow": {
-            "2f9c41ab07": "Tampilkan file dalam commit {{value0}}: {{value1}}",
-            "4a8d9e0c1f": "Sembunyikan file dalam commit {{value0}}: {{value1}}"
+            "b2c3d4e5f6": "Tidak ada perubahan file dalam commit ini"
           },
           "GitHistoryCommitContextMenu": {
             "7b1c4e9a02": "Buka commit di browser",
@@ -15397,6 +15636,24 @@
         },
         "forkIndicator": {
           "forkOf": "Fork {{repo}}"
+        },
+        "ProjectPeek": {
+          "openRemote": "Buka {{value0}} di browser",
+          "folderProject": "Folder · bukan repo git",
+          "noRemote": "Repo git lokal · tanpa remote",
+          "openUpstream": "Buka {{value0}} di browser",
+          "forkOf": "Fork dari {{value0}}",
+          "resetDone": "Ikon dan warna diatur ulang",
+          "undo": "Urungkan",
+          "styleLetters": "Huruf",
+          "stylePicture": "Gambar",
+          "resetAppearance": "Atur ulang ikon & warna",
+          "faviconPlaceholder": "Situs web untuk favicon",
+          "lettersInput": "Maksimal 2 huruf",
+          "lettersPlaceholder": "1–2 huruf",
+          "useLetters": "Gunakan “{{value0}}”",
+          "usingGitHubAvatar": "Memakai avatar GitHub",
+          "openSettings": "Buka Pengaturan"
         }
       },
       "pet": {
@@ -15773,34 +16030,11 @@
             "0bb39f8fe6": "Kirim",
             "69334b4b10": "Dikte suara",
             "29f2d13839": "Ketikkan perintah…",
-            "817090af40": "Ctrl+C",
-            "53ff909568": "Tab",
-            "4930eaaae7": "Esc",
             "fa22927f13": "Tempel",
             "985373052e": "Beralih ke mode telepon",
-            "58a9ee6003": "pemformatan panggilan alat. Ingin saya menambahkan diff berikutnya?",
-            "aa64b519c6": "layar terminal. Palet Tokyonight, Menlo, claude asli",
-            "e75112c834": "Saya telah mengganti slide pemindaian berpasangan dengan fidelitas tinggi",
-            "3ce3e8c892": "14 lulus, 1 dilewati (1,8 detik)",
-            "4b3666f9a9": "src/cache/worktree-cache.test.ts",
-            "1d448b69f7": "PASS",
-            "d39445686a": "src/transport/host-store.test.ts",
-            "a6e7cdc688": "tes pnpm --filter seluler",
-            "21b67dfc92": "Bash",
-            "d6d1041a1c": "⎿ Mengganti slide pemindaian berpasangan dengan sesi terminal",
-            "336c0e070e": "mobile/orca-mobile-sidebar-mock-v3.html",
-            "6d4ebd5833": "Sunting",
-            "fc83e0d5ef": "⎿ Baca 2103 baris",
-            "80cc356591": "Baca",
-            "2c10d43745": "Claude",
-            "e0f98be657": "orca/feat-mobile-page",
-            "2defc05141": "dev@mac",
-            "da121ba48d": "PLAN.md",
-            "e4befee569": "shell",
             "606aa93192": "File",
             "94febb0976": "Source control",
             "8d6516312d": "2 terminal · claude aktif",
-            "8432787c4e": "feat/mobile-page",
             "8fd998acd3": "Kembali"
           },
           "WorktreeListSlide": {
@@ -16769,7 +17003,7 @@
           "13822cdfda": "Teks biasa"
         },
         "RichMarkdownDocLinkMenu": {
-          "e17b987473": "↑↓ navigasikan&nbsp;&nbsp;↵ pilih&nbsp;&nbsp;esc tutup",
+          "e17b987473": "↑↓ navigasi ↵ pilih esc tutup",
           "63ced7cb9b": "Tidak ada dokumen yang ditemukan",
           "0e8489bc11": "Tautan dokumen Markdown",
           "showingOfTotal": "Menampilkan {{shown}} dari {{total}}"
@@ -17638,8 +17872,6 @@
             "fa6ea61de3": "Batal",
             "c2ef0359b9": "Salin Isi",
             "f2d0c22d67": "Hapus anotasi {{value0}}",
-            "11c5084aa2": "Hapus anotasi",
-            "734e4343ec": "Hapus anotasi browser",
             "95af781091": "Kirim masukan ke agen",
             "ac39b9366b": "Kirim",
             "366bf5d62c": "Tab Baru",
@@ -17673,21 +17905,14 @@
             "b71dc3d930": "Hubungkan ulang",
             "d51ef37351": "Salin",
             "6f4ab3592b": "Disalin",
-            "499b31b84e": "Salin Semua",
             "168350ae6a": "Klik atau arahkan kursor ke elemen, lalu tekan C untuk menyalin atau S untuk mengambil tangkapan layar.",
-            "e852e20cea": "Disalin — tekan S untuk mengambil tangkapan layar, atau pilih elemen lain",
             "777b5bc4ec": "Klik elemen untuk menambahkan masukan bagi agen.",
             "b733a91bd9": "Tambahkan masukan untuk elemen yang dipilih.",
             "4328a0a062": "Grab gagal: {{value0}}",
             "759f32af29": "Mengunduh",
             "4300f38145": "Mengunduh dari {{value0}}{{value1}}",
-            "cc4a071d3a": "Anotasi elemen halaman ({{value0}})",
             "572046436a": "Browser jarak jauh",
             "b313a7275b": "Membuka browser jarak jauh",
-            "ea6af700da": "{{value0}} anotasi",
-            "c13693fe27": "{{value0}} anotasi",
-            "074f0ed10b": "{{value0}} anotasi siap. Pilih elemen lain atau salin semua masukan.",
-            "a2164a6e5a": "{{value0}} anotasi siap. Pilih elemen lain atau salin semua masukan.",
             "9f6f2e8c19": "Jalur file yang diunduh tidak tersedia.",
             "0c79b7634d": "Tidak dapat membuka file yang diunduh. Mungkin telah dipindahkan atau dihapus.",
             "397d9dc923": "Tidak dapat menampilkan file yang diunduh. Mungkin telah dipindahkan atau dihapus.",
@@ -17717,7 +17942,13 @@
             "devToolsDockRight": "Dock ke kanan",
             "devToolsDockBottom": "Dock ke bawah",
             "devToolsUndock": "Buka di jendela terpisah",
-            "devToolsClose": "Tutup DevTools"
+            "devToolsClose": "Tutup DevTools",
+            "499b31b84e": "Salin Semua",
+            "e852e20cea": "Disalin — tekan S untuk mengambil tangkapan layar, atau pilih elemen lain",
+            "074f0ed10b": "{{value0}} anotasi siap. Pilih elemen lain atau salin semua masukan.",
+            "a2164a6e5a": "{{value0}} anotasi siap. Pilih elemen lain atau salin semua masukan.",
+            "11c5084aa2": "Hapus anotasi",
+            "734e4343ec": "Hapus anotasi browser"
           },
           "BrowserToolbarMenu": {
             "429ef481f9": "Batal",
@@ -17803,8 +18034,6 @@
                     "c16f932cb3": "Simpan",
                     "024467ceac": "Batal",
                     "449d2c2629": "Maksud anotasi",
-                    "38d320108c": "Ciutkan anotasi",
-                    "9f209891a7": "Perluas anotasi",
                     "includePageDetails": "Sertakan detail halaman",
                     "copyFeedback": "Salin masukan",
                     "copyFeedbackWithPageDetails": "Salin masukan dengan detail halaman"
@@ -19330,6 +19559,11 @@
         "stateNeedsYou": "Butuh Anda",
         "stateResuming": "Melanjutkan",
         "stateStopped": "Dihentikan"
+      },
+      "RunTargetCombobox": {
+        "noWslDistros": "Tidak ada distro WSL yang ditemukan",
+        "wslDistro": "Distro WSL",
+        "wslDistroHint": "Distro Linux di PC ini"
       }
     },
     "i18n": {
@@ -19389,7 +19623,8 @@
         "transitionFieldsNeedsUpdate": "Perbarui server Orca jarak jauh untuk mengirimkan kolom transisi yang diperlukan, atau selesaikan transisi di Jira."
       },
       "runtimeGitSyncClient": {
-        "completeMergeNeedsNewerHost": "Menyelesaikan merge memerlukan Orca yang lebih baru pada host ini. Perbarui Orca pada host itu."
+        "completeMergeNeedsNewerHost": "Menyelesaikan merge memerlukan Orca yang lebih baru pada host ini. Perbarui Orca pada host itu.",
+        "continueRebaseNeedsNewerHost": "Melanjutkan rebase memerlukan Orca yang lebih baru di host ini. Perbarui Orca di host tersebut."
       },
       "runtimeGitWorkingTreeClient": {
         "resolveConflictNeedsNewerHost": "Menyelesaikan konflik memerlukan Orca yang lebih baru pada host ini. Perbarui Orca pada host itu."
@@ -19892,7 +20127,6 @@
       },
       "composer": {
         "send": "Kirim",
-        "planMode": "Paket",
         "moreControls": "Lebih banyak kontrol obrolan",
         "exitPlanMode": "Keluar dari mode rencana",
         "alternateSteerHint": "{{shortcut}} untuk mengarahkan",
@@ -19968,7 +20202,6 @@
         "searchModels": "Model pencarian…",
         "noModelsMatch": "Tidak ada model yang cocok dengan pencarian Anda.",
         "toggleOption": "Alihkan {{value0}}",
-        "pillAccessibleName": "{{value0}} {{value1}}",
         "sentNotConfirmed": "Dikirim ke agen — tidak dikonfirmasi",
         "setWhenSessionStarts": "Atur kapan sesi dimulai.",
         "availableAfterSessionStarts": "Tersedia setelah sesi dimulai.",
@@ -19998,10 +20231,6 @@
         "attachmentOwnerChanged": "Ruang kerja ini mengubah host saat melampirkan — letakkan file lagi.",
         "attachmentUnreadable": "Tidak dapat membaca file yang dijatuhkan.",
         "tooManyAttachments": "Lampirkan {{value0}} atau lebih sedikit file sekaligus.",
-        "permissionAgentSettings": "Pengaturan {{agent}}",
-        "permissionAgentSettingsUsedHint": "Menggunakan pengaturan izin {{agent}} Anda.",
-        "permissionAgentSettingsUnnamedHint": "Menggunakan pengaturan izin {{agent}} Anda. Orca tidak dapat menampilkan mode ini.",
-        "permissionFromAgentSettings": "{{mode}}, dari pengaturan {{agent}}",
         "pasteFailed": "Gagal menempel.",
         "tooManySkills": "Pesan Anda tidak terkirim ke {{agent}}. Simpan maksimal {{limit}} file skill yang dipilih dan coba lagi.",
         "commandAttachmentsUnsupported": "Hapus lampiran sebelum menggunakan perintah sesi obrolan.",
@@ -20011,7 +20240,6 @@
           "xhigh": "XTinggi"
         },
         "imageUnavailable": "Pratinjau tidak tersedia",
-        "botFor": "Untuk: {{detail}}",
         "agents": "Agen",
         "recent": "Terbaru",
         "bots": "Bot",
@@ -20029,9 +20257,10 @@
         "noMatchingChats": "Tidak ada obrolan yang cocok",
         "noOtherChats": "Tidak ada obrolan lain",
         "retryChats": "Coba lagi",
-        "permissionAppliesNextMessage": "{{saved}} berlaku untuk pesan Anda berikutnya; saat ini memakai {{active}}",
         "modelAndEffortValue": "{{model}} · {{effort}}",
-        "modelAndEffort": "Model dan upaya"
+        "modelAndEffort": "Model dan upaya",
+        "modelsLoading": "Memuat model…",
+        "signInForModels": "Masuk untuk melihat model yang bisa Anda gunakan."
       },
       "tool": {
         "exitCode": "keluar {{value0}}",
@@ -20271,8 +20500,11 @@
       "railLabel": "Pesan Anda",
       "railImageMessage": "Lampiran gambar",
       "railEmptyMessage": "Pesan",
+      "railFilterPlaceholder": "Filter pesan Anda",
+      "railNoMatches": "Tidak ada pesan yang cocok",
+      "railTickLabel": "Pesan {{index}} dari {{count}}: {{text}}",
+      "railMatchCount": "{{count}} dari {{total}}",
       "question": {
-        "step": "Langkah {{value0}}",
         "otherPlaceholder": "Ketikkan jawaban Anda",
         "cancel": "Batal",
         "send": "Kirim",
@@ -20283,12 +20515,11 @@
         "recommended": "Direkomendasikan",
         "stepOf": "{{value0}} dari {{value1}}",
         "answered": "Sudah dijawab",
-        "title": "Pertanyaan",
         "previous": "Pertanyaan sebelumnya",
         "nextQuestion": "Pertanyaan berikutnya",
         "back": "Kembali",
         "skipAndSubmit": "Lewati dan kirim",
-        "stepLabel": "{{value0}}, {{value1}} dari {{value2}}: {{value3}}"
+        "questionStepLabel": "{{value0}}, {{value1}} dari {{value2}}"
       },
       "ask": {
         "awaiting": "Menunggu masukan pengguna:",
@@ -20344,10 +20575,7 @@
         "started_other": "Memulai {{count}} subagen",
         "ran_one": "Menjalankan subagen {{count}}",
         "ran_other": "Jalankan {{count}} subagen",
-        "backToMain": "Kembali ke agen utama",
-        "mainAgent": "Agen utama",
-        "promptFromMain": "Perintah dari agen utama",
-        "backTo": "Kembali ke {{value0}}",
+        "mainAgent": "Agent utama",
         "path": "Jalur subagen",
         "stateHeading": {
           "completed": "Selesai",
@@ -20360,7 +20588,15 @@
         "noSteps": "Belum ada langkah",
         "beforeClear": "Subagen ini berjalan sebelum obrolan dihapus",
         "stoppedBeforeReply": "Berhenti sebelum membalas",
-        "noReply": "Berakhir tanpa balasan"
+        "noReply": "Berakhir tanpa balasan",
+        "prompt": "Prompt",
+        "result": "Hasil",
+        "close": "Tutup",
+        "needsYou": "Membutuhkan Anda",
+        "agentNeedsYou": "{{name}} membutuhkan Anda",
+        "mainNeedsYou": "Agent utama membutuhkan Anda",
+        "show": "Tampilkan",
+        "backTo": "Kembali ke {{value0}}"
       },
       "rewind": {
         "unsupported": "Obrolan ini tidak dapat kembali ke pesan sebelumnya.",
@@ -20419,6 +20655,14 @@
           "followedUp": "Tindak lanjut",
           "handedOff": "Diserahkan",
           "task": "Tugas"
+        },
+        "unnamedRecipient": "seorang agent",
+        "recipientName": "{{name}}",
+        "event": {
+          "followedUp": "Kirim tindak lanjut",
+          "update": "Pembaruan",
+          "message": "Pesan",
+          "handedOff": "Dialihkan"
         }
       },
       "goal": {
@@ -20520,6 +20764,7 @@
       "explicitChatWslMoveToHost": "Obrolan tidak tersedia di folder WSL yang dibuka dari Windows. Jalankan proyek pada host WSL untuk mengobrol di sana, atau buka agen di terminal.",
       "explicitChatWslRunAsHost": "Jalankan {{distro}} sebagai host",
       "explicitChatSsh": "Obrolan tidak tersedia melalui SSH. Buka agen di terminal saja.",
+      "explicitChatWorkspaceAccess": "Orca tidak memiliki izin untuk membuka folder ruang kerja ini. Periksa izin foldernya lalu coba lagi.",
       "explicitChatUnavailable": "Ruang kerja ini tidak dapat menjalankan obrolan. Periksa instalasi agen atau buka di terminal.",
       "structuredSessionHostDeclined": "Dibuka {{value0}} di terminal",
       "structuredSessionTerminalNotVisible": "Orca membuka {{value0}} di terminal, tetapi tidak dapat menampilkannya di sini ketika peluncuran selesai. Draf obrolan Anda disimpan.",
@@ -20938,6 +21183,7 @@
         "template": "Templat",
         "nameTaken": "Anda sudah memiliki bot bernama {{name}}.",
         "open": "Buka",
+        "openBot": "Buka {{name}}",
         "edit": "Sunting",
         "rename": "Ganti nama",
         "create": "Buat bot",
@@ -21021,7 +21267,8 @@
           "addressLabel": "Alamat halaman masuk",
           "unfinished": "Proses masuk belum selesai. Selesaikan pada halaman yang terbuka, lalu tekan Selesai.",
           "pastePlaceholder": "http://localhost:…"
-        }
+        },
+        "manage": "Kelola server MCP"
       },
       "cardKindHidden": {
         "description": "Anda dapat mengubahnya kapan saja",
@@ -21186,6 +21433,7 @@
         "paused": "Dijeda",
         "replied": "{{actor}} membalas",
         "rowAccessibleName": "{{label}}: {{name}}. {{details}}",
+        "thenAt": "Berjalan sekali pada {{time}}",
         "thenLine": "Lalu",
         "thenOnce": "Berjalan sekali, saat itu terjadi",
         "thenOnceBy": "Berjalan sekali; di {{time}} jika tidak ada yang datang",
@@ -21251,7 +21499,8 @@
         "signIn": "Masuk",
         "signsInClaudeAccount": "Masuk ke akun Claude ini",
         "runsCommand": "Berjalan {{command}} di terminal",
-        "thenSlashCommand": "Masuk, lalu ketik {{slashCommand}}."
+        "thenSlashCommand": "Masuk, lalu ketik {{slashCommand}}.",
+        "signsInAgy": "Masuk ke agy dengan Google di browser Anda"
       },
       "antigravityAuth": {
         "chipLabel": "Antigravity masuk dengan {{method}}. Mengubah",
@@ -21268,11 +21517,8 @@
         "otherWays": "Anda dapat masuk dengan kunci API atau gcloud.",
         "moreOptions": "Opsi lainnya…",
         "useApiKey": "Gunakan kunci Gemini API Anda",
-        "useGcloud": "Gunakan gcloud ({{project}})",
         "useGoogle": "Gunakan login Google Anda",
-        "apiKeyFromEnvironment": "Ditemukan GEMINI_API_KEY di lingkungan Anda",
         "apiKeySaved": "Disimpan di Orca",
-        "gcloudFound": "Menemukan login gcloud Anda (Kredensial Default Aplikasi)",
         "googleFound": "Anda pernah masuk dengan Google di host ini sebelumnya",
         "askApiKeyEnvironment": "Gunakan kunci Gemini API yang ada di lingkungan Anda?",
         "askApiKeySaved": "Gunakan kunci Gemini API yang disimpan di Orca?",
@@ -21283,19 +21529,21 @@
         "signedOut": "Antigravity belum masuk.",
         "refused": "Google menolak kredensial obrolan ini.",
         "usageLimit": "Proses masuk ini mencapai batas penggunaannya.",
-        "foundLead": "Orca menemukan kredensial pada host ini yang dapat Anda gunakan:",
         "signInGoogle": "Masuk dengan Google",
-        "useKeyOrGcloud": "API kunci atau gcloud",
         "yourAgy": "Agnesmu",
         "yourAgyVersion": "Agy kamu · v{{version}}",
-        "orcaCopy": "salinan Orca",
-        "orcaCopyVersion": "salinan Orca · v{{version}}",
         "orcasAgy": "Orca sudah tua",
         "orcasAgyVersion": "Orca agy · v{{version}}",
         "runsOn": "Berjalan pada: {{program}}",
-        "agyItem": "login agy sendiri",
-        "agyHint": "Obrolan ini menjalankan Antigravity CLI pada host ini. Metode lain berlaku untuk obrolan baru.",
-        "confirmSignIn": "Masuk dengan Google?"
+        "keepsOwnLogin": "Chat ini memakai login Google agy sendiri. Chat baru memakai {{method}}.",
+        "apiKeyEnvironment": "Dari environment Anda",
+        "foundGcloud": "Login gcloud Anda juga bisa dipakai.",
+        "foundKey": "API key Gemini Anda juga bisa dipakai.",
+        "foundKeyAndGcloud": "API key Gemini dan login gcloud Anda juga bisa dipakai.",
+        "gcloudProject": "Proyek {{project}}",
+        "otherWaysMenu": "Cara lain untuk masuk…",
+        "useGcloudLogin": "Pakai login gcloud Anda",
+        "otherWaysLabel": "Cara lain untuk masuk"
       },
       "pairedServerAsk": {
         "always": "Selalu izinkan {{server}}",
@@ -21325,26 +21573,14 @@
         "commandOutputPending": "Output perintah belum tersedia.",
         "retry": "Coba lagi",
         "dismiss": "Tutup",
-        "openWorker": "Buka worker",
         "remoteOwner": "Hentikan atau bersihkan ini dari komputer tempatnya berjalan",
-        "restore": "Tampilkan di dock lagi",
-        "unavailable": "Status worker tidak tersedia",
         "alreadyStopped": "Sudah dihentikan",
         "cantStop": "Tidak dapat dihentikan sekarang",
-        "empty": "0 worker",
         "clearAllLabel_one": "Bersihkan worker yang gagal",
         "clearAllLabel_other": "Bersihkan semua {{count}} worker yang gagal",
-        "clearAll": "Bersihkan semua",
-        "attention": "Perlu perhatian",
-        "openWork": "Buka pekerjaan",
-        "orderHeld": "Urutan ditahan",
-        "statusChanged": "Status berubah",
         "loadingWorker": "Memuat worker…",
         "resultUnavailable": "Hasil worker tidak tersedia",
-        "showLatest": "Tampilkan terbaru",
         "workersRegion": "Worker",
-        "timeUnavailable": "Waktu status tidak tersedia",
-        "doneResult": "Selesai · buka hasil",
         "clearName": "Bersihkan {{name}}",
         "stopUnavailable": "Hentikan {{name}} · {{title}} tidak tersedia · {{reason}}",
         "stopName": "Hentikan {{name}} · {{title}}",
@@ -21366,28 +21602,29 @@
         "workflow": "Workflow",
         "monitor": "Monitor",
         "task": "Tugas",
-        "taskCount_one": "{{count}} tugas",
-        "taskCount_other": "{{count}} tugas",
         "workerCount_one": "{{count}} worker",
         "workerCount_other": "{{count}} worker",
-        "commandCount_one": "{{count}} perintah",
-        "commandCount_other": "{{count}} perintah",
-        "workflowCount_one": "{{count}} workflow",
-        "workflowCount_other": "{{count}} workflow",
-        "monitorCount_one": "{{count}} monitor",
-        "monitorCount_other": "{{count}} monitor",
-        "agentCount_one": "{{count}} agent",
-        "agentCount_other": "{{count}} agent",
-        "stoppedByYou": "Dihentikan oleh Anda",
-        "finished": "Selesai",
         "failedCount": "{{count}} gagal",
         "needsYouCount": "{{count}} menunggu Anda",
-        "showName": "Tampilkan {{name}}",
-        "startedAt": "· Dimulai {{time}} · {{elapsed}} berlalu",
-        "contactUnavailable": "· Kontak terakhir yang terkonfirmasi tidak tersedia",
         "runningCount": "{{count}} berjalan",
-        "cleared_one": "1 worker dibersihkan",
-        "cleared_other": "{{count}} worker dibersihkan"
+        "stopAll": "Hentikan semua",
+        "clearFailed": "Bersihkan yang gagal",
+        "unlistedDetail": "Sebagian pekerjaan latar tidak tercantum di sini",
+        "unlisted": "Pekerjaan latar sedang berjalan",
+        "unread": "Worker tidak dapat dimuat",
+        "unreadDetail": "Worker akan tampil di sini setelah dimuat",
+        "chipLabel": "{{label}}, terbaru: {{title}}",
+        "backgroundCommandCount_one": "{{count}} perintah latar",
+        "backgroundCommandCount_other": "{{count}} perintah latar",
+        "commandCount_one": "{{count}} perintah",
+        "commandCount_other": "{{count}} perintah",
+        "mixedRegion": "Worker dan perintah latar",
+        "commandsRegion": "Perintah latar",
+        "stopSubagentsAndCommands": "Hentikan subagent dan perintah",
+        "workersKeepRunning": "Worker tetap berjalan",
+        "clearFailedWorkers": "Bersihkan worker yang gagal",
+        "mixedCount": "{{workers}} · {{commands}}",
+        "mixedCountSpoken": "{{workers}}, {{commands}}"
       },
       "webhookSetup": {
         "heading": "Siapkan webhook",
@@ -21441,8 +21678,6 @@
           "noSizes": "Belum ada ukuran ruang kerja yang diukur.",
           "noSizesDescription": "Ukuran muncul setelah penggunaan disk diukur.",
           "measureSizesTitle": "Pindai ukuran ruang kerja",
-          "sizeOnDisk": "Ukuran pada disk: {{value0}}",
-          "checkingGitRow": "Memeriksa status git",
           "searchPlaceholder": "Nama pencarian, repo, cabang, jalur, host",
           "searchLabel": "Cari ruang kerja",
           "filters": "Filter",
@@ -21500,7 +21735,6 @@
           "noMatches": "Tidak ada ruang kerja yang cocok dengan filter ini.",
           "noMatchesDescription": "Setiap ruang kerja ada dalam satu daftar — perluas faset atau hapus filter.",
           "sortBy": "Urutkan menurut",
-          "sortByField": "Urutkan berdasarkan {{value0}}",
           "sort": {
             "lastActivity": "Aktivitas terakhir",
             "lastVisited": "Terakhir dibuka",
@@ -21556,18 +21790,11 @@
             "none": "Tidak ada"
           },
           "idleSignalField": "Sinyal menganggur",
-          "updatedAgo": "Diperbarui {{value0}}",
-          "refreshing": "Menyegarkan…",
-          "refreshingProgress": "Menyegarkan {{value0}}/{{value1}}",
-          "notMeasured": "Tidak diukur",
           "openWorkspaceNamed": "Buka {{value0}}",
           "openWorkspace": "Buka ruang kerja",
-          "workspaceStatus": "Status ruang kerja: {{value0}}",
           "measuringSizesProgress": "Memindai {{value0}}/{{value1}}",
           "measuringSizes": "Ukuran pemindaian",
           "measureSizesFailed": "Tidak dapat memindai ukuran ruang kerja",
-          "selectedCount": "{{value0}} dipilih",
-          "deleteAnyway": "Tetap hapus",
           "appliedFilters": "Filter yang diterapkan",
           "removeFilter": "Hapus filter {{value0}}",
           "chip": {
@@ -21616,10 +21843,8 @@
           "selectionVanishedCount_other": "{{count}} ruang kerja yang dipilih sudah tidak ada lagi.",
           "selectionWithheldCount_one": "{{count}} ruang kerja yang dipilih disembunyikan oleh filter saat ini dan tidak dipilih.",
           "selectionWithheldCount_other": "{{count}} ruang kerja yang dipilih disembunyikan oleh filter saat ini dan tidak dipilih.",
-          "selectAllSafetyChecked_one": "Pilih {{count}} ruang kerja yang diperiksa keamanannya",
-          "selectAllSafetyChecked_other": "Pilih semua {{count}} ruang kerja yang diperiksa keamanannya",
           "lastActive": "Terakhir aktif {{value0}}",
-          "moreFlags": "Tampilkan {{value0}} bendera lainnya",
+          "projectNamed": "Proyek: {{value0}}",
           "pathLabel": "Jalur",
           "copyPath": "Salin jalur",
           "gitNotChecked": "Belum dicek",
@@ -21627,7 +21852,8 @@
           "ignoreTooltip": "Abaikan: lewati penghapusan massal",
           "stopIgnoring": "Berhenti mengabaikan",
           "stopIgnoringNamed": "Berhenti mengabaikan {{value0}}",
-          "clearSelection": "Bersihkan pilihan"
+          "sortAscending": "menaik",
+          "sortDescending": "menurun"
         },
         "scan": {
           "progress": "Memindai ruang kerja ({{value0}}/{{value1}})",
@@ -21652,6 +21878,60 @@
           "ignoredFilesBlocker": "Mengabaikan file lokal",
           "ignoredFilesNamed": "File yang diabaikan: {{value0}}",
           "ignoredFilesUnchecked": "File yang diabaikan tidak sepenuhnya diperiksa"
+        },
+        "review": {
+          "title": "Review ruang kerja",
+          "refresh": "Segarkan",
+          "checking": "Memeriksa perubahan",
+          "updatesAvailable": "Ada pembaruan. Segarkan"
+        },
+        "row": {
+          "sizeLabel": "Ukuran",
+          "reviewLabel": "Review",
+          "statusLabel": "Status",
+          "signalsLabel": "Sinyal",
+          "projectOnHost": "{{project}} · {{host}}",
+          "notGit": "Bukan ruang kerja git. Hapus proyeknya dari Orca saja.",
+          "unreachable": "Tidak dapat menjangkau {{host}}. Sambungkan kembali untuk menghapus, atau hapus dari Orca.",
+          "mainCheckout": "Checkout utama proyek tidak dapat dihapus.",
+          "uncommittedFiles_one": "{{count}} file yang belum di-commit",
+          "uncommittedFiles_other": "{{count}} file yang belum di-commit",
+          "couldntCheck": "Tidak dapat memeriksa perubahan"
+        },
+        "group": {
+          "empty": "Tidak ada ruang kerja di sini.",
+          "localFiles": "Punya file lokal",
+          "cannotDelete": "Tidak dapat dihapus",
+          "label": "Grup ruang kerja",
+          "selected": "{{count}} dipilih"
+        },
+        "selectAll": {
+          "partial": "{{selected}} dari {{total}} dipilih",
+          "all": "Pilih semua {{count}}"
+        },
+        "runCard": {
+          "title": "Menghapus ruang kerja",
+          "progress": "{{done}}/{{total}}",
+          "dismiss": "Tutup",
+          "show": "Tampilkan"
+        },
+        "done": {
+          "failedLine_one": "{{count}} tidak dapat dihapus.",
+          "failedLine_other": "{{count}} tidak dapat dihapus.",
+          "title": "Menghapus {{deleted}} dari {{total}} ruang kerja",
+          "singleTitle": "Menghapus {{deleted}} dari {{total}} ruang kerja",
+          "button": "Selesai"
+        },
+        "deleting": {
+          "title_one": "Menghapus {{count}} ruang kerja",
+          "title_other": "Menghapus {{count}} ruang kerja",
+          "runInBackground": "Jalankan di latar",
+          "progress": "{{done}} dari {{total}} dihapus",
+          "statusDeleted": "Dihapus",
+          "statusDeleting": "Menghapus…",
+          "statusFailed": "Tidak dapat dihapus",
+          "statusWaiting": "Menunggu",
+          "unconfirmed": "Tidak dapat memastikan ini sudah dihapus. Segarkan untuk memeriksa."
         }
       },
       "creation": {
@@ -21729,6 +22009,9 @@
       },
       "hostFile": {
         "updateHostForOutsideFiles": "Perbarui Orca pada {{value0}} untuk membuka file di luar ruang kerjanya"
+      },
+      "paste": {
+        "clipboardUnpastable": "Tidak dapat menempelkan file yang disalin. Coba seret ke terminal."
       }
     },
     "settings": {
@@ -21824,7 +22107,7 @@
         "turnDiffsSearchChangedFiles": "mengubah file",
         "turnDiffsSearchEdits": "suntingan",
         "promptSuggestionsTitle": "Perintah yang disarankan",
-        "promptSuggestionsCopy": "Setelah Claude balasan, tebakannya pada pesan Anda berikutnya ditampilkan di kotak pesan kosong. Tekan Tab untuk menggunakannya. Setiap tebakan adalah permintaan tambahan yang diperhitungkan dalam penggunaan Claude Anda.",
+        "promptSuggestionsCopy": "Setelah Claude atau Codex membalas, tebakannya untuk pesan Anda berikutnya muncul di kotak pesan kosong. Tekan Tab untuk memakainya. Setiap tebakan adalah permintaan tambahan yang dihitung dalam pemakaian agent tersebut.",
         "promptSuggestionsSearchNext": "perintah berikutnya",
         "promptSuggestionsSearchGhost": "teks hantu"
       },
@@ -22008,7 +22291,8 @@
           "correctionWord": "Kata koreksi",
           "correctionWordDescription": "Ucapkan untuk mengambil kembali apa yang baru saja Anda katakan: “jam empat, {{word}}, jam lima”.",
           "correctionWordOff": "Tidak ada"
-        }
+        },
+        "localOnlyNotice": "Bicara alih-alih mengetik di panel mana pun. Pengaturan ini hanya berlaku untuk komputer ini; {{host}} memakai pengaturannya sendiri."
       },
       "repositoryHooks": {
         "availableEnvVars": "Variabel lingkungan yang tersedia"
@@ -22132,6 +22416,7 @@
         },
         "rulesLoadFailed": "Tidak dapat memuat aturan pembersihan host ini: {{error}}",
         "retry": "Coba lagi",
+        "listSeparator": ",",
         "summary": {
           "merged": "Hapus gabungan",
           "unchanged": "Hapus tidak berubah",
@@ -22376,9 +22661,9 @@
     "orchestration": {
       "workerAutoClose": {
         "keepOpen": "Tetap terbuka",
-        "bannerRunning": "Worker orkestrasi · Tutup 2 menit setelah selesai",
-        "bannerFinished": "Worker orkestrasi selesai · Ditutup dalam {{countdown}}",
-        "bannerFinishedStatus": "Worker orkestrasi selesai · Segera ditutup",
+        "bannerRunning": "Menutup {{minutes}} menit setelah selesai",
+        "bannerFinished": "Selesai · menutup dalam {{countdown}}",
+        "bannerFinishedStatus": "Worker selesai · segera menutup",
         "boundRunning": "Tutup bersama {{worker}}",
         "boundFinished": "{{worker}} selesai · Tutup dalam {{countdown}}",
         "boundFallbackName": "worker-nya"
@@ -22458,6 +22743,9 @@
       "fileRenameFailed": "Gagal mengganti nama '{{name}}'.",
       "worktreeCreateFailed": "Gagal membuat worktree.",
       "missingBaseBranchHelp": "Buat commit awal (misalnya di main), atau pilih cabang yang ada di Create From, lalu coba lagi.",
+      "baseBranchLookupFailedTitle": "Tidak dapat mencari branch dasar",
+      "baseBranchLookupFailedMessage": "Git gagal atau kehabisan waktu saat mencari branch dasar default repo ini.",
+      "baseBranchLookupFailedHelp": "Coba lagi, atau pilih branch dasar di Create From.",
       "dropTooManyPaths": "Drop berisi terlalu banyak jalur.",
       "dropPathsTooLarge": "Daftar jalur pelepasan terlalu besar.",
       "fileOwnerResolveFailed": "Gagal menyelesaikan pemilik file."
@@ -22941,9 +23229,6 @@
         "planModelWithoutThinking": "Model \"{{model}}\" tidak mendukung tingkat upaya berpikir.",
         "planThinkingLevelInvalid": "Tingkat berpikir \"{{level}}\" tidak berlaku untuk {{model}}.",
         "openCodeInvalidEvents": "OpenCode mengembalikan acara JSON yang tidak valid.",
-        "antigravityInvalidEvents": "Antigravity mengembalikan acara JSON yang tidak valid.",
-        "antigravityInvalidResult": "Antigravity mengembalikan hasil yang tidak valid.",
-        "antigravityNoFinalResult": "Antigravity tidak memberikan hasil akhir.",
         "kimiUnreadableOutput": "Kimi keluaran yang dikembalikan Orca tidak dapat dibaca. Coba lagi.",
         "kimiSessionOccupied": "Kimi tidak dapat menggunakan sesi ini karena aktif di klien lain. Hentikan sesi di sana atau keluar dari klien tersebut, lalu coba lagi.",
         "kimiInterrupted": "Kimi terputus sebelum selesai menghasilkan teks. Coba lagi.",
@@ -23269,7 +23554,6 @@
   },
   "common": {
     "retry": "Coba lagi",
-    "cancel": "Batal",
     "unassigned": "Belum ditetapkan",
     "copy": "Salin"
   },
@@ -23428,29 +23712,20 @@
       "description": "Agen di sana menggunakan akun default distro Claude dan Codex hingga Orca di WSL diperbarui."
     },
     "antigravity": {
-      "chatSignIn": "Masuk",
-      "chatChangeAccount": "Ganti akun",
-      "chatRetry": "Coba lagi masuk",
       "chatCancel": "Batal",
       "chatCopyLink": "Salin tautan masuk",
       "chatCopyFailed": "Tidak dapat menyalin tautan.",
       "chatStarting": "Mulai masuk…",
-      "chatWaiting": "Selesaikan proses masuk di browser Anda.",
       "chatOpenFailed": "Salin tautannya dan buka di browser Anda.",
       "chatVerifying": "Menyelesaikan proses masuk…",
-      "chatPasteHelp": "Jika halaman terakhir setelah masuk tidak dapat dimuat, salin alamat lengkapnya dari browser Anda dan tempelkan di sini.",
       "chatContinue": "Lanjutkan",
       "chatCancelled": "Proses masuk dibatalkan.",
       "chatExpired": "Waktu masuk habis. Coba lagi.",
       "chatFailed": "Gagal masuk. Coba lagi.",
-      "chatOtherClient": "Proses masuk sedang berlangsung di klien lain.",
       "chatReadFailed": "Tidak dapat memeriksa proses masuk pada {{host}}.",
       "retry": "Coba lagi",
       "changed": "Akun asli berubah. Pilih kembali akun yang disimpan sebelum meluncurkan agy.",
       "refresh": "Segarkan akun",
-      "usage": "Segarkan penggunaan",
-      "usageWithReading": "Segarkan penggunaan ({{reading}})",
-      "usageReading": "Sesi: {{session}} · Mingguan: {{weekly}}",
       "saved": "Akun Google tersimpan",
       "remove": "Hapus",
       "searchDescription": "Simpan dan pilih akun Google asli di host eksekusi.",
@@ -23471,16 +23746,6 @@
       "settingsIncomplete": "Pilih jenis akun Antigravity dan masukkan proyek dan lokasi Google Cloud-nya.",
       "settingsLoadFailed": "Orca tidak dapat memuat pengaturan masuk Antigravity Anda. Coba lagi.",
       "settingsSaveFailed": "Orca tidak dapat menyimpan pengaturan masuk Antigravity Anda. Coba lagi.",
-      "lastReading": "{{reading}} · Baca {{time}}",
-      "noReading": "Penggunaan tidak diketahui: belum dibaca",
-      "chatSeparate": "Pisahkan dari akun terminal agy Anda.",
-      "chatBadgeSigningIn": "Sedang masuk",
-      "chatBadgeSignedIn": "Sudah masuk",
-      "chatBadgeSignedOut": "Belum masuk",
-      "chatSignInWith": "Masuk dengan {{method}}",
-      "chatPasteOpen": "Halaman browser tidak dimuat?",
-      "chatSwitchMethod": "Masuk lagi untuk beralih ke {{method}}.",
-      "enterpriseFieldsNeeded": "Masukkan proyek dan lokasi Google Cloud.",
       "fd47b5a5dd": "Antigravity akun",
       "personalOption": "Paket Google AI pribadi Anda",
       "enterpriseOption": "Lisensi organisasi Anda",
@@ -23501,8 +23766,6 @@
       "apiKeyRemove": "Hapus",
       "apiKeyGet": "Dapatkan kunci API",
       "location": "Lokasi",
-      "enterpriseFieldsShort": "Masukkan proyek dan lokasi.",
-      "chatUseMethod": "Masuk lagi untuk menggunakan {{method}}",
       "signInEllipsis": "Masuk…",
       "loadFailed": "Tidak dapat memuat akun lama",
       "loading": "Memuat akun…",
@@ -23513,34 +23776,25 @@
       "currentNotSaved": "Login agy saat ini · tidak disimpan",
       "noEmailNotSaved": "agy tidak melaporkan email · tidak disimpan",
       "saveShort": "Simpan",
-      "readAt": "Baca {{time}}",
       "active": "Aktif",
-      "account": "Akun",
       "runtime": "Waktu proses",
       "chatTitle": "Antigravity Obrolan",
-      "chatDescription": "Masuk melalui browser Anda, sehingga Obrolan berfungsi tanpa menginstal agy.",
-      "chatDescriptionAgy": "agy login disini, jadi chat baru pakai akun agy di bawah. Proses masuk ini digunakan ketika agy tidak.",
-      "chatDescriptionAgyVersion": "Obrolan baru berjalan di agy Anda (v{{version}}) dan akunnya di bawah. Proses masuk ini digunakan ketika agy tidak.",
-      "chatDescriptionManagedVersion": "Obrolan baru dijalankan pada salinan Orca (v{{version}}), jadi Obrolan berfungsi tanpa menginstal agy.",
-      "chatDescriptionAgySignedOut": "Chat baru pakai agy yang belum login. Jalankan agy di host ini untuk masuk.",
-      "chatDescriptionOrcaAgy": "Obrolan dijalankan pada salinan agy Orca dan menggunakan login agy sendiri.",
-      "chatDescriptionAgyOwnSignIn": "Obrolan berjalan di agy dan menggunakan login agy sendiri.",
-      "chatDescriptionInstallAgy": "Instal agy di bawah untuk menggunakan Obrolan. Itu masuk dengan akunnya sendiri.",
-      "chatDescriptionOrcaAgyVersion": "Obrolan dijalankan di agy Orca (v{{version}}) dan menggunakan login agy sendiri.",
-      "chatDescriptionAgyOwnSignInVersion": "Obrolan dijalankan di agy Anda (v{{version}}) dan gunakan login agy sendiri.",
       "terminalTitle": "agy di terminal",
-      "terminalDescriptionWindows": "Menggunakan akun tersimpan agy sendiri. Peralihan berlaku untuk kredensial agy default host.",
       "terminalDescription": "Menggunakan akun tersimpan agy sendiri. Peralihan berlaku untuk sesi agy baru.",
-      "terminalDescriptionChats": "Menggunakan akun tersimpan agy sendiri. Peralihan berlaku untuk sesi agy baru dan Antigravity obrolan.",
-      "terminalDescriptionNoChats": "Menggunakan akun tersimpan agy sendiri. Peralihan berlaku untuk sesi agy baru, bukan untuk Antigravity obrolan.",
       "addAccountHelp": "Untuk menambah akun, jalankan /logout di agy, login lagi, lalu Simpan di sini.",
-      "googleSignIn": "masuk akun Google",
-      "googleSignInAgy": "login agy sendiri",
-      "googleSignInAgyOption": "Masuk dengan menjalankan agy",
-      "googleSignInOrca": "proses masuk bawaan Orca",
-      "googleSignInOrcaOption": "Masuk melalui browser Anda di sini; tidak diperlukan bantuan",
-      "googleSignInUpdateFailed": "Tidak dapat mengubah cara Antigravity masuk dengan Google.",
-      "chatDescriptionKeyOnAgy": "Obrolan baru berjalan di agy dengan proses masuk di bawah, terpisah dari agy di terminal."
+      "description": "Chat dan agy di terminal memakai akun Google yang sama. Chat bisa masuk dengan API key Gemini atau gcloud.",
+      "descriptionWindows": "Chat dan agy di terminal memakai akun Google yang sama. Peralihan berlaku untuk kredensial agy default host. Chat bisa masuk dengan API key Gemini atau gcloud.",
+      "signInGoogle": "Masuk dengan Google",
+      "addAccount": "Tambah akun",
+      "addAccountInApp": "Masuk ke akun Google lain. Keduanya tetap tersimpan di sini untuk dipilih.",
+      "chatCancelSignIn": "Batalkan proses masuk",
+      "chatCopied": "Disalin",
+      "chatCopySignInLink": "Salin tautan masuk",
+      "chatFinishInBrowser": "Selesaikan di browser, lalu tempelkan kodenya.",
+      "chatOtherWindow": "Proses masuk sedang berlangsung di jendela lain.",
+      "chatPageDidntOpen": "Halaman tidak terbuka?",
+      "chatPasteCode": "Tempelkan kode",
+      "chatPasteCodeLabel": "Kode yang ditampilkan Google setelah Anda masuk, atau alamat halaman itu"
     },
     "claude": {
       "added": "Akun ditambahkan. Pilih untuk menggunakannya pada Claude berikutnya Anda mulai.",
@@ -23644,6 +23898,12 @@
       }
     },
     "remoteScopeAccountsAddHere": "Menampilkan akun yang dikelola oleh {{value0}}. Akun baru masuk di sana; Anda selesai di browser perangkat ini.",
+    "selection": {
+      "claudeRemoteWslDefaultUnavailable": "Mengembalikan lane WSL host ini ke default sistem belum tersedia dari sini.",
+      "claudeWslLanesNotReset": "Akun Claude WSL belum dapat diatur ulang dari sini.",
+      "codexSystemDefaultIncludingWsl": "Pakai login Codex {{value0}} Anda saat ini, termasuk WSL.",
+      "systemDefaultIncludingWsl": "{{value0}} · termasuk WSL"
+    },
     "rename": {
       "action": "Ganti nama",
       "title": "Ganti nama akun",
@@ -23850,7 +24110,18 @@
       "addEmoji": "Tambahkan emoji",
       "addEmojiTooltip": "Tambahkan emoji (atau ketik :)",
       "noEmojiFound": "Tidak ada emoji yang ditemukan",
-      "labels": "Label: {{labels}}"
+      "labels": "Label: {{labels}}",
+      "peek": {
+        "closed": "ditutup",
+        "open": "terbuka",
+        "merged": "di-merge",
+        "draft": "draf",
+        "failing": "gagal",
+        "running": "berjalan",
+        "cancelled": "dibatalkan",
+        "passing": "lulus",
+        "more": "+{{count}} lagi"
+      }
     },
     "attachments": {
       "updateRuntime": "Perbarui runtime jarak jauh untuk mengubah tautan ruang kerja",
@@ -24525,7 +24796,8 @@
       "bots": "Bot"
     },
     "searchKeyword": {
-      "worktreePaletteFormerTitle": "Ganti worktree"
+      "worktreePaletteFormerTitle": "Ganti worktree",
+      "quickCommandsMenuFormerTitle": "Alihkan menu Quick Commands"
     }
   },
   "profileState": {
@@ -25417,7 +25689,7 @@
       "reports": "Laporan",
       "takesOver": "Mengambil alih",
       "agentsKeepRunning": "Agennya tetap berjalan.",
-      "uploadDropOrPaste": "<upload>Unggah</upload>, jatuhkan, atau tempel gambar",
+      "uploadOrPaste": "<upload>Unggah</upload> atau tempelkan",
       "purposeLabel": "Identitas",
       "purposePlaceholder": "Siapa dan apa fungsinya",
       "uploadPasteOrDrop": "atau unggah, tempel, atau letakkan milik Anda sendiri",
@@ -25449,7 +25721,37 @@
         "setUpInFirstChat": "Pengaturan di obrolan pertama"
       },
       "identityWatches": "Memantau {{what}}",
-      "identityReports": "Melaporkan {{what}}"
+      "identityReports": "Melaporkan {{what}}",
+      "wslSetupFailedShort": "Penyiapan tidak selesai",
+      "wslSettingUp": "Menyiapkan…",
+      "wslSetup": {
+        "waiting": "Menunggu {{distro}}…",
+        "starting": "Memulai {{distro}}",
+        "installing": "Memasang server Orca di ~/.orca-remote",
+        "connecting": "Menghubungkan",
+        "findingAgents": "Mencari agent di {{distro}}",
+        "installingHint": "Pertama kali juga mengunduh runtime Node Linux-nya.",
+        "failedTitle": "Tidak dapat menyiapkan {{distro}}",
+        "details": "Detail",
+        "retry": "Coba lagi",
+        "chooseAnother": "Pilih komputer lain",
+        "title": "Menyiapkan {{distro}} sebagai host",
+        "subtitle": "Sekitar satu menit untuk pertama kali. File Windows dan distro lain Anda tidak tersentuh.",
+        "cancel": "Batal",
+        "failedGeneric": "Server Orca tidak mulai di distro. Detail menjelaskan apa yang menghentikannya."
+      },
+      "wslNoAgent": {
+        "field": "Tidak ada agent di {{distro}}",
+        "title": "Pasang agent di dalam {{distro}}",
+        "body": "Agent yang dipasang di Windows tidak dapat berjalan di dalam WSL. Pasang satu di distro lalu masuk, dan agent itu akan muncul di sini.",
+        "copied": "Disalin",
+        "copy": "Salin",
+        "checkAgain": "Periksa lagi",
+        "checking": "Memeriksa lagi…"
+      },
+      "hostSleeping": "Tidur · bangun saat dipakai",
+      "wslWaking": "Membangunkan {{distro}}…",
+      "hostWaking": "Membangunkan…"
     },
     "section": {
       "scrollLeft": "Gulir ke kiri · {{amount}} tersembunyi",
@@ -25468,6 +25770,9 @@
     },
     "errors": {
       "nameTaken": "Bot lain sudah memiliki nama itu.",
+      "purposeTooLongForHost": "Orca di {{host}} hanya menerima hingga 200 karakter untuk keterangannya. Persingkat, atau perbarui Orca di {{host}}.",
+      "avatarHomeUnreadable": "Tidak dapat membaca gambar yang disimpan. Pilih lagi.",
+      "folderNotOwned": "Tidak dapat memverifikasi folder bot ini.",
       "avatarInvalid": "Gambar itu tidak dapat digunakan. Pilih gambar PNG atau JPG.",
       "unsavedDrafts": "Foldernya memiliki perubahan editor yang belum disimpan. Simpan atau tutup perubahan itu, lalu hapus lagi."
     },
@@ -25536,6 +25841,7 @@
       "stop": "Hentikan",
       "stopWorker": "Hentikan {{value0}}",
       "agent": "Agen",
+      "progress": "Kemajuan",
       "result": "Hasil",
       "workspace": "Ruang kerja",
       "branch": "Cabang",
@@ -25651,10 +25957,11 @@
         "describe": "Deskripsi gambar",
         "button": "Hasilkan",
         "generating": "Menghasilkan…",
+        "closeAnytime": "Tutup kapan saja",
+        "failedFor": "Tidak dapat membuat gambar untuk {{name}}.",
         "cancel": "Batal",
         "cancelRunning": "Batalkan pembuatan",
         "edit": "Edit deskripsi",
-        "realPerson": "Avatar tidak dapat menampilkan orang sungguhan. Jelaskan karakternya saja.",
         "signedOut": "{{agent}} belum masuk. Masuk ke sana, lalu coba lagi.",
         "usageLimit": "{{agent}} mencapai batas penggunaannya. Coba lagi nanti.",
         "noImage": "{{agent}} tidak membuat gambar. Coba tulis ulang deskripsi Anda.",
@@ -25734,6 +26041,12 @@
         "added": "Ditambahkan {{names}}",
         "adding": "Menambahkan <name/> ke GitHub",
         "stop": "Berhenti menambahkan {{name}} ke GitHub"
+      },
+      "ghSignedOut": {
+        "thisComputer": "komputer ini",
+        "status": "gh belum masuk di {{host}}",
+        "line": "gh belum masuk di {{host}}. Jalankan <code>gh auth login</code> di sana.",
+        "copy": "Salin {{text}}"
       }
     },
     "automations": {
@@ -25795,7 +26108,9 @@
       "openOnPage": "Buka di halaman Otomatisasi",
       "pauseShort": "Jeda",
       "resumeShort": "Lanjutkan",
-      "nextAt": "berikutnya {{time}}"
+      "nextAt": "berikutnya {{time}}",
+      "deleting": "Menghapus…",
+      "deleteFailed": "Tidak dapat menghapus {{name}}"
     },
     "accessRequest": {
       "toast": "{{person}} meminta akses ke {{name}}",
@@ -25812,9 +26127,7 @@
       "decideFailed": "Tidak dapat menyimpan jawaban Anda. Coba lagi."
     },
     "connect": {
-      "cancel": "Batal",
-      "signedInAs": "Masuk sebagai {{who}}",
-      "notYou": "Bukan kamu?"
+      "cancel": "Batal"
     },
     "connector": {
       "howToAsk": "Bagaimana cara bertanya",
@@ -26120,6 +26433,7 @@
       "sameComputer": "Bot dalam satu grup harus berada di komputer yang sama.",
       "pairedComputersOnly": "Grup hanya dapat menambahkan bot dari komputer yang dipasangkan.",
       "needsLocalBot": "Grup ini membutuhkan setidaknya satu bot di komputer ini.",
+      "pickLocalBot": "Pilih bot di komputer ini",
       "thisComputer": "Komputer ini",
       "remoteNeedsChat": "Buka obrolan dengan {{name}} sekali, lalu tambahkan ke grup.",
       "remoteReplied": "Membalas di {{computer}}",
@@ -26162,7 +26476,8 @@
       },
       "deliveryUnconfirmed": "Pengiriman belum terkonfirmasi",
       "starting": "Memulai…",
-      "notStarted": "Belum dimulai"
+      "notStarted": "Belum dimulai",
+      "renameThreadNeedsHostUpdate": "Perbarui Orca di {{host}} untuk mengganti nama thread."
     },
     "google": {
       "file": {
@@ -26179,10 +26494,7 @@
         "promotes": "{{email}} menjadi default.",
         "removeOneNote": "Bot berhenti memakai akun ini di sini."
       },
-      "reconnect": "Hubungkan ulang",
       "thisComputer": "komputer ini",
-      "thisServer": "server ini",
-      "title": "Google",
       "description": "Izinkan bot Anda menggunakan Gmail, Kalender, dan Drive seperti Anda. Proses masuk Google Anda tetap di {{host}}.",
       "updateServer": "Perbarui server ini untuk menghubungkan Google.",
       "retry": "Coba lagi",
@@ -26224,9 +26536,6 @@
       "setUpOpens": "Membuka obrolan {{bot}}",
       "createBotToSetUp": "Bot baru",
       "defaultBadge": "Default",
-      "row": {
-        "signedOut": "Dikeluarkan oleh Google"
-      },
       "setDefault": "Jadikan default",
       "accountActions": "Tindakan {{email}}",
       "addServiceMenu": "Tambahkan layanan…",
@@ -26238,7 +26547,11 @@
       "useAnotherSignIn": "Masuk dengan Google",
       "useAnotherSignInDetail": "Memakai aplikasi Google Anda saat ini",
       "setUpNewAppDetail": "Jika aplikasi Anda saat ini tidak berfungsi untuk akun atau organisasi ini",
-      "updateToSetUpNewApp": "Perbarui Orca di {{host}} untuk menyiapkan aplikasi Google baru."
+      "updateToSetUpNewApp": "Perbarui Orca di {{host}} untuk menyiapkan aplikasi Google baru.",
+      "picker": {
+        "label": "Akun Google",
+        "addAccount": "Tambah akun lain"
+      }
     },
     "googleSetup": {
       "receipt": {
@@ -26249,7 +26562,8 @@
         "signedIn": "✓ Masuk",
         "done": "✓ Selesai",
         "takeOver": "✓ {{bot}} mengambil alih dari sini",
-        "chose": "✓ Anda memilih {{what}}"
+        "chose": "✓ Anda memilih {{what}}",
+        "stopped": "Penyiapan dihentikan"
       },
       "ended": "Penyiapan Google ini berakhir.",
       "heading": "Hubungkan Google",
@@ -26293,7 +26607,8 @@
         "waiting": "Menunggumu",
         "working": "Bekerja",
         "heading": "Menyiapkan Google",
-        "you": "Anda"
+        "you": "Anda",
+        "stopped": "Dihentikan"
       },
       "letMe": "Biarkan saya melakukan yang ini",
       "step": {
@@ -26391,7 +26706,6 @@
     "composio": {
       "connectedAs": "Terhubung sebagai {{label}}",
       "connected": "Terhubung",
-      "group": "Lebih banyak aplikasi dengan Composio",
       "key": {
         "label": "kunci Composio API",
         "placeholder": "Tempelkan kunci Anda",
@@ -26405,7 +26719,8 @@
         "purpose": "Kunci proyek Composio Anda memungkinkan bot Anda menggunakan aplikasi yang Anda sambungkan di sana. Itu tetap di komputer ini; bot tidak pernah melihatnya.",
         "getKey": "Dapatkan kunci",
         "change": "Ubah",
-        "purposeOnHost": "Kunci proyek Composio Anda memungkinkan bot di {{host}} menggunakan aplikasi yang Anda sambungkan di sana. Tetap di {{host}}; bot tidak pernah melihatnya."
+        "purposeOnHost": "Kunci proyek Composio Anda memungkinkan bot di {{host}} menggunakan aplikasi yang Anda sambungkan di sana. Tetap di {{host}}; bot tidak pernah melihatnya.",
+        "changeKey": "Ganti key"
       },
       "card": {
         "heading": "Composio",
@@ -27044,12 +27359,9 @@
       "duplicateSkill": "Nama yang sama, di {{folder}} · tidak dibagikan"
     },
     "apps": {
-      "title": "Tambahkan ke {{bot}}",
       "close": "Tutup",
       "signingIn": "Sedang masuk",
-      "add": "Tambah",
       "composio": {
-        "note": "Ini terhubung melalui akun Composio Anda.",
         "browseAll": "Jelajahi Composio aplikasi",
         "searchCaption": "Composio aplikasi",
         "allCaption": "Semua Composio aplikasi",
@@ -27059,9 +27371,14 @@
         "accountThenCatalog": "Sekali, untuk semua bot Anda. Lalu pilih dari semua aplikasi Composio.",
         "keyStored": "Disimpan di komputer ini; bot tidak pernah melihatnya. Composio menahan proses masuk aplikasi Anda.",
         "addKey": "Tambahkan kunci dan lanjutkan",
-        "keyStoredOnHost": "Disimpan di {{host}}; bot tidak pernah melihatnya. Composio menahan proses masuk aplikasi Anda."
+        "keyStoredOnHost": "Disimpan di {{host}}; bot tidak pernah melihatnya. Composio menahan proses masuk aplikasi Anda.",
+        "signsIn": "Masuk melalui akun Composio Anda.",
+        "changeKeyTitle": "Ganti key Composio Anda",
+        "replacesKeyEnding": "Menggantikan key yang berakhiran {{hint}}, untuk semua bot Anda.",
+        "replacesKey": "Menggantikan key tersimpan Anda, untuk semua bot Anda.",
+        "newKeyNeeds": "Key baru memerlukan <permission/>.",
+        "replaceKey": "Ganti key dan lanjutkan"
       },
-      "allApps": "Semua aplikasi",
       "closeKeepsSigningIn": "Proses masuk berlanjut di browser Anda",
       "openPageAgain": "Buka halaman lagi",
       "webhooks": {
@@ -27074,7 +27391,9 @@
         "line": "Server MCP {{bot}} apa pun harus digunakan",
         "failedLine": "{{app}} aktif {{bot}} namun belum masuk. Coba lagi, atau hapus di Pengaturan › Alat.",
         "done": "{{app}} aktif {{bot}}",
-        "doneLine": "{{bot}} dapat menggunakan alatnya pada giliran berikutnya."
+        "doneLine": "{{bot}} dapat menggunakan alatnya pada giliran berikutnya.",
+        "name": "Kustom",
+        "rowLine": "Server MCP apa pun"
       },
       "couldNotSignIn": "Tidak dapat masuk ke {{app}}",
       "done": "Selesai",
@@ -27086,11 +27405,11 @@
       },
       "signInAllow": "Masuk ke {{app}} dan izinkan akses.",
       "viaComposio": "melalui Composio",
-      "onBot": "Aktif {{bot}}",
       "appsCaption": "Aplikasi",
       "searchComposio": "Cari Composio aplikasi",
-      "searchMine": "Pencarian Aktif {{bot}}",
+      "searchAdded": "Cari aplikasi yang ditambahkan",
       "search": "Cari aplikasi",
+      "filters": "Filter aplikasi",
       "categories": "Kategori",
       "addByUrl": "Tambahkan berdasarkan URL",
       "noMatch": "Tidak ada aplikasi yang cocok dengan “{{query}}”.",
@@ -27110,7 +27429,6 @@
         "github": "Sebutan dan peristiwa tentang isu dan PR",
         "slack": "Pesan dan sebutan",
         "linear": "Issue dan sebutan yang ditetapkan",
-        "google": "Gmail, Kalender, dan Drive, sesuai keinginan Anda",
         "vercel": "Periksa deploy dan baca log-nya",
         "sentry": "Selidiki error dan peristiwa di baliknya",
         "datadog": "Cari di log, metrik, dan monitor",
@@ -27123,7 +27441,13 @@
         "context7": "Dokumen dan contoh terkini untuk library kode",
         "atlassian": "Issue Jira dan halaman Confluence",
         "notion": "Cari, baca, dan sunting halaman",
-        "stripe": "Cari pembayaran, pelanggan, dan langganan"
+        "stripe": "Cari pembayaran, pelanggan, dan langganan",
+        "clickup": "Kelola task, list, dan dokumen",
+        "airtable": "Kueri dan edit base, tabel, dan record",
+        "todoist": "Tambah, urutkan, dan selesaikan task",
+        "zapier": "Jalankan aksi di aplikasi yang Anda siapkan di Zapier",
+        "granola": "Cari catatan dan transkrip rapat",
+        "intercom": "Cari percakapan, kontak, dan artikel"
       },
       "mcp": {
         "adding": "Menambahkan {{app}}…",
@@ -27137,7 +27461,11 @@
           "hostLabel": "GitLab alamat (opsional)",
           "hostHint": "Untuk dikelola sendiri atau Didedikasikan. Biarkan kosong untuk GitLab.com."
         },
+        "intercom": {
+          "siteLabel": "Region Intercom"
+        },
         "place": {
+          "unitedStates": "Amerika Serikat",
           "usEast": "AS Timur",
           "usWest": "AS Barat",
           "usCentral": "AS Tengah",
@@ -27179,7 +27507,17 @@
         "box": "File dan folder",
         "miro": "Board, sticky note, dan frame",
         "reddit": "Postingan, komentar, dan subreddit"
-      }
+      },
+      "addedCount": "{{count}} ditambahkan",
+      "addedCaption": "Ditambahkan",
+      "chip": {
+        "all": "Semua",
+        "composio": "Composio",
+        "more": "Lainnya"
+      },
+      "setUpNamed": "Siapkan {{name}}",
+      "setUp": "Siapkan",
+      "couldNotConnect": "Tidak dapat menghubungkan {{app}}"
     },
     "panel": {
       "idle": "Menganggur",
@@ -27423,7 +27761,8 @@
       "delete": "Hapus obrolan",
       "open": "Buka",
       "actions": "Tindakan obrolan",
-      "needsYouCount": "{{count}} menunggu Anda"
+      "needsYouCount": "{{count}} menunggu Anda",
+      "hideOlder": "Sembunyikan yang lama"
     },
     "cloudSignIn": {
       "automationScheduledOnly": "Berjalan sesuai jadwalnya saja: acaranya dijeda saat keluar dari Orca",
@@ -27587,7 +27926,7 @@
         "showLess": "Tampilkan lebih sedikit",
         "submit": "Komentar",
         "thisServer": "Server ini",
-        "replyOrPick": "Balas dengan kata-kata Anda sendiri, atau pilih salah satu opsi",
+        "replyOrPick": "Balas atau pilih opsi",
         "replyingTo": "Membalas:",
         "hideReplyingTo": "Sembunyikan",
         "replyingToShow": "Membalas: {{question}}. Tampilkan pertanyaan",
@@ -27712,17 +28051,19 @@
         "pickCustom": "Waktu khusus"
       },
       "ask": {
-        "heldCount_one": "{{count}} jawaban belum terkirim, <send>tetap kirim</send>",
-        "heldCount_other": "{{count}} jawaban belum terkirim, <send>tetap kirim</send>",
-        "next": "Pertanyaan selanjutnya",
         "notSentYet": "belum terkirim",
-        "previous": "Pertanyaan sebelumnya",
         "recommended": "Direkomendasikan",
-        "step": "{{n}} dari {{total}}",
         "typeAnswer": "Ketikkan jawaban Anda",
         "replaced": "Agen menanyakan pertanyaan baru. Baca, lalu balas.",
         "replacedByNewer": "Diganti oleh pertanyaan yang lebih baru",
-        "skipped": "Dilewati"
+        "skipped": "Dilewati",
+        "send": "Kirim",
+        "sending": "Mengirim…",
+        "sendSome": "Kirim {{count}}/{{total}}",
+        "sendSomeLabel": "Kirim {{count}} dari {{total}} jawaban",
+        "changeAnswer": "{{question}}: {{answer}}. Ubah jawaban",
+        "heldImagesLimit": "Jawaban Anda dikirim sebagai satu komentar, yang memuat maksimal {{max}} gambar. Kirim dulu jawaban yang sudah disiapkan, atau hapus beberapa.",
+        "heldSkillsLimit": "Jawaban Anda dikirim sebagai satu komentar, yang memuat maksimal {{max}} skill. Kirim dulu jawaban yang sudah disiapkan, atau hapus beberapa."
       },
       "readMoreClosedFailed": "Gagal membaca item Closed lainnya",
       "wait": {
@@ -27755,6 +28096,7 @@
       "continuesTip": "Berlanjut secara otomatis pada {{time}}",
       "hitTip": "{{agent}} mencapai batas penggunaannya · disetel ulang {{time}}",
       "continuesShort": "Lanjutan {{time}}",
+      "rowLine": "Batas pemakaian · {{time}}",
       "hitShort": "Batas pencapaian",
       "stoppedCount": "{{count}} berhenti"
     },
@@ -27817,6 +28159,7 @@
       "toolCredentialsRaced": "Kredensial alat bot berubah di Orca lain. Coba lagi.",
       "toolSourceManaged": "Orca mengelola alat ini. Ubah di tempat Anda menyiapkannya.",
       "toolValuesUnmoved": "Masih ada alat yang menyimpan nilainya. Buka kembali alat bot untuk memindahkannya.",
+      "googleAccountsChanged": "Akun Google-nya berubah sejak Anda membukanya. Periksa lalu simpan lagi.",
       "toolCodexCheckFailed": "Codex tidak dapat memeriksa atau menghubungkan alat. Periksa penyiapannya lalu coba lagi.",
       "toolCodexNoThread": "Codex tidak memulai thread untuk memeriksa alat.",
       "toolSignInFolderFailed": "Tidak dapat menyiapkan folder proses masuk: {{detail}}",
@@ -27872,7 +28215,10 @@
       "groupReplierNotMember": "Pilih anggota room saat ini di balasan Room.",
       "groupMailNeverStarted": "Email ini tidak pernah memulai giliran.",
       "groupRemoteUnreachable": "Tidak dapat menghubungi {{host}}. {{detail}}",
-      "groupRemoteUnreachableRetry": "Tidak dapat menghubungi {{host}}. {{detail}} Posting lagi untuk mencoba ulang."
+      "groupRemoteUnreachableRetry": "Tidak dapat menghubungi {{host}}. {{detail}} Posting lagi untuk mencoba ulang.",
+      "composioKeyCantCreateSessions": "Key Composio ini tidak dapat membuat sesi. Key ini memerlukan {{permission}}.",
+      "composioKeyNeedsPermission": "Key Composio ini kehilangan satu izin. Key ini memerlukan {{permission}}.",
+      "composioKeyMissingPermission": "Key Composio ini kehilangan izin yang diperlukan Orca."
     },
     "lookAroundEvery": {
       "every4h": "Setiap 4 jam, pukul 08.00 sampai 20.00",
@@ -28031,7 +28377,8 @@
     "branchCreated": "Dibuat {{branch}} di {{commit}}",
     "branchName": "Nama cabang",
     "invalidBranchName": "Nama cabang ini tidak valid. Pilih nama lain.",
-    "createBranchFailed": "Orca tidak dapat membuat cabang. Periksa repositori ini di terminal, lalu coba lagi."
+    "createBranchFailed": "Orca tidak dapat membuat cabang. Periksa repositori ini di terminal, lalu coba lagi.",
+    "openDiff": "Buka diff"
   },
   "macosUpdateRequirement": {
     "title": "Orca pembaruan sekarang membutuhkan macOS {{macos}}",
@@ -28200,7 +28547,23 @@
     "failedChipTooltip": "Pembaruan gagal. Klik untuk melihat detailnya.",
     "failedTitle": "Tidak dapat memperbarui {{product}}",
     "failedDescription": "Orca jalankan <code>{{command}}</code> di <strong>{{host}}</strong> untuk memperbarui {{product}} Anda dari <strong>{{installedVersion}}</strong> ke <strong>{{latestVersion}}</strong>, dan gagal.",
-    "failedDescriptionNoCommand": "Orca tidak dapat memperbarui {{product}} Anda di <strong>{{host}}</strong>."
+    "failedDescriptionNoCommand": "Orca tidak dapat memperbarui {{product}} Anda di <strong>{{host}}</strong>.",
+    "cardLabel": "Pembaruan CLI agent",
+    "cardLater": "Nanti",
+    "toastUpdating_one": "Memperbarui {{current}} dari {{count}} CLI",
+    "toastUpdating_other": "Memperbarui {{current}} dari {{count}} CLI",
+    "toastDone_one": "{{count}} CLI diperbarui",
+    "toastDone_other": "{{count}} CLI diperbarui",
+    "hideList": "Sembunyikan daftar",
+    "showList": "Tampilkan daftar",
+    "toastUpdate": "Perbarui {{total}}",
+    "toastRetry": "Coba lagi {{failed}}",
+    "copied": "Disalin",
+    "manualSection": "Manual",
+    "toastFailedCount_one": "{{count}} pembaruan gagal",
+    "toastFailedCount_other": "{{count}} pembaruan gagal",
+    "toastClose": "Tutup",
+    "queued": "Dalam antrean"
   },
   "backgroundWorkerPaused": {
     "title": "Beberapa pekerjaan latar belakang dijeda setelah mengalami error berulang kali",
@@ -28234,7 +28597,10 @@
     "toolsLabel": "Alat aplikasi",
     "workspaces": "Ruang kerja",
     "more": "Lainnya",
-    "pageRegion": "Halaman"
+    "customize": "Sesuaikan",
+    "pageRegion": "Halaman",
+    "account": "Akun",
+    "signIn": "Masuk"
   },
   "chats": {
     "delete": {
@@ -28261,5 +28627,14 @@
     "moveLeft": "Pindahkan ke kiri",
     "moveRight": "Pindahkan ke kanan",
     "reset": "Atur ulang urutan tab"
+  },
+  "mcpServers": {
+    "paste": {
+      "badCommand": "Masukkan nilainya langsung di perintah mcp add: Orca tidak dapat mengisi $VARIABLES atau ekspresi shell lain.",
+      "unsupported": "Orca tidak dapat menambahkan server ini apa adanya: server ini memakai SSE, OAuth client sendiri, atau nilai yang dibaca dari environment.",
+      "badAddCommand": "Periksa perintah mcp add: perlu nama dan URL atau perintah.",
+      "badJson": "Periksa JSON yang ditempel: JSON itu tidak dapat diurai.",
+      "none": "Orca tidak menemukan server yang bisa ditambahkan. Server SSE, server dengan OAuth client atau filter tool sendiri, dan nilai yang dibaca dari environment (${VAR}) tidak didukung."
+    }
   }
 }
